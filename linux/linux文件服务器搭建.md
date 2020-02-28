@@ -2,13 +2,13 @@
 
 #### 配置文件保存路径
 
-```
+```sh
 /usr/local/httpd/apache2/conf/httpd.conf
 ```
 
 #### 资源文件存放路径
 
-```
+```shell
 /medicare_files_server/szyb/    # 省医保资源存放路径
 /medicare_files_server/ydjy/    # 异地就医资源存放路径
 ```

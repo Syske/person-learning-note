@@ -110,7 +110,7 @@ D:/Redis/redis-server.exe --service-start --service-name Redis6381
 D:/Redis/redis-server.exe --service-start --service-name Redis6382
 ```
 
-执行结果：       ![img](images/578448-20170101000748273-1080049971.png)
+执行结果：       ![img](../images/578448-20170101000748273-1080049971.png)
 
 ### 2.下载并安装ruby
 
@@ -122,7 +122,7 @@ D:/Redis/redis-server.exe --service-start --service-name Redis6382
 
 意思是将ruby添加到系统的环境变量中，在cmd命令中能直接使用ruby的命令
 
-​    ![img](images/578448-20161231232630711-211501252.png)
+​    ![img](../images/578448-20161231232630711-211501252.png)
 
 ####    2.2.下载ruby环境下Redis的驱动，考虑到兼容性，这里下载的是3.2.2版本
 
@@ -130,7 +130,7 @@ https://rubygems.org/gems/redis/versions/3.2.2
 
 注意：下载在页面右下角相关连接一项中
 
-![img](images/578448-20161231224127351-260128949.png)
+![img](../images/578448-20161231224127351-260128949.png)
 
 ​           
 
@@ -142,7 +142,7 @@ gem install --local path_to_gem/filename.gem
 
 ​       实际操作如下：
 
-​    ![img](images/578448-20161231233209898-1115746848.png)
+​    ![img](../images/578448-20161231233209898-1115746848.png)
 
 ####       2.3.下载Redis官方提供的创建Redis集群的ruby脚本文件redis-trib.rb，路径如下：
 
@@ -154,13 +154,13 @@ gem install --local path_to_gem/filename.gem
 
 　　注意：因为redis-trib.rb是ruby代码，必须用ruby来打开，若redis-trib.rb无法识别，需要手动选择该文件的打开方式：
 
-​                  ![img](images/QQ图片20170712112440.png)
+​                  ![img](../images/QQ图片20170712112440.png)
 
-​                  ![img](images/QQ图片20170712112842.png)
+​                  ![img](../images/QQ图片20170712112842.png)
 
 ​	选择ruby为的打开方式后，redis-trib.rb的logo都会发生改变，如下图：
 
-​                      ![img](images/QQ图片20170712112431.png)
+​                      ![img](../images/QQ图片20170712112431.png)
 
  
 
@@ -174,11 +174,11 @@ redis-trib.rb create --replicas 0 127.0.0.1:6380 127.0.0.1:6381 127.0.0.1:6382
 
 　　执行结果：
 
-​     ![img](images/578448-20170103100940691-382820890.jpg)
+​     ![img](../images/578448-20170103100940691-382820890.jpg)
 
 ​     当出现提示时，需要手动输入yes，输入后，当出现以下内容，说明已经创建了Redis集群
 
-​     ![img](images/578448-20170103101131050-439447930.jpg)
+​     ![img](../images/578448-20170103101131050-439447930.jpg)
 
 ​     检验是否真的创建成功，输入以下命令：
 
@@ -188,7 +188,7 @@ redis-trib.rb check 127.0.0.1:6380
 
 ​     出现以下信息，说明创建的Redis集群是没问题的
 
- ![img](images/578448-20170103114028206-281352717.png)
+ ![img](../images/578448-20170103114028206-281352717.png)
 
    使用Redis客户端Redis-cli.exe来查看数据记录数，以及集群相关信息
 
@@ -200,7 +200,7 @@ D:/Redis/redis-cli.exe -c -p 6380
 
    -p 表示 port 端口号
 
-   ![img](images/578448-20170105170548003-2022751429.png)
+   ![img](../images/578448-20170105170548003-2022751429.png)
 
    输入dbsize查询 记录总数
 
@@ -216,7 +216,7 @@ D:/Redis/redis-cli.exe -c -p 6380 dbsize
 
 ​    结果如下：
 
-​    ![img](images/578448-20170105170856269-1044676861.png)
+​    ![img](../images/578448-20170105170856269-1044676861.png)
 
 ​    输入cluster info可以从客户端的查看集群的信息：
 
@@ -226,4 +226,4 @@ cluster info
 
 　结果如下：
 
-  ![img](images/578448-20170105171104691-1699042108.png)
+  ![img](../images/578448-20170105171104691-1699042108.png)

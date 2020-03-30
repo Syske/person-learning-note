@@ -1,3 +1,50 @@
+ server {
+			  listen 8080;
+			  server_name 127.0.0.1:8080;
+			  
+				underscores_in_headers on;
+			  
+			  location /syb/ {			
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8083;
+				}
+				
+				location /syb-pc/ {				
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8083;
+				}
+				
+				location /sso/ {				
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8088;
+				}
+				
+				location /api/ {
+				 if ( $request_method = 'OPTIONS' ) { 
+					add_header Access-Control-Allow-Origin $http_origin; 
+					add_header Access-Control-Allow-Headers Authorization,access-token,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Data-Type,X-Requested-With; 
+					add_header Access-Control-Allow-Methods GET,POST,OPTIONS,HEAD,PUT; 
+					add_header Access-Control-Allow-Credentials true; 
+					add_header Access-Control-Allow-Headers X-Data-Type,X-Auth-Token;
+					return 200;
+	    }
+				proxy_next_upstream http_502 http_504 error timeout invalid_header;				
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8081;
+				}		
+			}
 #### 安装目录
 
 ```
@@ -24,9 +71,13 @@ nginx -s stop # #停止 Nginx
 
 #### 请求转发
 
-如下配置就是将10.190.147.31:8720服务器上的所有服务以syb开头的服务，将通过10.189.139.35来访问，如10.189.139.35/syb，实际访问的就是http://10.190.147.31:8720/syb，10.189.139.35/syb-pc实际访问的是
+如下配置就是将`10.190.147.31:8720`服务器上的所有服务以`syb`开头的服务，将通过`10.189.139.35`来访问，如`10.189.139.35/syb`，实际访问的就是`http://10.190.147.31:8720/syb`，`10.189.139.35/syb-pc`实际访问的是
 
+```
 http://10.190.147.31:8720/syb-pc
+```
+
+
 
 ```
 location /syb {
@@ -53,5 +104,59 @@ location /status {
   #auth_basic "status";   							#auth_basic 是nginx的一种认证机制。
   #auth_basic_user_file conf/htpasswd;	#用来指定密码文件的位置。
 }
+```
+
+
+
+#### 单点登陆token共享配置
+
+```nginx
+ server {
+			  listen 8080;
+			  server_name 127.0.0.1:8080;
+			  
+				underscores_in_headers on;
+			  
+			  location /syb/ {			
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8083;
+				}
+				
+				location /syb-pc/ {				
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8083;
+				}
+				
+				location /sso/ {				
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8088;
+				}
+				
+				location /api/ {
+				 if ( $request_method = 'OPTIONS' ) { 
+					add_header Access-Control-Allow-Origin $http_origin; 
+					add_header Access-Control-Allow-Headers Authorization,access-token,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Data-Type,X-Requested-With; 
+					add_header Access-Control-Allow-Methods GET,POST,OPTIONS,HEAD,PUT; 
+					add_header Access-Control-Allow-Credentials true; 
+					add_header Access-Control-Allow-Headers X-Data-Type,X-Auth-Token;
+					return 200;
+        }
+				proxy_next_upstream http_502 http_504 error timeout invalid_header;				
+			    proxy_redirect off;
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_pass http://127.0.0.1:8081;
+				}		
+			}
 ```
 

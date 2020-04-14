@@ -212,3 +212,53 @@ public class MyBaseErrorController extends BasicErrorController {
 }
 ```
 
+最后，对于以上问题我最后的解决方法是继承ErrorController，然后定义errorHtml和error，更重要的是@RequestMapping注解，然后在方法中response写入返回值，这种方式不够优雅🤣：
+
+```java
+@RestController
+@RequestMapping(value = "error")
+public class MyBaseErrorController implements ErrorController {
+    private static final String path_default = "/error";
+
+    @Autowired
+    private ErrorAttributes errorAttributes;
+
+
+    @RequestMapping(produces = {MediaType.ALL_VALUE})
+    public void error(HttpServletRequest request,  HttpServletResponse response) {
+        setJsonError(response);
+    }
+
+
+    @RequestMapping(
+            produces = {"text/html"}
+    )
+    public void errorHtml(HttpServletRequest request, HttpServletResponse response) {
+        setJsonError(response);
+    }
+
+    @Override
+    public String getErrorPath() {
+        return path_default;
+    }
+
+    private void setJsonError(HttpServletResponse response) {
+        PrintWriter writer = null;
+        try {
+            response.setStatus(200);
+            response.setHeader("Content-type", "text/html;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            writer = response.getWriter();
+            writer.write(JSON.toJSONString(Result.getFailed("未知错误", null)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (writer != null) {
+                writer.close();
+            }
+        }
+    }
+
+}
+```
+

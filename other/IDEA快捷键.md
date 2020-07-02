@@ -1,4 +1,7 @@
-- IntelliJ Idea 常用快捷键列表
+# IntelliJ Idea 常用快捷键列表
+
+#### 【常用快捷键】
+
 - Ctrl+Shift + Enter，语句完成
 - “！”，否定完成，输入表达式时按 “！”键
 - Ctrl+E，最近的文件
@@ -64,9 +67,7 @@
 - Ctrl+I，实现方法
 - Ctrl+Shift+U，大小写转化
 - Ctrl+Y，删除当前行
-
 - Alt + insert getter/setter/构造函数/toString()
-
 - Shift+Enter，向下插入新行
 - psvm/sout，main/System.out.println(); Ctrl+J，查看更多
 - Ctrl+Shift+F，全局查找

@@ -17,7 +17,7 @@
 ### [数据连接池——JNDI](./db/数据连接池——JNDI.md)
 
 ## Druid
-### [Druid 介绍及配置](./druid/Druid 介绍及配置.md)
+### [Druid 介绍及配置](./druid/Druid介绍及配置.md)
 ### [druid数据库明文密码加密](./druid/druid数据库明文密码加密.md)
 
 ## GIT
@@ -34,7 +34,7 @@
 
 ## JAVA
 ### [class探索](./java/class探索.md)
-### [java EE学习流程](./java/java EE学习流程.md)
+### [java EE学习流程](./java/javaEE学习流程.md)
 ### [javaEE学习流程](./java/javaEE学习流程.xmind)
 ### [java多线程](./java/java多线程.md)
 ### [java基础](./java/java基础.md)
@@ -48,7 +48,7 @@
 
 ### java SE
 #### [ArrayList与Vector](./java/javaSE/ArrayList与Vector.md)
-#### [Java SE自学阶段的笔记整理](./java/javaSE/Java SE自学阶段的笔记整理.md)
+#### [Java SE自学阶段的笔记整理](./java/javaSE/JavaSE自学阶段的笔记整理.md)
 #### [Java-String类型的参数传递问题](./java/javaSE/Java-String类型的参数传递问题.md)
 #### [java知识点积累（二）](./java/javaSE/java知识点积累（二）.md)
 #### [java知识点积累（一）](./java/javaSE/java知识点积累（一）.md)
@@ -79,7 +79,7 @@
 ### [linux文件服务器搭建](./linux/linux文件服务器搭建.md)
 ### [wsl安装jdk](./linux/wsl安装jdk.md)
 ### [还不会安装Linux？](./linux/还不会安装Linux？.md)
-### [解决linux环境下nohup redirecting stderr to stdout问题](./linux/解决linux环境下nohup redirecting stderr to stdout问题.md)
+### [解决linux环境下nohup redirecting stderr to stdout问题](./linux/解决linux环境下问题.md)
 
 ## log
 ### [关于日志认知的一些修正](./log/关于日志认知的一些修正.md)
@@ -127,7 +127,7 @@
 ### [python其他技巧](./python/python其他技巧.md)
 ### [python通过openpyxl操作excel](./python/python通过openpyxl操作excel.md)
 ### [python学习笔记](./python/python学习笔记.md)
-### [初探python GUI——pyqt](./python/初探python GUI——pyqt.md)
+### [初探python GUI——pyqt](./python/初探pythonGUI——pyqt.md)
 
 ## REDIS
 ### [Redis 数据类型](./redis/Redis 数据类型.md)
@@ -150,14 +150,14 @@
 ## spring
 ### [AOP常用注解](./spring/AOP常用注解.md)
 ### [AOP切点相关](./spring/AOP切点相关.md)
-### [spring 5.0 api - Web on Servlet Stack](./spring/spring 5.0 api - Web on Servlet Stack.md)
-### [Spring core注解](./spring/Spring core注解.md)
-### [spring MVC](./spring/spring MVC.md)
-### [spring MVC初试](./spring/spring MVC初试.md)
-### [Spring MVC零配置（全注解）](./spring/Spring MVC零配置（全注解）.md)
-### [spring MVC文件上传](./spring/spring MVC文件上传.md)
-### [Spring MVC中的注解](./spring/Spring MVC中的注解.md)
-### [Spring 事务管理](./spring/Spring 事务管理.md)
+### [spring 5.0 api - Web on Servlet Stack](./spring/spring5.0api-WebOnServletStack.md)
+### [Spring core注解](./spring/SpringCore注解.md)
+### [spring MVC](./spring/springMVC.md)
+### [spring MVC初试](./spring/springMVC初试.md)
+### [Spring MVC零配置（全注解）](./spring/SpringMVC零配置（全注解）.md)
+### [spring MVC文件上传](./spring/springMVC文件上传.md)
+### [Spring MVC中的注解](./spring/SpringMVC中的注解.md)
+### [Spring 事务管理](./spring/Spring事务管理.md)
 ### [springboot学习笔记（一）](./spring/springboot学习笔记（一）.md)
 ### [springboot知识点](./spring/springboot知识点.md)
 ### [springboot自定义注解及应用](./spring/springboot自定义注解及应用.md)
@@ -171,11 +171,11 @@
 ### [如果还不知道什么是微服务，你是不是该面壁思过下？](./spring/如果还不知道什么是微服务，你是不是该面壁思过下？.md)
 ### [手动创建spring项目（maven）](./spring/手动创建spring项目（maven）.md)
 ### [手动创建spring项目](./spring/手动创建spring项目.md)
-### [spring boot 第一个Dome](./spring/springboot/spring boot 第一个Dome.md)
+### [spring boot 第一个Dome](./spring/springboot/springboot第一个Dome.md)
 ### [Spring boot进阶-配置Controller、interceptor...](./spring/springboot/Spring boot进阶-配置Controller、interceptor....md)
 ### [spring boot日志及Log4j日志配置](./spring/springboot/spring boot日志及Log4j日志配置.md)
 ### [spring boot整合Mybatis](./spring/springboot/spring boot整合Mybatis.md)
-### [Spring boot注解](./spring/springboot/Spring boot注解.md)
+### [Spring boot注解](./spring/springboot/Springboot注解.md)
 ### [Springcloud基础知识点](./spring/springcloud/Springcloud基础知识点.md)
 ### [springCloud应用网关简单示例](./spring/springcloud/springCloud应用网关简单示例.md)
 
@@ -235,11 +235,11 @@
 ## 代码整理
 ### [java MD5加密](./代码整理/java/常用算法/java MD5加密.md)
 ### [MD5withRSA和SHA1withRSA两种方式](./代码整理/java/常用算法/MD5withRSA和SHA1withRSA两种方式.md)
-### [RSA 1024位 256加密](./代码整理/java/常用算法/RSA 1024位 256加密.md)
+### [RSA 1024位 256加密](./代码整理/java/常用算法/RSA1024位256加密.md)
 ### [排序算法](./代码整理/java/常用算法/排序算法.md)
 ### [ajaxForm](./代码整理/js/ajaxForm.md)
-### [Jquery dataTable](./代码整理/js/Jquery dataTable.md)
-### [js UUID](./代码整理/js/js UUID.md)
+### [Jquery dataTable](./代码整理/js/Jquery-dataTable.md)
+### [js UUID](./代码整理/js/jsUUID.md)
 ### [js 时间格式化](./代码整理/js/js 时间格式化.md)
 ### [js三级分类查询](./代码整理/js/js三级分类查询.md)
 ### [ztree增删改查代码](./代码整理/js/ztree增删改查代码.md)
@@ -272,10 +272,10 @@
 ### [java资料-链接版](./微信公众号发布/java资料-链接版.md)
 ### [shiro入门笔记之第一个demo创建](./微信公众号发布/shiro入门笔记之第一个demo创建.md)
 ### [shiro与spring项目整合](./微信公众号发布/shiro与spring项目整合.md)
-### [spring boot 第一个Demo](./微信公众号发布/spring boot 第一个Demo.md)
-### [spring boot基于DRUID数据源密码加密及数据源监控实现](./微信公众号发布/spring boot基于DRUID数据源密码加密及数据源监控实现.md)
-### [Spring boot进阶-配置Controller、interceptor](./微信公众号发布/Spring boot进阶-配置Controller、interceptor.md)
-### [spring boot日志及Log4j日志配置](./微信公众号发布/spring boot日志及Log4j日志配置.md)
+### [spring boot 第一个Demo](./微信公众号发布/springboot第一个Demo.md)
+### [spring boot基于DRUID数据源密码加密及数据源监控实现](./微信公众号发布/springboot基于DRUID数据源密码加密及数据源监控实现.md)
+### [Spring boot进阶-配置Controller、interceptor](./微信公众号发布/Springboot进阶-配置Controller、interceptor.md)
+### [spring boot日志及Log4j日志配置](./微信公众号发布/springboot日志及Log4j日志配置.md)
 ### [spring零配置AOP踩坑指南](./微信公众号发布/spring零配置AOP踩坑指南.md)
 ### [xstream采坑](./微信公众号发布/xstream采坑.md)
 ### [基于mybatis-plus的代码生成](./微信公众号发布/基于mybatis-plus的代码生成.md)
@@ -309,8 +309,8 @@
 ### [股票日k周k月k简介](./管理/股票/股票日k周k月k简介.md)
 
 ## 练习题知识点整理
-### [牛客网错题java EE部分知识点](./练习题知识点整理/牛客网错题java EE部分知识点.md)
-### [牛客网错题Java SE部分知识点](./练习题知识点整理/牛客网错题Java SE部分知识点.md)
+### [牛客网错题java EE部分知识点](./练习题知识点整理/牛客网错题javaEE部分知识点.md)
+### [牛客网错题Java SE部分知识点](./练习题知识点整理/牛客网错题JavaSE部分知识点.md)
 ### [小知识点汇总](./练习题知识点整理/小知识点汇总.md)
 
 ## 设计模式

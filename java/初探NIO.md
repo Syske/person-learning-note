@@ -23,5 +23,7 @@ BIO（Blocking I/O）即同步阻塞I/O，在NIO出现之前主要使用BIO及�
 
 #### 1. 缓冲区Buffer
 
-缓冲区有直接缓冲区和非直接缓冲区之分（关于两者的区别可以看[这里](https://blog.csdn.net/qiuwenjie123/article/details/79795699?utm_source=blogxgwz2)），它实际上也是一段内存空间。在NIO库中，所有数据都是用缓冲区处理的。在读取数据时，它是直接读到缓冲区中的； 在写入数据时，它也是写入到缓冲区中的。流程如下图：![image-20200107112743557](..\images\image-20200107112743557.png)
+缓冲区有直接缓冲区和非直接缓冲区之分（关于两者的区别可以看[这里](https://blog.csdn.net/qiuwenjie123/article/details/79795699?utm_source=blogxgwz2)），它实际上也是一段内存空间。在NIO库中，所有数据都是用缓冲区处理的。在读取数据时，它是直接读到缓冲区中的； 在写入数据时，它也是写入到缓冲区中的。流程如下图：
+
+![image-20200107112743557](https://gitee.com/sysker/picBed/raw/master/images/image-20200107112743557.png)
 

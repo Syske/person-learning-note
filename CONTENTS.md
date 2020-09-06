@@ -130,7 +130,7 @@
 ### [初探python GUI——pyqt](./python/初探pythonGUI——pyqt.md)
 
 ## REDIS
-### [Redis 数据类型](./redis/Redis 数据类型.md)
+### [Redis 数据类型](./redis/Redis数据类型.md)
 ### [redis](./redis/redis.md)
 ### [Redis数据结构](./redis/Redis数据结构.md)
 ### [Redis详解](./redis/Redis详解.md)
@@ -172,9 +172,9 @@
 ### [手动创建spring项目（maven）](./spring/手动创建spring项目（maven）.md)
 ### [手动创建spring项目](./spring/手动创建spring项目.md)
 ### [spring boot 第一个Dome](./spring/springboot/springboot第一个Dome.md)
-### [Spring boot进阶-配置Controller、interceptor...](./spring/springboot/Spring boot进阶-配置Controller、interceptor....md)
-### [spring boot日志及Log4j日志配置](./spring/springboot/spring boot日志及Log4j日志配置.md)
-### [spring boot整合Mybatis](./spring/springboot/spring boot整合Mybatis.md)
+### [Spring boot进阶-配置Controller、interceptor...](./spring/springboot/Springboot进阶-配置Controller、interceptor....md)
+### [spring boot日志及Log4j日志配置](./spring/springboot/springboot日志及Log4j日志配置.md)
+### [spring boot整合Mybatis](./spring/springboot/springboot整合Mybatis.md)
 ### [Spring boot注解](./spring/springboot/Springboot注解.md)
 ### [Springcloud基础知识点](./spring/springcloud/Springcloud基础知识点.md)
 ### [springCloud应用网关简单示例](./spring/springcloud/springCloud应用网关简单示例.md)
@@ -219,7 +219,7 @@
 ### [webservice初体验-cxf](./webservice/webservice初体验-cxf.md)
 
 ## windows
-### [win10 开始菜单不显示修复代码](./windows系统操作技巧/win10 开始菜单不显示修复代码.md)
+### [win10 开始菜单不显示修复代码](./windows系统操作技巧/win10开始菜单不显示修复代码.md)
 
 ## zookeeper
 ### [zookeeper文件节点示例](./zookeeper/zookeeper文件节点示例.vsdx)
@@ -233,14 +233,14 @@
 ### [异地就医](./业务笔记/医保业务/异地就医.xmind)
 
 ## 代码整理
-### [java MD5加密](./代码整理/java/常用算法/java MD5加密.md)
+### [java MD5加密](./代码整理/java/常用算法/javaMD5加密.md)
 ### [MD5withRSA和SHA1withRSA两种方式](./代码整理/java/常用算法/MD5withRSA和SHA1withRSA两种方式.md)
 ### [RSA 1024位 256加密](./代码整理/java/常用算法/RSA1024位256加密.md)
 ### [排序算法](./代码整理/java/常用算法/排序算法.md)
 ### [ajaxForm](./代码整理/js/ajaxForm.md)
 ### [Jquery dataTable](./代码整理/js/Jquery-dataTable.md)
 ### [js UUID](./代码整理/js/jsUUID.md)
-### [js 时间格式化](./代码整理/js/js 时间格式化.md)
+### [js 时间格式化](./代码整理/js/js时间格式化.md)
 ### [js三级分类查询](./代码整理/js/js三级分类查询.md)
 ### [ztree增删改查代码](./代码整理/js/ztree增删改查代码.md)
 

@@ -171,13 +171,25 @@
 ### [如果还不知道什么是微服务，你是不是该面壁思过下？](./spring/如果还不知道什么是微服务，你是不是该面壁思过下？.md)
 ### [手动创建spring项目（maven）](./spring/手动创建spring项目（maven）.md)
 ### [手动创建spring项目](./spring/手动创建spring项目.md)
-### [spring boot 第一个Dome](./spring/springboot/springboot第一个Dome.md)
-### [Spring boot进阶-配置Controller、interceptor...](./spring/springboot/Springboot进阶-配置Controller、interceptor....md)
-### [spring boot日志及Log4j日志配置](./spring/springboot/springboot日志及Log4j日志配置.md)
-### [spring boot整合Mybatis](./spring/springboot/springboot整合Mybatis.md)
-### [Spring boot注解](./spring/springboot/Springboot注解.md)
-### [Springcloud基础知识点](./spring/springcloud/Springcloud基础知识点.md)
-### [springCloud应用网关简单示例](./spring/springcloud/springCloud应用网关简单示例.md)
+
+### springboot
+
+#### [spring boot 第一个Dome](./spring/springboot/springboot第一个Dome.md)
+#### [Spring boot进阶-配置Controller、interceptor...](./spring/springboot/Springboot进阶-配置Controller、interceptor....md)
+#### [spring boot日志及Log4j日志配置](./spring/springboot/springboot日志及Log4j日志配置.md)
+#### [spring boot整合Mybatis](./spring/springboot/springboot整合Mybatis.md)
+#### [Spring boot注解](./spring/springboot/Springboot注解.md)
+
+#### [springboot项目通过策略模式减少if-else](./spring/springboot/springboot项目通过策略模式减少if-else.md)
+
+
+
+### springcloud
+
+#### [Springcloud基础知识点](./spring/springcloud/Springcloud基础知识点.md)
+#### [springCloud应用网关简单示例](./spring/springcloud/springCloud应用网关简单示例.md)
+
+#### 
 
 ## ssm整合
 ### [mybatis、Spring整合（eclipse）以及事务管理](./ssm整合/mybatis、Spring整合（eclipse）以及事务管理.md)

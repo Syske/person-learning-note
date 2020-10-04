@@ -158,11 +158,6 @@
 ### [spring MVC文件上传](./spring/springMVC文件上传.md)
 ### [Spring MVC中的注解](./spring/SpringMVC中的注解.md)
 ### [Spring 事务管理](./spring/Spring事务管理.md)
-### [springboot学习笔记（一）](./spring/springboot学习笔记（一）.md)
-### [springboot知识点](./spring/springboot知识点.md)
-### [springboot自定义注解及应用](./spring/springboot自定义注解及应用.md)
-### [Springcloud基础知识点](./spring/Springcloud基础知识点.md)
-### [springCloud应用网关简单示例](./spring/springCloud应用网关简单示例.md)
 ### [spring零配置AOP踩坑指南](./spring/spring零配置AOP踩坑指南.md)
 ### [Spring配置](./spring/Spring配置.md)
 ### [Spring知识点积累](./spring/Spring知识点积累.md)
@@ -181,7 +176,9 @@
 #### [Spring boot注解](./spring/springboot/Springboot注解.md)
 
 #### [springboot项目通过策略模式减少if-else](./spring/springboot/springboot项目通过策略模式减少if-else.md)
-
+#### [springboot学习笔记（一）](./spring/springboot/springboot学习笔记（一）.md)
+#### [springboot知识点](./spring/springboot/springboot知识点.md)
+#### [springboot自定义注解及应用](./spring/springboot/springboot自定义注解及应用.md)
 
 
 ### springcloud
@@ -189,9 +186,8 @@
 #### [Springcloud基础知识点](./spring/springcloud/Springcloud基础知识点.md)
 #### [springCloud应用网关简单示例](./spring/springcloud/springCloud应用网关简单示例.md)
 
-#### 
-
 ## ssm整合
+
 ### [mybatis、Spring整合（eclipse）以及事务管理](./ssm整合/mybatis、Spring整合（eclipse）以及事务管理.md)
 ### [mybatis配置](./ssm整合/mybatis配置.md)
 ### [ssm整合配置示例](./ssm整合/ssm整合配置示例.md)

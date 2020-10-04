@@ -21,7 +21,7 @@
 
 
 - 修改后的pom
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -88,7 +88,7 @@
 ![](https://images2018.cnblogs.com/blog/1077694/201807/1077694-20180730223122579-1304577635.png)
 
 
-```
+```java
 package io.github.syske;
 
 import org.springframework.boot.SpringApplication;
@@ -101,14 +101,13 @@ public class FirstSpringBootDome {
     }
 
 }
-
 ```
 
 # 4、创建Controller
 
 - 这里需要留意的是controller和Application的相对路径
 
-```
+```java
 package io.github.syske.controller;
 
 import org.springframework.stereotype.Controller;
@@ -144,7 +143,7 @@ public class HelloController {
 # 总结
 
 - 我在踩坑的过程中发现，setting的设置可能会导致找不到类的错误，具体错误如下，仅供参考，楼主最后通过修改setting成功修复
-```
+```sh
 java.lang.NoClassDefFoundError: ch/qos/logback/core/joran/spi/JoranException
 ```
 

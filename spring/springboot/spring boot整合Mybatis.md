@@ -3,7 +3,7 @@
 
 ### 1、引入依赖
 
-```
+```xml
 <!-- 数据库连接配置 -->
         <!-- mysql数据库连接jar包 -->
         <dependency>
@@ -40,7 +40,7 @@
 
 > 配置文件采用的yaml，如果不懂得话可以看一下Spring boot官方文档
 
-```
+```yml
 #阿里巴巴druid数据源配置
 spring:
   datasource:
@@ -64,7 +64,7 @@ mybatis:
 
 ### 3、entity
 
-```
+```java
 
 public class User {
     // 用户id，采用UUID
@@ -97,7 +97,7 @@ public class User {
 
 ### 4、DAO
 
-```
+```java
 import java.util.List;
 
 public interface UserDAO {
@@ -112,7 +112,7 @@ public interface UserDAO {
 
 ### 5、Usermapper.xml
 
-```
+```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -131,7 +131,7 @@ public interface UserDAO {
 
 - 接口
 
-```
+```java
 
 import java.util.List;
 
@@ -146,7 +146,7 @@ public interface UserService {
 
 ```
 - 服务接口实现类
-```
+```java
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -167,7 +167,7 @@ public class UserServiceImpl implements UserService {
 
 ### 7、测试类
 
-```
+```java
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -199,7 +199,7 @@ public class SpringBoot31ApplicationTests {
 ```
 
 - 本次示例中mybatis配置文件为空：
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -211,7 +211,7 @@ public class SpringBoot31ApplicationTests {
 
 - 这里要补充一下，需要在Spring boot启动类中标注mapper路径
 
-```
+```java
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;

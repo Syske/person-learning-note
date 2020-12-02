@@ -11,7 +11,7 @@ cd /wls/Oracle/Middleware/Oracle_Home/wlserver/common/bin
 export DISPLAY=localhost:10.0
 ```
 见下图
-![https://note.youdao.com/yws/api/personal/file/8649CA216A104EA4BB298AB5D0E33A76?method=download&shareKey=7817781faf39cea8213796e8680f513f](https://note.youdao.com/yws/api/personal/file/8649CA216A104EA4BB298AB5D0E33A76?method=download&shareKey=7817781faf39cea8213796e8680f513f)
+![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-01.png)
 
 - 4、执行如下命令：
 ```
@@ -67,17 +67,17 @@ Exception in thread "main" java.awt.AWTError: Can't connect to X11 window server
 - 5、然后会弹出和windows环境相同的界面，后续操作同windows
 - 具体步骤
     - 第一步：<br>
-![image](https://note.youdao.com/yws/api/personal/file/E2F3831A3A744E7B8CDE5B9C7FF74FEF?method=download&shareKey=5df1b5280c3edba9761c3af66869020e)
+![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-02.png)
     - 第二步<br>
-    ![image](https://note.youdao.com/yws/api/personal/file/1A14180BBB5B4F069450F01245713A38?method=download&shareKey=59d77919f814e3b4302884eaf5ea8cda)
+    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-03.png)
     - 第三步<br>
-    ![image](https://note.youdao.com/yws/api/personal/file/82FE481F1F4D4987B30CF50A17EF3B60?method=download&shareKey=ac06e741368018619acc2d39294c8fcd)
+    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-04.png)
     - 第四步<br>
-    ![image](https://note.youdao.com/yws/api/personal/file/BDE701F89ED246829CC47FF255C31AA3?method=download&shareKey=8b3351ae4652877c0cf8568acfc40d0c)
+    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-05.png)
     - 第五步<br>
-    ![image](https://note.youdao.com/yws/api/personal/file/85A8DC1EEC224D71AA77067784FFC45D?method=download&shareKey=96e0d75a421deae13462c4f732b4618b)
+    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-06.png)
     - 第六步<br>
-    ![image](https://note.youdao.com/yws/api/personal/file/C7ACB3C9A9AF471D88F3A25289213B86?method=download&shareKey=3cb0e6a870a0d3d3dbe5854169b1b873)
+    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-07.png)
     - 第七步<br>
-    ![image](https://note.youdao.com/yws/api/personal/file/DB16468710094679B847715C29966412?method=download&shareKey=02495a3061a39bd9c9f3e3ea9e3f6c55)
+    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-08.png)
 - 至此，domain创建完成

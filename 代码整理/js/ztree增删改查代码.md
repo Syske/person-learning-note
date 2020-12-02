@@ -1,6 +1,8 @@
+tags: [#code, #ztree]
+
 # 1、css样式
 
-```
+```css
 <style type="text/css">
 .ztree li span.button.add {
 	margin-left: 2px;
@@ -13,11 +15,11 @@
 ```
 
 # 2、html
-```
+```html
 <ul id="treeDemo" class="ztree"></ul>
 ```
 添加tree模态框
-```
+```html
 <!-- Modal -->
 				<div class="modal" id="myModalAddCategory" tabindex="-1"
 					role="dialog" aria-labelledby="myModalLabel">
@@ -63,7 +65,7 @@
 
 # 3、js
 
-```
+```js
 <script type="text/javascript">
 		//alert("tesete")
 		var setting = {

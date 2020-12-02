@@ -1,6 +1,6 @@
 # [Spring boot进阶-配置Controller、interceptor](https://www.cnblogs.com/caoleiCoding/p/9404236.html)
 
-
+tags: [#springboot]
 
 ### 1、配置SpringBootApplication(对spring boot来说这是最基本)
 

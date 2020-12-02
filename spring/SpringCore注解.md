@@ -4,7 +4,7 @@
 - Autowired注解来指定自动装配，可以修饰setter方法、普通方法、实例变量和构造器等
 - 当用来标注setter方法时，默认采用byType自动装配策略
 
-```
+```java
 @component
 public class Chinese implments Person {
     @Autowried
@@ -14,7 +14,7 @@ public class Chinese implments Person {
 }
 ```
 - 修饰带多个参数的普通方法时，Spring会自动到容器中寻找类型匹配的Bean，如果恰好为每个参数都找到一个类型匹配的Bean，Spring会自动以这些Bean作为参数来调用该方法
- ```
+ ```java
 @component
 public class Chinese implments Person {
     
@@ -25,12 +25,12 @@ public class Chinese implments Person {
     }
     ...
 }
-```
+ ```
 
 - 也可以用于修饰构造器和实例变量
 - 修饰一个实例变量时，Spring将会把容器中与该实例变量匹配的Bean设置为该实例变量的值
 
-```
+```java
 @component
 public class Chinese implments Person {
     @Autowried
@@ -45,7 +45,7 @@ public class Chinese implments Person {
 ```
 
 - 也可以用于修饰数组类型的成员变量，Spring会自动搜索容器中的所有Axe实例，并以这些Axe实例作为数组元素来创建数组，最后将该数组付给axes
-```
+```java
 @Component
 public class Chinese implements Person {
     @Autowired
@@ -56,7 +56,7 @@ public class Chinese implements Person {
 
 - 与此类似的是，它也可以标注集合类型的实例变量，或者标注形参类型的集合方法，Spring对这种集合属性、集合形参的处理与上面对数组类型的处理是完全相同的
 
-```
+```java
 @Component
 public class Chinese implements Person {
     
@@ -80,7 +80,7 @@ public class BaseDaoImpl<T> implements BaseDaoImpl<T> {
 ```
 
 ### 2、@Component
--（把普通pojo实例化到spring容器中，相当于配置文件中的 <bean id="" class=""/>）
+-（把普通pojo实例化到spring容器中，相当于配置文件中的 `<bean id="" class=""/>`）
 
 - 标注一个普通的Spring Bean类
 - 泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于@Controller、@Services等的时候），我们就可以使用@Component来标注这个类。
@@ -109,7 +109,7 @@ public class BaseDaoImpl<T> implements BaseDaoImpl<T> {
 ### 7、@Resource
 
 - 为目标Bean指定协作者Bean
-```
+```java
 @Component
 public class Chinese implements Person {
     private Axe axe;
@@ -131,7 +131,7 @@ public class Chinese implements Person {
 
 - 可以修饰Bean类或方法，使用时可以指定一个字符串数组作为参数，每个数组元素对应于一个强制初始化的Bean 
 
-```
+```java
 @DependsOn({"steelAxe","abc"})
 @Component
 pulic class Chinese implements Person {
@@ -142,7 +142,7 @@ pulic class Chinese implements Person {
 
 - 修饰Spring Bean类用于指定该Bean的预初始化行为，使用时可以指定一个boolen类型的value值，该属性决定是否要预初始化该Bean
 
-```
+```java
 @Lazy(true)
 @component
 public class Chinese implements Person {
@@ -153,7 +153,7 @@ public class Chinese implements Person {
 ### 11、@Qualifier
 
 - 允许根据Bean的id来执行自动装配
-```
+```java
 @Component
 pulic class Chinese implements Person {
     @Autowired
@@ -176,14 +176,14 @@ pulic class Chinese implements Person {
 
 - RequestParpm是传递参数的，用于将请求的参数区数据映射到功能处理方法的参数上
 - 参数：
-- - value：参数名字，即入参的请求参数名字，如username表示请求的参数区中的名字为username的参数的值将传入；
+  - **value**：参数名字，即入参的请求参数名字，如username表示请求的参数区中的名字为username的参数的值将传入；
 
-- - required：是否必须，默认是true，表示请求中一定要有相应的参数，否则将报404错误码；
+  - **required**：是否必须，默认是true，表示请求中一定要有相应的参数，否则将报404错误码；
 
-- - defaultValue：默认值，表示如果请求中没有同名参数时的默认值，默认值可以是SpEL表达式，如“#{systemProperties['java.vm.version']}”。
+  - **defaultValue**：默认值，表示如果请求中没有同名参数时的默认值，默认值可以是SpEL表达式，如“#{systemProperties['java.vm.version']}”。
 
 
-```
+```java
 
 public String queryUserName(@RequestParam String userName)
 
@@ -199,3 +199,23 @@ public String requestparam5(
 - 原子类型：必须有值，否则抛出异常，如果允许空值请使用包装类代替。
 
 - Boolean包装类型类型：默认Boolean.FALSE，其他引用类型默认为null。
+
+### 13、@ComponentScan
+
+```java
+@ComponentScan(basePackages="com.example.javaconfig")
+```
+
+- 配置扫描包
+
+### 14、@propertySource 
+
+```java
+@propertySource(value={"classpath:jdbc.properties","classpath:xxxx"}, ignoreResourceNotFound = true) 
+```
+
+- 配置jdbc.properties文件
+
+### 15、@Configuration
+
+- 通过该注解来表明该类是一个Spring的配置类，相当于一个xml文件

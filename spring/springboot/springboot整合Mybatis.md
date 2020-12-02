@@ -238,7 +238,7 @@ public class SpringBoot31Application {
 ```
 
 - 从上面可以看出来，核心的点如下
-- - 引入jar包
-- - 配置datasource及mybatis
-- - 指定mapper(DAO)的路径
+  - 引入jar包
+  - 配置datasource及mybatis
+  - 指定mapper(DAO)的路径
 - 其余的和我们在ssm中基本没有区别

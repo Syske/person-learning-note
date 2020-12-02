@@ -1,5 +1,7 @@
+tags: [#code, #三级分类]
+
 # 1、html
-```
+```html
 <div class="form-group">
     <label for="memberprice" class="col-sm-2 control-label">商品分类</label>
     <div class="col-sm-3">
@@ -21,7 +23,7 @@
 ```
 # 2、js
 
-```
+```js
 	function beforeEdit() {
 		var eles = [ "#first_leve", "#second_leve", "#thrid_leve" ];
 		ajaxCategories(eles);

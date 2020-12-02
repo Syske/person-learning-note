@@ -1,7 +1,7 @@
 ### 1、默认实现的日志配置
 Spring boot默认已经集成了logging，同时也是默认开启的，如果想根据自己的需求对日志进行配置，方法很简单——只需要在配置文件中进行相应设置，这里提供我自己的配置如下(配置文件采用了yml)：
 
-```
+```properties
 logging:
   #指定日志的等级，可以对不同包采用不同的等级，比如如下配置就是将root的等级设置为info，将com.example设置为debug
   level: {root: info,com.example: debug}
@@ -16,7 +16,7 @@ logging:
 
 #### 2.1 修改spring-boot-starter的dependency
 
-```
+```xml
 <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -29,7 +29,7 @@ logging:
         </dependency>
 ```
 添加我们需要自定义的logging的dependency，这里用的是log4j2
-```
+```xml
  <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
@@ -42,7 +42,7 @@ logging:
 - Spring boot对自定义配置文件的名称是有要求的，对Login4j2而言必须为log4j2-spring.xml or log4j2.xml
 - 关于配置文件中的参数，详细参考官方文档
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <appenders>

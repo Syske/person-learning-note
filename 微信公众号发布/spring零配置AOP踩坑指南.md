@@ -1,6 +1,6 @@
 # [spring零配置AOP踩坑指南](https://www.cnblogs.com/caoleiCoding/p/9245644.html)
 
-
+tags: [#spring, #aop]
 
 今天照着书，试着配了AOP（全注解），结果踩了各种坑，后来参考书附带的源码，终于走出来了，现在总结一下
 

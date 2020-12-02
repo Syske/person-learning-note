@@ -1,3 +1,5 @@
+tags: [#db, #oracle]
+
 ### 1、创建自增主键
 
 - 创建序列
@@ -33,3 +35,27 @@ select seq_tb_batch_file.nextval into :new.id from dual;
 
 end;
 ```
+
+### 2、查看数据库版本信息
+
+```sql
+select * from v$version;
+--或
+select banner from sys.v_$version;
+```
+
+ 结果如下：
+    BANNER
+ 1 Oracle Database 10g Enterprise Edition Release 10.2.0.1.0 - Prod
+ 2 PL/SQL Release 10.2.0.1.0 - Production
+ 3 CORE 10.2.0.1.0 Production
+ 4 TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+ 5 NLSRTL Version 10.2.0.1.0 - Production
+
+- 例如：Oracle 9.0.1.1.2 
+   　　
+   　　9：版本号 
+   　　0：新特性版本号 
+   　　1（第一个）：维护版本号 
+   　　1（第二个）：普通的补丁设置号码 
+   　　2：非凡的平台补丁设置号码

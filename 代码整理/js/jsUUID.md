@@ -1,4 +1,6 @@
-```
+tags: [#code, #UUID]
+
+```js
 function uuid() {
 			var s = [];
 			var hexDigits = "0123456789abcdef";

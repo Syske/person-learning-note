@@ -162,9 +162,8 @@
    make install
    ```
 
-9. 查看安装路径：whereis nginx
-   ![img](https://www.cnblogs.com/handsomeye/p/media/15336343653165/15337133899604.jpg)￼![img](https://images2018.cnblogs.com/blog/872887/201808/872887-20180809202137626-1411197392.jpg)
-
+9. 查看安装路径：whereis nginx![img](https://images2018.cnblogs.com/blog/872887/201808/872887-20180809202137626-1411197392.jpg)
+   
 10. 启动、停止：
 
     ```

@@ -10,5 +10,7 @@
 ```
 url=jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8
 ```
-- - 其中，characterEncoding=UTF-8必须写在第一位
+-  其中，characterEncoding=UTF-8必须写在第一位
+
+
     

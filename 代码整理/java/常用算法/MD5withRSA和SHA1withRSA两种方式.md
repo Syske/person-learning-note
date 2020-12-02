@@ -1,4 +1,6 @@
-```
+tags: [#code]
+
+```java
 package rsa;
 
 import java.security.KeyPair;

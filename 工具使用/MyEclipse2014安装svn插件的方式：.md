@@ -1,3 +1,5 @@
+tags: [#Myeclipse, #插件, #svn]
+
 MyEclipse2014安装svn插件的方式：
 
 - 进入subclipse官方网站下载页面

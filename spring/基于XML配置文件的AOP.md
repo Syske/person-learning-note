@@ -32,7 +32,7 @@
 ```
 
  配置增强处理：
- 
+
  ```
  <aop:config>
 		<aop:aspect id="afterAdviceAspect" ref="afeterAdviceBean">
@@ -40,9 +40,9 @@
 		</aop:aspect>
 	</aop:config>
  ```
- 
+
  配置切入点，并在增强处理中使用该切点：
- 
+
  ```
  <aop:config>
 
@@ -54,4 +54,3 @@
 		</aop:aspect>
 	</aop:config>
  ```
- 

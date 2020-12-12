@@ -1,5 +1,7 @@
 # 基于mybatis-plus的代码生成
 
+tags: [#mybatis-plus, #代码生成]
+
 ##### 前言
 
 随着敏捷开发模式的推广，伴着日益增长的需求，日常工作中我们越来越注重效率和便捷性。今天我们就来探讨下如何自动生成代码，准确地说是如何依赖数据库生成我们的entity、mapper、mybatis xml、service、serviceImpl、controller，搭建我们的项目模板，提高我们的开发效率。这里我们的实现方式是基于mybatis-plus来实现的，废话少说，直接开始吧。

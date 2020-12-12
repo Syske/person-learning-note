@@ -1,5 +1,7 @@
 # git 优化美化
 
+tags: [#git]
+
 ### 1、中文乱码
 
 #### git status中文乱码

@@ -1,5 +1,5 @@
 #### 1、基本结构
-```
+```js
 <script type="text/javascript">
         // 创建XMLHttpRequest对象
 		var request = new XMLHttpRequest();
@@ -83,7 +83,7 @@
 - - 值为 4：请求已完成，且响应已就绪，也就是响应完成了
 
 - 常用方法：
-```
+```js
 request.onreadystatechanage=function() {
     if(request.readystate === 4 && request.status === 200) {
         // 响应后的操作

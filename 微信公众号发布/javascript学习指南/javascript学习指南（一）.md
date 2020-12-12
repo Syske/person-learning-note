@@ -1,3 +1,5 @@
+tags: [#javascript]
+
 1、**`document.write()`  **：可用于直接向 HTML 输出流写内容。简单的说就是直接在网页中输出内容。
 
 2、**`alert`(字符串或变量)** **：**警告（alert 消息对话框）
@@ -44,9 +46,11 @@ prompt(str1, str2);
 `open()` 方法可以查找一个已经存在或者新建的浏览器窗口。
 
 - **语法：**
+
 ```
 window.open([URL], [窗口名称], [参数字符串])
 ```
+
 - **参数说明:**
 
   - **URL：**可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。
@@ -55,17 +59,17 @@ window.open([URL], [窗口名称], [参数字符串])
 
     - 1.该名称由字母、数字和下划线字符组成。     
 
-    -  2."_top"、"_blank"、"_self"具有特殊意义的名称。       
+    - 2."_top"、"_blank"、"_self"具有特殊意义的名称。       
 
-       _blank：在新窗口显示目标网页       
+      _blank：在新窗口显示目标网页       
 
-       _self：在当前窗口显示目标网页       
+      _self：在当前窗口显示目标网页       
 
-       _top：框架网页中在上部窗口中显示目标网页      
+      _top：框架网页中在上部窗口中显示目标网页      
 
     - 3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。    
 
-    -  4.name 不能包含有空格。
+    - 4.name 不能包含有空格。
 
   - **参数字符串：**可选参数，设置窗口参数，各参数用逗号隔开。
 
@@ -83,6 +87,7 @@ window.open([URL], [窗口名称], [参数字符串])
   | status     | yes, no | 窗口是否有状态栏             |
 
 例如:打开http://www.imooc.com网站，大小为300px * 200px，无菜单，无工具栏，无状态栏，有滚动条窗口：
+
 ```javascript
 <script type="text/javascript">
 
@@ -106,6 +111,7 @@ scrollbars=yes')
 
 </script>
 ```
+
 ***注意：***运行结果考虑浏览器兼容问题。
 
  
@@ -181,9 +187,11 @@ document.getElementById(“id”)
 `innerHTML` 属性用于获取或替换 HTML 元素的内容。
 
 - **语法:**
+
 ```
 Object.innerHTML
 ```
+
 **注意:**
 
 1.Object是获取的元素对象，如通过document.getElementById("ID")获取的元素。
@@ -356,23 +364,23 @@ var num3=true;    //布尔值true（真），false(假)
 
 我们先看看下面的JavaScript语句：
 
-![cc703000174.jpeg](..\..\images\ip_image012.jpeg)
+![](https://gitee.com/sysker/picBed/raw/master/images/ip_image012.jpeg)
 
 生活中“再见”表达方法很多，如:英语(goodbye）、网络语（88）、肢体语（挥挥手）等。在JavaScript表达式无处不在，所以一定要知道可以表达哪些内容，看看下面几种情况:
 
-![02302800228.jpeg](..\..\images\ip_image014.jpeg)
+![](https://gitee.com/sysker/picBed/raw/master/images/ip_image014.jpeg)
 
 注意:串表达式中mychar是变量
 
  
 
-![45b02920187.jpeg](..\..\images\ip_image016.jpeg)
+![](https://gitee.com/sysker/picBed/raw/master/images/ip_image016.jpeg)
 
 注意:数值表达式中num是变量
 
  
 
-![1d402980228.jpeg](..\..\images\ip_image018.jpeg)
+![](https://gitee.com/sysker/picBed/raw/master/images/ip_image018.jpeg)
 
 **注意：**布尔表达式中num是变量
 
@@ -384,7 +392,7 @@ var num3=true;    //布尔值true（真），false(假)
 
 看下面这段JavaScript代码。
 
-```
+```js
 sum = numa + numb;
 ```
 
@@ -398,7 +406,7 @@ JavaScript中还有很多这样的操作符，例如，算术操作符(`+、-、
 
 算术运算符主要用来完成类似加减乘除的工作，在JavaScript中，“+”不只代表加法，还可以连接两个字符串，例如：
 
-```
+```js
 mystring = "Java" + "Script"; // mystring的值“JavaScript”这个字符串
 ```
 
@@ -414,6 +422,7 @@ mynum--; //mynum的值又变回10
 ```
 
 上面的例子中，mynum++使mynum值在原基础上增加1，mynum--使mynum在原基础上减去1,其实也可以写成:
+
 ```
 mynum = mynum + 1;//等同于mynum++
 mynum = mynum - 1;//等同于mynum--
@@ -444,7 +453,7 @@ mynum = mynum - 1;//等同于mynum--
 
 看看下面例子:
 
-```
+```js
 var a = 5;//定义a变量，赋值为5
 
 var b = 9; //定义b变量，赋值为9
@@ -473,7 +482,7 @@ b>a && b<c    //“&&”是并且的意思, 读法"b大于a"并且" b小于c "
 
 好比我们参加高考时,在进入考场前,必须出示准考证和身份证,两者缺一不可，否则不能参加考试，表示如下:
 
-```
+```js
 if(有准考证 &&有身份证)  {    进行考场考试 }
 ```
 
@@ -483,12 +492,12 @@ if(有准考证 &&有身份证)  {    进行考场考试 }
 
 **逻辑与操作符值表:**
 
-| A     | B     | A\&\&B  |
-| ----- | ----- | ----- |
-| true  | true  | true  |
-| true  | flase | false |
-| false | true  | false |
-| false | false | false |
+| A     | B     | A\&\&B |
+| ----- | ----- | ------ |
+| true  | true  | true   |
+| true  | flase | false  |
+| false | true  | false  |
+| false | false | false  |
 
 **注意:** 如果A为假，A && B为假，不会在执行B; 反之，如果A为真，要由 B 的值来决定 A && B 的值。
 
@@ -500,7 +509,7 @@ if(有准考证 &&有身份证)  {    进行考场考试 }
 
 例如：本周我们计划出游,可是周一至周五工作,所以周六或者周日哪天去都可以。即两天中只要有一天有空，就可以出游了。
 
-```
+```js
 var a=3; 
 var b=5; 
 var c; 
@@ -535,7 +544,7 @@ c=b>a ||a>b;  //b>a是true，a>b是false，c是true
 
 看看下面代码，变量c的值是什么:
 
-```
+```js
 var a=3; 
 var b=5; 
 var c; 
@@ -550,7 +559,7 @@ c=!(b<a);  // b<a值是false, ! (b<a）值是true
 
 我们都知道，除法、乘法等操作符的优先级比加法和减法高，例如：
 
-```
+```js
 var numa=3; 
 var numb=6 
 jq= numa + 30 / 2 - numb * 3;  // 结果为0
@@ -558,7 +567,7 @@ jq= numa + 30 / 2 - numb * 3;  // 结果为0
 
 如果我们要改变运算顺序，需添加括号的方法来改变优先级:
 
-```
+```js
 var numa=3; 
 var numb=6 
 jq= ((numa + 30) / (2 - numb)) * 3; //结果是-24.75
@@ -574,7 +583,7 @@ jq= ((numa + 30) / (2 - numb)) * 3; //结果是-24.75
 
 如果同级的运算是按从左到右次序进行,多层括号由里向外。
 
-```
+```js
 var numa=3; 
 var numb=6; 
 jq= numa + 30 >10 && numb * 3<2;  //结果为false

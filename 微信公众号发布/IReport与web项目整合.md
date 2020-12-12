@@ -1,3 +1,5 @@
+tags: [#ireport]
+
 #### 前言
 
 上周我们探讨了如何用IReport设计PDF报表，我们了解了IReport报表的设计流程，也学会了如何构建多数据集报表，本周我们来探讨下如何在我们的项目中使用我们设计的报表。
@@ -495,7 +497,7 @@ where username=$P{username}]]>
 
 项目结构如下：
 
-![image-20191228132908308](../images/image-20191228132908308.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191228132908308.png)
 
 ##### 总结
 

@@ -1,3 +1,7 @@
+tags: [#idea, #快捷键]
+
+#### 【常用快捷键】
+
 - IntelliJ Idea 常用快捷键列表
 - Ctrl+Shift + Enter，语句完成
 - “！”，否定完成，输入表达式时按 “！”键

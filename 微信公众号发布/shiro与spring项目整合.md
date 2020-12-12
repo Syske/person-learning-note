@@ -1,4 +1,6 @@
-### shiro与spring的整合
+# shiro与spring的整合
+
+tags: [#shiro, #spring]
 
 上一期，我们分享了如何在项目中使用shiro，了解了shiro的基本用法，但毕竟学习shiro的目的就是在项目中应用shiro，更准确地说是在web项目中应用shiro。那么，今天我们就来探讨一下shiro在spring web项目中的应用，这里依然参考官方sample部分的代码。好了，废话少说，直接开战。
 

@@ -1,6 +1,8 @@
+tags: [#code, #dataTable]
+
 ### 示例代码
 #### js
-```
+```js
  $('#sampleTable').on( 'init.dt', function () {           // 初始化之后执行的回调函数
             $('.bs-component [data-toggle="popover"]').popover();
         } ).DataTable( {
@@ -126,7 +128,7 @@
         } );
 ```
 #### html
-```
+```html
 <div class="col-md-12" style="overflow-x: scroll;">
             <div class="tile" style="width: 180%;">
                 <h3 class="tile-title">备案列表</h3>

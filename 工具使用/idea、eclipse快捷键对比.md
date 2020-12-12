@@ -1,3 +1,5 @@
+tags: [#idea, #eclipse, #快捷键 ]
+
 <table border="1" cellspacing="0" cellpadding="0" style="color:rgb(85,85,85);font-family:'microsoft yahei';font-size:15px;"><tbody><tr><td valign="top">
 <p align="center">
 <strong>分类</strong></p>

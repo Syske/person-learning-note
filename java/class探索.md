@@ -17,6 +17,8 @@
 <tr><td align=center> long         </td> &nbsp;&nbsp;&nbsp; <td align=center> J</td></tr>
 <tr><td align=center> short        </td> &nbsp;&nbsp;&nbsp; <td align=center> S</td></tr>
 </table></blockquote>
+
+
 **注意：**对于数组，该方法获取到的值为`[[[Ljava.lang.Object`，其中`[`表示数组，`[`的数量表示数组的维度，一维数组一个，二位数组为两个，如上显示的时三维数组
 
 下面是我演示的结果：

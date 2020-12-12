@@ -1,3 +1,5 @@
+tags: [#javascript]
+
 #### **81、返回前一个浏览的页面**
 
 back()方法，加载 history 列表中的前一个 URL。
@@ -91,7 +93,7 @@ location.[属性|方法]
 
 **location对象属性图示:**
 
-![image-20200209231459984](../../images/image-20200209231459984.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209231459984.png)
 
 **location 对象属性：**
 
@@ -196,7 +198,7 @@ document.write("u_agent:"+u_agent+"<br>");
 
 **运行结果:**
 
-![image-20200209231543508](../../images/image-20200209231543508.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209231543508.png)
 
  
 
@@ -301,7 +303,7 @@ document.write("可用高度：" + screen.availHeight);
 
 **将HTML代码分解为DOM节点层次图:**
 
-![image-20200209231639871](../../images/image-20200209231639871.png)
+![image-20200209231639871](https://gitee.com/sysker/picBed/raw/master/images/image-20200209231639871.png)
 
 **HTML文档可以说由节点构成的集合，DOM节点有:**
 
@@ -390,9 +392,7 @@ function getElements(){
 
 **运行结果:**
 
-![image-20200209231712224](../../images/image-20200209231712224.png)
-
- 
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209231712224.png)
 
 #### **92、getElementsByTagName()方法**
 
@@ -743,6 +743,7 @@ elementNode.parentNode
 **注意:父节点只能有一个。**
 
 看看下面的例子,获取 P 节点的父节点，代码如下:
+
 ```html
 <div id="text"> 
     <p id="con"> parentNode 获取指点节点的父节点</p>
@@ -764,6 +765,7 @@ elementNode.parentNode.parentNode
 ```
 
 看看下面的代码:
+
 ```html
 <div id="text"> 
     <p>parentNode
@@ -1165,7 +1167,7 @@ data : 字符串值，可规定此节点的文本。
 
 **运行结果:**
 
-![image-20200209232140299](../../images/image-20200209232140299.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209232140299.png)
 
  
 
@@ -1247,7 +1249,7 @@ var h= document.documentElement.offsetHeight     || document.body.offsetHeight;
 
 **我们先来看看下面的图：**
 
-![image-20200209232247198](../../images/image-20200209232247198.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209232247198.png)
 
 **scrollLeft:**设置或获取位于给定对象左边界与窗口中目前可见内容的最左端之间的距离 ，即左边灰色的内容。
 

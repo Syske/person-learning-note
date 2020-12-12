@@ -1,8 +1,10 @@
+tags: [#html]
+
 #### 示例
 
 让我们通过一个网页的学习，来对html标签有一个初步理解。平常大家说的上网就是浏览各种各式各样的网页，这些网页都是由**html标签**组成的。下面就是一个简单的网页。效果图如下：
 
-![img](../images/1077694-20161209113848147-981300864.png) 
+![](https://gitee.com/sysker/picBed/raw/master/images/1077694-20161209113848147-981300864.png)
 
 我们来分析一下，这个网页由哪些html标签组成：
 
@@ -14,7 +16,7 @@
 
 网页的完整代码如下图： 
 
- ![img](../images/1077694-20161209113924538-87687929.jpg)
+ ![](https://gitee.com/sysker/picBed/raw/master/images/1077694-20161209113924538-87687929.jpg)
 
 #### HTML 基本文档
 
@@ -46,6 +48,7 @@
 ```
 
 #### 文本格式化（Formatting）
+
 ```html
 <b>粗体文本</b>
 <code>计算机代码</code>
@@ -68,20 +71,25 @@
 ```
 
 #### 链接（Links）
+
 ```html
 普通的链接：<a href="http://www.example.com/">链接文本</a> 
 图像链接： <a href="http://www.example.com/"><img src="URL" alt="替换文本"></a> 
 邮件链接： <a href="mailto:webmaster@example.com">发送e-mail</a> 书签： <a id="tips">提示部分</a> <a href="#tips">跳到提示部分</a>
 ```
+
 ------
 
 #### 图片（Images）
+
 ```html
 <img src="URL" alt="替换文本" height="42" width="42">
 ```
+
 ------
 
 #### 样式/区块（Styles/Sections）
+
 ```html
 <style type="text/css">
 
@@ -92,27 +100,33 @@
 <div>文档中的块级元素</div> 
 <span>文档中的内联元素</span>
 ```
+
 ------
 
 #### 无序列表
+
 ```html
 <ul>     
     <li>项目</li>     
     <li>项目</li> 
 </ul>
 ```
+
 ------
 
 #### 有序列表
+
 ```html
 <ol>     
     <li>第一项</li>     
     <li>第二项</li> 
 </ol>
 ```
+
 ------
 
 #### 定义列表
+
 ```html
 <dl>
   <dt>项目 1</dt>
@@ -121,9 +135,11 @@
     <dd>描述项目 2</dd>
 </dl>
 ```
+
 ------
 
 #### 表格（Tables）
+
 ```html
 <table border="1">
   <tr>
@@ -136,15 +152,19 @@
   </tr>
 </table>
 ```
+
 ------
 
 #### 框架（Iframe）
+
 ```html
 <iframe src="demo_iframe.htm"></iframe>
 ```
+
 ------
 
 #### 表单（Forms）
+
 ```html
 <form action="demo_form.php" method="post/get">
 
@@ -176,9 +196,11 @@
 
 </form>
 ```
+
 ------
 
 #### 实体（Entities）
+
 ```
 &lt; 等同于 < 
 &gt; 等同于 > 

@@ -1,4 +1,6 @@
-shiro入门笔记之第一个demo创建
+# shiro入门笔记之第一个demo创建
+
+tags: [#shiro, #demo]
 
 #### 前言
 
@@ -14,19 +16,19 @@ Apache Shiro™是一个功能强大且易于使用的Java安全框架，它执�
 
 选择maven，这里我选择的模板是quickstart
 
-![1571455743716](..\images\1571455743716.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/1571455743716.png)
 
 填写项目信息
 
-![1571455915103](..\images\1571455915103.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/1571455915103.png)
 
 设置项目maven配置，如果没有特殊设置，直接下一步
 
-![1571456044986](..\images\1571456044986.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/1571456044986.png)
 
 设置项目保存路径
 
-![1571456154116](..\images\1571456154116.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/1571456154116.png)
 
 maven项目到此创建完成，下面开始shiro demo
 
@@ -425,6 +427,5 @@ public static void main(String[] args) {
 
         System.exit(0);
     }
-
 ```
 

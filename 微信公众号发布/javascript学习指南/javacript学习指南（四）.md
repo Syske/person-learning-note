@@ -1,3 +1,5 @@
+tags: [#javascript]
+
 #### **61、提取字符串substring()**
 
 substring() 方法用于提取字符串中介于两个指定下标之间的字符。
@@ -276,7 +278,7 @@ Math.round(x)
 
 3. 如果 x 与两侧整数同等接近，则结果接近 +∞方向的数字值 。(如 -5.5 将舍入为 -5; -5.52 将舍入为 -6),如下图:
 
-![9a907530196.jpeg](../../images/lip_image112.gif)
+![](https://gitee.com/sysker/picBed/raw/master/images/lip_image112.gif)
 
 把不同的数舍入为最接近的整数,代码如下：
 
@@ -857,6 +859,7 @@ clearInterval(id_of_setInterval)
 id_of_setInterval：由 setInterval() 返回的 ID 值。
 
 每隔 100 毫秒调用 clock() 函数,并显示时间。当点击按钮时，停止时间,代码如下:
+
 ```html
 <!DOCTYPE HTML>
  <html>
@@ -1026,6 +1029,7 @@ clearTimeout(id_of_setTimeout)
 **id_of_setTimeout：**由 setTimeout() 返回的 ID 值。该值标识要取消的延迟执行代码块。
 
 下面的例子和上节的无穷循环的例子相似。唯一不同是，现在我们添加了一个 "Stop" 按钮来停止这个计数器：
+
 ```html
 <!DOCTYPE HTML>
 

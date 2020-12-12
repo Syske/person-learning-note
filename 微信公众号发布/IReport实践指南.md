@@ -1,5 +1,7 @@
 # IReport实践指南
 
+tags: [#ireport]
+
 #### 前言
 
 最近，在做一个电子签章的功能，然后就接触到IReport报表，经过好几天的摸索实践，功能已经完成了，今天来总结一下。
@@ -18,53 +20,53 @@ https://community.jaspersoft.com/project/ireport-designer/releases
 
 然后选择下面的选项，然后点击下载：
 
-![image-20191223151834137](../images/image-20191223151834137.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223151834137.png)
 
 然后解压，进入bin文件夹，打开ireport.exe，界面如下：
 
-![image-20191221155802876](../images/image-20191221155802876.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191221155802876.png)
 
 ##### 选择报表模板，创建报表
 
 然后新建一个报表，根据自己的需求选择合适的尺寸，然后点击Launch Report Wizard，选择保存路径，设置名称，然后下一步
 
-![image-20191221160353055](../images/image-20191221160353055.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191221160353055.png)
 
 ##### 设置报表名称及存储路径
 
-![image-20191221160544291](../images/image-20191221160544291.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191221160544291.png)
 
 ##### 设置数据源
 
 然后设置数据源，如果是第一次打开，那你需要创建自己的数据源，点击New开始
 
-![image-20191221202824891](../images/image-20191221202824891.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191221202824891.png)
 
 选择数据源,我这里选择的是jdbc connection，其他的没有研究，用兴趣的小伙伴可以研究下
 
-![image-20191221202737305](../images/image-20191221202737305.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191221202737305.png)
 
 设置数据源，包括地址、驱动类型，用户名、密码，配置完成后点击test测试下你的数据源，如果报错，可能是你还没有添加数据库驱动jar包：
 
-![image-20191223093017760](../images/image-20191223093017760.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223093017760.png)
 
 当然，如果你添加的数据库驱动是红的的，也说明你还没有添加驱动的jar包：
 
 在工具 -> 选项菜单下，找到classpath
 
-![image-20191223094551126](../images/image-20191223094551126.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223094551126.png)
 
 ##### 配置核心数据集
 
 配置报表主数据集
 
-![image-20191223093855833](../images/image-20191223093855833.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223093855833.png)
 
 ##### 配置字段
 
 配置需要显示的字段
 
-![image-20191223094118975](../images/image-20191223094118975.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223094118975.png)
 
 然后，下一步，完成，报表就创建完成了，接着我们该开始报表设计了。
 
@@ -79,7 +81,7 @@ https://community.jaspersoft.com/project/ireport-designer/releases
 - 组件面板：包括各种常用的控件，如静态文本、字段文本、形状、图表等
 - 控制台：显示报表编译信息、错误警告
 
-![image-20191223105336653](../images/image-20191223105336653.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223105336653.png)
 
 ##### 基本控件
 
@@ -95,13 +97,13 @@ https://community.jaspersoft.com/project/ireport-designer/releases
 
 其他的我还没研究，目前已经可以满足我的需求了
 
-![image-20191223105853143](../images/image-20191223105853143.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223105853143.png)
 
 ##### 报表页面结构
 
 报表基本结构如下：
 
-![image-20191223095239377](../images/image-20191223095239377.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223095239377.png)
 
 这里解释下各个区域的含义和功能：
 
@@ -121,11 +123,11 @@ https://community.jaspersoft.com/project/ireport-designer/releases
 
 下面是我输出的报表，大家可以参考下
 
-![image-20191223103458398](../images/image-20191223103458398.png)
+![image-20191223103458398](https://gitee.com/sysker/picBed/raw/master/images/image-20191223103458398.png)
 
 汇总区在最后一页显示
 
-![image-20191223104623007](../images/image-20191223104623007.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223104623007.png)
 
 ##### 设计报表
 
@@ -135,27 +137,27 @@ https://community.jaspersoft.com/project/ireport-designer/releases
 
 选中报表，右键Edit Query
 
-![image-20191223112333472](../images/image-20191223112333472.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223112333472.png)
 
 然后配置数据sql，字段会自动识别，入参是sql入参，先不用考虑如何传入参，只用配置sql即可
 
-![image-20191223112643578](../images/image-20191223112643578.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223112643578.png)
 
 ##### 插入控件
 
 拖入需要的控件：
 
-![image-20191223115623030](../images/image-20191223115623030.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223115623030.png)
 
 选中控件，点击属性面板，可以编辑控件数据，包括字体大小，格式等数据，双击控件可以编辑控件内容
 
-![image-20191223120008522](../images/image-20191223120008522.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223120008522.png)
 
 对于Text Field控件，**$F{字段名}**表示显示字段数据，​**$V{变量名}**表示显示变量数据，**$P{参数名}**表示显示参数数据。当然也可以直接在你自己报表下方对应的区域直接拖到设计区。
 
 对于中文内容，必须设定如下两个属性，否则pdf输出的时候是没有内容的。
 
-![image-20191223141334626](../images/image-20191223141334626.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223141334626.png)
 
 
 
@@ -163,25 +165,25 @@ https://community.jaspersoft.com/project/ireport-designer/releases
 
 首先在Parameters下面创建我们的入参参数，如果你是多个数据集，你的入参一定要创建在对应的数据集下面。
 
-![image-20191223143759859](../images/image-20191223143759859.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223143759859.png)
 
 然后编辑数据集，如果是默认的数据集，直接Edit Query：
 
-![image-20191223144711223](../images/image-20191223144711223.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223144711223.png)
 
-![image-20191223144234665](../images/image-20191223144234665.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223144234665.png)
 
 当然也要改下我们的sql：
 
-![image-20191223144821488](../images/image-20191223144821488.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223144821488.png)
 
 然后点击预览，输入参数
 
-![image-20191223145036333](../images/image-20191223145036333.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223145036333.png)
 
 如果没有什么问题的话，可以看到类似如下内容：
 
-![image-20191223145224138](../images/image-20191223145224138.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223145224138.png)
 
 到这里我们第一个报表就算完结了。如果有问题，好好看下以上内容。
 
@@ -191,34 +193,34 @@ https://community.jaspersoft.com/project/ireport-designer/releases
 
 选中报表，右键Add Datasets
 
-![image-20191223111551084](../images/image-20191223111551084.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223111551084.png)
 
 配置sql，如果还没配数据源，先配置数据源，忘记了如何配置可以返回前面看下
 
-![image-20191223111903996](../images/image-20191223111903996.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223111903996.png)
 
 选择数据字段
 
-![image-20191223112000145](../images/image-20191223112000145.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223112000145.png)
 
 选择数据分组，没有分组可以不选，然后直接完成
 
-![image-20191223112147046](../images/image-20191223112147046.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223112147046.png)
 
 ##### 插入List控件
 
-![image-20191223150452869](../images/image-20191223150452869.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223150452869.png)
 
 编辑List数据集，选择数据集，设置连接表达式
 
-![image-20191223151004820](../images/image-20191223151004820.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223151004820.png)
 
 ##### 在List下创建我们的控件
 
-![image-20191223151533444](../images/image-20191223151533444.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223151533444.png)
 
 然后预览，你会发现两个数据集都执行了，效果如下：
 
-![image-20191223151504613](../images/image-20191223151504613.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20191223151504613.png)
 
 好了，今天就到这里吧！本周周末会接着本周的内容，来介绍如何在web项目容使用我们今天绘制的报表。

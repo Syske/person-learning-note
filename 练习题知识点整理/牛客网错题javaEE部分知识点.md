@@ -1,4 +1,7 @@
 ### java EE部分知识点
+
+tags: [#错题, #知识点]
+
 - #### 1、doget/dopost与Http协议有关，是在 javax.servlet.http.HttpServlet 中实现的
 
 ---

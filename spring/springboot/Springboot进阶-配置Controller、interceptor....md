@@ -1,5 +1,5 @@
 ### 1、配置SpringBootApplication(对spring boot来说这是最基本)
-```
+```java
 package io.github.syske.springboot31;
 
 import org.springframework.boot.Banner;
@@ -26,7 +26,7 @@ public class SpringBoot31Application {
 ### 2、创建配置类
 > 完整配置
 
-```
+```java
 package io.github.syske.springboot31.config;
 
 import io.github.syske.springboot31.formatter.DateFomaters;
@@ -58,8 +58,6 @@ public class Webconfig implements WebMvcConfigurer {
         registry.addConverter(new DateFomaters());
     }
 }
-
-
 ```
 
 ### 3、配置Controller
@@ -68,7 +66,7 @@ public class Webconfig implements WebMvcConfigurer {
 
 - 主要是针对一些仅需要返回页面的Controller，如果需要model操作则不适用
 
-```
+```java
  @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/user/login.html").setViewName("login");
@@ -82,8 +80,7 @@ public class Webconfig implements WebMvcConfigurer {
 
 > 自定义的convertor
 
-```
-
+```java
 package io.github.syske.springboot31.formatter;
 
 
@@ -112,12 +109,11 @@ public class DateFomaters implements Converter<String, Date> {
         return date;
     }
 }
-
 ```
 
 > 将自定义的转化类添加到Spring boot配置中
 
-```
+```java
   @Override
     public void addFormatters(FormatterRegistry registry) {
         //给当前的Spring容器中添加自定义格式转换器.
@@ -130,7 +126,7 @@ public class DateFomaters implements Converter<String, Date> {
 
 > 自定义拦截器
 
-```
+```java
 package io.github.syske.springboot31.interceptor;
 
 import org.springframework.web.servlet.mvc.WebContentInterceptor;
@@ -160,7 +156,7 @@ public class SessionInterceptor extends WebContentInterceptor {
 ```
 > 将自定义的拦截器添加到Spring boot配置中
 
-```
+```java
  @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new SessionInterceptor())
@@ -173,7 +169,7 @@ public class SessionInterceptor extends WebContentInterceptor {
 
 > 继承DefaultErrorAttributes
 
-```
+```java
 package io.github.syske.springboot31.errorhandler;
 
 
@@ -200,7 +196,7 @@ public class SimpleErrorHandle extends DefaultErrorAttributes {
 
 > 登录拦截测试，以及格式化打印
 
-```
+```java
 package io.github.syske.springboot31.controller;
 
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,6 @@
-```
+tags: [#code, #ajaxFrom]
+
+```js
 $(function () {
           var ajaxFormOption = {
                type: "post",  //提交方式 

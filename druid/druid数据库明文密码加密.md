@@ -1,3 +1,5 @@
+tags: [#db, #druid]
+
 - 1、输入下列命令
 ```
 java -cp druid-1.0.16.jar com.alibaba.druid.filter.config.ConfigTools your_password

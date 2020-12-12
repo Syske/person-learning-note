@@ -190,7 +190,7 @@ document.write(vm.$el === document.getElementById('vue_det')) // true
 
 ##### 4.1.1 文本
 
-数据绑定最常见的形式就是使用 {{...}}（双大括号）的文本插值：
+数据绑定最常见的形式就是使用 `{{...}}（双大括号）`的文本插值：
 
 ```vue
 <div id="app">

@@ -55,7 +55,45 @@ select banner from sys.v_$version;
 - 例如：Oracle 9.0.1.1.2 
    　　
    　　9：版本号 
-   　　0：新特性版本号 
-   　　1（第一个）：维护版本号 
-   　　1（第二个）：普通的补丁设置号码 
-   　　2：非凡的平台补丁设置号码
+      　　0：新特性版本号 
+      　　1（第一个）：维护版本号 
+      　　1（第二个）：普通的补丁设置号码 
+      　　2：非凡的平台补丁设置号码
+
+### 3、命令行操作
+
+- 登陆
+
+  ```sh
+  $ sqlplus
+  $ SQL>sys as sysdba
+  ```
+
+- 查看所有表空间
+
+  ```sql
+  select * from Dba_Tablespaces;
+  ```
+
+- 删除表空间
+
+  ```sql
+  drop tablespace TBS_SXSSC_AZ14 including contents and datafiles cascade constraints;
+  ```
+
+  其中，`TBS_SXSSC_AZ14`是要删除的表空间名称
+
+### 4、查看oracle会话
+
+```sql
+select session_id from v$locked_object;
+
+SELECT sid, serial#, username, osuser FROM v$session where sid IN (select session_id from v$locked_object);
+
+--将上面锁定的会话关闭：
+ALTER SYSTEM KILL SESSION '2092,10026';
+
+ALTER SYSTEM KILL SESSION '201,34383';
+ALTER SYSTEM KILL SESSION '2099,58703';
+```
+

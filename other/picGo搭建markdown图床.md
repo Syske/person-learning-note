@@ -112,6 +112,28 @@ github国内访问比较慢，我放下自己的百度云下载地址链接: htt
 
 这里我就不测试了，因为本篇文章就是通过gitee图床完成的，用起来很爽，图片加载很快
 
+### 补充更新
+
+最近因为个人原因导致picGO不可用，我一直以为是软件的问题，卸载安装，来回折腾了好多遍，最后发现是安全软件防火墙的锅，当时心里真的MMP，浪费我时间🤣。当然这一次的事情还是有收获的，我在安装gitee插件的时候发现github-plus已经完美支持gitee了，不需要再单独安装gitee插件了。可以再插件里面直接搜索github-plus，找不到的话，也可以手动安装。
+
+#### 安装github-plus
+
+![](https://gitee.com/sysker/picBed/raw/master/20210123131600.png)
+
+手动安装命令：
+
+```sh
+npm install picgo-plugin-github-plus
+```
+
+当然手动安装的前提是你要有哦node.js的环境，具体的百度吧
+
+#### 配置githubplus
+
+配置方法大同小异，根据类型选择origin
+
+![](https://gitee.com/sysker/picBed/raw/master/20210123132246.png)
+
 ### 总结
 
 之前图片一直是存在本地的，每次发博客的时候都需要上传图片，很麻烦，后来用了GitHub图床，网络太卡也放弃了，现在用了gitee图床，我只能说真香😂😂😂，赶紧用起来吧，真的很爽

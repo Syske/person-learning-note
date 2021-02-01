@@ -79,7 +79,9 @@ class MissThread implements Runnable{
 
 有关线程更详细的构造方法、方法请查阅Java jdk API，本文会在后续进一步的扩充和归纳！
 
-　　
+##### 　　Callable的方式创建线程
+
+当然也可以通过继承`Callable`的方式创建线程，两者的区别是，`Callable`创建的线程`run`方法有返回值，而`Runnable`创建的线程`run`方法是没有返回值的
 
 ### 5.常用方法
 

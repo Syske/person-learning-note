@@ -26,7 +26,7 @@ tags: [#java, #学习]
 
 ### 2、操作数据类型为byte、short、int 、char时，两个数都会被转换成int类型，并且结果也是int类型（在进行+，-，*，/，%运算操作时）
 
-
+![](https://gitee.com/sysker/picBed/raw/master/20210131115546.png)
 
 ### 3、方法入参：
 

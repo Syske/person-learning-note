@@ -14,7 +14,7 @@ python解释器、字节码编译(.pyc)、python虚拟机（PVM）
 
 ![image-20200201191548732](../images/image-20200201191548732.png)
 
-### 第二章
+### 第二章 
 
 #### python命令行:交互模式:jack_o_lantern:
 

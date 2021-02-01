@@ -12,9 +12,9 @@
 
 python解释器、字节码编译(.pyc)、python虚拟机（PVM）
 
-![image-20200201191548732](../images/image-20200201191548732.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20200201191548732.png)
 
-### 第二章 
+### 第二章
 
 #### python命令行:交互模式:jack_o_lantern:
 
@@ -171,7 +171,7 @@ Press Enter to exit
 | 编程单元类型     | 函数、模块、类                         |
 | 与实现相关的类型 | 编译的代码堆栈跟踪                     |
 
-![image-20200203150405708](../images/image-20200203150405708.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20200203150405708.png)
 
 #### 数字
 

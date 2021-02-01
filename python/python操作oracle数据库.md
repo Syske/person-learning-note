@@ -69,7 +69,7 @@ E:\app\myUserName\product\11.2.0_64bit
 ```
 
 那么，我的环境变量设置如下：
-![image-20200229214457622](../images/image-20200229214457622.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/20210128103625.png)
 
 上面的环境变量是添加在path这个变量底下的。
 

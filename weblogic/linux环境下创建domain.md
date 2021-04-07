@@ -81,3 +81,4 @@ Exception in thread "main" java.awt.AWTError: Can't connect to X11 window server
     - 第七步<br>
     ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-08.png)
 - 至此，domain创建完成
+

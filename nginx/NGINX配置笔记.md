@@ -263,6 +263,39 @@ location /status {
 			}
 ```
 
+### 负载均衡配置
+
+在`nginx`配置文件根节点增加`stream`配置：
+
+```nginx
+stream{
+            log_format  main '$remote_addr [$time_local] '
+                 '$protocol $status $bytes_sent $bytes_received '
+                 '$session_time "$upstream_addr" '
+                 '"$upstream_bytes_sent" "$upstream_bytes_received" "$upstream_connect_time"';
+      access_log  logs/access.log main;     
+     
+
+
+ upstream  wfjk-server {
+		  least_conn;
+		  server   192.190.131.78:9903 weight=1;
+		  server   192.190.131.78:9902 weight=1;
+		  server   192.190.131.79:9901 weight=1;
+		  server   192.190.131.79:9902 weight=1;
+
+  	 }
+server{
+	proxy_next_upstream off;
+        listen 9901;
+        proxy_pass wfjk-server;
+      }
+
+}
+```
+
+其中，`upsteam`节点为负载服务信息，`server`节点表示负载之后的服务信息
+
 ### 重启
 
 ```shell
@@ -271,4 +304,3 @@ nginx -s reopen ## 重启 Nginx
 nginx -s stop # #停止 Nginx
 ```
 
-### 

@@ -1,5 +1,17 @@
+## 工作笔记 | 来，我们今天来学习一个古老的知识：weblogic创建domain
+
+## 前言
+
+最近在整理之前的工作笔记，稍后会一一分享出来，希望这些知识能够帮到你。今天分享的是`weblogic`创建`domain`的过程，话不多说，直接开始正文
+
+
+
+
+
+## 创建domain
+
 - 首先进入weblogic的安装目录，具体如下：
-```
+```sh
 cd /wls/Oracle/Middleware/Oracle_Home/wlserver/common/bin
 ```
 
@@ -18,7 +30,7 @@ export DISPLAY=localhost:10.0
 ./config.sh
 ```
 **注意：** 第一次输入这个命令可能会报如下错误
-```
+```sh
 Exception in thread "main" java.awt.AWTError: Can't connect to X11 window server using 'localhost:10.0' as the value of the DISPLAY variable.
 	at sun.awt.X11GraphicsEnvironment.initDisplay(Native Method)
 	at sun.awt.X11GraphicsEnvironment.access$200(X11GraphicsEnvironment.java:65)
@@ -82,3 +94,8 @@ Exception in thread "main" java.awt.AWTError: Can't connect to X11 window server
     ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-08.png)
 - 至此，domain创建完成
 
+## 结语
+
+不知道还有没有小伙伴在使用`weblogic`，阿里巴巴作为国内`java`的大厂，从当年发起去`IOE`（`IBM`、`Oracle`、`EMC`）运动开始，`IOE`的相关产品就开始在国内的慢慢消失了，毕竟是国内`java`的领导者，大家都紧跟阿里的架构，除了部分政府单位还在使用外相关组件外，国内鲜有互联网公司使用，而且随着信息安全的不断加强，现在政府招投标的新项目也开始去`IOE`，所以如果你掌握了这门技术，就可以独领风骚了🤣
+
+好了，闲扯完毕，大家晚安哦！

@@ -7,7 +7,6 @@
 
 ```
 [root@localhost ~]# rpm -ivh mysql-community-release-el7-5.noarch.rpm
-
 ```
 
 ### 3、安装mysql服务

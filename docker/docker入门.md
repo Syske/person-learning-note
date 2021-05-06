@@ -160,7 +160,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'syske'@'%';
 ```sh
 $ docker run --rm --name mysqlTemp -it -v /usr/local/mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456  mysql:5.7 /bin/bash
 
-cp /etc/mysql/my.cnf /var/lib/mysql
+$ cp /etc/mysql/my.cnf /var/lib/mysql
 ```
 
 `-- rm` 退出后就删除该容器
@@ -170,6 +170,14 @@ cp /etc/mysql/my.cnf /var/lib/mysql
 `-it` 交互模式
 
 `/bin/bash` 进入 `bash` 命令模式
+
+上面这几种启动方式，在实际使用中重启`docker`容器之后，数据都会丢失，为了能够在下次启动容器的时候数据还在，我们要用下面的启动命令：
+
+```sh
+$ docker run -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=密码 -v /windows盘符/指定的文件夹路径:/var/lib/mysql    mysql:5.7
+```
+
+
 
 ##### 安装并运行redis
 
@@ -184,6 +192,14 @@ $ docker run --name redis -p 6380:6379 redis-test --requirepass 123456
 
 参数大部分都和前面一致，`--requirepas`是这只`redis`的访问密码
 
+和上面`mysql`一样，为了确保存储数据下次可以被加载，我们要用下面的启动命令
+
+```sh
+docker run -p 6379:6379 -d  -v /windows盘符/指定的文件夹路径:/data    redis:5.0 redis-server --appendonly yes
+```
+
+
+
 ##### 安装activemq
 
 ```sh
@@ -191,6 +207,14 @@ $ docker run -d --name myactivemq -p 61616:61616 -p 8162:8161 docker.io/webcente
 ```
 
 这里没什么特殊的参数，不做过多说明
+
+##### 安装zookeeper
+
+```sh
+$ docker run -d --name zookeeper-test -p 2181:2181 zookeeper
+```
+
+
 
 #### 查看所有容器
 

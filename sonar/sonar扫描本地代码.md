@@ -1,6 +1,6 @@
 ### 扫描命令
 ```sh
-mvn sonar:sonar   -Dsonar.host.url=http://sonar.coolcollege.cn:9001   -Dsonar.login=8ca4fd5cb0c75ac2ee35e33bae4097074a8acd60
+mvn sonar:sonar   -Dsonar.host.url=http://sonar.coolcollege.cn:9001   -Dsonar.login=7cd050b58095a951b35e72e6af8e472db1c06791
 ```
 
 ### 常见扫描规则

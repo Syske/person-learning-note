@@ -1,6 +1,6 @@
 ### 1、创建maven项目
 - 按照步骤一步一步来
-- - 创建项目
+-  创建项目
 ![image](https://note.youdao.com/yws/api/personal/file/518B34A3DC1D4606AC1B997C6D1F0A1E?method=download&shareKey=e394f1aec92abbf81cc9691f10ce9cdf)
 
 - - 这里选择maven的模板

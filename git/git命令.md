@@ -3,7 +3,7 @@ tags: [#git]
 - 1.设置全局用户名称
  
 ```
-git config --global user.name "吴群"
+git config --global user.name "12345"
 ```
 
 - 2.设置全局邮箱

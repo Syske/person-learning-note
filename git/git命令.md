@@ -9,7 +9,7 @@ git config --global user.name "吴群"
 - 2.设置全局邮箱
 
 ```
-git config --global user.email "WUQUN469@pingan.com.cn"
+git config --global user.email "12345@qq.cn"
 - - #查看全局名称及邮箱
 git config user.name
 git config user.email

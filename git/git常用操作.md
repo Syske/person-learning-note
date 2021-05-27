@@ -4,7 +4,7 @@ tags: [#git]
 
 ```sh
 git config --global user.name "syske" # 设置全局用户名
-git config --global user.email "caolei199311@163.com" # 设置全局邮箱
+git config --global user.email "syske@qq.com" # 设置全局邮箱
 ```
 
 ### 2、查看全局名称及邮箱
@@ -37,7 +37,7 @@ git branch -av
 ### 6、生成ssh
 
 ```sh
-ssh-keygen -t rsa -C "caolei199311@163.com"
+ssh-keygen -t rsa -C "syske@qq.com"
 ```
 
 用户名和密码为空 ，连续敲回车
@@ -50,7 +50,7 @@ cd ~/.ssh
 
 ```sh
 cat id_rsa.pub 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7hbUdwRT62NxFWnMhHcYFe4fNYq7tcAEF5q3U0MMWnk85tOq4ERrRqZQ4ZEKI+UWsLH/ddLMaZKk4xxNSYSyzO1sHbd1It1UXBfbEvHoBw44waVk6BsbEkclgUqyBg85ZW0t4oSnTIrYWtaPBhLc0Hz1uhQHpf1S5ZRO5H9KBCjeQHU14o2snJXcvGn9OdqwSCgTBPYs+sqCvieU5Mhw3kzvjYXXIcev+TJGdw2bYljMrvfavTo6SfqKTp+O6OfLJOZUnpsdfdsfYUNOROTZ+y5Xs9CntWDL64LoGJ99ocfZh3So6rziTaWInIUGJ 123123@163.com
+ssh-rsa AAAAB3Hz1uhQHpf1S5ZRO5H9KBCjeQHU14o2snJXcvNzaC1yc2EAAAADAQABAAABAQC7hbUdwRT62NxFWnMhHcYFe4fNYq7tcAEF5q3U0MMWnk85tOq4ERrRqZQ4ZEKI+UWsLH/ddLMaZKk4xxNSYSyzO1sHbd1It1UXBfbEvHoBw44waVk6BsbEkclgUqyBg85ZW0t4oSnTIrYWtaPBhLc0Hz1uhQHpf1S5ZRO5H9KBCjeQHU14o2snJXcvGn9OdqwSCgTBPYs+sqCvieU5Mhw3kzvjYXXIcev+TJGdw2bYljMrvfavTo6SfqKTp+O6OfLJOZUnpsdfdsfYUNOROTZ+y5Xs9CntWDL64LoGJ99ocfZh3So6rziTaWInIUGJ 123123@163.com
 ```
 
 
@@ -66,8 +66,8 @@ git remote add origin git@github.com:Syske/note.git  #别名最好不一样写
 
 ```sh
 git remote -v
-origin  git@10.189.139.34:MedicalIInsuranceServiceGroup/ydjy/ydjylss.git (fetch)
-origin  git@10.189.139.34:MedicalIInsuranceServiceGroup/ydjy/ydjylss.git (push)
+origin  git@github.com:Syske/note.git (fetch)
+origin  git@github.com:Syske/note.git (push)
 ```
 
 ### 9、定义Git全局的 .gitignore 文件

@@ -43,7 +43,7 @@ git branch -av
 
 
 ```
-1.ssh-keygen -t rsa -C "wuqun469@pingan.com.cn"
+1.ssh-keygen -t rsa -C "12323@qq.cn"
 #用户名和密码为空 ，连续敲回车
 
 2.cd ~/.ssh
@@ -51,7 +51,7 @@ git branch -av
 3、查看公钥
 cat id_rsa.pub 
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7hbUdwRT62NxFWnMhHcYFe4fNYq7tcAEF5q3U0MMWnk85tOq4ERrRqZQ4ZEKI+UWsLH/ddLMaZKk4xxNSYSyzO1sHbd1It1UXBfbEvHoBw44waVk6BsbEkclgUqyBg85ZW0t4oSnTIrYWtaPBhLc0Hz1uhQHpf1S5ZRO5H9KBCjeQHU14o2snJXcvGn9OdqwSCgTBPYs+sqCvieU5Mhw3kzvjYXXIcev+TJGdw2bYljMrvfavTo6SfqKTp+O6OfLJOZUnpVXdOqpPHIQJpUygZfMscgDzKCoby66YUNOROTZ+y5Xs9CntWDL64LoGJ99ocfZh3So6rziTaWInIUGJ wuqun469@pingan.com.cn
+ssh-rsa AAAAB3NzaC1yc2EAA5H9KBCjeQHU14o2snJXcvGn9OdqwSCgTBPYs+sqCvieU5Mhw3kzvjYXXIcev+TJGdw2bYljMrvfavTo6SfqKTp+O6OfLJOZUnpVXdOqpPHIQJpUygZfMscgDzKCoby66YUNOROTZ+y5Xs9CntWDL64LoGJ99ocfZh3So6rziTaWInIUGJAADAQABAAABAQC7hbUdwRT62NxFWnMhHcYFe4fNYq7tcAEF5q3U0MMWnk85tOq4ERrRqZQ4ZEKI+UWsLH/ddLMaZKk4xxNSYSyzO1sHbd1It1UXBfbEvHoBw44waVk6BsbEkclgUqyBg85ZW0t4oSnTIrYWtaPBhLc0Hz1uhQHpf1S5ZRO 12323@qq.cn
 ```
 
 > 登录远程库系统 将上述公钥匙 放到共钥匙设置里面
@@ -61,12 +61,12 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7hbUdwRT62NxFWnMhHcYFe4fNYq7tcAEF5q3U0MMW
 - 4.添加远程  
 
 ```
-git remote add origin git@10.189.139.34:MedicalIInsuranceServiceGroup/ydjy/ydjylss.git  别名最好不一样写
+git remote add origin git@127.0.0.1:nsuranceServiceGroup/lss.git  别名最好不一样写
 
 查看远程库：git remote -v
 会出现两个链接
-origin  git@10.189.139.34:MedicalIInsuranceServiceGroup/ydjy/ydjylss.git (fetch)
-origin  git@10.189.139.34:MedicalIInsuranceServiceGroup/ydjy/ydjylss.git (push)
+origin   git@127.0.0.1:nsuranceServiceGroup/lss.git (fetch)
+origin   git@127.0.0.1:nsuranceServiceGroup/lss.git (push)
 
 #一个是拉取 的一个是推送的
 ```

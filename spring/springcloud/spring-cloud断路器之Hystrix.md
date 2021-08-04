@@ -103,4 +103,10 @@ public Object testHystrix() {
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210804084550.png)
 
+
+
+#### 启用监控面板
+
+![](https://gitee.com/sysker/picBed/raw/master/20210804085015.png)
+
 ### 总结

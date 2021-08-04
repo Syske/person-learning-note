@@ -269,7 +269,11 @@ $(document).ready(function () {
 
 显示效果如下：
 
-![image-20200224194541308](../images/image-20200224194541308.png)
+```javascript
+$(document).ready(function () {
+    alert('RUNOOB');
+});
+```
 
 ### Markdown链接
 
@@ -379,7 +383,10 @@ Markdown 制作表格使用 **|** 来分隔不同的单元格，使用 **-** 来
 
 显示效果如下：
 
-![image-20200224201423268](../images/image-20200224201423268.png)
+| 表头   | 表头   |
+| ------ | ------ |
+| 单元格 | 单元格 |
+| 单元格 | 单元格 |
 
 #### 对齐方式
 
@@ -472,7 +479,7 @@ $$
 ##### 横向流程图
 
 ```
-​```mermaid
+```mermaid
 graph LR
 A[方形] -->B(圆角)
     B --> C{条件a}
@@ -495,7 +502,7 @@ A[方形] -->B(圆角)
 
 ##### 竖向流程图
 ```
-​```mermaid
+```mermaid
 graph TD
 A[方形] --> B(圆角)
     B --> C{条件a}
@@ -519,7 +526,7 @@ A[方形] --> B(圆角)
 ##### 标准流程图
 
 ```
-​```flow
+```flow
 st=>start: 开始框
 op=>operation: 处理框
 cond=>condition: 判断框(是或否?)
@@ -541,7 +548,7 @@ cond(no)->sub1(right)->op
 ##### 标准流程图（横向）
 
 ```
-​```flow
+```flow
 st=>start: 开始框
 op=>operation: 处理框
 cond=>condition: 判断框(是或否?)
@@ -563,7 +570,7 @@ cond(no)->sub1(right)->op
 ##### UML时序图
 
 ```
-​```sequence
+```sequence
 对象A->对象B: 对象B你好吗?（请求）
 Note right of 对象B: 对象B的描述
 Note left of 对象A: 对象A的描述(提示)
@@ -579,7 +586,7 @@ Note left of 对象A: 对象A的描述(提示)
 ##### UML时序图（复杂）
 
 ```
-​```sequence
+```sequence
 Title: 标题：复杂使用
 对象A->对象B: 对象B你好吗?（请求）
 Note right of 对象B: 对象B的描述
@@ -601,7 +608,7 @@ Note right of C: 没人陪我玩
 ##### UML标准时序图
 
 ```
-​```mermaid
+```mermaid
 %% 时序图例子,-> 直线，-->虚线，->>实线箭头
   sequenceDiagram
     participant 张三
@@ -637,7 +644,7 @@ Note right of C: 没人陪我玩
 ##### 甘特图样例
 
 ```
-​```mermaid
+```mermaid
 %% 语法示例
         gantt
         dateFormat  YYYY-MM-DD

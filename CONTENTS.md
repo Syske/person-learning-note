@@ -1,4 +1,5 @@
 # 笔记目录
+- [README](./README.md)：README
 - [CONTENTS](./CONTENTS.md)：CONTENTS
 ### db
 - [Cassandra数据库常用操作](./db/Cassandra数据库常用操作.md)：Cassandra数据库常用操作
@@ -78,6 +79,7 @@
 - [kuboard简单使用](./k8s/kuboard简单使用.md)：kuboard简单使用
 - [wsl安装搭建k8s环境](./k8s/wsl安装搭建k8s环境.md)：wsl安装搭建k8s环境
 - [wsl搭建k8s集群补充内容](./k8s/wsl搭建k8s集群补充内容.md)：wsl搭建k8s集群补充内容
+- [LICENSE](./LICENSE)：LICENSE
 ### linux
 - [linux创建sftp用户及相关信息配置](./linux/linux创建sftp用户及相关信息配置.md)：linux创建sftp用户及相关信息配置
 - [linux常用命令](./linux/linux常用命令.md)：linux常用命令
@@ -147,7 +149,6 @@
 - [python操作oracle数据库](./python/python操作oracle数据库.md)：python操作oracle数据库
 - [python通过openpyxl操作excel](./python/python通过openpyxl操作excel.md)：python通过openpyxl操作excel
 - [初探pythonGUI——pyqt](./python/初探pythonGUI——pyqt.md)：初探pythonGUI——pyqt
-- [README](./README.md)：README
 ### redis
 - [redis](./redis/redis.md)：redis
 - [Redis数据类型](./redis/Redis数据类型.md)：Redis数据类型
@@ -180,12 +181,12 @@
 #### springboot
 - [spring-boot-security组件总结补充](./spring/springboot/spring-boot-security组件总结补充.md)：spring-boot-security组件总结补充
 - [spring-boot-websocket总结回顾](./spring/springboot/spring-boot-websocket总结回顾.md)：spring-boot-websocket总结回顾
-- [spring-boot之webflux - 上](./spring/springboot/spring-boot之webflux - 上.md)：spring-boot之webflux - 上
-- [spring-boot之webflux简单入门 - 中](./spring/springboot/spring-boot之webflux简单入门 - 中.md)：spring-boot之webflux简单入门 - 中
-- [spring-boot之websocket · 中](./spring/springboot/spring-boot之websocket · 中.md)：spring-boot之websocket · 中
+- [spring-boot之webflux - 上](./spring/springboot/spring-boot之webflux\ -\ 上.md)：spring-boot之webflux - 上
+- [spring-boot之webflux简单入门 - 中](./spring/springboot/spring-boot之webflux简单入门\ -\ 中.md)：spring-boot之webflux简单入门 - 中
+- [spring-boot之websocket · 中](./spring/springboot/spring-boot之websocket\ ·\ 中.md)：spring-boot之websocket · 中
 - [spring-boot之websocket](./spring/springboot/spring-boot之websocket.md)：spring-boot之websocket
-- [spring-boot启用security组件 · 下](./spring/springboot/spring-boot启用security组件 · 下.md)：spring-boot启用security组件 · 下
-- [spring-boot启用security组件 · 中](./spring/springboot/spring-boot启用security组件 · 中.md)：spring-boot启用security组件 · 中
+- [spring-boot启用security组件 · 下](./spring/springboot/spring-boot启用security组件\ ·\ 下.md)：spring-boot启用security组件 · 下
+- [spring-boot启用security组件 · 中](./spring/springboot/spring-boot启用security组件\ ·\ 中.md)：spring-boot启用security组件 · 中
 - [spring-boot启用security组件](./spring/springboot/spring-boot启用security组件.md)：spring-boot启用security组件
 - [spring-boot整合security组件实战demo](./spring/springboot/spring-boot整合security组件实战demo.md)：spring-boot整合security组件实战demo
 - [spring-webflux骚操作](./spring/springboot/spring-webflux骚操作.md)：spring-webflux骚操作
@@ -329,7 +330,7 @@
 #### 解决方案
 - [base64内外网文件下载](./图表文件/解决方案/base64内外网文件下载.drawio)：base64内外网文件下载
 #### 读书笔记
-- [My Clippings](./图表文件/读书笔记/My Clippings.txt)：My Clippings
+- [My Clippings](./图表文件/读书笔记/My\ Clippings.txt)：My Clippings
 - [习惯的力量](./图表文件/读书笔记/习惯的力量.xmind)：习惯的力量
 - [人类简史](./图表文件/读书笔记/人类简史.xmind)：人类简史
 - [今日简史](./图表文件/读书笔记/今日简史.xmind)：今日简史

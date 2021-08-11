@@ -347,3 +347,9 @@ websocket.send(message)
 
 `websocket`的内容相对比较简单，而且配置也不复杂，所以今天也没有太多要补充说明的，各位小伙伴如果对于之前的知识点还有疑问，可以再回顾下：
 
+[spring-boot之websocket-上篇](./spring-boot之websocket.md)：spring-boot之websocket上篇
+
+[spring-boot之websocket-中篇](./spring-boot之websocket-中.md)：spring-boot之websocket中篇
+
+
+

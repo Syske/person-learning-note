@@ -2,9 +2,17 @@
 
 ### 前言
 
-
+`dubbo`的相关知识点这几天我们已经分享的差不多了，剩余的知识点一方面比较零碎，单独拎出来讲的话，内容比较少，另一方面这些知识点可能在日常工作中很少用到，所以我打算今天把抽几个剩余的知识点分享下，剩余的内容，各位小伙伴可以自己去了解下，确保遇到问题的时候知道如何解决问题，知道在那查资料就行了。好了，下面让我们开始吧。
 
 ### 其他知识点
+
+我们这里说到的知识点，都可以在`dubbo`官网的高级用法下查到，没有提到的内容，各位小伙伴自己去看下：
+
+```
+https://dubbo.apache.org/zh/docs/advanced/
+```
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210818124801.png)
 
 #### 启动时检查
 
@@ -121,6 +129,104 @@ public class DemoServiceImpl implements DemoService {}
 <dubbo:reference cluster="failsafe" />
 ```
 
+注解方式：
 
+客户端
+
+```java
+@DubboReference(version = "1.0", interfaceName = "demoService", interfaceClass = DemoService.class,
+cluster =  ClusterRules.FAIL_FAST)
+private DemoService demoService;
+```
+
+服务端
+
+```java
+@Service
+@DubboService(version = "1.0", interfaceName = "demoService", cluster = ClusterRules.FAIL_OVER, interfaceClass = DemoService.class, loadbalance = "roundrobin")
+public class DemoServiceImpl implements DemoService {}
+```
+
+#### 线程模型
+
+线程模型主要是设置哪些应用场景需要通过线程池来完成，设置方式也很简单，但是具体的参数需要结合实际应用场景来确定：
+
+```xml
+<dubbo:protocol name="dubbo" dispatcher="all" threadpool="fixed" threads="100" />
+```
+
+配置文件
+
+```properties
+dubbo.protocol.name=dubbo
+# 线程池场景
+dubbo.protocol.dispatcher=all
+# 线程池类别
+dubbo.protocol.threadpool=fixed
+# 线程名称
+dubbo.protocol.threadname=dubbo-server-task
+# 核心线程数
+dubbo.protocol.corethreads=10
+# 线程池大小（固定大小）
+dubbo.protocol.threads=100
+# io线程池大小（固定大小）
+dubbo.protocol.iothreads=100
+```
+
+##### 线程池场景
+
+- `all` 所有消息都派发到线程池，包括请求，响应，连接事件，断开事件，心跳等。
+- `direct` 所有消息都不派发到线程池，全部在 IO 线程上直接执行。
+- `message` 只有请求响应消息派发到线程池，其它连接断开事件，心跳等消息，直接在 IO 线程上执行。
+- `execution` 只有请求消息派发到线程池，不含响应，响应和其它连接断开事件，心跳等消息，直接在 IO 线程上执行。
+- `connection` 在 IO 线程上，将连接断开事件放入队列，有序逐个执行，其它消息派发到线程池。
+
+##### 线程池类别
+
+- `fixed` 固定大小线程池，启动时建立线程，不关闭，一直持有。(缺省)
+- `cached` 缓存线程池，空闲一分钟自动删除，需要时重建。
+- `limited` 可伸缩线程池，但池中的线程数只会增长不会收缩。只增长不收缩的目的是为了避免收缩时突然来了大流量引起的性能问题。
+- `eager` 优先创建`Worker`线程池。在任务数量大于`corePoolSize`但是小于`maximumPoolSize`时，优先创建`Worker`来处理任务。当任务数量大于`maximumPoolSize`时，将任务放入阻塞队列中。阻塞队列充满时抛出`RejectedExecutionException`。(相比于`cached`:`cached`在任务数量超过`maximumPoolSize`时直接抛出异常而不是将任务放入阻塞队列)
+
+#### 直连提供者
+
+直连提供者一般是在开发测试环境下，为了方便测试，绕过注册中心，测试特定服务，具体操作方式有两种：
+
+- `jvm`命令行：
+
+  ```sh
+  java -Dcom.alibaba.xxx.XxxService=dubbo://localhost:20890
+  # 或者
+  java -Ddubbo.resolve.file=xxx.properties
+  ```
+
+  文件内容
+
+  ```properties
+  com.alibaba.xxx.XxxService=dubbo://localhost:20890
+  ```
+
+  `2.0` 以上版本自动加载 `${user.home}/dubbo-resolve.properties`文件，不需要配置
+
+- `xml`或者注解
+
+  xml
+
+  ```xml
+  <dubbo:reference id="xxxService" interface="com.alibaba.xxx.XxxService" url="dubbo://localhost:20890" />
+  ```
+
+  
+
+  注解
+  
+  ```java
+  @DubboReference(version = "1.0", interfaceName = "demoService", interfaceClass = DemoService.class,
+              url = "dubbo://localhost:20890")
+      private DemoService demoService;
+  ```
 
 ### 总结
+
+好了，今天就说这么多，其他更多配置建议各位小伙伴看下官方文档。大部分都很简单，基本上都是加个配置就可以搞定的，而且有好多内容我们在之前分享的过程中都已经提到过了，所以就更简单了。
+

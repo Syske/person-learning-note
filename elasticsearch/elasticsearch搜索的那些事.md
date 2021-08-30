@@ -2,11 +2,15 @@
 
 ### 前言
 
+`elasticsearch`本身就是为搜索而生的组件，所以搜索才是它的重头戏。从今天我们就学习`es`的各种检索语法了，但是我大概看了下官方文档，发现他对于各种检索语法的解释比较少，虽然也有好多示例，但是都比较零散，很难让我们看清楚它的语法规则。因此，我们今天也不会有太多内容分享，但是我这边会花两天时间梳理相关规则，争取未来两天整理出它的语法规则。
 
+下面我们就先来看一些简单的检索规则。
 
 ### elastsearch搜索
 
 #### 轻量搜索
+
+这个检索语法类似于我们传统数据库中不加条件的查询语句，他会查询`megacorp`索引下所有`employee`的数据，然会返回
 
 ```sh
 curl -X GET "localhost:9200/megacorp/employee/_search?pretty"
@@ -94,7 +98,7 @@ curl -X GET "localhost:9200/megacorp/employee/_search?pretty"
 
   #### 根据关键字搜索
 
-  这种方式查询就比较灵活了，我们可以根据数据中的某个字段名进行查询，具体语法如下：
+  相比于前面的那种查询全部，这种方式查询就比较灵活了，我们可以根据数据中的某个字段名进行查询，具体语法如下：
 
   ```
   索引/数据类型/_search?q=字段名:字段值
@@ -152,5 +156,156 @@ curl -X GET "localhost:9200/megacorp/employee/_search?pretty"
   查询不到结果时，返回结果如下：
 
   ![](https://gitee.com/sysker/picBed/raw/master/20210827085442.png)
+  
+  #### 查询表达式搜索
+  
+  `Elasticsearch `提供一个丰富灵活的查询语言叫做 *查询表达式* ， 它支持构建更加复杂和健壮的查询。
+  
+  *领域特定语言* （`DSL`）， 使用 `JSON `构造了一个请求。
+  
+  查询语法也基本上和我们前面的查询一致，唯一的区别是，表达式搜索的时候，需要传一个`json`的表达式：
+  
+  ```sh
+  curl -X GET "localhost:9200/megacorp/employee/_search?pretty" -H 'Content-Type: application/json' -d'
+  {
+      "query" : {
+          "match" : {
+              "name" : "syske"
+          }
+      }
+  }
+  '
+  ```
+  
+  返回结果：
+  
+  ```json
+  {
+    "took" : 50,
+    "timed_out" : false,
+    "_shards" : {
+      "total" : 1,
+      "successful" : 1,
+      "skipped" : 0,
+      "failed" : 0
+    },
+    "hits" : {
+      "total" : {
+        "value" : 2,
+        "relation" : "eq"
+      },
+      "max_score" : 0.18232156,
+      "hits" : [
+        {
+          "_index" : "megacorp",
+          "_type" : "employee",
+          "_id" : "2",
+          "_score" : 0.18232156,
+          "_source" : {
+            "name" : "syske",
+            "age" : 18,
+            "about" : "I love to read book",
+            "interests" : [
+              "sports",
+              "music"
+            ]
+          }
+        },
+        {
+          "_index" : "megacorp",
+          "_type" : "employee",
+          "_id" : "1",
+          "_score" : 0.18232156,
+          "_source" : {
+            "name" : "syske",
+            "age" : 15,
+            "about" : "I love to read book",
+            "interests" : [
+              "sports",
+              "music"
+            ]
+          }
+        }
+      ]
+    }
+  }
+  ```
+  
+  关于表达式的写法，我们下面继续研究：
+  
+  ```json
+  curl -X GET "localhost:9200/megacorp/employee/_search?pretty" -H 'Content-Type: application/json' -d'
+  {
+      "query" : {
+          "bool": {
+              "must": {
+                  "match" : {
+                      "name" : "syske" 
+                  }
+              },
+              "filter": {
+                  "range" : {
+                      "age" : { "gt" : 15 } 
+                  }
+              }
+          }
+      }
+  }'
+  ```
+  
+  表达式中的`filter`，其实就是对我们前面查出来的结果进行过滤。关于表达式的逻辑关系，我们先补充一点内容：
+  
+  - `EQ `就是 `EQUAL`等于 
+  - `NE`就是 `NOT EQUAL`不等于 
+  - `GT` 就是 `GREATER THAN`大于　 
+  - `LT `就是` LESS THAN`小于 
+  - `GE `就是 `GREATER THAN OR EQUAL `大于等于 
+  - `LE `就是 `LESS THAN OR EQUAL` 小于等于
+  
+  上面表达式最终查出的结果如下：
+  
+  ```json
+  {
+    "took" : 18,
+    "timed_out" : false,
+    "_shards" : {
+      "total" : 1,
+      "successful" : 1,
+      "skipped" : 0,
+      "failed" : 0
+    },
+    "hits" : {
+      "total" : {
+        "value" : 1,
+        "relation" : "eq"
+      },
+      "max_score" : 0.18232156,
+      "hits" : [
+        {
+          "_index" : "megacorp",
+          "_type" : "employee",
+          "_id" : "2",
+          "_score" : 0.18232156,
+          "_source" : {
+            "name" : "syske",
+            "age" : 18,
+            "about" : "I love to read book",
+            "interests" : [
+              "sports",
+              "music"
+            ]
+          }
+        }
+      ]
+    }
+  }
+  ```
+  
+  在我们的`megacorp`索引下，名字为`syske`的`employee`数据有两条，年龄分别为`18`和`15`，因为我们过滤条件为年龄大于`15`，所以查出的结果只有年龄为`18`的。
+  
+  **注意**：实际在测试的时候，发现`range`表达之只支持`gt`和`lt`，其他都不支持。
 
 ### 总结
+
+`elasticsearch`因为有自己特定的*领域特定语言* （`DSL`），所以我们真正想要用好`es`，还是要学好`DSL`相关语法的，这也是我截止到目前都没有通过`java`去访问`es`的一个重要原因。学东西有时候是不能探快的，学好基础才是关键，只有学好了基础内容，后面上手才会更容易，毕竟`java`操作`es`也是建立在`es`的各种基础语法之上的。
+

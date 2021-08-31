@@ -2,7 +2,7 @@
 
 ### 前言
 
-我们都知道`spring boot`项目是通过`main方法来启动运行的`，但是`main`方法执行之后，`spring boot`都替我们完成了哪些操作，最终让我们的服务成功启动呢？今天我们就来从源码层面探讨下这个问问题。
+我们都知道`spring boot`项目是通过`main方法来启动运行的`，但是`main`方法执行之后，`spring boot`都替我们完成了哪些操作，最终让我们的服务成功启动呢？今天我们就来从源码层面探讨下这个问题。
 
 ### spring boot启动过程
 
@@ -70,6 +70,7 @@ public class DailyNoteApplication {
 
   ```java
   SpringApplicationRunListeners listeners = getRunListeners(args);
+  listeners.starting();
   ```
 
   
@@ -114,10 +115,68 @@ public class DailyNoteApplication {
   					new Class[] { ConfigurableApplicationContext.class }, context);
   ```
 
-  
+- 准备容器，这一步会进行初始化操作，把环境设置、系统参数、`banner`注入到容器中，并把容器绑定到监听器上
+
+  ```java
+  prepareContext(context, environment, listeners, applicationArguments, printedBanner);
+  ```
+
+- 刷新容器，这里其实进行了两步操作，一个是给我们的`spring boot`绑定`SpringContextShutdownHook`钩子函数，有了这个函数，我们就可以优雅地关闭`spring boot`了；另一个是刷新`beanFactory`，默认情况下`spring boot`为我们创建的是`GenericApplicationContext`容器，初始化完后，所有的对象都被初始化在它的`beanFactory`，为了确保其他组件也能拿到`beanFactory`中的内容，`refreshContext`方法内还进行了同步操作（直接`copy`给他们）：
+
+```java
+refreshContext(context);
+```
+
+从源码中可以很明显看出这一点：
+
+![](https://gitee.com/sysker/picBed/raw/master/20210830212720.png)
+
+
+
+- 刷新完成后会执行`afterRefresh`方法，但是这个方法默认情况下是空的
+
+  ```java
+  afterRefresh(context, applicationArguments);
+  ```
+
+  ![](https://gitee.com/sysker/picBed/raw/master/20210830212928.png)
+
+- 停止秒表。这个秒表的作用应该就是计时
+
+  ```java
+  stopWatch.stop();
+  ```
+
+- 调用监听器`started`方法，这方法修改了容器的状态。和前面`starting`方法不同的是，这个方法必须在`beanfactory`刷新后执行：
+
+  ```
+  listeners.started(context);
+  ```
+
+  ![](https://gitee.com/sysker/picBed/raw/master/20210830213921.png)
+
+- 运行容器中的`runner`，这里的`runner`主要有两类，一类是继承`ApplicationRunner`的，一类是继承`CommandLineRunner`。我猜测这个应该是为了方便我们实现更复杂的需求实现的，目前还没用到过，后面可以找时间研究下
+
+  ```
+  callRunners(context, applicationArguments);
+  ```
+
+  ![](https://gitee.com/sysker/picBed/raw/master/20210830214854.png)
+
+- 最后一步还是监听器的操作。这个方法最后将容器的状态改为`ACCEPTING_TRAFFIC`，表示可以接受请求
+
+  ```
+  listeners.running(context);
+  ```
+
+  到这里，`spring boot`就启动成功了。下面是整个`run`方法的源码，虽然不长，但是我感觉读起来还是有点吃力，想想自己模仿`spring boot`写的`demo`，真的是小巫见大巫。
 
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210830131800.png)
 
-
-
 ### 总结
+
+`spring boot`启动过程虽然看起来简单，用起来简单，但是当我一行一行看源码的时候，我觉得不简单，就好比老远看一棵大树，不就是一个直立的杆嘛，但是当你抵近看的时候，你会发现树干有树杈，树杈又有小树杈，总之看起来盘根错节的，总是感觉看不到树真实的样子。不过，随着后面我们不断地将`spring boot`的树叶、小树杈一一拿掉的时候，我相信我们会越来越清楚地看到`spring boot`这棵大树真实的样子。
+
+今天的内容，其实如果有一张时序图，看起来就比较友好了，但是由于时间的关系，今天来不及做了，我们明天争取把时序图搞出来。
+
+另外，后面我还会把今天一笔带过的方法尽可能详细地研究然后讲解的，我的目标就是由大到小（从树干到树杈，最后到树叶）地剖析`spring boot`的源码，最后把`spring boot`的核心技术梳理清楚。好了，今天就先到这里吧！

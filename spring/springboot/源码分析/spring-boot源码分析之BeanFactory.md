@@ -100,4 +100,40 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210903085640.png)
 
+`postProcessBeanFactory`方法就是我们昨天提到的会进行包扫描的那个方法，但由于`basePackages`和`annotatedClasses`都是空，所以其中的`scan`方法并不会被执行。这个方法实际的作用是，后置处理`BeanFactory`
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903125146.png)
+
+`invokeBeanFactoryPostProcessors`方法的作用是，实例化并调用所有注册的`BeanFactory`的后置处理器。我们昨天说的`beanDefinitionNames`和`beanDefinitionMap`就是通过这个方法最终完成初始化的：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903130342.png)
+
+`registerBeanPostProcessors`方法和它名字一样，它的作用就是注册`bean`的后置处理器：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903131858.png)
+
+`initMessageSource`方法是进行消息源初始化的，主要是对`web`应用消息国际化提供支持的：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903132410.png)
+
+`initApplicationEventMulticaster`，这个方法是初始化`spring boot`应用时间广播的，如果不指定的话，默认情况下为我们指定的是`SimpleApplicationEventMulticaster`：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903132723.png)
+
+`onRefresh`，这个方法是提供给子类初始化其他特殊`bean`对象的，默认实现为空，子类可根据需要重写：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903132942.png)
+
+`registerListeners`方法是用来注册事件监听器的：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903133324.png)
+
+`finishBeanFactoryInitialization`，完成`beanFactory`初始化，同时在方法内部会实例化剩余的单例类（不包括懒加载部分）：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903134535.png)
+
+`finishRefresh`，完成刷新，主要进行一些清理、刷新、事件推送等操作：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210903134722.png)
+
 ### 总结

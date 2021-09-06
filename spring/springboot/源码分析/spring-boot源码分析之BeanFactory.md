@@ -1,10 +1,16 @@
-# spring-boot源码分析之BeanFactory
+# spring-boot源码分析之BeanFactory · 壹
 
 ### 前言
 
+今天原本是打算分析`beanFactory`的，但由于昨天我们有一部分内容还没有分享完，所以今天就先开个倒车，把做昨天的内容先将清楚，所以今天的内容主要就是对昨天分享内容的的补充。
 
+当然，昨天我们分享的内容`beanDefinitionNames`也算是`BeanFactory`的核心属性，所以也不能说完全没有关系：
 
-### BenFactory
+![](https://gitee.com/sysker/picBed/raw/master/20210903201214.png)
+
+而且从源码中我们可以看出来，`beanDefinitionNames`、`beanDefinitionMap`这些属性的初始化大小，这也算是在学习`beanFactory`的相关知识吧。
+
+### BeanFactory
 
 #### `beanDefinitionNames`内容补充
 
@@ -14,7 +20,7 @@
 
 ##### 调用过程各方法作用
 
-`SpringApplication`这里就不做过多说明了，我们在前面最开始的时候就已经分析过这个类的`run`方法，当时也已经介绍过之类的这些方法，他们的主要作用就是为了初始化容器，在`SpringApplication`的最后一个`refresh`方法中，最后会调用`AbstractApplicationContext`自身的`refresh`方法，这里的`AbstractApplicationContext`是`ApplicationContext`的抽象实现，它实现了`ConfigurableApplicationContext`接口（`ConfigurableApplicationContext`继承了`ApplicationContext`），我们的`AnnotationConfigReactiveWebServerApplicationContext`（默认容器）就是继承自它，不过并不是直接继承，它的父类继承了`AbstractApplicationContext`，关于容器这块的继承关系，我们改天抽个时间，专门分析下。
+`SpringApplication`这里就不做过多说明了，我们在前面最开始的时候就已经分析过这个类的`run`方法，当时也已经介绍过这个类的这些方法，他们的主要作用就是为了初始化容器，在`SpringApplication`的最后一个`refresh`方法中，最后会调用`AbstractApplicationContext`自身的`refresh`方法，这里的`AbstractApplicationContext`是`ApplicationContext`的抽象实现，它实现了`ConfigurableApplicationContext`接口（`ConfigurableApplicationContext`继承了`ApplicationContext`），我们的`AnnotationConfigReactiveWebServerApplicationContext`（默认容器）就是继承自它，不过并不是直接继承，它的父类继承了`AbstractApplicationContext`，关于容器这块的继承关系，我们改天抽个时间，专门分析下。
 
 大部分继承了`AbstractApplicationContext`的容器都没有重写`refresh`方法，就算重写了这个方法，其内部也是调用了父类的`refresh`方法：
 
@@ -137,3 +143,5 @@
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210903134722.png)
 
 ### 总结
+
+经过今天的补充之后，我相信各位小伙伴一定也对`spring boot`的启动和初始化过程有了更深刻的认识，因为我就是这样的感受。相比于昨天分享完内容的感受，今天我感觉整体来说要更好。一方面感觉`spring boot`启动和初始化的流程更清晰了，而且由于最近这几天一直在看`spring boot`的源码，看的多了感觉就没有那么难了，毕竟书读百遍其意自现，代码也是大同小异；另一方面在梳理分析的过程中，让我也能够清晰地看到下一步要分享的内容，明确后面地前进方向，这也算是意外的收获吧。

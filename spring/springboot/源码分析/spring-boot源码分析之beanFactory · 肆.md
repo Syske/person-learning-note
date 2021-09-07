@@ -24,6 +24,31 @@
 
   可以看到默认情况下为我们注册的转换器包括了`String`转`Date`这种常用的转换，当然我们也可以定义自己的转换器，这个我记下来，后面专门出一期`demo`示例。
 
-  ![image-20210907085757521](C:\Users\syske\AppData\Roaming\Typora\typora-user-images\image-20210907085757521.png)
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210907130505.png)
+  
+- 初始化操作（`applyInitializers`），这个方法我们昨天已经分析过了，这里就不再赘述了，后面关于`ApplicationContextInitializer`的初始化我也会专门做一期`demo`分享的。
+
+- 绑定容器初始化事件（`contextPrepared`），这个方法在容器创建并准备好之后，资源加载完成前执行，这一步和`beanFactory`也没有关系
+
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210907132035.png)
+
+- 打印`startupInfo`。下面那一段代码就是打印启动日志信息， 默认情况下`logStartupInfo`是`true`，所以控制台会输出两行日志：
+
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210907132528.png)
+
+- 获取`beanFactory`（ `context.getBeanFactory()`），这个是为了方便后面注册数据，因为紧接着就需要把`springApplicationArguments`、`springBootBanner`等注册到`beanFactory`中：
+
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210907132902.png)
+
+  最终`registerSingleton`方法会把他们注册到`singletonObjects`容器中，从名字我们就可以看出来，这是个存放单例对象的容器。
+
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210907133313.png)
+
+- 设置是否允许同名覆盖（`setAllowBeanDefinitionOverriding`），默认情况下为`true`（`allowBeanDefinitionOverriding`属性默认值）。如果为`true`，后面的`BeanDefinition`数据会将前面的覆盖掉。但是默认启动时，`spring boot`会将它该为`false`
+
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210907135410.png)
+
+- 添加`beanFactory`懒加载后置处理器（`addBeanFactoryPostProcessor`）
 
 ### 总结
+

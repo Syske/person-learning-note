@@ -48,8 +48,29 @@
 
 #### 设置loader属性
 
-下面就是这只`loader`的属性，包括`beanNameGennerator`、`resourceLoader`和`environment`
+下面就是这只`loader`的属性，包括`beanNameGennerator`、`resourceLoader`和`environment`。但是由于这些参数都是空的，所以默认情况下这些设置方法并不会被执行：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210908090105.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/20210908130336.png)
+
+#### loader加载资源
+
+下面是`load`方法最核心的执行流程，核心部分就是注册`Bean`
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210908131728.png)
+
+由于一张截图无法完整体现`registerBean`的流程，所以我分成了两张截图，这里最核心的就是`doRegisterBean`方法，这个方法内部会构建当前`class`的`BeanDefinition`。其中`AnnotatedGenericBeanDefinition`是根据注解信息生成的`bean`的`definition`信息，包括`beanClass`、`AnnotationMetadata`（注解元数据）、`scope`（范围）等，总之就是凡是通过注解方式配置的类，都是通过`AnnotatedGenericBeanDefinition`来构建它的`definition`信息的，它本身也就是为了支持注解元数据而生的。
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210908132127.png)
+
+上面这些操作执行完毕后会往`beanFactory`的`beanDefinitionMap`和`beanDefinitionNames`分别保存`beanClass`的`beanName`和`beanDefinition`信息
+
+#### 加载事件监听器
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210908144903.png)
+
+
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210908145012.png)
 
 ### 总结
+

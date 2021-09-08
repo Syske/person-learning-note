@@ -48,7 +48,19 @@
 
   ![](https://gitee.com/sysker/picBed/raw/master/images/20210907135410.png)
 
-- 添加`beanFactory`懒加载后置处理器（`addBeanFactoryPostProcessor`）
+- 添加`beanFactory`懒加载后置处理器（`addBeanFactoryPostProcessor`），由于默认情况下并未启动懒加载，所以默认情况下懒加载后置处理器也不会被添加
+
+  ![](https://gitee.com/sysker/picBed/raw/master/20210907205656.png)
+
+- 获取所有资源（`getAllSources`），默认情况下只包括当前`spring boot`项目的主类，同时关联了包括`classLoader`、`packages`等数据
+
+  ![](https://gitee.com/sysker/picBed/raw/master/20210907210316.png)
+
+- 将资源加载到容器中（`load`，官方文档给的解释是`bean`）。这个方虽然看起来其貌不扬，但是内部操作还是蛮多的。本来内容已经写出来了，但是介于篇幅我决定把剩余内容放到明天分享，当然也是因为`load`方法确实也比较重要，其内部不仅包括了`scanner`的初始化，而且包括了`filter`的相关内容，这些都算是`spring boot`的核心内容，所以还是要尽可能详细些。
+
 
 ### 总结
 
+原本是打算把`prepareContext`的内容一次性分享完的，但是实际分享的时候，发现内容还是蛮多的，特别是`load`方法，一个看起来小小的方法，没想到它的内部初始化操作还挺复杂的。不过，经过今天的梳理之后，我感觉对`prepareContext`认识要比之前清晰多了，而且在分析的过程中，还发现了两个需要`demo`实践的内容，相关内容的`flag`已经立起来了，后面就该填坑了，这也算是意外的收获吧。
+
+好了，今天就先到这里吧！

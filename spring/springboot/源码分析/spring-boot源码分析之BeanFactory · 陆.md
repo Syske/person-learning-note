@@ -2,7 +2,7 @@
 
 ### 前言
 
-从今天开始，我们要啃硬骨头了——`refreshContext`
+从今天开始，我们要啃硬骨头了——`refreshContext`。
 
 ### refreshContext
 
@@ -50,7 +50,26 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210909133426.png)
 
+##### validateRequiredProperties
+
+这里校验是根据我们`AbstractPropertyResolver`解析器的`requiredProperties`中如果存在为空的配置就会报错：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210909202806.png)
+
+这里的`requiredProperties`和`environment`有关，是`AbstractEnvironment`的`setRequiredProperties`方法中初始化的。
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210909204118.png)
+
+##### 监听器赋值
+
+下面就是一些监听器集合的赋值操作，`earlyApplicationListeners`表示预刷新容器应用监听器集合（`pre-refresh ApplicationListeners`），`applicationListeners`表示当前容器监听器集合，`earlyApplicationEvents`就表示预刷新应用监听事件。
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210909204652.png)
+
 
 
 ### 总结
 
+今天效率有点低呀，但是也没办法，今天事情确实比较多——今天我负责处理`oncall`问题，然后下午又开了三个多小时的会，所以就没有太多事件搞源码分析了。
+
+不过，我看了下剩余的内容，明天至少可以搞定`3`个方法，剩余`11`个方法，最多再需要三天应该也可以搞定，所以今天就先到这里吧~

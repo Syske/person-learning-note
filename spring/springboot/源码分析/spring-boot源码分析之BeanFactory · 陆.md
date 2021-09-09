@@ -38,5 +38,19 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210909085855.png)
 
+这里通过`getEnvironment`方法获取系统的环境设置，主要包括`profiles`以及资源解析器，这里的`defaultProfiles`表示`spring boot`的默认配置文件，`activeProfiles`表示`spring boot`启动时激活的配置文件。
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210909131025.png)
+
+关于`profile`文件，相比各位小伙伴应该都不陌生，在`spring boot`中我们的配置文件就叫`profile`，默认情况下的配置文件是`application.*`，文件类型可以是`properties`文件或者`yaml`文件，我们通常通过`spring.profiles.active=@profileActive@`（``yml`方式类似）指定需要激活的文件（环境配置）
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210909132234.png)
+
+获取完配置资源之后，会调用`ConfigurableWebEnvironment`的`initPropertySources`方法，下面是`initPropertySources`方法的内部调用流程。在`debug`过程中，我发现默认情况下`servletContext`和`servletConfig`都为空，所以`replace`方法实际并未执行。
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210909133426.png)
+
+
+
 ### 总结
 

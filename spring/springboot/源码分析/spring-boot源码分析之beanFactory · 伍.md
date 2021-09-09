@@ -2,7 +2,11 @@
 
 ### 前言
 
+原本是打算昨天把`prepareContext`方法梳理完，今天开始啃硬骨头——`refresh`方法的，结果大家昨天就知道了：由于篇幅的问题，剩余内容放在今天分享了。
 
+然后今天的想法是除了昨天需要补充的内容外，看能不能把`refresh`的内容也分享一部分，毕竟是硬骨头，然而现实情况是在我把昨天需要补充的内容梳理之后，发现剩余的内容还不少，所以就只能先不开始新的内容了，等`prepareContext`方法彻底剖析完毕之后我们再啃硬骨头。
+
+下面就让我们看下`prepareContext`的剩余内容吧！
 
 ### prepareContext补充
 
@@ -64,13 +68,31 @@
 
 上面这些操作执行完毕后会往`beanFactory`的`beanDefinitionMap`和`beanDefinitionNames`分别保存`beanClass`的`beanName`和`beanDefinition`信息
 
-#### 加载事件监听器
+#### 执行事件监听
+
+这里调用的是监听器容器的`contextLoaded`方法，其方法内部本质上是触发对应的事件，从方法名上我们可以看出来这个方法其实发的就是容器已经加载完成的事件。下面是`Logger`
 
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210908144903.png)
 
+`debug`过程中，我发现这里触发的时间类型是`ApplicationPeparedEvent`事件，这里的事件类别挺多的，不同的监听器会执行各自的`onApplicationEvent`方法，上面的流程中我们就是以`LoggingApplicationListener`为例，剖析其执行流程的
+
+![](https://gitee.com/sysker/picBed/raw/master/20210908214555.png)
+
+对于`LoggingApplicationListener`总共会处理`5`种事件，这里处理的是`ApplicationPreparedEvent`事件，也就是我们前面看到的类型
+
+![](https://gitee.com/sysker/picBed/raw/master/20210908214752.png)
+
+在当前事件类型下，`LoggingApplicationListener`的`onApplicationEvent`方法会往容器中注册两个单例实例，中间的`logFile`为空，所以并未成功注入。
+
+![](https://gitee.com/sysker/picBed/raw/master/20210908215403.png)
 
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210908145012.png)
 
 ### 总结
+
+好了，到今天我们算是把`prepareContext`方法的内容梳理完了，整体来看还算清晰。
+
+说实话，我是没想到一小块补充内容能有这么多，但事实确实如此，这也从侧面说明了`spring boot`本身确实比较复杂，任何一小行代码，其内部可能都潜藏着核心的实现代码。我数了一下，不算括号和`if`语句，只有`17`行，但是就这短短的`17`行代码，我用了近三千字还没有说的特别清楚，我自己都不敢想象，不过好的一点是，虽然中间磕磕绊绊，但也算是啃下来了，不过更硬的骨头还在后头——`refresh`方法才是重头戏，还是不能松懈呀~
+
+最后，我想说的是，任何一小行代码很有可能就是解开你心中困惑的钥匙，所以不论是坑，还是意外收获，更多时候都需要我们自己亲自蹚~
 

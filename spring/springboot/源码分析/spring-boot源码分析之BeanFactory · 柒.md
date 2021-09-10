@@ -36,4 +36,16 @@
 
 - 最后，往`beanFactory`中注册了环境相关的`bean`
 
+  ![](https://gitee.com/sysker/picBed/raw/master/images/prepareBeanFactory.jpg)
+
+  #### postProcessBeanFactory
+
+  关于这个方法官方注释给出如下说明：
+
+  > Modify the application context's internal bean factory after its standard initialization. All bean definitions will have been loaded, but no beans will have been instantiated yet. This allows for registering special BeanPostProcessors etc in certain ApplicationContext implementations.
+
+  意思就是说，这个方法是在标准初始化之后，修改应用容器的内部`beanFactory`，这时候，所有`bean`定义都已加载，但尚未实例化任何`bean`，是允许往容器中注册特殊的`BeanPostProcessor`的。所以这个方法其实就是在`bean`实例化前，往`beanFactory`中注册`BeanPostProcessor`（`bean`后置处理器）。
+
+  
+
 ### 总结

@@ -8,6 +8,10 @@
 - `prepareBeanFactory`
 - `postProcessBeanFactory`
 
+今天下午突然有事把我的计划打乱了，剩下的内容还没有补充进去，我又不想打断自己的计划，索性就先发一部分，剩余内容后续完善后再更新。
+
+下面我们就先来简单看下吧！
+
 ### refresh
 
 #### obtainFreshBeanFactory
@@ -46,6 +50,12 @@
 
   意思就是说，这个方法是在标准初始化之后，修改应用容器的内部`beanFactory`，这时候，所有`bean`定义都已加载，但尚未实例化任何`bean`，是允许往容器中注册特殊的`BeanPostProcessor`的。所以这个方法其实就是在`bean`实例化前，往`beanFactory`中注册`BeanPostProcessor`（`bean`后置处理器）。
 
-  
+  ![](https://gitee.com/sysker/picBed/raw/master/20210910224239.png)
 
 ### 总结
+
+今天由于一些特殊情况，我的原有计划又被打乱了，有点无语，但是事情撂给我了，我也不能撒手不管，所以今天只能先到这里。
+
+虽然三个方法也算分析完了，但是原本更细致的内容还没来得及剖析，好多内容都没来得及剖析，剩余的内容，我明后两天再抽时间完善下，届时再重新分享。
+
+好了，各位小伙伴，晚安哦！

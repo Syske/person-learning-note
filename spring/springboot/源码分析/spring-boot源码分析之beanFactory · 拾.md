@@ -2,7 +2,13 @@
 
 ### 前言
 
+今天分享的`refresh`是的最后三个方法：
 
+- `destroyBeans`
+- `cancelRefresh`
+- `resetCommonCaches`
+
+这三个方法中，有两个位于`catch`语句块，主要是用于`refresh`方法运行异常时，清除已经构建的`bean`和依赖的，另一个方法位于`finally`语句块中，主要用于启动成功或失败后重置各类缓存。
 
 ### refresh最后的晚餐
 
@@ -52,6 +58,10 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210913085400.png)
 
+在`destroySingletons`方法内部，它首先调用了父类的`destroySingletons`方法，最终在父类的方法内部调用`destroySingletons`以递归的方式销毁`bean`和`bean`的依赖，具体流程如下：
+
+![](https://gitee.com/sysker/picBed/raw/master/Snipaste_2021-09-13_21-26-22.jpg)
+
 ##### cancelRefresh
 
 发生异常后取消容器刷新操作，这里只是将容器的激活状态改为`false`
@@ -60,6 +70,17 @@
 
 ##### resetCommonCaches
 
-这个方法始终会被执行，它的作用就是清理各种缓存以及`classLoader`
+这个方法始终会被执行，它的作用就是清理各种缓存以及`classLoader`，其中`ReflectionUtils`清理的是和反射相关的缓存，`AnnotationUtils`清理的是和注解相关的缓存，`ResolvableType`清理的是和解析类型相关的缓存，`CachedIntrospectionResults.clearClassLoader`清理的是类加载器的相关缓存。
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210913085707.png)
+
+至此，`refresh`方法算是彻底分享完了，`run`方法中剩余的方法，由于之前已经分析过了，所以这里就不过多赘述了，后面就该花时间把最近一段时间的内容好好梳理下，然后该补充的再补充下（比如上周五的内容）。
+
+![](https://gitee.com/sysker/picBed/raw/master/20210913214403.png)
+
+### 总结
+
+说实话我是没想到剩余的三个方法这么简单，总体内容都没有昨天`finishRefresh`的补充内容多，不过也能想明白，毕竟今天内容就是`catch`和`finally`语句块的方法，也不会有太核心的内容。
+
+今天分享完毕后，剩余的工作就是查漏补缺和知识点梳理了，原本想着经过梳理`run`方法会发现有集中初始化的代码，但是截止到现在都没找到，至少不像我之前手写的`web`服务器那种，不过现在感觉似乎已经对`spring boot`的`bean`的完整初始化过程有了一点点懵懂的认知，我想等我梳理完最近分析的代码，这一团迷雾一定会被揭开，好了，今天就先到这里吧，各位小伙伴，晚安哟！
+

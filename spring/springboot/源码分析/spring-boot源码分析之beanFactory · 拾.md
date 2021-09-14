@@ -52,6 +52,14 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210913085400.png)
 
+这里最后调用的是`DefaultListableBeanFactory`的`destroySingletons`，也就是我们默认容器的销毁方法：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210913133143.png)
+
+首先它调用了父类的销毁方法，在父类的销毁方法中，最终会销毁`bean`和它的依赖：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/destoryBean.jpg)
+
 ##### cancelRefresh
 
 发生异常后取消容器刷新操作，这里只是将容器的激活状态改为`false`
@@ -63,3 +71,15 @@
 这个方法始终会被执行，它的作用就是清理各种缓存以及`classLoader`
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210913085707.png)
+
+到这里`refresh`方法就算执行完毕了。
+
+整个`run`方法，除了`refreshContext`方法之外，还有`6`个方法，这六个方法前面也已经分析过了，所以这一次就不重复说了。
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210913131334.png)
+
+
+
+### 总结
+
+实在是没想到剩下的三个方法竟然能如此简单，以至于我三言两语都分析完了，还没有`finishReresh`方法的补充内容多。

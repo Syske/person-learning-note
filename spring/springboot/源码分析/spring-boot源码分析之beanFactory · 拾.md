@@ -61,6 +61,14 @@
 在`destroySingletons`方法内部，它首先调用了父类的`destroySingletons`方法，最终在父类的方法内部调用`destroySingletons`以递归的方式销毁`bean`和`bean`的依赖，具体流程如下：
 
 ![](https://gitee.com/sysker/picBed/raw/master/Snipaste_2021-09-13_21-26-22.jpg)
+=======
+这里最后调用的是`DefaultListableBeanFactory`的`destroySingletons`，也就是我们默认容器的销毁方法：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210913133143.png)
+
+首先它调用了父类的销毁方法，在父类的销毁方法中，最终会销毁`bean`和它的依赖：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/destoryBean.jpg)
 
 ##### cancelRefresh
 
@@ -78,9 +86,18 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210913214403.png)
 
+![](https://gitee.com/sysker/picBed/raw/master/20210913085707.png)
+
+到这里`refresh`方法就算执行完毕了。
+
+整个`run`方法，除了`refreshContext`方法之外，还有`6`个方法，这六个方法前面也已经分析过了，所以这一次就不重复说了。
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210913131334.png)
+
+
+
 ### 总结
 
 说实话我是没想到剩余的三个方法这么简单，总体内容都没有昨天`finishRefresh`的补充内容多，不过也能想明白，毕竟今天内容就是`catch`和`finally`语句块的方法，也不会有太核心的内容。
 
 今天分享完毕后，剩余的工作就是查漏补缺和知识点梳理了，原本想着经过梳理`run`方法会发现有集中初始化的代码，但是截止到现在都没找到，至少不像我之前手写的`web`服务器那种，不过现在感觉似乎已经对`spring boot`的`bean`的完整初始化过程有了一点点懵懂的认知，我想等我梳理完最近分析的代码，这一团迷雾一定会被揭开，好了，今天就先到这里吧，各位小伙伴，晚安哟！
-

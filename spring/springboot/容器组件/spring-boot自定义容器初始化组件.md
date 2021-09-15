@@ -83,19 +83,29 @@ org.springframework.context.ApplicationContextInitializer=io.github.syske.spring
 
 具体的配置和用法分享完了，下面我们结合最近研究的`spring boot`启动过程分析下`spring.factories`的加载过程。
 
+`spring.factories`文件需要放在`META-INF`文件夹下，注意观察文件名，我们可以发现，文件后缀刚好是`factory`的复数形式，这也说明了这个文件的用途。它是在`run`方法中被解析的，更准确的说是在实例化`SpringApplication`的时候被解析的：
 
+首先我们在程序主入口中调用了`SpringApplication`的静态方法`run`：
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210915081735.png)
 
+然后静态`run`方法调用了另一个静态`run`，并在第二个静态`run`方法内部实例化`SpringApplication`：
+
 ![](https://gitee.com/sysker/picBed/raw/master/20210915081608.png)
+
+实例化`SpringApplication`的时候，会同步调用`setInitializers`（紧挨着的`setListeners`是设置应用监听器的），这里设置的就是容器初始化组件（包括我们自定义的），这里获取初始化组件的方法`getSpringFactoriesInstances`其内部进行了`spring.factories`文件的解析操作：
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210915081523.png)
 
+下面就是`getSpringFactoriesInstances`方法的内部实现：
 
+其中的`SpringFactoriesLoader.loadFactoryNames`就是解析并
+
+![](https://gitee.com/sysker/picBed/raw/master/20210915082048.png)
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210915081441.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210915082048.png)
+
 
 
 

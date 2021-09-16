@@ -2,7 +2,7 @@
 
 ### 前言
 
-
+前段时间我们在分享`spring boot`启动过程的时候，提到有几个`dome`要分享下，至于分享这些`dome`的原因主要有以下几点，第一点是结合`spring boot`启动过程从实践的角度看这些组件的用法和作用；第二点是，从源码能发掘`spring boot`潜在的高级知识点，学习和消化这些知识点，实现自我提升，所以从今天开始我们会逐一把前面说的`demo`分享出来，今天我们先来看下容器初始化组件——`ApplicationContextInitializer`。
 
 ### 自定义初始化组件
 
@@ -77,6 +77,10 @@ org.springframework.context.ApplicationContextInitializer=io.github.syske.spring
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210915085854.png)
 
+从`setInitializer`方法这里我们可以看到，我们自己定义的`ApplicationContextInitalizer`已经被注册到`initializers`中了
+
+![](https://gitee.com/sysker/picBed/raw/master/20210915081441.png)
+
 
 
 #### 加载过程分析
@@ -99,11 +103,15 @@ org.springframework.context.ApplicationContextInitializer=io.github.syske.spring
 
 下面就是`getSpringFactoriesInstances`方法的内部实现：
 
-其中的`SpringFactoriesLoader.loadFactoryNames`就是解析并
+其中的`SpringFactoriesLoader.loadFactoryNames`就是解析并获取`spring.factories`文件中的`Factory`的名字，然后将最终结果放进缓存中并返回：
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210915082048.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210915081441.png)
+![](https://gitee.com/sysker/picBed/raw/master/loadFactoryNames.jpg)
+
+### 总结
+
+今天我们分享了自定义初始化组件，演示了定义过程、配置方式以及最终测试，整体来说还是比较简单的，当然重要的还是如何将这一组件和我们的具体业务相结合，实现我们具体的业务，这应该才是我们应该思考的。好了，关于`spring boot`初始化组件我们暂时就分享这么多，有兴趣的小伙伴可以亲自动手试一下。
 
 
 

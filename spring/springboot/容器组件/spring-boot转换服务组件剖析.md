@@ -6,11 +6,13 @@
 
 ### 转换组件
 
+#### ConversionService
+
 这里我们说的转换组件其实指的是`ConversionService`，它是`spring`为我们提供的类型转换接口，通过调用`convert(Object, Class) `方法就可以实现一个类型到另一个类型的完美转换，而且更重要的是，它是线程安全的：
 
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210916131632.png)
 
-这个接口为我们提供了四个核心方法：
+与此相关的还有四个接口，一个是`GenericConverter`，一个是`Converter<S, T>`，还有一个是`ConfigurableConversionService`，最后一个是`ConverterRegistry`，我们先来说下这几个接口的关系，首先最基本的当然是`ConversionService`，它是所有转换服务类的基类接口，它为我们提供了四个基本方法：
 
 - 判断是否可以进行类型转换
 
@@ -36,15 +38,15 @@ boolean canConvert(@Nullable TypeDescriptor sourceType, TypeDescriptor targetTyp
 Object convert(@Nullable Object source, @Nullable TypeDescriptor sourceType, TypeDescriptor targetType);
 ```
 
-与此相关的还有两个接口，一个是`GenericConverter`，另一个是`Converter<S, T>`
+但是仅有这四个基本方法还不够，所以`spring boot`引入了`ConverterRegistry`接口。
 
+#### ConverterRegistry
 
+`ConverterRegistry`接口的主要作用就是实现最转换器的管理，主要包括往`ConversionService`中添加转换器。因为`ConversionService`不可能只提供某几种特定的类型转换，为了能够实现转换器的扩展，同时对转换器实现管理，`spring boot`引入了`ConverterRegistry`（转换器注册接口）：
 
-我们先说下这三个接口的关系，首先最基本的当然是`ConversionService`，它是所有转换类的基类接口，它为我们提供了四个基本方法：
+![](https://gitee.com/sysker/picBed/raw/master/images/20210917131258.png)
 
-
-
-但是仅有这四个基本方法还不够，因为我们还需要往`ConversionService`中添加转换器，因为`ConversionService`不可能只提供某几种特定的类型转换，为了能够实现转换器的扩展，同时对转换器实现管理，`spring boot`引入了`ConverterRegistry`（转换器注册接口），这个接口为我们提供了五个方法，分为三类：
+这个接口为我们提供了五个方法，分为三类：
 
 - 添加转换器
 
@@ -68,11 +70,19 @@ void addConverterFactory(ConverterFactory<?, ?> factory);
 void removeConvertible(Class<?> sourceType, Class<?> targetType);
 ```
 
-在上面这几个方法中，`sourceType`表示原始类型，`targetType`表示目标类型，`converter`就是我们的转换器，这里转换器主要有两种，一种是直接继承了`Converter`的转换器，就比如我们昨天演示的`String`转日期的转换类：
+在上面这几个方法中，`sourceType`表示原始类型，`targetType`表示目标类型，`converter`就是我们的转换器，这里转换器主要有两种，一种是直接继承了`Converter`的转换器，另一种就是基于`GenericConverter`实现的类型转换，所以下面我们就分享下这两个接口的相关内容。
+
+#### converter和GenericConverter
+
+这里的`converter`类型的转换器是最常用的转换器类型，比如我们昨天演示的`String`转日期的转换类，就属于这种：
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20210917085230.png)
 
-另一种就是基于`GenericConverter`实现的类型转换，它本身也是一个接口，而且是独立的，它有两个核心方法：
+`GenericConverter`本身也是一个接口，而且是独立的，它不同于`converter`：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210917132445.png)
+
+它有两个核心方法：
 
 - 获取转换类型
 
@@ -93,6 +103,14 @@ Object convert(@Nullable Object source, TypeDescriptor sourceType, TypeDescripto
 们昨天分享的内容可以看出来，`ConversionService`服务主要的作用就是进行数据类型转换，通常情况下，我们并不需要实现`ConversionService`接口，而是实现`GenericConverter`转换器即可，而且从昨天我们启动测试的情况来看，基本上所有的转换器都是基于`GenericConverter`实现的：
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210916225158.png)
+
+`ConverterRegistry`接口对这两种接口都提供了支持，可以直接对这两种转换器进行新增和移出。
+
+#### ConfigurableConversionService
+
+这里的`ConfigurableConversionService`接口其实是`ConversionService`接口和`ConverterRegistry`接口的合体，它直接继承了这两个接口，具备这两个接口的能力，而且从名字也可以看出来，它其实是用来配置我们的转换服务的。
+
+
 
 ### 总结
 

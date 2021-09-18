@@ -2,9 +2,13 @@
 
 ### 前言
 
+今天要分享的内容原本是要昨天分享的，具体原因昨天也说过了，虽然昨天没分享成，但是最后还是有意外收获的，特别是关于`converter`的相关内容，瞬间就让我搞清楚了`converter`的用法和场景，所以这样来说，其实今天的内容算是对昨天内容的延申和扩展。
 
+好了，废话不多说，下面我们直接看`converter`的相关内容。
 
 ### 转换组件
+
+转换组件算是`spring boot`的另一块比较系统，而且也比较通用的内容，所以在剖析`converter`之前，我们有必要先看下转换服务`ConversionService`，以及它的小伙伴，当然其中也包括我们的`converter`。
 
 #### ConversionService
 
@@ -108,9 +112,12 @@ Object convert(@Nullable Object source, TypeDescriptor sourceType, TypeDescripto
 
 #### ConfigurableConversionService
 
-这里的`ConfigurableConversionService`接口其实是`ConversionService`接口和`ConverterRegistry`接口的合体，它直接继承了这两个接口，具备这两个接口的能力，而且从名字也可以看出来，它其实是用来配置我们的转换服务的。
+这里的`ConfigurableConversionService`接口其实是`ConversionService`接口和`ConverterRegistry`接口的合体，它直接继承了这两个接口，具备这两个接口的能力，而且从名字也可以看出来，它应该是用来配置我们的转换服务的。
 
-
+![](https://gitee.com/sysker/picBed/raw/master/blog/20210917212239.png)
 
 ### 总结
 
+今天主要是梳理了和`ConversionService`相关的接口以及接口的方法，算是对昨天内容的补充和延申，但是`ConversionService`的相关内容还比较多，所以我打算分两到三次分享，这样我们就可以更细致地展开，了解的也更深入。
+
+好了，关于`converter`的相关内容我们暂时先说这么多，明天我们再结合`run`方法看下`ConversionService`以及它的小伙伴的初始化过程。

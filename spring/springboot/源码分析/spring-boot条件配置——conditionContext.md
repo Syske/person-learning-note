@@ -36,7 +36,9 @@
 
   ![](https://gitee.com/sysker/picBed/raw/master/blog/20210922084524.png)
 
-  如果`shouldSkip`返回`true`，则会直接跳过该类的初始化。
+  如果`shouldSkip`返回`true`，则会直接跳过该类的初始化，`shouldSkip`要返回`true`，则`condition`的返回值必须为`false`:
+
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922131244.png)
 
   #### 条件配置实例
 
@@ -45,7 +47,7 @@
   ##### 定义条件
 
   首先我们需要定义一个条件，也就是实现`Conditon`接口：
-
+  
   ```java
   public class ResultCondition implements Condition {
       @Override
@@ -60,7 +62,9 @@
   这里为了演示方便，我直接返回`true`。
 
   ##### 增加配置类
-
+  
+  在配置类中，我加了一个`Result`的实例化配置，同时在它的配置上增加了` @Conditional(ResultCondition.class)`。
+  
   ```java
   @Configuration
   public class ConditionConfig {
@@ -74,7 +78,33 @@
       }
   }
   ```
-
+  
+  加了这个注解之后，想要`Result`实例化成功，就要求`ResultCondition`的`matches`方法必须为`true`，也就是`shouldSkip`返回`false`。
+  
+  ##### 测试
+  
+  下面我们简单测试下，因为我已经在相关代码中加了打印输出，所以我们直接启动看效果即可，当`matches`方法返回`true`时，我们可以看到`Result`的实例化配置被执行了：
+  
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922132004.png)
+  
+  然后我们把`matches`方法返回值改成`false`再看下，这时候我们会发现`Result`的实例化配置并没有被执行：
+  
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922132402.png)
+  
+  综上，我们可以看出来，`conditionContext`其实就是通过`Condition`接口来实现有条件的配置，这样的好处是，可以动态地调整优化配置，即灵活又方便，更重要的是，这种方式还可以有效降低组件的耦合性，便于扩展，而且可以提高系统启动效率（`condition`可以直接过滤不需要实例化的组件）。
+  
+  举个栗子，比如你现在要开发一个集成组件，这个组件既可以发消息，又可以做`redis`的工具包，还可以做`zk`的客户端，这时候如果别人要用你这个集成组件中的某一个功能，比如发消息的功能，在没有条件配置的情况下，他不仅需要引入消息组件的依赖，还需要引入`zk`和`redis`的组件依赖，但是对他而言，后两种组件是非必要的，引入之后只会增加不必要的依赖和配置，但是没有这些依赖和配置又会报错，所以极其不灵活。
+  
+  但是如果你的组件才有的是条件配置的话，就不会存在这个问题，你可以通过条件配置的方式，来启用相关组件：他引入消息组件依赖，你启用消息组件配置；他启用`zk`依赖，你启用`zk`组件配置；他启用`redis`组件依赖，你启用`redis`组件配置。当不存在相关组件依赖时，相关组件配置并不会起作用。
+  
+  #### 知识扩展
+  
+  除了我们这里说的`@Conditional`注解外， `spring boot`还为我们提供了 `@ConditionalOnClass`注解，这个注解的作用是当指定的类的`class`存在于`classpath`中时，才会执行该配置，和我们`Conditional`注解差不多，他只是已经默认实现了`matches`方法，我们直接可以使用。类似的注解还有很多，有兴趣的小伙伴可以自己去看下：
+  
+  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922140257.png)
+  
+  关于`@ConditionalOnClass`注解的用法，可以参考我们前面分享过的`spring-boot-starter`自定义相关内容：
+  
   
 
 ### 总结

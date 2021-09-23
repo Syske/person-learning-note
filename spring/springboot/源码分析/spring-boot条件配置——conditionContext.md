@@ -99,7 +99,9 @@
   
   #### 知识扩展
   
-  除了我们这里说的`@Conditional`注解外， `spring boot`还为我们提供了 `@ConditionalOnClass`注解，这个注解的作用是当指定的类的`class`存在于`classpath`中时，才会执行该配置，和我们`Conditional`注解差不多，他只是已经默认实现了`matches`方法，我们直接可以使用。类似的注解还有很多，有兴趣的小伙伴可以自己去看下：
+  除了我们这里说的`@Conditional`注解外， `spring boot`还为我们提供了 `@ConditionalOnClass`注解，这个注解的作用是当指定的类的`class`存在于`classpath`中时，才会执行该配置，和我们`Conditional`注解差不多，他只是已经默认实现了`matches`方法，我们直接可以使用。
+  
+  类似的注解还有很多，有兴趣的小伙伴可以自己去看下：
   
   ![](https://gitee.com/sysker/picBed/raw/master/images/20210922140257.png)
   
@@ -109,3 +111,6 @@
 
 ### 总结
 
+好了，关于`conditionContext`的相关内容我们就先讲到这里，感兴趣的小伙伴自己可以去看下我们今天提到的其他注解。
+
+下面做一个简单小结，今天我们围绕着`conditionContext`的初始化过程，探讨了`spring boot`条件化配置的基本原理，然后我们还通过一个简单实例演示了条件配置的具体用法，最后我们还对`@Conditional`注解的基础上做了一点点引申和扩展，总体来说，条件配置的用法还是比较简单的，但是如果真正用起来，是可以有效降低你的系统的耦合性，极大提高系统扩展性。

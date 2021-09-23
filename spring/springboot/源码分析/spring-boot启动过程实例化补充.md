@@ -10,6 +10,19 @@
 
 
 
+### @Bean注解
+
+首先我搜索了全局有用到`Bean.class`的地方，找到以下结果：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210923132356.png)
+
+总共找到`10`条记录，其中前两条和我们昨天分享的条件配置有关，主要是判断方法是否存在`@Bean`注解，但是这里并不进行实例化操作，所以我们这里就不深入研究了；
+
+第三行、第四行是获取所有包含`@Bean`注解的方法的元数据，但是由于这个类是和异常报告相关的（`NoSuchBeanDefinitionFailureAnalyzer`，从名字可以看出来是个失败分析器，找不到`bean`的定义信息时触发），所以我们也不做过多说明。不过从调用的方法名来看，这个方法的作用是获取所有的`beanMethod`：
+![](https://gitee.com/sysker/picBed/raw/master/images/20210923134626.png)
+
+
+
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20210923084335.png)
 
 

@@ -27,5 +27,23 @@
 
 
 
+下面我们看下`Bootstrap`的`main`方法执行过程：
 
+![](https://gitee.com/sysker/picBed/raw/master/blog/20210927082820.png)
+
+首先，它以单例模式创建了`Bootstrap`实例，并执行它的初始化操作，最后讲创建的对象赋值给`daemon`对象，如果发生异常会调用`handleThrowable`方法进行异常处理。这里创建方式是单例模式，首先`daemon`是一个静态私有变量，同时它被`volatile`关键字修饰，确保它在修改后对所有线程可见，为了进一步保证线程安全，这里还引入了`daemonLock`变量，并加了`synchronized`锁，下面是这两对象的定义及修饰：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20210927083045.png)
+
+在`main`方法的下半部分中，它需要执行`daemon`的`load`方法和`start`方法来启动容器，这里发生异常，同样会调用`handleThrowable`方法来处理异常。另外从这几行代码中，我们可以看出来，`command`其实只支持通过`args`参数传入的，需要注意的是，`command`必须是`args`的最后一个参数：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20210927084215.png)
+
+下面我们就来逐一看下与 `Bootstrap`相关的几个方法。
+
+#### init
+
+首先是`init`方法，这个方法主要有两部分操作，一部分就是关于类加载器的操作，一部分就是关于`Catalina`的操作。
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20210927085524.png)
 

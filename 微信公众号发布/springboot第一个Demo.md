@@ -1,4 +1,4 @@
-# [spring boot 第一个Demo](https://www.cnblogs.com/caoleiCoding/p/9393210.html)
+# spring boot 第一个Demo
 
 tags: [#springboot]
 

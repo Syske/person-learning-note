@@ -1,4 +1,4 @@
-# [spring零配置AOP踩坑指南](https://www.cnblogs.com/caoleiCoding/p/9245644.html)
+# spring零配置AOP踩坑指南
 
 tags: [#spring, #aop]
 

@@ -1,4 +1,4 @@
-# [Spring boot进阶-配置Controller、interceptor](https://www.cnblogs.com/caoleiCoding/p/9404236.html)
+# Spring boot进阶-配置Controller、interceptor
 
 tags: [#springboot]
 

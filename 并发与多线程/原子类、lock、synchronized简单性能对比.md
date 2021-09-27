@@ -1,4 +1,5 @@
 # 原子类、lock、synchronized简单性能对比
+tags: [#多线程]
 
 ### 前言
 

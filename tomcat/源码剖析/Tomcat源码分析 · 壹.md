@@ -29,3 +29,31 @@
 
 
 
+我们先来看下`bin`下面的启动脚本，从`startup`脚本中我们可以找到项目启动入口，这里我们以`windows`环境下的`bat`脚本为例：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210926131145.png)
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210926132445.png)
+
+可以看到`startup`脚本调用的是`catalina`脚本，而且传递的参数是`start`：
+
+首先从下面的脚本中我们可以推测出，这里最终应该会通过执行`Bootstrap`的`main`方法来启动`Tomcat`，而且由于`%1`处的参数是`start`，所以最终他会去调用`noJpda`语句块：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210926134054.png)
+
+在`noJpda`语句块中，由于我们的参数是`start`，所以他会调用`doStart`语句块：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210926132544.png)
+
+在`ddStart`操作中，设置了启动参数，最后调用`execCme`操作：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210926132628.png)
+
+在`execCmd`语句块中最终通过`java`命令行的方式，来运行`MAINCLASS`的`main`方法启动`tomcat`:
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210926134658.png)
+
+下面我们就来简单看下`Bootstrap`的 `main`方法执行过程。
+
+
+

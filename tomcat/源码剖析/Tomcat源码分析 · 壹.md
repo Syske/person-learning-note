@@ -79,7 +79,7 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210927132336.png)
 
-在获取配置资源的时候，会从三个地方获取`catalina.properties`文件，分别是系统的根目录、`conf`目录、和`/org/apache/catalina/startup/包下面，但只会解析其中一个，会按照我们这里说的顺序解析，如果中间任意一个文件不为空，则后面的文件就不会被解析得到
+在获取配置资源的时候，会从三个地方获取`catalina.properties`文件，分别是系统的根目录、`conf`目录、和`/org/apache/catalina/startup/`包下面，但只会解析其中一个，会按照我们这里说的顺序解析，如果中间任意一个文件不为空，则后面的文件就不会被解析到：
 
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210927133320.png)
 
@@ -93,4 +93,21 @@
 
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210927134254.png)
 
+这里的`gatPaths`方法就是为了解析出配置文件中的路径，然后返回：
+
 ![](https://gitee.com/sysker/picBed/raw/master/images/20210927134332.png)
+
+最后，调用`ClassLoaderFactory`的`creaeteClassLoader`方法创建了一个`URLClassLoader`的实例，入参就是出`jar`文件之外的路径：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20210927220214.png)
+
+好了，由于时间的关系，我们今天就只说`init`方法中的一部分，剩下的内容明天继续，另外今天打算搞下`tomcat`的环境，让`tomcat`能在`idea`环境下`debug`。
+
+### 总结
+
+从目前情况来看，`tomcat`的源码和`spring boot`比起来，还是比较简单的，当然这也不排除正是经历了`spring boot`源码的磨砺，才让我们现在看`tomcat`的源码如此地轻松。
+
+另外有个好消息说下，由于最近一直忘记提交内容，所以今天我专门搞了一个定时任务提交内容，这样以后每天六点定时任务会自动帮我提交内容，我再也不用担心写好的内容忘记提交了，`so easy`！
+
+好了，各位小伙伴晚安吧，我要继续搞环境了！
+

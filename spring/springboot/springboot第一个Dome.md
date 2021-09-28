@@ -1,4 +1,4 @@
-
+tags: [#spring boot, #maven]
 
 # 1、创建Maven项目
 - 按照下面的步骤

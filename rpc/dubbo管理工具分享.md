@@ -1,4 +1,5 @@
 # dubbo管理工具分享
+tags: [#rpc, #dubbo]
 
 ### 前言
 

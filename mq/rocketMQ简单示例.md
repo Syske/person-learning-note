@@ -92,7 +92,7 @@ NAMESRV_ADDR="localhost:9876"
 
 ![](https://gitee.com/sysker/picBed/raw/master/20210310230554.png)
 
-![image-20210310230651594](D:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210310230651594.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/20210928104351.png)
 
 或者在启动前的`powershell`窗口里设置，这里是临时，每次都要设置，嫌麻烦的直接设置永久的:
 

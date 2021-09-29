@@ -40,4 +40,69 @@ tags: [#Tomcat, #源码]
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20210929090116.png)
 
+配置文件获取完成后，会根据获取到的配置文件构建`FileInputStream`和`InputSource`。
+
+如果构建失败会再次通过`getConfigFile`获取配置文件，再次构建输入流和输入资源；如果这里还是构建失败，会基于`server-embed.xml`构建输入流和输入资源，如果以上操作之后还是失败，这时候会打印警告信息，然后返回：
+
+```java
+try {
+    file = configFile();
+    inputStream = new FileInputStream(file);
+    inputSource = new InputSource(file.toURI().toURL().toString());
+} catch (Exception e) {
+    if (log.isDebugEnabled()) {
+        log.debug(sm.getString("catalina.configFail", file), e);
+    }
+}
+if (inputStream == null) {
+    try {
+        inputStream = getClass().getClassLoader()
+            .getResourceAsStream(getConfigFile());
+        inputSource = new InputSource
+            (getClass().getClassLoader()
+             .getResource(getConfigFile()).toString());
+    } catch (Exception e) {
+        if (log.isDebugEnabled()) {
+            log.debug(sm.getString("catalina.configFail",
+                                   getConfigFile()), e);
+        }
+    }
+}
+
+// This should be included in catalina.jar
+// Alternative: don't bother with xml, just create it manually.
+if (inputStream == null) {
+    try {
+        inputStream = getClass().getClassLoader()
+            .getResourceAsStream("server-embed.xml");
+        inputSource = new InputSource
+            (getClass().getClassLoader()
+             .getResource("server-embed.xml").toString());
+    } catch (Exception e) {
+        if (log.isDebugEnabled()) {
+            log.debug(sm.getString("catalina.configFail",
+                                   "server-embed.xml"), e);
+        }
+    }
+}
+
+if (inputStream == null || inputSource == null) {
+    if  (file == null) {
+        log.warn(sm.getString("catalina.configFail",
+                              getConfigFile() + "] or [server-embed.xml]"));
+    } else {
+        log.warn(sm.getString("catalina.configFail",
+                              file.getAbsolutePath()));
+        if (file.exists() && !file.canRead()) {
+            log.warn("Permissions incorrect, read permission is not allowed on the file.");
+        }
+    }
+    return;
+}
+```
+
+如果输入流和输入资源都创建`ok`，则会通过前面已经创建好的`digester`实例进行资源解析：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20210929132439.png)
+
 ### 总结

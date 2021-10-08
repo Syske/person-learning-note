@@ -73,7 +73,7 @@ tags: [#截图工具, #snipaste, #安利]
 
 贴到桌面以后，可以把鼠标放在截图上，通过鼠标滚轮进行缩放，如果想销毁固定在桌面的截图，可以右键点击销毁，或者直接鼠标双击截图：
 
-![image-20210929202244873](C:\Users\syske.LAPTOP-2GRN6KQV\AppData\Roaming\Typora\typora-user-images\image-20210929202244873.png)
+![](https://gitee.com/sysker/picBed/raw/master/images/image-20210929202244873.png)
 
 这里还可以对截图进行二次标注，也可以将图像另存或者复制。
 

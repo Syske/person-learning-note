@@ -1,5 +1,7 @@
 # WSL安装配置oh-my-zsh
 
+想必每一个使用`linux`的小伙伴，都希望自己的终端看起来炫酷高端上档次，所以这个美化操作肯定是少不了的。今天我们就来看下如何来通过`oh-my-zsh`来美化我们的`linux`终端，让它更炫酷。
+
 #### 安装zsh
 
 ```
@@ -42,6 +44,21 @@ vim ~/.zshrc
 source ~/.zshrc
 ```
 
-至此打工告成！
+至此大功告成！
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20211008234414.png)
+
+如果你的终端修改之后，显示异常，可能是这样：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211010224641.png)
+
+那大概率是你的字体没有修改，这里推荐使用更纱黑体
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211010224807.png)
+
+这是一款开源字体，是可以商用的，下载地址如下：
+
+```
+https://github.com/lekoOwO/Sarasa-Cascadia
+```
+

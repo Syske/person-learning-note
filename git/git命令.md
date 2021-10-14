@@ -1,7 +1,7 @@
 tags: [#git]
 
 - 1.设置全局用户名称
- 
+
 ```
 git config --global user.name "12345"
 ```
@@ -55,7 +55,7 @@ ssh-rsa AAAAB3NzaC1yc2EAA5H9KBCjeQHU14o2snJXcvGn9OdqwSCgTBPYs+sqCvieU5Mhw3kzvjYX
 ```
 
 > 登录远程库系统 将上述公钥匙 放到共钥匙设置里面
- 
+
 - 添加  .gitignore文件，在工程上新增文件，选择java 删掉需要上传的文件。保存即可。
 
 - 4.添加远程  
@@ -119,3 +119,4 @@ git marge -h #该命令可以忽略历史枪指向拉文件到本地库
 ```
 git remote prune origin(远程库名称)
 ```
+

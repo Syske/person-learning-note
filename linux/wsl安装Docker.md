@@ -1,6 +1,8 @@
-# wsl安装Docker
+# wsl2安装Linux原生Docker
 
 
+
+其实`wsl`安装`Docker`相关内容我已经在`wsl`整合`k8s`的相关内容中分享过了，但是为了方便各位小伙伴和自己查阅，我今天又做一个一次整理汇总，形成一个专门的文档，算是对之前内容回顾和总结吧。
 
 #### wsl的那些事
 
@@ -182,3 +184,4 @@ systemctl restart docker
 systemctl start docker
 ```
 
+好了，以上就是`wsl2`安装原生`Linux Docker`的所有内容了，感兴趣的小伙伴，可以亲自动手实践下。 

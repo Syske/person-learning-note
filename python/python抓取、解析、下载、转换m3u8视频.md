@@ -1,10 +1,8 @@
-# python抓取、解析、下载、转换m3u8视频
+python抓取、解析、下载、转换m3u8视频
 
 ### 前言
 
-
-
-
+一到周末就想搞点有意思的事，比如之前分享的`arduino`开发，比如上周分享的博客爬虫，今天我又想搞点有意思的事，所以就有了今天的内容——`python`爬取`m3u8`视频资源。不过需要在这里需要着重说明的是，技术无罪，切勿用技术搞违法犯罪的事，不然日子真的就越来越有判头了。
 
 ### 知识扩展
 
@@ -19,7 +17,7 @@
 从上面的原理图中我们可以得到以下知识点：
 
 - 首先`m3u8`并非是视频格式，而是视频文件的索引。
-- `ts`文件才是我们真正播放的视频资源
+- `ts`文件才是我们真正播放的视频资源。`ts`是日本高清摄像机拍摄下进行的封装格式，全称为`MPEG2-TS`。`ts`即"`Transport Stream`"的缩写。`MPEG2-TS`格式的特点就是要求从视频流的任一片段开始都是可以独立解码的。
 
 `m3u8`通常分两种格式，一种是单码率（固定分辨率），一种是多码率（包含多种分别率）。下面就是一个单码率的`m3u8`文件的内容：
 
@@ -140,7 +138,7 @@ def getTsFileUrlList(m3u8Url):
 
 #### 下载文件
 
-下载并解密视频资源，这里我加了一个解密操作
+这里的方法是下载并解密视频资源，这里我加了一个解密操作，因为注释够清晰，所以我也不过多赘述了
 
 ```python
 def fileDownloadWithdecrypt(fileSavePath, player_list):
@@ -190,6 +188,125 @@ def decrypt(context):
 
 
 #### 合并视频
+
+合并视频就更简单了，就是讲前面我们保存的视频合并成一个完整的视频，合并完之后的格式是`mp4`。
+
+```python
+def fileMerge(filePath):
+    # 查询出文件中的ts文件
+    c = os.listdir(filePath)
+    # 打开视频保存文件
+    with open('%s.mp4' % filePath, 'wb+') as f:
+      # 循环
+      for i in range(len(c)):
+        # 打开 ts 视频文件
+        x = open('{}/{}.ts'.format(filePath, str(i + 1)), 'rb').read()
+        f.write(x)
+    print('合并完成')
+```
+
+我看了下，短短的一集葫芦娃，总共被分割成`272`个`ts`文件（好像比这个多，我没下载完就把网断了）：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20211023185049.png)
+
+`272`个`ts`文件合并成一个视频文件:
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20211023194412.png)
+
+好了，到这里我们`python`爬取`m3u8`视频资源的实例就结束了，今天的示例还算比较完美，目标也比较完美的达成了。
+
+完整代码如下：
+
+```python
+import requests
+import os
+from Crypto.Cipher import AES   # 用于AES解码
+
+headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'
+            }
+
+def getTsFileUrlList(m3u8Url):
+    ts_rs = requests.get(url = m3u8Url, headers=headers).text
+    print(ts_rs)
+    list_content = ts_rs.split('\n');
+    print('list_content:{}'.format(list_content))
+    player_list = []
+    index = 1;
+    for line in list_content:
+      # 以下拼接方式可能会根据自己的需求进行改动
+      if '#EXTINF' in line:
+        continue;
+      elif line.endswith('.ts'):
+        player_list.append(line)
+    print('数据列表组装完成-size: {}'.format(len(player_list)));
+    return player_list;    
+    
+def fileDownloadWithdecrypt(fileSavePath, player_list):
+    if not os.path.exists(fileSavePath):
+        os.mkdir(fileSavePath);
+    for index, url in enumerate(player_list):
+        ts_video = requests.get(url = url, headers=headers)
+        with open('{}/{}.ts'.format(fileSavePath, str(index + 1)), 'wb') as file:
+            context = decrypt(ts_video.content);
+            file.write(context)
+            print('正在写入第{}个文件'.format(index + 1))
+    print('下载完成');
+    
+    
+def fileMerge(filePath):
+    c = os.listdir(filePath)
+    with open('%s.mp4' % filePath, 'wb+') as f:
+      for i in range(len(c)):
+        x = open('{}/{}.ts'.format(filePath, str(i + 1)), 'rb').read()
+        f.write(x)
+    print('合并完成')
+    
+    
+def decrypt(context):
+    key =  b'2cd1da2aedacaec8';
+    cryptor = AES.new(key, AES.MODE_CBC, key);
+    decrypt_content = cryptor.decrypt(context);
+    return decrypt_content;
+    
+    
+if __name__ == '__main__':
+    m3u8Url = 'https://vod1.bdzybf1.com/20200819/wMgIH6RN/1000kb/hls/index.m3u8';
+    videoList = getTsFileUrlList(m3u8Url);
+    print(videoList)
+    savePath = "./test"
+    fileDownloadWithdecrypt(savePath, videoList);
+    fileMerge(savePath);
+```
+
+运行上面的代码，你就可以得到一集完整的葫芦娃
+
+### 总结
+
+今天的视频爬虫很简单，可以说非常简单，核心技术点也不多，主要涉及如下几点：
+
+- `request`请求
+- 字符串解析（响应结果解析）
+- 文件操作
+- `ASE`解密
+
+只需要稍微有一点`python`基础，就可以做出来，所以这里我也没什么好总结的了。
+
+最后，免费为`python`做一个无偿广告。我一直觉得`python`是一门不错的语言，特别是作为脚本使用的时候，真的是太方便了，今天它也依然没有让我失望。
+
+其实严格来说，我学`python`，但是之前一直诟病于它的缩进语法，所以也就一直没入门，直到做了一段时间`java web`开发之后，回头再看下`python`，觉得好简单，于是就又愉快地使用它了，不过用它写脚本真的太爽了，短短几行代码，搞定`java`一个繁琐的项目，而且用起来也很轻便。
+
+最近一年多的时间，我用它处理过数据、用它跑数据库统计过数据，然后日程工作中我可以用它生成文件目录、爬取资料，也感觉我对它越来越有好感，所以在这里强烈安利各位小伙伴都来学下`python`，特别是那些非开发岗位的小伙伴，`python`简直是统计数据的利器，虽然不像广告吹的那么秀，但是技多不压身呀，而且它真的是可以极大提供我们的效率。
+
+最后的最后，再强调下，**技术无罪，切勿用技术搞违法犯罪的事，不然日子真的就越来越有判头了！**
+
+**技术无罪，切勿用技术搞违法犯罪的事，不然日子真的就越来越有判头了！**
+
+**技术无罪，切勿用技术搞违法犯罪的事，不然日子真的就越来越有判头了！**
+
+重要的事情说三遍！！！
+
+另外，今天忙着搞爬虫了，设计模式的类图还没来得及补，明天要加下油了。好了，铁子们，晚安吧
 
 
 

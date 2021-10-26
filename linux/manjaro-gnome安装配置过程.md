@@ -1,5 +1,21 @@
 # manjaro安装配置指南
 
+### 前言
+
+关注我时间久一点的小伙伴应该知道，我对`linux`有着一种特殊的情怀，所以也一直特别喜欢折腾`linux`，而且在学校那会更是热衷于体验各种`linux`发行版，从那时候起我的电脑就一直是`linux + win`双系统，也一直有想法将`linux`作为自己日常系统使用，但是由于有时候还需要用到`ps`这些软件，所以也就一直是双系统。
+
+直到前段时间换了电脑之后，旧电脑（双系统，`win`装的是固态）就一直闲置，所以我一直考虑抽个时间把系统重新整下，但一直没时间（可能是懒），一切最终在上周天发生了改变，然后就在那天开始这个`manjaro`安装计划，所以就有了今天的内容。
+
+整个过程中，最花时间的也就是安装搜狗输入法了，可能我也是闲的，一般人折腾下就放弃了，我竟然折腾了一天半，我可能也比较爱折腾，反正整个过程还是挺爽的，特别是一切最终都经过自己的探索和尝试解决了，真的很有意义，也正是由于很有爽，所以关于整个过程我就特别能说，所以最终的结果就是这篇文章会特别长，但是过程也比较详细，而且感兴趣的小伙伴一定会找到自己的答案。
+
+由于时间的关系，我们本次只分享`manjaro gnome`环境下搜狗输入法的安装过程，其他软件的安装配置，我们放在下次发分享，好了，说了这么多废话，我们开始今天的正文吧！
+
+### manjaro安装搜狗输入法
+
+前面的系统安装过程我就不再赘述了，之前已经分享过了，还想回顾的小伙伴点击下面的链接回顾：
+
+
+
 系统安装完成后，第一次进来效果如下，因为我选择的是`gnome`版本的，所以和`kde`、`xface`显示会有一些差异。
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 03-26-48屏幕截图.png)
@@ -54,15 +70,7 @@ sudo pacman -S fcitx-sogoupinyin
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-24 23-31-57屏幕截图.png)
 
-不过这个问题我们可以通过`yay`包管理工具来解决这个问题。
-
-关于`yay`这个工具我们多说两句，因为之前安装搜狗输入法的时候用过，这次专门去查了下：
-
-> Yay是用Go编写的Arch Linux AUR帮助工具，它可以帮助你以自动方式从PKGBUILD安装软件包， yay有一个AUR Tab完成，具有高级依赖性解决方案，它基于yaourt、apacman和pacaur，同时能实现几乎没有依赖、为pacman提供界面、有像搜索一样的yaourt、最大限度地减少用户输入、知道git包何时升级等功能。
-
-另外关于这里提到的`AUR`也有一些说明资料：
-
-> AUR是Arch Linux/Manjaro用户的社区驱动存储库，创建AUR的目的是使共享社区包的过程更容易和有条理，它包含包描述（PKGBUILDs），允许使用makepkg从源代码编译包，然后通过pacman安装它。
+不过这个问题我们可以通过`yay`包管理工具来解决这个问题，关于`yay`我们后面还会讲到它的安装。
 
 我们先要增加下`arch-linux`的软件源，对`linux`发行版本有了解的小伙伴应该知道，`manjaro`是基于`arch-linux`发行的，所以`arch-linux`支持的软件，`manjaro`也就可以安装，因此我们添加了`arch-linux`之后，就可以在`manjaro`上享受`arch-linux`的生态，岂不是美滋滋！
 
@@ -96,13 +104,21 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 
 ##### 更新软件源、添加key
 
+这里主要是强制更新系统，同时还要安装`archlinuxcn-keyring`
+
 ```
 sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
 ```
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-24 23-37-15屏幕截图.png)
 
-如果这里安装`key`报错的话，可以用下面这种方式解决
+我当时在安装签名的时候就报错了，当时忘记截图了，错误提示类似下面：
+
+```sh
+error: php53: signature from "lilac (build machine) <lilac@build.archlinuxcn.org>" is unknown trust
+```
+
+如果你也是这样的报错的话，可以用下面这种方式解决：
 
 ```
 sudo pacman -Syu haveged
@@ -115,85 +131,116 @@ sudo pacman-key --populate archlinux
 sudo pacman-key --populate archlinuxcn
 ```
 
-```
-sudo pacman -S fcitx fcitx-im fcitx-configtool
-```
+这个是我搜的解决方法，也是`Arch`给出的解决方案：
 
+![](https://gitee.com/sysker/picBed/raw/master/manjaro/20211027055611.png)
 
-```
-sudo pacman -S yaourt
-```
+地址如下：
 
 ```
+https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/
+```
+
+##### 继续安装依赖
+
+完成`Arch`的相关配置之后，我们还要安装一些依赖，这里的`fcitx-im`是小企鹅输入法的核心组件（`im`应该就是`input method`的简写）
+
+```sh
+sudo pacman -S  fcitx-im
+```
+
+`base`包是基础系统，基本上装`arch`这个包组都要装的，而`base-devel`里的是一些常用的开发工具，编译安装某些软件，就会用到其中的一些编译工具，比如`automake`， `cmake`之类的：
+
+```sh
 sudo pacman -Sy base-devel
 ```
 
 ##### 安装yay工具
 
+关于`yay`这个工具我们多说两句，因为之前安装搜狗输入法的时候用过，这次专门去查了下：
+
+> Yay是用Go编写的Arch Linux AUR帮助工具，它可以帮助你以自动方式从PKGBUILD安装软件包， yay有一个AUR Tab完成，具有高级依赖性解决方案，它基于yaourt、apacman和pacaur，同时能实现几乎没有依赖、为pacman提供界面、有像搜索一样的yaourt、最大限度地减少用户输入、知道git包何时升级等功能。
+
+另外关于这里提到的`AUR`也有一些说明资料：
+
+> AUR是Arch Linux/Manjaro用户的社区驱动存储库，创建AUR的目的是使共享社区包的过程更容易和有条理，它包含包描述（PKGBUILDs），允许使用makepkg从源代码编译包，然后通过pacman安装它。
+
+安装命令如下：
+
 ```
 sudo pacman -Sy yay
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 09-55-27屏幕截图.png)
+ 这里如果在安装过程中报如下错误的话：![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 09-55-27屏幕截图.png)
+
+可以将`/etc/pacman.conf`中的`community`的`SigLevel`改成`Optional TurstAll`
+
+![](https://gitee.com/sysker/picBed/raw/master/manjaro/20211027064006.png)
+
+然后再次执行安装命令就可以安装成功：
+
+![](https://gitee.com/sysker/picBed/raw/master/manjaro/20211027064413.png)
 
 ##### 安装搜狗拼音
+
+安装完`yay`工具之后，我们就可以愉快地安装搜狗输入法了，安装命令如下
 
 ```
 yay -S fcitx-sogoupinyin 
 ```
 
+这里如果安装还是报错，好好检查下`pacman.conf`文件中软件源的配置项是否正常：
+
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 09-56-29屏幕截图.png)
+
+前天晚上，我为了装好搜狗拼音，一直熬到凌晨，最后的解决方法很粗暴，直接将所有软件源的`SigLevel`改成`Optional TrustAll`：
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-26 17-05-05 的屏幕截图.png)
 
+然后搜狗拼音就完美安装成功了：
+
+![](https://gitee.com/sysker/picBed/raw/master/manjaro/image-20211027064851922.png)
+
+可以看到安装日志中有词库的解压操作：
+
+![](https://gitee.com/sysker/picBed/raw/master/manjaro/20211027065231.png)
+
 ##### 添加启动配置
+
+这里也是个大坑，我那天安装完后，死活无法启动，最后发现是配置文件搞错了，一个是配置文件名称搞错了，我之前创建的配置文件是` ~/.xprofile`，但是这个文件对`gnome manjaro`无效；另一个是我用`sudo`权限创建的文件，所以最终搜狗都没启动起来。最终我想明白了后一个问题，同时找到了另外一种配置方法，也就是创建这里的`~/.pam_environment`文件：
 
 ```sh
 nano ~/.pam_environment  
 ```
 
-增加如下内容：
+然后在其中增加如下内容：
 
-```
+```sh
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 ```
 
-然后重启电脑，然后就可以看到搜狗输入法了，除了不能安装好看的皮肤，其他的都还好，还挺稳定的。
+最后重启电脑，再然后就可以看到搜狗输入法了，除了不能安装好看的皮肤，其他的都还好，还挺稳定的。今天这篇内容，我就是在`manjaro`环境下，用搜狗拼音敲出来的。
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-26 16-57-39 的屏幕截图.png)
 
 
 
-#### 安装nodeJs
 
-这里安装`nodeJs`是为了后面安装`picGo`的`gitee`插件，没有`nodeJs`插件是装不上的。
 
-首先，官网下载对应系统的`tar`压缩文件，下载完成后解压
+### 结语
 
-```sh
-tar -vxf node-v14.18.1-linux-x64.tar.xz  
-```
-
-移动到目标路径，这里我直接放在了`opt`文件夹下：
-
-```sh
-sudo mv node-v14.18.1-linux-x64 /opt 
-```
-
-##### 建立链接
-
-这里其实就是讲`npm`和`node`映射到`usr/local/bin`目录下，这样我们就可以在任意路径下执行`nmp`和`node`命令了，类似于配置环境变量。
+关于最新版本的`gnome`镜像，国内镜像站都没有，官方地址我这边连不上，最后我是在`sourceforge`找到的，下载速度还可以：
 
 ```
-sudo ln -s /opt/node-v14.18.1-linux-x64/bin/npm /usr/local/bin/ 
-sudo ln -s /opt/node-v14.18.1-linux-x64/bin/node /usr/local/bin/
+https://sourceforge.net/projects/manjarolinux/files/gnome/
 ```
 
-##### 修改更新源
+关于`manjaro`的镜像我下载了两次，第一次下载的`kde`版本，因为国内不好找`gnome`的资源，但是安装完之后，感觉还是`gnome`好用，可能我和最开始用的`ubuntu`有关系，所以一直觉得`gnome`挺好用的，然后又全网找`gnome`版本，最后又重新安装了一次。
 
-```sh
-npm config set registry https://registry.npm.taobao.org
-```
+而且在我重装`manjaro`我就用的`gnome`版本的，要不是我想把`manjaro`安装在固态硬盘上，我是不打算重新安装的，毕竟之前也配置了好久，而且我感觉最近更新完`gnome`，`manjaro`整体都流畅了好多。
 
+另外需要补充说明的是，我当期的`manjaro`是基于`gnome`的，它的版本是`21.1.6`：
+
+![](https://gitee.com/sysker/picBed/raw/master/manjaro/20211027070132.png)

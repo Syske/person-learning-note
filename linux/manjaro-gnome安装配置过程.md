@@ -111,6 +111,8 @@ yay -S fcitx-sogoupinyin
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 09-56-29屏幕截图.png)
 
+![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-26 17-05-05 的屏幕截图.png)
+
 ##### 添加启动配置
 
 ```sh

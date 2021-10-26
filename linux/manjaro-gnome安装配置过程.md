@@ -34,7 +34,10 @@ sudo pacman -Syyu
 
 ##### 安装基本依赖
 
+`fcitx`是小企鹅输入法的依赖。小企鹅输入法是一个以 `GPL `方式发布的输入法平台,可以通过安装引擎支持多种输入法，支持简入繁出，是在 `Linux` 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。关于小企鹅输入法的更多资料，各位小伙伴可以自行检索。
+
 ```sh
+# fcitx
 sudo pacman -S fcitx
 sudo pacman -S fcitx-configtool
 sudo pacman -S fcitx-gtk2 fcitx-gtk3
@@ -47,19 +50,49 @@ sudo pacman -S fcitx-qt5
 sudo pacman -S fcitx-sogoupinyin
 ```
 
-但我这里是不行的，真后悔上次安装的时候没有形成文档，那会我安装的还可以安装官方皮肤，不知道是不是版本的问题。
+但我这里是不行的，直接安装的话，会提示无法找到软件包（真后悔上次安装的时候没有形成文档，那会我安装的还可以安装官方皮肤，不知道是不是版本的问题）：
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-24 23-31-57屏幕截图.png)
 
-这时候我们先要增加下`arch-linux`的软件源，如果对`linux`发行版本有了解的小伙伴应该知道，`manjaro`是基于`arch-linux`发行的，所以`arch-linux`支持的软件，对`manjaro`也是支持的，因此我们添加了`arch-linux`之后，就可以在`manjaro`上享受`arch-linux`的生态，岂不是美滋滋！
+不过这个问题我们可以通过`yay`包管理工具来解决这个问题。
+
+关于`yay`这个工具我们多说两句，因为之前安装搜狗输入法的时候用过，这次专门去查了下：
+
+> Yay是用Go编写的Arch Linux AUR帮助工具，它可以帮助你以自动方式从PKGBUILD安装软件包， yay有一个AUR Tab完成，具有高级依赖性解决方案，它基于yaourt、apacman和pacaur，同时能实现几乎没有依赖、为pacman提供界面、有像搜索一样的yaourt、最大限度地减少用户输入、知道git包何时升级等功能。
+
+另外关于这里提到的`AUR`也有一些说明资料：
+
+> AUR是Arch Linux/Manjaro用户的社区驱动存储库，创建AUR的目的是使共享社区包的过程更容易和有条理，它包含包描述（PKGBUILDs），允许使用makepkg从源代码编译包，然后通过pacman安装它。
+
+我们先要增加下`arch-linux`的软件源，对`linux`发行版本有了解的小伙伴应该知道，`manjaro`是基于`arch-linux`发行的，所以`arch-linux`支持的软件，`manjaro`也就可以安装，因此我们添加了`arch-linux`之后，就可以在`manjaro`上享受`arch-linux`的生态，岂不是美滋滋！
 
 ##### 修改软件源权限
 
+这里要修改下`pacman`的软件包配置：
+
+```sh
+sudo nano /etc/pacman.conf
 ```
+
+这里的`nano`是一个轻量级的文本编辑器，在很多`linux`发行版中都会附带，树莓派官方`linux`中就有这个编辑器，所以我对这个工具比较熟悉。这个工具操作也很简单，直接编辑内容即可，`Ctrl + O`是写入操作，也就是保存，`Ctrl + X`是关闭。
+
+然后在其中增加如下软件包配置：
+
+```properties
 [archlinuxcn]
 SigLevel = Optional TrustedOnly
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
+
+这里的`SigLevel`设置的是软件源的前面等级，取值范围如下：
+
+- `TrustedOnly`：如果检查了签名，则该签名必须位于密钥环中并且完全受信任； 边际信任不符合此条件；
+- `TrustAll`：如果检查了签名，则签名必须在密钥环中，但不需要分配信任级别（例如，未知或边际信任）
+- `Never`：表示不进行签名检查
+- `Optional`：表示将检查签名（如果存在），但也将接受未签名的数据库和软件包。
+- `Required`：则所有软件包和数据库都需要签名。
+
+默认为`Optional TrustedOnly` 
 
 ##### 更新软件源、添加key
 
@@ -134,6 +167,8 @@ XMODIFIERS=@im=fcitx
 
 
 #### 安装nodeJs
+
+这里安装`nodeJs`是为了后面安装`picGo`的`gitee`插件，没有`nodeJs`插件是装不上的。
 
 首先，官网下载对应系统的`tar`压缩文件，下载完成后解压
 

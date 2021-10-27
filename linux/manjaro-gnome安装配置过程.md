@@ -14,7 +14,7 @@
 
 前面的系统安装过程我就不再赘述了，之前已经分享过了，还想回顾的小伙伴点击下面的链接回顾：
 
-
+http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421482&idx=1&sn=538ca03374779e41bb83f74a52696409&chksm=bea6dae089d153f6f90b37de5db7d968a5f4438aac8dd33dba06d1f25bf9b1a0edf38eac86e6#rd
 
 系统安装完成后，第一次进来效果如下，因为我选择的是`gnome`版本的，所以和`kde`、`xface`显示会有一些差异。
 

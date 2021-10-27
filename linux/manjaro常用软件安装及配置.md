@@ -17,10 +17,77 @@ http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421467&idx=1&sn=9d37abe
 首先去这款软件的`github`首页下载安装包：
 
 ```
- https://github.com/Molunerfinn/PicGo
+https://github.com/Molunerfinn/PicGo/releases
 ```
 
 这里我们下载`AppImage`格式的安装文件，因为这个版本的可以直接在`manjaro`环境下运行：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20211027131953.png)
+
+下载完成后，将下载文件移动到目标文件夹下，然后授予软件运行权限就行了：
+
+```
+sudo chmod u+x ./PicGo-2.3.AppImage
+```
+
+然后直接执行`./PicGo-2.3.AppImage`即可运行`picGo`：
+
+
+
+如果你需要开启启动，通过增加开机自动启动脚本来执行如上命令即可：
+
+1. 创建一个启动`service`脚本
+
+   ```sh
+   sudo vim /etc/systemd/system/rc-local.service
+   ```
+
+   向文件中添加如下内容：
+
+2. 创建` /etc/rc.local` 文件
+
+   ```sh
+   sudo vim /etc/rc.local
+   ```
+
+   然后添加如下内容
+
+   ```sh
+   #!/bin/sh
+   # /etc/rc.local
+   if test -d /etc/rc.local.d; then
+       for rcscript in /etc/rc.local.d/*.sh; do
+           test -r "${rcscript}" && sh ${rcscript}
+       done
+       unset rcscript
+   fi
+   ```
+
+   
+
+3. 添加执行权限
+
+   ```sh
+   chmod a+x /etc/rc.local
+   ```
+
+   
+
+4. 添加`/etc/rc.local.d`文件夹
+
+   ```sh
+   mkdir /etc/rc.local.d
+   ```
+
+   
+
+5. 设置开机自启
+
+   ```sh
+   systemctl enable rc-local.service
+   ```
+
+   
 
 
 

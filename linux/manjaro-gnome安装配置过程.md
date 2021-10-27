@@ -18,11 +18,11 @@
 
 系统安装完成后，第一次进来效果如下，因为我选择的是`gnome`版本的，所以和`kde`、`xface`显示会有一些差异。
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 03-26-48屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233626.png)
 
-然后打开终端
+然后打开终端，这里可以看到终端应该已经安装了`oh-my-zsh`，后面我们有时间了看下具体如何优化：
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-24 23-19-15屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233531.png)
 
 ### 基本配置
 
@@ -35,7 +35,7 @@ sudo pacman-mirrors -i -c China -m rank
 ```sh
 sudo pacman-mirrors -g
 ```
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-24 23-17-43屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233734.png)
 
 #### 更新软件库
 
@@ -68,7 +68,7 @@ sudo pacman -S fcitx-sogoupinyin
 
 但我这里是不行的，直接安装的话，会提示无法找到软件包（真后悔上次安装的时候没有形成文档，那会我安装的还可以安装官方皮肤，不知道是不是版本的问题）：
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-24 23-31-57屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233748.png)
 
 不过这个问题我们可以通过`yay`包管理工具来解决这个问题，关于`yay`我们后面还会讲到它的安装。
 
@@ -110,7 +110,7 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-24 23-37-15屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233803.png)
 
 我当时在安装签名的时候就报错了，当时忘记截图了，错误提示类似下面：
 
@@ -171,7 +171,9 @@ sudo pacman -Sy base-devel
 sudo pacman -Sy yay
 ```
 
- 这里如果在安装过程中报如下错误的话：![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 09-55-27屏幕截图.png)
+ 这里如果在安装过程中报如下错误的话：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233844.png)
 
 可以将`/etc/pacman.conf`中的`community`的`SigLevel`改成`Optional TurstAll`
 
@@ -191,11 +193,11 @@ yay -S fcitx-sogoupinyin
 
 这里如果安装还是报错，好好检查下`pacman.conf`文件中软件源的配置项是否正常：
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-25 09-56-29屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233904.png)
 
 前天晚上，我为了装好搜狗拼音，一直熬到凌晨，最后的解决方法很粗暴，直接将所有软件源的`SigLevel`改成`Optional TrustAll`：
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-26 17-05-05 的屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233919.png)
 
 然后搜狗拼音就完美安装成功了：
 
@@ -223,7 +225,7 @@ XMODIFIERS=@im=fcitx
 
 最后重启电脑，再然后就可以看到搜狗输入法了，除了不能安装好看的皮肤，其他的都还好，还挺稳定的。今天这篇内容，我就是在`manjaro`环境下，用搜狗拼音敲出来的。
 
-![](https://gitee.com/sysker/picBed/raw/master/manjaro/2021-10-26 16-57-39 的屏幕截图.png)
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233936.png)
 
 
 

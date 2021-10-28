@@ -1,5 +1,5 @@
 # deepin 系的软件
-```
+```sh
 pacman -S deepin-picker # 深度取色器
 pacman -S deepin-screen-recorder # 录屏软件，可以录制 Gif 或者 MP4 格式
 pacman -S deepin-screenshot # 深度截图
@@ -16,18 +16,22 @@ yay -S deepin.com.thunderspeed #迅雷
 yay -S peek
 
 # 开发软件
-```
+```sh
 pacman -S jdk8-openjdk
-pacman -S span class="token function">make
+pacman -S make
 pacman -S cmake
 pacman -S clang
 pacman -S nodejs
-pacman -S span class="token function">npm
+pacman -S npm
 pacman -S goland
 pacman -S vim
 pacman -S maven
-pacman -S pycharm-professional # Python IDE
-pacman -S intellij-idea-ultimate-edition # JAVA IDE
+
+# Python IDE
+pacman -S pycharm-professional 
+
+# JAVA IDE
+pacman -S intellij-idea-ultimate-edition 
 pacman -S goland # Go IDE
 pacman -S visual-studio-code-bin # vscode
 pacman -S qtcreator # 一款QT开发软件
@@ -42,7 +46,7 @@ pacman -S gitkraken # Git 管理工具
 
 
 # 办公软件
-```
+```sh
 pacman -S google-chrome
 pacman -S foxitreader # pdf 阅读
 pacman -S bookworm # 电子书阅读

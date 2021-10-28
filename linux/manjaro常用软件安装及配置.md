@@ -2,13 +2,15 @@
 
 ### 前言
 
-
+昨天我们主要分享了`manjaro gnome`环境下搜狗输入法的安装过程，但是真正想把`manjaro`打造成生产工具，只有输入法还是不够的，所以我们今天来看下如何在`manjaro gnome`环境下安装微信、网易云、`picGo`图床工具、`typora`编辑器以及截图工具等软件。
 
 ### 常用软件
 
 #### 安装picGo
 
 经常写博客的小伙伴应该都知道图床，我们这里安装的`picGo`就是一个图床工具，而且我们之前也分享过关于利用 `picGo`搭建基于`gitee`和`github`搭建个人图床，感兴趣的小伙伴可以去看下：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/face-img-a5baeb44acd2480e94278a7580c979f6.jpg)
 
 http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421467&idx=1&sn=9d37abe76ed2f61ab1df1a9a0507e07f&chksm=bea6dad189d153c733901ce3669411a6ae06e9327cd62f6d1824a936118a80d67efa0b818b13#rd
 
@@ -228,6 +230,8 @@ sudo pacman -S netease-cloud-music
 
 `Typora`是一款特别好用的`markdown`编辑器，我现在基本上所有的博客都是通过它完成的，关于它的用法我之前有分享过它的内容，感兴趣的小伙伴可以去看看：
 
+![](https://gitee.com/sysker/picBed/raw/master/blog/face-img-f6e5d3b18e2147fea7f296a0cf72c55f.jpg)
+
 http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421449&idx=1&sn=e7efa7a9012579fda56b852f823572ec&chksm=bea6dac389d153d5c1d10f96a06183cc0982510dfaae825e9060032ff587a992e34bc3a854b8#rd
 
 这款工具安装工程也很简单，通过如下命令安装即可：
@@ -284,11 +288,17 @@ flameshot gui
 
 还有一些其他的软件在`manjaro`也是支持的，这里我们放出安装命令，各位小伙伴可以根据自己需要安装：
 
-```
+```sh
 # wps office，与Windows相比，linux下的要清爽的多，没有烦人的广告
 pacman -S wps-office
 # post man，做后端开发的小伙伴比较熟悉
 pacman -S postman-bin
+# 深度的百度云盘
+yay -S deepin-wine-baidupan
+#迅雷
+yay -S deepin.com.thunderspeed 
+#思维导图
+yay -S xmind 
 ```
 
 
@@ -296,4 +306,4 @@ pacman -S postman-bin
 
 ### 结语
 
-到这里我们`manjaro`安装日常常用软件基本就算结束了，以上软件基本上就满足了我们的大部分工作场景。
+到这里我们`manjaro`安装日常常用软件基本就算结束了，以上软件基本上就满足了我们的大部分工作场景，感兴趣的小伙伴亲自动手整起来吧。好了，各位小伙伴晚安吧！

@@ -206,7 +206,17 @@ yay google-chrome
 
 ![](https://gitee.com/sysker/picBed/raw/master/manjaro/20211027223113.png)
 
+如果安装过程中报如下错误：
 
+![](https://gitee.com/sysker/picBed/raw/master/images/20211028130249.png)
+
+请先确认`base-devel`是否安装，如果没有安装，先通过如下命令进行安装：
+
+```sh
+sudo pacman -S base_devel
+```
+
+然后在重新安装
 
 #### 安装网易云
 

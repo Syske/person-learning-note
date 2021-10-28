@@ -24,9 +24,9 @@ http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421482&idx=1&sn=538ca03
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233531.png)
 
-### 基本配置
+#### 基本配置
 
-#### 选择国内镜像
+##### 选择国内镜像
 
 ```sh
 sudo pacman-mirrors -i -c China -m rank
@@ -37,13 +37,14 @@ sudo pacman-mirrors -g
 ```
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20211026233734.png)
 
-#### 更新软件库
+##### 更新软件库
 
 ```sh
 sudo pacman -Syyu
 ```
 
-### 安装常用软件
+
+
 #### 搜狗输入法
 
 搜狗输入法安装过程简直不要太坑，昨天折腾到凌晨，最后搜狗输入法是安装上了，但是愣是没法启动使用，然后今天又查了一些资料，最终才搞定。

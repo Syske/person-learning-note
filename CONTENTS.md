@@ -30,7 +30,7 @@
 ### elasticsearch
 - [elasticsearch专用术语及基本用法](./elasticsearch/elasticsearch专用术语及基本用法.md)：elasticsearch专用术语及基本用法
 - [elasticsearch搜索的那些事](./elasticsearch/elasticsearch搜索的那些事.md)：elasticsearch搜索的那些事
-- [elasticsearch搜索语法梳理 · 贰](./elasticsearch/elasticsearch搜索语法梳理 · 贰.md)：elasticsearch搜索语法梳理 · 贰
+- [elasticsearch搜索语法梳理-贰](./elasticsearch/elasticsearch搜索语法梳理-贰.md)：elasticsearch搜索语法梳理-贰
 - [elasticsearch搜索语法梳理](./elasticsearch/elasticsearch搜索语法梳理.md)：elasticsearch搜索语法梳理
 - [开始步入Elasticsearch的世界：初探elasticsearch](./elasticsearch/开始步入Elasticsearch的世界：初探elasticsearch.md)：开始步入Elasticsearch的世界：初探elasticsearch
 ### git

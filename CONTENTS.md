@@ -1,5 +1,7 @@
 # 笔记目录
-- [README](./README.md)：README
+### arduino
+- [8266搭建微型服务器](./arduino/8266搭建微型服务器.md)：8266搭建微型服务器
+- [开始入坑硬件开发……Arduino点亮oled小屏](./arduino/开始入坑硬件开发……Arduino点亮oled小屏.md)：开始入坑硬件开发……Arduino点亮oled小屏
 - [CONTENTS](./CONTENTS.md)：CONTENTS
 ### db
 - [Cassandra数据库常用操作](./db/Cassandra数据库常用操作.md)：Cassandra数据库常用操作
@@ -25,11 +27,18 @@
 ### druid
 - [Druid介绍及配置](./druid/Druid介绍及配置.md)：Druid介绍及配置
 - [druid数据库明文密码加密](./druid/druid数据库明文密码加密.md)：druid数据库明文密码加密
+### elasticsearch
+- [elasticsearch专用术语及基本用法](./elasticsearch/elasticsearch专用术语及基本用法.md)：elasticsearch专用术语及基本用法
+- [elasticsearch搜索的那些事](./elasticsearch/elasticsearch搜索的那些事.md)：elasticsearch搜索的那些事
+- [elasticsearch搜索语法梳理 · 贰](./elasticsearch/elasticsearch搜索语法梳理 · 贰.md)：elasticsearch搜索语法梳理 · 贰
+- [elasticsearch搜索语法梳理](./elasticsearch/elasticsearch搜索语法梳理.md)：elasticsearch搜索语法梳理
+- [开始步入Elasticsearch的世界：初探elasticsearch](./elasticsearch/开始步入Elasticsearch的世界：初探elasticsearch.md)：开始步入Elasticsearch的世界：初探elasticsearch
 ### git
 - [git优化美化](./git/git优化美化.md)：git优化美化
 - [git命令](./git/git命令.md)：git命令
 - [git常用操作](./git/git常用操作.md)：git常用操作
 - [git笔记](./git/git笔记.md)：git笔记
+- [Git高级操作](./git/Git高级操作.md)：Git高级操作
 ### go学习笔记
 - [基本语法](./go学习笔记/基本语法.md)：基本语法
 - [循环语句](./go学习笔记/循环语句.md)：循环语句
@@ -60,11 +69,13 @@
 - [java多线程](./java/java多线程.md)：java多线程
 - [java知识架构](./java/java知识架构.md)：java知识架构
 - [Java资源大全中文版](./java/Java资源大全中文版.md)：Java资源大全中文版
+- [java进阶方向梳理](./java/java进阶方向梳理.md)：java进阶方向梳理
 #### JVM
 - [java内存及数据区](./java/JVM/java内存及数据区.md)：java内存及数据区
 - [java类加载器](./java/JVM/java类加载器.md)：java类加载器
 - [jvm中垃圾回收机制](./java/JVM/jvm中垃圾回收机制.md)：jvm中垃圾回收机制
 - [jvm基本内存模型](./java/JVM/jvm基本内存模型.md)：jvm基本内存模型
+- [lambda表达式知识点补充](./java/lambda表达式知识点补充.md)：lambda表达式知识点补充
 - [xstream踩坑指南](./java/xstream踩坑指南.md)：xstream踩坑指南
 - [初探NIO](./java/初探NIO.md)：初探NIO
 #### 多线程
@@ -87,8 +98,16 @@
 - [Linux环境下jdk、tomcat、redis安装及配置](./linux/Linux环境下jdk、tomcat、redis安装及配置.md)：Linux环境下jdk、tomcat、redis安装及配置
 - [Linux环境下mysql安装并配置远程访问](./linux/Linux环境下mysql安装并配置远程访问.md)：Linux环境下mysql安装并配置远程访问
 - [linux环境日志分析](./linux/linux环境日志分析.md)：linux环境日志分析
+- [manjaro-gnome安装配置过程](./linux/manjaro-gnome安装配置过程.md)：manjaro-gnome安装配置过程
+- [manjaro常用软件安装及配置](./linux/manjaro常用软件安装及配置.md)：manjaro常用软件安装及配置
+- [manjaro常用软件安装命令](./linux/manjaro常用软件安装命令.md)：manjaro常用软件安装命令
 - [pacman常用命令](./linux/pacman常用命令.md)：pacman常用命令
+- [ubuntu常用操作](./linux/ubuntu常用操作.md)：ubuntu常用操作
+- [win10开启wsl系统，让我们愉快的使用Linux](./linux/win10开启wsl系统，让我们愉快的使用Linux.md)：win10开启wsl系统，让我们愉快的使用Linux
+- [wsl安装Docker](./linux/wsl安装Docker.md)：wsl安装Docker
 - [wsl安装jdk](./linux/wsl安装jdk.md)：wsl安装jdk
+- [wsl安装其他盘解决方案](./linux/wsl安装其他盘解决方案.md)：wsl安装其他盘解决方案
+- [WSL安装配置oh-my-zsh](./linux/WSL安装配置oh-my-zsh.md)：WSL安装配置oh-my-zsh
 - [回顾下Linux相关知识，为k8s预热……](./linux/回顾下Linux相关知识，为k8s预热…….md)：回顾下Linux相关知识，为k8s预热……
 - [解决linux环境下问题](./linux/解决linux环境下问题.md)：解决linux环境下问题
 - [还不会安装Linux？](./linux/还不会安装Linux？.md)：还不会安装Linux？
@@ -125,11 +144,13 @@
 - [pdf文件预览解决方案](./other/pdf文件预览解决方案.md)：pdf文件预览解决方案
 - [picGo搭建markdown图床](./other/picGo搭建markdown图床.md)：picGo搭建markdown图床
 - [RPC和http的区别](./other/RPC和http的区别.md)：RPC和http的区别
-- [win10开启wsl系统，让我们愉快的使用Linux](./other/win10开启wsl系统，让我们愉快的使用Linux.md)：win10开启wsl系统，让我们愉快的使用Linux
+- [今天不谈技术，分享一些生活日常的修，修， 修……](./other/今天不谈技术，分享一些生活日常的修，修， 修…….md)：今天不谈技术，分享一些生活日常的修，修， 修……
 - [初探企业级应用开发新技术](./other/初探企业级应用开发新技术.md)：初探企业级应用开发新技术
 - [在线签名前后端业务实现](./other/在线签名前后端业务实现.md)：在线签名前后端业务实现
 - [基于FileBrowser搭建轻量级文件服务器](./other/基于FileBrowser搭建轻量级文件服务器.md)：基于FileBrowser搭建轻量级文件服务器
 - [基于weui的cityPicker](./other/基于weui的cityPicker.md)：基于weui的cityPicker
+- [安利一款markdown编辑利器——Typora](./other/安利一款markdown编辑利器——Typora.md)：安利一款markdown编辑利器——Typora
+- [安利一款超强截图工具——snipaste](./other/安利一款超强截图工具——snipaste.md)：安利一款超强截图工具——snipaste
 - [并发测试工具jmeter了解下？](./other/并发测试工具jmeter了解下？.md)：并发测试工具jmeter了解下？
 - [开源协议简介](./other/开源协议简介.md)：开源协议简介
 - [快来康康你是哪一种？](./other/快来康康你是哪一种？.md)：快来康康你是哪一种？
@@ -145,16 +166,28 @@
 ### python
 - [python其他技巧](./python/python其他技巧.md)：python其他技巧
 - [python学习笔记](./python/python学习笔记.md)：python学习笔记
+- [python抓取、解析、下载、转换m3u8视频](./python/python抓取、解析、下载、转换m3u8视频.md)：python抓取、解析、下载、转换m3u8视频
 - [Python操作mysql数据库](./python/Python操作mysql数据库.md)：Python操作mysql数据库
 - [python操作oracle数据库](./python/python操作oracle数据库.md)：python操作oracle数据库
+- [python爬取个人博客园博客列表](./python/python爬取个人博客园博客列表.md)：python爬取个人博客园博客列表
 - [python通过openpyxl操作excel](./python/python通过openpyxl操作excel.md)：python通过openpyxl操作excel
 - [初探pythonGUI——pyqt](./python/初探pythonGUI——pyqt.md)：初探pythonGUI——pyqt
+- [README](./README.md)：README
 ### redis
-- [redis](./redis/redis.md)：redis
+- [Redis常用命令](./redis/Redis常用命令.md)：Redis常用命令
 - [Redis数据类型](./redis/Redis数据类型.md)：Redis数据类型
 - [Redis数据结构](./redis/Redis数据结构.md)：Redis数据结构
 - [Redis详解](./redis/Redis详解.md)：Redis详解
+- [redis配置](./redis/redis配置.md)：redis配置
 - [Windows下搭建Redis集群](./redis/Windows下搭建Redis集群.md)：Windows下搭建Redis集群
+### rpc
+- [dubbo事件通知机制简介](./rpc/dubbo事件通知机制简介.md)：dubbo事件通知机制简介
+- [dubbo其他知识点分享](./rpc/dubbo其他知识点分享.md)：dubbo其他知识点分享
+- [Dubbo回顾总结](./rpc/Dubbo回顾总结.md)：Dubbo回顾总结
+- [dubbo的负载均衡以及配置方式补充](./rpc/dubbo的负载均衡以及配置方式补充.md)：dubbo的负载均衡以及配置方式补充
+- [dubbo管理工具分享](./rpc/dubbo管理工具分享.md)：dubbo管理工具分享
+- [RPC框架之dubbo简单入门](./rpc/RPC框架之dubbo简单入门.md)：RPC框架之dubbo简单入门
+- [spring-boot整合dubbo配置相关知识点补充](./rpc/spring-boot整合dubbo配置相关知识点补充.md)：spring-boot整合dubbo配置相关知识点补充
 ### servlet&JSP
 - [JSP九大内置对象](./servlet&JSP/JSP九大内置对象.md)：JSP九大内置对象
 - [jsp动作指令](./servlet&JSP/jsp动作指令.md)：jsp动作指令
@@ -167,6 +200,7 @@
 - [自定义标签——带标签体](./servlet&JSP/自定义标签——带标签体.md)：自定义标签——带标签体
 - [自定义标签——第一个自定义标签](./servlet&JSP/自定义标签——第一个自定义标签.md)：自定义标签——第一个自定义标签
 ### share
+- [Google限速神器——RateLimiter分享](./share/Google限速神器——RateLimiter分享.md)：Google限速神器——RateLimiter分享
 - [安利一个java开发利器——guava](./share/安利一个java开发利器——guava.md)：安利一个java开发利器——guava
 ### skywalking
 - [skywalking入门](./skywalking/skywalking入门.md)：skywalking入门
@@ -177,6 +211,7 @@
 ### spring
 - [AOP切点相关](./spring/AOP切点相关.md)：AOP切点相关
 - [AOP常用注解](./spring/AOP常用注解.md)：AOP常用注解
+#### jpa
 - [spring5.0api-WebOnServletStack](./spring/spring5.0api-WebOnServletStack.md)：spring5.0api-WebOnServletStack
 #### springboot
 - [spring-boot-security组件总结补充](./spring/springboot/spring-boot-security组件总结补充.md)：spring-boot-security组件总结补充
@@ -201,12 +236,41 @@
 - [springboot自定义注解及应用](./spring/springboot/springboot自定义注解及应用.md)：springboot自定义注解及应用
 - [Springboot进阶-配置Controller、interceptor...](./spring/springboot/Springboot进阶-配置Controller、interceptor....md)：Springboot进阶-配置Controller、interceptor...
 - [springboot项目通过策略模式减少if-else](./spring/springboot/springboot项目通过策略模式减少if-else.md)：springboot项目通过策略模式减少if-else
+##### 容器组件
+- [spring-boot自定义容器初始化组件](./spring/springboot/容器组件/spring-boot自定义容器初始化组件.md)：spring-boot自定义容器初始化组件
+- [spring-boot转换服务ConversionService二次剖析](./spring/springboot/容器组件/spring-boot转换服务ConversionService二次剖析.md)：spring-boot转换服务ConversionService二次剖析
+- [spring-boot转换服务组件剖析](./spring/springboot/容器组件/spring-boot转换服务组件剖析.md)：spring-boot转换服务组件剖析
+##### 源码分析
+- [spring-boot启动过程中的实例化方式](./spring/springboot/源码分析/spring-boot启动过程中的实例化方式.md)：spring-boot启动过程中的实例化方式
+- [spring-boot启动过程实例化补充](./spring/springboot/源码分析/spring-boot启动过程实例化补充.md)：spring-boot启动过程实例化补充
+- [spring-boot启动过程源码分析内容补充](./spring/springboot/源码分析/spring-boot启动过程源码分析内容补充.md)：spring-boot启动过程源码分析内容补充
+- [spring-boot条件配置——conditionContext](./spring/springboot/源码分析/spring-boot条件配置——conditionContext.md)：spring-boot条件配置——conditionContext
+- [spring-boot源码分析之beanDefinitionNames · 壹](./spring/springboot/源码分析/spring-boot源码分析之beanDefinitionNames · 壹.md)：spring-boot源码分析之beanDefinitionNames · 壹
+- [spring-boot源码分析之beanFactory · 伍](./spring/springboot/源码分析/spring-boot源码分析之beanFactory · 伍.md)：spring-boot源码分析之beanFactory · 伍
+- [spring-boot源码分析之BeanFactory · 叁](./spring/springboot/源码分析/spring-boot源码分析之BeanFactory · 叁.md)：spring-boot源码分析之BeanFactory · 叁
+- [spring-boot源码分析之BeanFactory · 壹](./spring/springboot/源码分析/spring-boot源码分析之BeanFactory · 壹.md)：spring-boot源码分析之BeanFactory · 壹
+- [spring-boot源码分析之beanFactory · 拾](./spring/springboot/源码分析/spring-boot源码分析之beanFactory · 拾.md)：spring-boot源码分析之beanFactory · 拾
+- [spring-boot源码分析之beanFactory · 捌](./spring/springboot/源码分析/spring-boot源码分析之beanFactory · 捌.md)：spring-boot源码分析之beanFactory · 捌
+- [spring-boot源码分析之BeanFactory · 柒](./spring/springboot/源码分析/spring-boot源码分析之BeanFactory · 柒.md)：spring-boot源码分析之BeanFactory · 柒
+- [spring-boot源码分析之beanFactory · 玖](./spring/springboot/源码分析/spring-boot源码分析之beanFactory · 玖.md)：spring-boot源码分析之beanFactory · 玖
+- [spring-boot源码分析之beanFactory · 肆](./spring/springboot/源码分析/spring-boot源码分析之beanFactory · 肆.md)：spring-boot源码分析之beanFactory · 肆
+- [spring-boot源码分析之BeanFactory · 贰](./spring/springboot/源码分析/spring-boot源码分析之BeanFactory · 贰.md)：spring-boot源码分析之BeanFactory · 贰
+- [spring-boot源码分析之BeanFactory · 陆](./spring/springboot/源码分析/spring-boot源码分析之BeanFactory · 陆.md)：spring-boot源码分析之BeanFactory · 陆
+- [spring-boot源码分析之ConfigurableApplicationContext](./spring/springboot/源码分析/spring-boot源码分析之ConfigurableApplicationContext.md)：spring-boot源码分析之ConfigurableApplicationContext
+- [spring-boot源码分析小结 · 叁](./spring/springboot/源码分析/spring-boot源码分析小结 · 叁.md)：spring-boot源码分析小结 · 叁
+- [spring-boot源码分析小结 · 壹](./spring/springboot/源码分析/spring-boot源码分析小结 · 壹.md)：spring-boot源码分析小结 · 壹
+- [spring-boot源码分析小结 · 贰](./spring/springboot/源码分析/spring-boot源码分析小结 · 贰.md)：spring-boot源码分析小结 · 贰
+- [spring-boot源码分析小结](./spring/springboot/源码分析/spring-boot源码分析小结.md)：spring-boot源码分析小结
+- [从代码层面看spring boot启动过程](./spring/springboot/源码分析/从代码层面看spring boot启动过程.md)：从代码层面看spring boot启动过程
 - [编写你的第一个spring-boot-starter](./spring/springboot/编写你的第一个spring-boot-starter.md)：编写你的第一个spring-boot-starter
 #### springcloud
+- [spring-cloud-Hystrix监控面板](./spring/springcloud/spring-cloud-Hystrix监控面板.md)：spring-cloud-Hystrix监控面板
 - [spring-cloud之服务治理组件Eureka](./spring/springcloud/spring-cloud之服务治理组件Eureka.md)：spring-cloud之服务治理组件Eureka
+- [spring-cloud应用网关之zuul](./spring/springcloud/spring-cloud应用网关之zuul.md)：spring-cloud应用网关之zuul
 - [spring-cloud断路器之Hystrix](./spring/springcloud/spring-cloud断路器之Hystrix.md)：spring-cloud断路器之Hystrix
 - [spring-cloud服务间调用之feign](./spring/springcloud/spring-cloud服务间调用之feign.md)：spring-cloud服务间调用之feign
 - [spring-cloud服务间调用之ribbon](./spring/springcloud/spring-cloud服务间调用之ribbon.md)：spring-cloud服务间调用之ribbon
+- [spring-cloud核心知识点简单总结](./spring/springcloud/spring-cloud核心知识点简单总结.md)：spring-cloud核心知识点简单总结
 - [Springcloud基础知识点](./spring/springcloud/Springcloud基础知识点.md)：Springcloud基础知识点
 - [springCloud应用网关简单示例](./spring/springcloud/springCloud应用网关简单示例.md)：springCloud应用网关简单示例
 - [SpringCore注解](./spring/SpringCore注解.md)：SpringCore注解
@@ -221,7 +285,6 @@
 - [Spring配置](./spring/Spring配置.md)：Spring配置
 - [spring零配置AOP踩坑指南](./spring/spring零配置AOP踩坑指南.md)：spring零配置AOP踩坑指南
 - [基于XML配置文件的AOP](./spring/基于XML配置文件的AOP.md)：基于XML配置文件的AOP
-- [如果还不知道什么是微服务，你是不是该面壁思过下？](./spring/如果还不知道什么是微服务，你是不是该面壁思过下？.md)：如果还不知道什么是微服务，你是不是该面壁思过下？
 - [手动创建spring项目](./spring/手动创建spring项目.md)：手动创建spring项目
 - [手动创建spring项目（maven）](./spring/手动创建spring项目（maven）.md)：手动创建spring项目（maven）
 - [静态资源访问设置](./spring/静态资源访问设置.md)：静态资源访问设置
@@ -236,8 +299,17 @@
 - [单点登陆接口用户登陆状态校验解决方案](./sso/单点登陆接口用户登陆状态校验解决方案.md)：单点登陆接口用户登陆状态校验解决方案
 ### swagger
 - [swagger初探指南](./swagger/swagger初探指南.md)：swagger初探指南
+### to-do-list
+- [收集整理技术学习点、更新点](./to-do-list/收集整理技术学习点、更新点.md)：收集整理技术学习点、更新点
+- [构建个人知识库](./to-do-list/构建个人知识库.md)：构建个人知识库
+- [自制Linux-card](./to-do-list/自制Linux-card.md)：自制Linux-card
+- [设计模式待更新内容](./to-do-list/设计模式待更新内容.md)：设计模式待更新内容
 ### tomcat
 - [tomcat安全加固](./tomcat/tomcat安全加固.md)：tomcat安全加固
+#### 源码剖析
+- [Tomcat源码分析 · 叁——init方法补充](./tomcat/源码剖析/Tomcat源码分析 · 叁——init方法补充.md)：Tomcat源码分析 · 叁——init方法补充
+- [Tomcat源码分析 · 壹——启动过程值init方法](./tomcat/源码剖析/Tomcat源码分析 · 壹——启动过程值init方法.md)：Tomcat源码分析 · 壹——启动过程值init方法
+- [Tomcat源码分析 · 贰——init方法补充](./tomcat/源码剖析/Tomcat源码分析 · 贰——init方法补充.md)：Tomcat源码分析 · 贰——init方法补充
 ### vue
 - [vue学习笔记](./vue/vue学习笔记.md)：vue学习笔记
 ### web-front
@@ -286,14 +358,18 @@
 ### 加密解密
 - [Java&keytool生成RSA密钥](./加密解密/Java&keytool生成RSA密钥.md)：Java&keytool生成RSA密钥
 ### 图表文件
+#### arduino
+- [oled点亮接线](./图表文件/arduino/oled点亮接线.drawio)：oled点亮接线
 #### db
 - [mysql查询过程](./图表文件/db/mysql查询过程.drawio)：mysql查询过程
 - [mysql逻辑架构](./图表文件/db/mysql逻辑架构.drawio)：mysql逻辑架构
 - [数据库驱动配置引发的惨案](./图表文件/db/数据库驱动配置引发的惨案.drawio)：数据库驱动配置引发的惨案
+#### dubbo
+- [Dubbo](./图表文件/dubbo/Dubbo.xmind)：Dubbo
 #### java
 - [javaEE学习流程](./图表文件/java/javaEE学习流程.xmind)：javaEE学习流程
-- [深入理解JVM](./图表文件/java/深入理解JVM.xmind)：深入理解JVM
 - [电子签章流程](./图表文件/java/电子签章流程.xmind)：电子签章流程
+- [m3u8](./图表文件/m3u8.drawio)：m3u8
 #### microservice
 - [微服务介绍](./图表文件/microservice/微服务介绍.drawio)：微服务介绍
 #### mq
@@ -305,9 +381,22 @@
 - [rpc和http](./图表文件/rpc/rpc和http.drawio)：rpc和http
 - [简易rpc](./图表文件/rpc/简易rpc.drawio)：简易rpc
 #### spring
+- [BeanFactory创建过程](./图表文件/spring/BeanFactory创建过程.drawio)：BeanFactory创建过程
+- [BeanFactory初始化过程](./图表文件/spring/BeanFactory初始化过程.drawio)：BeanFactory初始化过程
+- [initPropertySources](./图表文件/spring/initPropertySources.drawio)：initPropertySources
+- [invokeBeanFactoryPostProcessors](./图表文件/spring/invokeBeanFactoryPostProcessors.drawio)：invokeBeanFactoryPostProcessors
+- [loadFactoryNames](./图表文件/spring/loadFactoryNames.drawio)：loadFactoryNames
+- [obtainFreshBeanFactory](./图表文件/spring/obtainFreshBeanFactory.drawio)：obtainFreshBeanFactory
+- [onRefresh](./图表文件/spring/onRefresh.drawio)：onRefresh
+- [postProcessBeanFactory](./图表文件/spring/postProcessBeanFactory.drawio)：postProcessBeanFactory
+- [prepareBeanFactory](./图表文件/spring/prepareBeanFactory.drawio)：prepareBeanFactory
+- [refresh-context](./图表文件/spring/refresh-context.drawio)：refresh-context
+- [run方法运行时序图](./图表文件/spring/run方法运行时序图.drawio)：run方法运行时序图
 - [sping-boot-websocket](./图表文件/spring/sping-boot-websocket.xmind)：sping-boot-websocket
 - [spring-boot-security](./图表文件/spring/spring-boot-security.xmind)：spring-boot-security
+- [spring-cloud](./图表文件/spring/spring-cloud.xmind)：spring-cloud
 - [webSocket](./图表文件/spring/webSocket.drawio)：webSocket
+- [容器刷新启动时序图](./图表文件/spring/容器刷新启动时序图.drawio)：容器刷新启动时序图
 - [sso](./图表文件/sso.drawio)：sso
 - [treeNode](./图表文件/treeNode.drawio)：treeNode
 #### 业务笔记
@@ -315,23 +404,51 @@
 - [医保电子凭证业务流程](./图表文件/业务笔记/医保/医保电子凭证业务流程.drawio)：医保电子凭证业务流程
 - [异地就医](./图表文件/业务笔记/医保/异地就医.xmind)：异地就医
 - [社银平台](./图表文件/业务笔记/医保/社银平台.drawio)：社银平台
+#### 兴趣爱好
+- [linux-card](./图表文件/兴趣爱好/linux-card.xmind)：linux-card
 - [包装类](./图表文件/包装类.drawio)：包装类
 - [在线签名](./图表文件/在线签名.drawio)：在线签名
 #### 多线程
 - [可重入锁](./图表文件/多线程/可重入锁.drawio)：可重入锁
+- [多线程梳理](./图表文件/多线程/多线程梳理.xmind)：多线程梳理
 - [死锁](./图表文件/多线程/死锁.drawio)：死锁
 - [线程池](./图表文件/多线程/线程池.xmind)：线程池
 - [开源协议](./图表文件/开源协议.drawio)：开源协议
+#### 总结
+##### 2021
+- [七月内容总结](./图表文件/总结/2021/七月内容总结.xmind)：七月内容总结
+- [第三季度-近期内容小结](./图表文件/总结/2021/第三季度-近期内容小结.xmind)：第三季度-近期内容小结
 - [数组、ArrayList、LinkedList存储原理](./图表文件/数组、ArrayList、LinkedList存储原理.drawio)：数组、ArrayList、LinkedList存储原理
 - [权限校验](./图表文件/权限校验.drawio)：权限校验
 - [流程图-流程控制](./图表文件/流程图-流程控制.drawio)：流程图-流程控制
 #### 管理
+- [如何学习一门技术](./图表文件/管理/如何学习一门技术.xmind)：如何学习一门技术
+- [如何构建个人知识库](./图表文件/管理/如何构建个人知识库.xmind)：如何构建个人知识库
+- [学习能力](./图表文件/管理/学习能力.xmind)：学习能力
 ##### 股票
 - [k线](./图表文件/管理/股票/k线.drawio)：k线
 #### 解决方案
 - [base64内外网文件下载](./图表文件/解决方案/base64内外网文件下载.drawio)：base64内外网文件下载
+#### 设计模式
+- [MVC模式](./图表文件/设计模式/MVC模式.drawio)：MVC模式
+- [单例模式](./图表文件/设计模式/单例模式.drawio)：单例模式
+- [命令模式](./图表文件/设计模式/命令模式.drawio)：命令模式
+- [外观模式](./图表文件/设计模式/外观模式.drawio)：外观模式
+- [工厂方法模式](./图表文件/设计模式/工厂方法模式.drawio)：工厂方法模式
+- [工厂模式](./图表文件/设计模式/工厂模式.drawio)：工厂模式
+- [抽象工厂](./图表文件/设计模式/抽象工厂.drawio)：抽象工厂
+- [模板方法](./图表文件/设计模式/模板方法.drawio)：模板方法
+- [状态模式](./图表文件/设计模式/状态模式.drawio)：状态模式
+- [策略模式](./图表文件/设计模式/策略模式.drawio)：策略模式
+- [组合模式](./图表文件/设计模式/组合模式.drawio)：组合模式
+- [装饰者模式](./图表文件/设计模式/装饰者模式.drawio)：装饰者模式
+- [观察者模式](./图表文件/设计模式/观察者模式.drawio)：观察者模式
+- [迭代器模式](./图表文件/设计模式/迭代器模式.drawio)：迭代器模式
+- [适配器模式](./图表文件/设计模式/适配器模式.drawio)：适配器模式
+- [限流算法——令牌桶](./图表文件/设计模式/限流算法——令牌桶.drawio)：限流算法——令牌桶
+- [限流算法——漏桶](./图表文件/设计模式/限流算法——漏桶.drawio)：限流算法——漏桶
 #### 读书笔记
-- [My Clippings](./图表文件/读书笔记/My\ Clippings.txt)：My Clippings
+- [My Clippings](./图表文件/读书笔记/My Clippings.txt)：My Clippings
 - [习惯的力量](./图表文件/读书笔记/习惯的力量.xmind)：习惯的力量
 - [人类简史](./图表文件/读书笔记/人类简史.xmind)：人类简史
 - [今日简史](./图表文件/读书笔记/今日简史.xmind)：今日简史
@@ -344,14 +461,27 @@
 - [爱的艺术](./图表文件/读书笔记/爱的艺术.xmind)：爱的艺术
 - [自私的基因](./图表文件/读书笔记/自私的基因.xmind)：自私的基因
 - [身份的焦虑](./图表文件/读书笔记/身份的焦虑.xmind)：身份的焦虑
+- [软件架构](./图表文件/软件架构.drawio)：软件架构
 - [限流](./图表文件/限流.drawio)：限流
 ### 工具使用
 - [idea、eclipse快捷键对比](./工具使用/idea、eclipse快捷键对比.md)：idea、eclipse快捷键对比
 - [IDEA快捷键](./工具使用/IDEA快捷键.md)：IDEA快捷键
 - [MyEclipse2014安装svn插件的方式：](./工具使用/MyEclipse2014安装svn插件的方式：.md)：MyEclipse2014安装svn插件的方式：
+- [常用工具链接](./工具使用/常用工具链接.md)：常用工具链接
 ### 并发与多线程
+- [原子类、lock、synchronized简单性能对比](./并发与多线程/原子类、lock、synchronized简单性能对比.md)：原子类、lock、synchronized简单性能对比
 - [多线程与并发](./并发与多线程/多线程与并发.md)：多线程与并发
+- [多线程之countDownLatch](./并发与多线程/多线程之countDownLatch.md)：多线程之countDownLatch
+- [多线程之CyclicBarrier](./并发与多线程/多线程之CyclicBarrier.md)：多线程之CyclicBarrier
+- [多线程之Exchanger](./并发与多线程/多线程之Exchanger.md)：多线程之Exchanger
+- [多线程之Semaphore](./并发与多线程/多线程之Semaphore.md)：多线程之Semaphore
+- [多线程之原子类](./并发与多线程/多线程之原子类.md)：多线程之原子类
+- [多线程之线程池 · 下](./并发与多线程/多线程之线程池 · 下.md)：多线程之线程池 · 下
+- [多线程之线程池-上](./并发与多线程/多线程之线程池-上.md)：多线程之线程池-上
+- [多线程之线程池-中](./并发与多线程/多线程之线程池-中.md)：多线程之线程池-中
+- [多线程之读写锁](./并发与多线程/多线程之读写锁.md)：多线程之读写锁
 - [线程安全](./并发与多线程/线程安全.md)：线程安全
+- [线程池知识点补充与总结](./并发与多线程/线程池知识点补充与总结.md)：线程池知识点补充与总结
 ### 异常处理
 - [异常处理](./异常处理/异常处理.md)：异常处理
 ### 异常汇总
@@ -399,6 +529,28 @@
 - [小黄鸭后期更新计划](./微信公众号发布/小黄鸭后期更新计划.md)：小黄鸭后期更新计划
 - [新年快乐，阖家欢乐](./微信公众号发布/新年快乐，阖家欢乐.md)：新年快乐，阖家欢乐
 - [认识html标签](./微信公众号发布/认识html标签.md)：认识html标签
+### 微服务
+- [Google限速神器——RateLimiter分享](./微服务/Google限速神器——RateLimiter分享.md)：Google限速神器——RateLimiter分享
+- [spring-boot基于redis实现计数器限流算法](./微服务/spring-boot基于redis实现计数器限流算法.md)：spring-boot基于redis实现计数器限流算法
+- [关于微服务限速的那些事](./微服务/关于微服务限速的那些事.md)：关于微服务限速的那些事
+- [如果还不知道什么是微服务，你是不是该面壁思过下？](./微服务/如果还不知道什么是微服务，你是不是该面壁思过下？.md)：如果还不知道什么是微服务，你是不是该面壁思过下？
+### 总结
+#### 2021
+##### 06
+- [六月份内容回顾  Java & Docker & Linx](./总结/2021/06/六月份内容回顾  Java & Docker & Linx.md)：六月份内容回顾  Java & Docker & Linx
+- [六月份内容回顾  k8s系列合集](./总结/2021/06/六月份内容回顾  k8s系列合集.md)：六月份内容回顾  k8s系列合集
+- [六月份内容回顾  手写RPC框架](./总结/2021/06/六月份内容回顾  手写RPC框架.md)：六月份内容回顾  手写RPC框架
+- [手写web服务-合集](./总结/2021/06/手写web服务-合集.md)：手写web服务-合集
+##### 07
+- [7月份内容回顾  spring-boot securtiy合集](./总结/2021/07/7月份内容回顾  spring-boot securtiy合集.md)：7月份内容回顾  spring-boot securtiy合集
+- [7月份内容回顾  spring-boot webflux合集](./总结/2021/07/7月份内容回顾  spring-boot webflux合集.md)：7月份内容回顾  spring-boot webflux合集
+- [7月份内容回顾  spring-boot websocket合集](./总结/2021/07/7月份内容回顾  spring-boot websocket合集.md)：7月份内容回顾  spring-boot websocket合集
+- [7月份内容回顾  其他内容](./总结/2021/07/7月份内容回顾  其他内容.md)：7月份内容回顾  其他内容
+- [7月份内容回顾  多线程合集](./总结/2021/07/7月份内容回顾  多线程合集.md)：7月份内容回顾  多线程合集
+- [7月份内容回顾  线程池合集](./总结/2021/07/7月份内容回顾  线程池合集.md)：7月份内容回顾  线程池合集
+- [7月份内容总结](./总结/2021/07/7月份内容总结.md)：7月份内容总结
+- [2021年第三季度总结](./总结/2021/2021年第三季度总结.md)：2021年第三季度总结
+- [内容更新简单总结](./总结/2021/内容更新简单总结.md)：内容更新简单总结
 ### 树莓派把玩笔记
 - [python经典实例](./树莓派把玩笔记/python经典实例.md)：python经典实例
 - [树莓派+摄像头变监控](./树莓派把玩笔记/树莓派+摄像头变监控.md)：树莓派+摄像头变监控
@@ -413,6 +565,12 @@
 #### 分享文字
 - [穷就算了，为啥我们还越来越忙？](./管理/分享文字/穷就算了，为啥我们还越来越忙？.md)：穷就算了，为啥我们还越来越忙？
 - [国产工业软件的后浪在哪里](./管理/国产工业软件的后浪在哪里.md)：国产工业软件的后浪在哪里
+#### 工具管理
+- [Obsidian工具使用技巧](./管理/工具管理/Obsidian工具使用技巧.md)：Obsidian工具使用技巧
+##### 媒体资源
+- [霞鹜文楷字体分享](./管理/工具管理/媒体资源/霞鹜文楷字体分享.md)：霞鹜文楷字体分享
+- [手机投屏至电脑工具](./管理/工具管理/手机投屏至电脑工具.md)：手机投屏至电脑工具
+- [电子书网站整理](./管理/工具管理/电子书网站整理.md)：电子书网站整理
 - [我们并非不快乐……](./管理/我们并非不快乐…….md)：我们并非不快乐……
 - [穷爸爸富爸爸笔记](./管理/穷爸爸富爸爸笔记.md)：穷爸爸富爸爸笔记
 #### 股票
@@ -422,8 +580,22 @@
 - [牛客网错题javaEE部分知识点](./练习题知识点整理/牛客网错题javaEE部分知识点.md)：牛客网错题javaEE部分知识点
 - [牛客网错题JavaSE部分知识点](./练习题知识点整理/牛客网错题JavaSE部分知识点.md)：牛客网错题JavaSE部分知识点
 ### 设计模式
+- [常用设计模式简单剖析](./设计模式/常用设计模式简单剖析.md)：常用设计模式简单剖析
 - [结构型模式](./设计模式/结构型模式.md)：结构型模式
-- [设计模式详解](./设计模式/设计模式详解.md)：设计模式详解
+- [设计模式简单总结-中](./设计模式/设计模式简单总结-中.md)：设计模式简单总结-中
+- [设计模式简单总结-仲](./设计模式/设计模式简单总结-仲.md)：设计模式简单总结-仲
+- [设计模式简单总结](./设计模式/设计模式简单总结.md)：设计模式简单总结
+- [设计模式详解——单例、工厂和抽象工厂](./设计模式/设计模式详解——单例、工厂和抽象工厂.md)：设计模式详解——单例、工厂和抽象工厂
+- [设计模式详解——命令、代理、策略模式](./设计模式/设计模式详解——命令、代理、策略模式.md)：设计模式详解——命令、代理、策略模式
+- [设计模式详解——复合模式](./设计模式/设计模式详解——复合模式.md)：设计模式详解——复合模式
+- [设计模式详解——外观模式](./设计模式/设计模式详解——外观模式.md)：设计模式详解——外观模式
+- [设计模式详解——模板方法模式](./设计模式/设计模式详解——模板方法模式.md)：设计模式详解——模板方法模式
+- [设计模式详解——状态模式](./设计模式/设计模式详解——状态模式.md)：设计模式详解——状态模式
+- [设计模式详解——组合模式](./设计模式/设计模式详解——组合模式.md)：设计模式详解——组合模式
+- [设计模式详解——装饰者模式](./设计模式/设计模式详解——装饰者模式.md)：设计模式详解——装饰者模式
+- [设计模式详解——观察者模式](./设计模式/设计模式详解——观察者模式.md)：设计模式详解——观察者模式
+- [设计模式详解——迭代器模式](./设计模式/设计模式详解——迭代器模式.md)：设计模式详解——迭代器模式
+- [设计模式详解——适配器模式](./设计模式/设计模式详解——适配器模式.md)：设计模式详解——适配器模式
 ### 读书笔记
 - [无问西东](./读书笔记/无问西东.md)：无问西东
 ### 面试

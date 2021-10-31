@@ -144,7 +144,7 @@
 - [pdf文件预览解决方案](./other/pdf文件预览解决方案.md)：pdf文件预览解决方案
 - [picGo搭建markdown图床](./other/picGo搭建markdown图床.md)：picGo搭建markdown图床
 - [RPC和http的区别](./other/RPC和http的区别.md)：RPC和http的区别
-- [今天不谈技术，分享一些生活日常的修，修， 修……](./other/今天不谈技术，分享一些生活日常的修，修， 修…….md)：今天不谈技术，分享一些生活日常的修，修， 修……
+- [今天不谈技术，分享一些生活日常的修，修，修……](./other/今天不谈技术，分享一些生活日常的修，修，修…….md)：今天不谈技术，分享一些生活日常的修，修，修……
 - [初探企业级应用开发新技术](./other/初探企业级应用开发新技术.md)：初探企业级应用开发新技术
 - [在线签名前后端业务实现](./other/在线签名前后端业务实现.md)：在线签名前后端业务实现
 - [基于FileBrowser搭建轻量级文件服务器](./other/基于FileBrowser搭建轻量级文件服务器.md)：基于FileBrowser搭建轻量级文件服务器
@@ -245,7 +245,7 @@
 - [spring-boot启动过程实例化补充](./spring/springboot/源码分析/spring-boot启动过程实例化补充.md)：spring-boot启动过程实例化补充
 - [spring-boot启动过程源码分析内容补充](./spring/springboot/源码分析/spring-boot启动过程源码分析内容补充.md)：spring-boot启动过程源码分析内容补充
 - [spring-boot条件配置——conditionContext](./spring/springboot/源码分析/spring-boot条件配置——conditionContext.md)：spring-boot条件配置——conditionContext
-- [spring-boot源码分析之beanDefinitionNames · 壹](./spring/springboot/源码分析/spring-boot源码分析之beanDefinitionNames · 壹.md)：spring-boot源码分析之beanDefinitionNames · 壹
+- [spring-boot源码分析之beanDefinitionNames-壹](./spring/springboot/源码分析/spring-boot源码分析之beanDefinitionNames-壹.md)：spring-boot源码分析之beanDefinitionNames-壹
 - [spring-boot源码分析之beanFactory-伍](./spring/springboot/源码分析/spring-boot源码分析之beanFactory-伍.md)：spring-boot源码分析之beanFactory-伍
 - [spring-boot源码分析之BeanFactory-壹](./spring/springboot/源码分析/spring-boot源码分析之BeanFactory-壹.md)：spring-boot源码分析之BeanFactory-壹
 - [spring-boot源码分析之beanFactory-拾](./spring/springboot/源码分析/spring-boot源码分析之beanFactory-拾.md)：spring-boot源码分析之beanFactory-拾
@@ -448,7 +448,7 @@
 - [限流算法——令牌桶](./图表文件/设计模式/限流算法——令牌桶.drawio)：限流算法——令牌桶
 - [限流算法——漏桶](./图表文件/设计模式/限流算法——漏桶.drawio)：限流算法——漏桶
 #### 读书笔记
-- [My Clippings](./图表文件/读书笔记/My Clippings.txt)：My Clippings
+- [My-Clippings](./图表文件/读书笔记/My-Clippings.txt)：My-Clippings
 - [习惯的力量](./图表文件/读书笔记/习惯的力量.xmind)：习惯的力量
 - [人类简史](./图表文件/读书笔记/人类简史.xmind)：人类简史
 - [今日简史](./图表文件/读书笔记/今日简史.xmind)：今日简史

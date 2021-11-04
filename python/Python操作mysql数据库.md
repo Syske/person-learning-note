@@ -8,6 +8,10 @@
 python -m pip install mysql-connector
 ```
 
+```
+python -m pip install mysql-connector -i --trusted-host http://mirrors.aliyun.com/pypi/simple/
+```
+
 测试安装是否成功：
 
 ```python

@@ -85,9 +85,106 @@ groupadd sambashare
 
 `groupdd`是`linux`的用户组新增命令，后面直接更用户组名称即可。
 
+##### 修改配置文件
+
 安装完成后会在`/etc`文件夹下生成`samba`文件夹，在配置之前我们先将初始化配置文件备份下：
 
 ```sh
 mv /etc/samba/smb.conf /etc/samba/smb.conf.bak
 ```
 
+接着我们开始编辑`smb.conf`文件，将其中原有的配置文件全部注释掉，并加入如下配置内容：
+
+```properties
+[global]
+#所要加入的工作组或者域
+workgroup = WORKGROUP
+#用于在 Windows 网上邻居上显示的主机名
+netbios name = Manjaro
+#定义安全级别
+security = user
+#将所有samba系统主机所不能正确识别的用户都映射成guest用户
+map to guest = bad user
+#是否开启dns代理服务
+dns proxy = no
+```
+
+这里设置的是`samba`的全局设置信息，注释已经够详细了，所以不再赘述
+
+然后再写入系统配置分享文件夹地配置：
+
+```properties
+[syskeshare]
+   # 我们要分享的文件夹路径
+   path = /run/media/syske/D88047AA80478DC6
+   # 是否允许浏览
+   browseable = yes
+   # 是否可写
+   writable = yes
+   # 是否允许匿名(guest)访问,等同于public
+   guest ok = yes
+   # 客户端上传文件的默认权限
+   create mask = 0777
+   # 客户端创建目录的默认权限
+   # 注意共享文件在系统本地的权限不能低于以上设置的共享权限。
+   directory mask = 0777
+```
+
+这里主要设置我们要分享的文件夹的相关信息，首先`syskeshare`是节点名，也是我们客户端访问的共享路径，节点下面配置了文件夹的路径以及权限信息，需要注意的是，这里设置的文件夹权限只能小于等于分享路径文件夹的权限，否则不一定能正常写入文件。
+
+
+
+#### 启动测试
+
+完成以上配置之后，从理论上讲，我们只需要启动`samba`服务就可以访问我们共享的文件夹了。启动的方式也很简单:
+
+```sh
+# 启动
+sudo systemctl start smb nmb
+# 重启
+sudo systemctl restart smb nmb
+# 停止
+sudo systemctl stop smb nmb
+```
+
+启动成功后，我们可以先通过如下命令测试下效果：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211106225513.png)
+
+如上显示则表明，`samba`服务已经启动成功，且可以正常访问，下面我们看下各个平台具体如何访问：
+
+##### 安卓
+
+安卓端可以通过`es`文件管理器进行访问，操作也很方便：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211106231135.png)
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211106231307.png)
+
+这款软件不知道`ios`平台是否有，不过应该可以找到替代软件。这一款软件的不好之处是有广告，优点是可以自动扫描，操作上便捷很多，安卓平台还有另一款软件`Solid Explorer`，是一款国外的软件，只能通过`google play`下载，需要的小伙伴可以私信，我放几张截图：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211106231841.png)
+
+这款软件的优势是轻量，而且没广告，云盘这块支持的也挺多的，我是今天刚发现的。
+
+##### win平台
+
+`win`平台操作就简单多了，直接点击文件管理器中的网络，如果能找到你的共享机器，直接双击即可，如果有密码输入密码即可，如果找不多，直接输入分享地址访问：
+
+```
+\\192.168.0.101\syskeshare
+```
+
+其中`192.168.0.101`是我`manjaro`的主机地址，`syskeshare`是我的分享名称，显示效果如下：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211106232144.png)
+
+由于手里没有`mac`系统的设备，感兴趣的小伙伴自己尝试下，应该也不会太难。
+
+
+
+### 结语
+
+用`linux`搭建`samba`服务器算是一个比较简单，但是特别实用的技能，有了这个技能加持之后，你再也不用担心文件共享问题了，最爽的是视频资源、音乐资源、图片资源再也不用手动复制了，只需要接入`samba`服务器就可以在家里的任何可以连到`wifi`的地方访问他们，岂不是美滋滋！
+
+另外关于家庭媒体中心这块也有一款特别好用的软件，而且它本身也支持`samba`资源，后面我们可以专门分享下，教大家如何用树莓派搭建家庭媒体中心，好了，今天就到这里吧，各位小伙伴 ，晚安吧！

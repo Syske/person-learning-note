@@ -1,10 +1,13 @@
 # 基于FileBrowser搭建轻量级文件服务器
 
-File Browser是一款使用Golang开发的文件管理器，跨平台，免费开源，功能强大。这篇文章分享下CentOS 7手动安装File Browser的方法，熟悉下File Browser运作流程，不至于后期出现问题不知所措。
+`File Browser`是一款使用`Golang`开发的文件管理器，跨平台，免费开源，功能强大。这篇文章分享下`CentOS 7`手动安装`File Browser`的方法，熟悉下`File Browser`运作流程，不至于后期出现问题不知所措。
 
 ### 下载File Browser
 
-- 下载地址：https://github.com/filebrowser/filebrowser/releases
+ 下载地址：
+```
+https://github.com/filebrowser/filebrowser/releases
+```
 
 下载地址中作者提供了各平台编译好的二进制文件，根据自己的平台下载解压即可，无需自行编译。
 
@@ -19,7 +22,7 @@ mv filebrowser /usr/sbin
 
 ### 创建配置文件
 
-File Browser支持json, toml, yaml, yml格式的配置文件，以`json`格式为例，命令如下：
+`File Browser`支持`json`, `toml`, `yaml`, `yml`格式的配置文件，以`json`格式为例，命令如下：
 
 ```bash
 #先创建一个目录用来存放数据库和配置文件
@@ -52,7 +55,7 @@ vi /etc/filebrowser/config.json
 
 ### 运行File Browser
 
-参数`-c`是指定File Browser配置文件路径，请根据自身情况填写路径，命令如下：
+参数`-c`是指定`File Browser`配置文件路径，请根据自身情况填写路径，命令如下：
 
 ```bash
 #常规运行
@@ -118,10 +121,23 @@ filebrowser -d /etc/filebrowser.db users add root password --perm.admin
 
 有关更多配置的选项，可以参考官方文档：https://docs.filebrowser.xyz/
 
-配置修改好以后，就可以启动 File Browser 了，使用`-d`参数指定配置数据库路径。示例：
+配置修改好以后，就可以启动 `File Browser` 了，使用`-d`参数指定配置数据库路径。示例：
 
 ```
 filebrowser -d /etc/filebrowser.db
 ```
 
-启动成功就可以使用浏览器访问 File Browser 了，在浏览器输入 IP:端口，示例：http://192.168.1.1:8088
+启动成功就可以使用浏览器访问 `File Browser` 了，在浏览器输入 `IP`:端口，示例：
+```
+http://192.168.1.1:8088
+```
+
+#### 效果预览
+登录之后的效果：
+![](https://gitee.com/sysker/picBed/raw/master/images/20211111132747.png)
+
+修改语言：
+![](https://gitee.com/sysker/picBed/raw/master/images/20211111132927.png)
+还可以对文件进行管理，包括分享、重命名、移动、删除、下载、上传等操作：
+![](https://gitee.com/sysker/picBed/raw/master/images/20211111133024.png)
+如果当作简易版的网盘来用也还不错

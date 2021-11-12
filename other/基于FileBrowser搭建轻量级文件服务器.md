@@ -1,8 +1,10 @@
 # 基于FileBrowser搭建轻量级文件服务器
 
-`File Browser`是一款使用`Golang`开发的文件管理器，跨平台，免费开源，功能强大。这篇文章分享下`CentOS 7`手动安装`File Browser`的方法，熟悉下`File Browser`运作流程，不至于后期出现问题不知所措。
+`File Browser`是一款使用`Golang`开发的文件管理器，跨平台，费开源，功能强大。今天我们分享下手动安装`File Browser`的方法，熟悉下`File Browser`运作流程，当然最重要的是，希望它能够成为你的生产力工具，如果你有一台外网服务器，那你可以用它来搭建一个简易版的个人网盘，就算没有外网，在局域网环境下，你甚至可以用它来替代`samba`文件服务器或者`webdav`服务。
+好了，下面我们就一起来看下详细的安装过程。
 
 ### 下载File Browser
+首先我们要下载`File Browser`的安装包，直接下载对应平台的软件包即可，当然熟悉`go`的小伙伴可以自行编译。
 
  下载地址：
 ```
@@ -30,6 +32,8 @@ mkdir /etc/filebrowser/
 #新建配置文件
 vi /etc/filebrowser/config.json
 ```
+
+`windows`环境下可以通过文本工具直接新建配置文件，配置内容是一样的，当然其中的路径需要改成`windows`的路径
 
 复制下面的内容保存到`/etc/filebrowser/config.json`
 

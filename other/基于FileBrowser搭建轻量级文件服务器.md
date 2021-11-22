@@ -121,7 +121,7 @@ filebrowser -d /etc/filebrowser.db config set --log /var/log/filebrowser.log
 filebrowser -d /etc/filebrowser.db users add root password --perm.admin
 ```
 
-其中的`root`和`password`分别是用户名和密码，根据自己的需求更改。
+其中的`root`和`password`分别是用户名和密码，根据自己的需求更改。如果不配置用户名和密码，默认用户名和密码都为`admin`
 
 有关更多配置的选项，可以参考官方文档：https://docs.filebrowser.xyz/
 

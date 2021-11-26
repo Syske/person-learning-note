@@ -19,17 +19,54 @@
 今天我们主要`lambda`中的以下几块内容，这几个也是本次用的频次比较高的：
 
 - `map`
-
 - `filter`
-
 - `joining`
-
 - `max`
-
 - 排序
-
 - `flatMap`
-
 - `collect`
 
-  
+
+#### map
+
+`map`其实就类似于一个处理器，我们可以通过`map`方法将现有对象的集合转换成我们需要的数据类型。其中最常见的用法就是从一个对象实例的`list`中，过滤出对象实例的某个属性，比如`User`的name`属性：
+
+```java
+User user1 = new User(1L, "syske");
+User user2 = new User(2L, "yun zhong zhi");
+List<User> userList = Lists.newArrayList(user1, user2);
+// 用户
+System.out.printf("userList = %s\n",userList);
+// 用户名list
+List<String> userNameList = userList.stream().map(User::getUsername).collect(Collectors.toList());
+System.out.printf("userNameList = %s\n",userNameList);
+```
+
+运行结果如下：
+
+![](https://gitee.com/sysker/picBed/raw/master/images/20211126132527.png)
+
+`user`源码：
+
+```java
+public class User {
+    /**
+     * 用户 id
+     */
+    private Long id;
+    /**
+     * 用户名
+     */
+    private String username;
+    /*
+    省略getter/setter方法
+    */
+}
+```
+
+这里我们其实也演示了`collect`方法的简单用法，`collect`方法的作用就是将我们`map`处理之后的数据流收集起来，后面我们还会详细演示它的用法。
+
+```
+ List<String> userStrList = userList.stream().map(String::valueOf).collect(Collectors.toList());
+```
+

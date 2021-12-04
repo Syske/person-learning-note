@@ -70,8 +70,6 @@ HGET key field
 HGETALL key
 ```
 
-
-
 ### list常用操作
 
 获取指定范围资源：
@@ -85,4 +83,3 @@ lrange key 0 -1
 ```
 LREM key count value
 ```
-

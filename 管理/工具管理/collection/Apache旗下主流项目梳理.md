@@ -18,7 +18,7 @@
 - [ ] [Atlas](http://atlas.apache.org/)
 - [ ] [Attic](http://attic.apache.org/)
 - [ ] [Avro](http://avro.apache.org/)
-- [ ] [Axis](http://axis.apache.org/)
+- [x] [Axis](http://axis.apache.org/)：流行的`xml`工具包
 
 ### B
 
@@ -75,7 +75,7 @@
 - [ ] [Felix](http://felix.apache.org/)
 - [ ] [Fineract](http://fineract.apache.org/)
 - [ ] [Flex](http://flex.apache.org/)
-- [ ] [Flink](http://flink.apache.org/)
+- [ ] [Flink](http://flink.apache.org/)：一个框架和分布式处理引擎，用于在*无边界和有边界*数据流上进行有状态的计算
 - [ ] [Flume](http://flume.apache.org/)
 - [ ] [Fluo](http://fluo.apache.org/)
 - [ ] [FreeMarker](http://freemarker.apache.org/)
@@ -89,7 +89,7 @@
 - [ ] [Gora](http://gora.apache.org/)
 - [ ] [Griffin](http://griffin.apache.org/)
 
-- [ ] [Groovy](http://groovy.apache.org/)
+- [ ] [Groovy](http://groovy.apache.org/)：基于JVM（Java虚拟机）的敏捷开发语言，它结合了Python、Ruby和Smalltalk的许多强大的特性，*Groovy* 代码能够与 Java 代码很好地结合，也能用于扩展现有代码
 - [ ] [Guacamole](http://guacamole.apache.org/)
 - [ ] [Gump](http://gump.apache.org/)
 
@@ -114,7 +114,7 @@
 
 ### J
 
-- [ ] [JMeter](http://jmeter.apache.org/)
+- [x] [JMeter](http://jmeter.apache.org/)：基于`java`开发的测试工具
 - [ ] [JSPWiki](http://jspwiki.apache.org/)
 - [ ] [Jackrabbit](http://jackrabbit.apache.org/)
 - [ ] [James](http://james.apache.org/)
@@ -147,7 +147,7 @@
 - [ ] [MINA](http://mina.apache.org/)
 - [ ] [Mahout](http://mahout.apache.org/)
 - [ ] [ManifoldCF](http://manifoldcf.apache.org/)
-- [ ] [Maven](http://maven.apache.org/)
+- [x] [Maven](http://maven.apache.org/)：依赖管理工具
 - [ ] [Mesos](http://mesos.apache.org/)
 - [ ] [Mnemonic](http://mnemonic.apache.org/)
 - [ ] [MyFaces](http://myfaces.apache.org/)
@@ -201,7 +201,7 @@
 - [ ] [Ranger](http://ranger.apache.org/)
 - [ ] [Ratis](http://ratis.apache.org/)
 - [ ] [River](http://river.apache.org/)
-- [ ] [RocketMQ](http://rocketmq.apache.org/)
+- [x] [RocketMQ](http://rocketmq.apache.org/)：消息队列工具
 - [ ] [Roller](http://roller.apache.org/)
 - [ ] [Royale](http://royale.apache.org/)
 - [ ] [Rya](http://rya.apache.org/)
@@ -210,16 +210,16 @@
 
 - [ ] [SINGA](http://singa.apache.org/)
 - [ ] [SIS](http://sis.apache.org/)
-- [ ] [Samza](http://samza.apache.org/)
-- [ ] [Santuario](http://santuario.apache.org/)
-- [ ] [Serf](http://serf.apache.org/)
-- [ ] [ServiceComb](http://servicecomb.apache.org/)
-- [ ] [ServiceMix](http://servicemix.apache.org/)
+- [ ] [Samza](http://samza.apache.org/)：分布式流处理框架
+- [ ] [Santuario](http://santuario.apache.org/)：提供 `XML` 主要安全标准的实现
+- [ ] [Serf](http://serf.apache.org/)：一个基于` C `的高性能` HTTP` 客户端库，它基于 `Apache Portable Runtime` (`APR`) 库构建。
+- [ ] [ServiceComb](http://servicecomb.apache.org/)：开源、全栈的微服务解决方案，开箱即用、高性能、兼容主流生态、多语言支持
+- [ ] [ServiceMix](http://servicemix.apache.org/)：一个灵活的、开源的集成容器，它将`apache activemq`、`Camel`、`CXF`和`Karaf`的特性和功能统一到一个强大的运行时平台中，您可以用来构建自己的集成解决方案。
 - [ ] [ShardingSphere](http://shardingsphere.apache.org/)
-- [ ] [Shiro](http://shiro.apache.org/)
-- [ ] [SkyWalking](http://skywalking.apache.org/)
-- [ ] [Sling](http://sling.apache.org/)
-- [ ] [Solr](http://solr.apache.org/)
+- [x] [Shiro](http://shiro.apache.org/)：流行的权限管理框架
+- [x] [SkyWalking](http://skywalking.apache.org/)：流行的链路监控框架
+- [ ] [Sling](http://sling.apache.org/)：免费、开源的、分布式即时计算系统，可以轻松可靠地处理无界数据流，实时处理 `Hadoop` 的批处理，它很简单，可以与任何编程语言一起使用，而且使用起来很有趣
+- [ ] [Solr](http://solr.apache.org/)：基于` Apache Lucene `构建的流行的、快速的、开源的企业搜索平台
 - [ ] [SpamAssassin](http://spamassassin.apache.org/)
 - [ ] [Spark](http://spark.apache.org/)
 - [ ] [Steve](http://steve.apache.org/)
@@ -264,19 +264,19 @@
 
 - [ ] [Web Services](http://ws.apache.org/)
 - [ ] [Whimsy](http://whimsical.apache.org/)
-- [ ] [Wicket](http://wicket.apache.org/)
+- [ ] [Wicket](http://wicket.apache.org/)：一个开发`Java Web`应用程序框架。它使得开发`web`应用程序变得容易而轻松，号称`Java`平台上的`ASP.NET`
 
 ### X
 
-- [ ] [XML Graphics](http://xmlgraphics.apache.org/)
-- [ ] [Xalan](http://xalan.apache.org/)
-- [ ] [Xerces](http://xerces.apache.org/)
+- [ ] [XML Graphics](http://xmlgraphics.apache.org/)：`xml`的图形化项目，目前由`batik`、`fop`和`commons`三个子项目构成，三个子项目都是基于`java`开发的，其中`batik`是`svg`工具包，`FOP`是用于` XSL-FO` 的打印格式化程序和渲染器，`commons`是基于`fop`和`batik`开发的工具库
+- [ ] [Xalan](http://xalan.apache.org/)：将可扩展标记语言（`XML`）转换为超文本链接标识语言（`HTML`）或其它类型`XML`文档的规范。
+- [ ] [Xerces](http://xerces.apache.org/)：`Xerces`是由`Apache`组织所推动的一项`XML`文档解析开源项目,它目前有多种语言版本包括`JAVA`、`C++`、`PERL`、`COM`等
 
 ### Y
 
-- [ ] [Yetus](http://yetus.apache.org/)
+- [ ] [Yetus](http://yetus.apache.org/)：一组支持软件项目的贡献和发布过程的库和工具。
 
 ### Z
 
-- [ ] [Zeppelin](http://zeppelin.apache.org/)
-- [ ] [ZooKeeper](http://zookeeper.apache.org/)
+- [ ] [Zeppelin](http://zeppelin.apache.org/)：基于网络的笔记本，支持数据驱动， 使用` SQL`、`Scala`、`Python`、`R `等进行交互式数据分析和协作文档。
+- [x] [ZooKeeper](http://zookeeper.apache.org/)：流行的注册中心

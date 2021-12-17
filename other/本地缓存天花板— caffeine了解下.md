@@ -108,8 +108,95 @@ keys.add("hello2");
 // 批量查找缓存，如果缓存不存在则生成缓存元素
 Map<String, Object> objectMap = cache2.getAll(keys);
 System.out.println(objectMap);
+
+private static Object createObject(String key) {
+    return "hello caffeine 2021";
+}
 ```
 
 
 
+##### 手动异步加载
+
+手动异步加载和手动加载类似，唯一的区别是这里的缓存加载是异步的。`AsyncCache`提供了在 `Executor`上生成缓存元素并返回 `CompletableFuture`的能力，`synchronous()`方法给 `Cache`提供了阻塞直到异步缓存生成完毕的能力。
+
+`AsyncCache`默认的线程池实现是 `ForkJoinPool.commonPool() `，当然你也可以通过覆盖并实现 `Caffeine.executor(Executor)`方法来自定义你的线程池选择。
+
+```JAVA
+// 手动异步加载
+AsyncCache<String, Object> cache3 = Caffeine.newBuilder()
+    .expireAfterWrite(10, TimeUnit.MINUTES)
+    .maximumSize(10_000)
+    .buildAsync();
+
+// 查找一个缓存元素， 没有查找到的时候返回null
+CompletableFuture<Object> graph = cache3.getIfPresent(key);
+// 查找缓存元素，如果不存在，则异步生成
+graph = cache3.get(key, k -> createObject(key));
+// 添加或者更新一个缓存元素
+cache3.put(key, graph);
+// 移除一个缓存元素
+cache3.synchronous().invalidate(key);
+```
+
+
+
+##### 自动异步加载
+
+自动异步加载和自动加载对应，只是这里的加载是异步的，和手动异步加载一样，当然因为是自动加载，所以需要我们指定缓存加载方法。默认情况下，采用的线程池也是`ForkJoinPool.commonPool()`，另外自动异步加载也支持自定义线程池类型。
+
+```java
+// 自动异步加载
+AsyncLoadingCache<String, Object> cache4 = Caffeine.newBuilder()
+    .maximumSize(10_000)
+    .expireAfterWrite(10, TimeUnit.MINUTES)
+    // 你可以选择: 去异步的封装一段同步操作来生成缓存元素
+    .buildAsync(key3 -> createObject(key3));
+// 你也可以选择: 构建一个异步缓存元素操作并返回一个future
+// .buildAsync((key, executor) -> createExpensiveGraphAsync(key, executor));
+
+// 查找缓存元素，如果其不存在，将会异步进行生成
+CompletableFuture<Object> object4 = cache4.get(key);
+// 批量查找缓存元素，如果其不存在，将会异步进行生成
+CompletableFuture<Map<String, Object>> graphs = cache4.getAll(keys);
+```
+
+关于缓存的添加我们暂时就说这么多，下面我们看下`Caffeine`缓存的属性参数。
+
+##### 属性参数
+
+- 缓存数量
+
+通过`maximumSize`指定缓存的最大存储数量，在缓存达到该限制会移除最近没有用过，或者使用频次较低的缓存，当然在达到缓存的临界点时，可能会出现暂时超出限制的情况。如果该值被设置为`0`，则缓存在加载后后会立即失效（类似于禁用）
+
+- 写入过期时间
+
+在构建`Caffeine`实例的时候，我们需要通过`expireAfterWrite`方法指定缓存的过期时间，指定具体时间的同时还需要指定时间的单位。
+
+- 访问后过期时间
+
+通过`expireAfterAccess`设置访问后过期时间。
+
+- 创建后过期时间
+
+通过`expireAfter`设置创建后过期时间。
+
+- 写入后刷新时间
+
+通过`refreshAfterWrite`设置多久之后刷新缓存。
+
+更多属性，各位小伙伴可以参考官方文档和源码。
+
 ### 结语
+
+但从官方文档来看，这块缓存组件的性能还是非常棒的：
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211216232050.png)
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211216232149.png)
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20211216232212.png)
+
+当然一款工具是否好用，往往是需要经得起实践检验的，而不仅仅简单的测试，所以`Caffeine`是否好用，还得我们自己亲自实测。
+
+最后，由于内容篇幅和时间的限制，我们这里只能做一个简单的分享，更多详细内容还需要各位小伙伴自己探索，毕竟实践出真知。

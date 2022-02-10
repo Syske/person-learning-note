@@ -123,6 +123,9 @@ add-apt-repository \
   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) \
   stable"
+  
+  # 国内推荐通过阿里云的地址替换，官方地址超级慢，密钥的地址也可以替换
+  http://mirrors.aliyun.com/docker-ce/linux/ubuntu
 ```
 
 这里会把它添加进`/etc/apt/sources.list`文件中。
@@ -148,13 +151,7 @@ sudo vim /etc/docker/daemon.json
 
 ```json
 {
-  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/", "https://hub-mirror.c.163.com/", "https://reg-mirror.qiniu.com"],
-  "exec-opts": ["native.cgroupdriver=systemd"],
-  "log-driver": "json-file",
-  "log-opts": {
-    "max-size": "100m"
-  },
-  "storage-driver": "overlay2"
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/", "https://hub-mirror.c.163.com/", "https://reg-mirror.qiniu.com"]
 }
 ```
 
@@ -182,6 +179,22 @@ systemctl daemon-reload
 systemctl restart docker
 # 启动
 systemctl start docker
+```
+
+
+
+#### 解决需要root运行docker的问题
+
+创建`docker`组
+
+```sh
+sudo groupadd docker
+```
+
+将用户添加到`docker`组中：
+
+```sh
+sudo usermod -aG docker $USER
 ```
 
 好了，以上就是`wsl2`安装原生`Linux Docker`的所有内容了，感兴趣的小伙伴，可以亲自动手实践下。 

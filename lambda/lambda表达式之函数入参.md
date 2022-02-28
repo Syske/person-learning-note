@@ -8,7 +8,9 @@
 
 ### @FunctionalInterface
 
-`@FunctionalInterface`和其他的`lambda`一样，都是`jdk1.8`引入的，但是相比于`stream`和`Optional`这两种常用的，我之前对`@FunctionalInterface`的了解也很浅薄，虽然经常在`stram()`中用到它，但对于具体如何使用它，我还真的是一知半解。下面我们先通过一个简单的实例，见识下`@FunctionalInterface`：
+`@FunctionalInterface`和其他的`lambda`一样，都是`jdk1.8`引入的，但相比于`stream`和`Optional`这两种常用的新特性，我对`@FunctionalInterface`的了解就显得很浅薄了。虽然经常在`stram()`中用到它，但对于具体如何使用它，如何更好的应用它，我还真的是一知半解。
+
+下面我们先通过一个简单的实例，来见识下`@FunctionalInterface`的魅力：
 
 假设我们有一个方法，需要在方法中的某个执行结果为`success`的时候执行一段代码或者调另一个方法，在执行结果为`failed`的时候执行另一段代码，在传统实现下，我们需要这样操作：
 
@@ -142,6 +144,34 @@ new FunctionalInterfaceTest().functionTest("syske", "hello", FunctionalInterface
 需要注意的是，函数式接口中只能定义一个未实现的接口，否则会报编译错误：
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20220225084944.png)
+
+
+
+上面我们演示的都是单参数的函数式接口，其实官方也提供了多参数的接口实现，比如：`BiFunction`
+
+![](https://gitee.com/sysker/picBed/raw/master/blog/20220228084711.png)
+
+这里的`BiFunction`有两个入参和一个返回值，如果两个参数依然满足不了你的需要，你还可以自己定义多参数接口：
+
+```java
+@FunctionalInterface
+public interface MyFunctionInterface2<T, R, U, X, Y> {
+    void syske(T t, R r, U u, X x, Y y);
+
+}
+```
+
+调用方式也是大同小异：
+
+```java
+public void setMyFunctionInterface2(String t, String r, String u, String x, String y, MyFunctionInterface2<String, String, String, String, String> interface2) {
+        interface2.syske(t, r, u, x, y);
+    }
+    
+new FunctionalInterfaceTest().setMyFunctionInterface2("parameter1", "parameter2", "parameter3", "parameter4", "parameter5", (t, r, u, x, y) -> System.out.printf("%s.%s.%s.%s.%s", t, r, u, x,y));
+```
+
+
 
 ### 结语
 

@@ -14,6 +14,8 @@
 
 下面我们先通过一个简单的实例，来见识下`@FunctionalInterface`的魅力：
 
+#### 一个简单场景
+
 假设我们有一个方法，需要在方法中的某个执行结果为`success`的时候执行一段代码或者调另一个方法，在执行结果为`failed`的时候执行另一段代码，在传统实现下，我们需要这样操作：
 
 ```java
@@ -74,6 +76,8 @@ public void dealThing2(String parameter) {
 
 当然，如果是一两个业务，我觉得都还可以接受，但如果是十几个或者几十个业务的时候，这种处理方式就显得很不友好，而且往往`success`和`failed`需要处理的业务逻辑可能不尽相同，所以我们还需要更友好更能够简化我们业务实现逻辑的方法，这时候就到了函数式接口发光发热的时候了：
 
+#### 函数式接口应用
+
 如果采用函数式接口的方式，对于上面这样的需求场景，我们只需要增加两个`Consumer`入参即可——成功回调、失败回调：
 
 ```java
@@ -110,6 +114,8 @@ new FunctionalInterfaceTest().dealThing(parameter, s -> {System.out.println("业
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20220225082723.png)
 
+#### Consumer函数式接口
+
 下面我们来简单看下`Consumer`接口的基本结构：
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20220225083029.png)
@@ -117,6 +123,8 @@ new FunctionalInterfaceTest().dealThing(parameter, s -> {System.out.println("业
 和我们通常定义的接口有所不同的是，函数式接口有一个`@FunctionalInterface`注解，其中的`accept`方法就是我们在调用方法时需要实现的方法。除了`Consumer`函数式接口之外，`java`还为我们提供了其他很多有用的函数式接口，比如`Function`，与`Consumer`不同的是，`Function`提供的函数式接口是可以有返回值的：
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20220225084212.png)
+
+#### 定义自己的函数式接口
 
 关于官方提供的函数式接口我们就先看这么多，下面我们一起来看下如何定制自己的函数式接口，其实也很简单：
 
@@ -151,7 +159,7 @@ new FunctionalInterfaceTest().functionTest("syske", "hello", FunctionalInterface
 
 ![](https://gitee.com/sysker/picBed/raw/master/blog/20220225084944.png)
 
-
+#### 多参数函数式接口
 
 上面我们演示的都是单参数的函数式接口，其实官方也提供了很多其他的函数式接口，比如带返回值的函数式接口`Function`、多参数的接口`BiFunction`
 

@@ -105,7 +105,7 @@ docker images
 然后通过`docker run`运行我们构建成功后的镜像即可：
 
 ```
-run -p 5000:5000 -d arduino-control-center:latest
+docker run -p 5000:5000 -d arduino-control-center:latest
 ```
 
 我们还可以通过`docker ps`看下镜像的运行信息，可以看到我这里的端口指定的是`5000`：

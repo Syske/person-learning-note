@@ -77,18 +77,103 @@ public static boolean telnet(String host, Integer port, Integer timeout) {
 
 ##### 发送测试邮件
 
-端口和服务器校验通过之后，还需要通过发送测试邮件的方式来测试用户名和邮箱账号是否争取。
+端口和服务器校验通过之后，还需要通过发送测试邮件的方式来测试用户名和邮箱账号是否正确，这里自己写了一个发送邮件的方法，需要用到`javax.mail`的`mail`包，本次示例用的版本是`1.4`，在实际测试中发现，相同的代码，用不同的版本可能会报错。
 
+```java
 
+    /**
+     * 发送邮件的方法
+     *
+     * @param host    :邮件服务器地址
+     * @param account :账户（发送方）
+     * @param password :账户密码（发送方）
+     * @param port    :邮箱服务器端口（发送方）
+     * @param toUser  :收件人
+     * @param title   :标题
+     * @param content :内容
+     */
+    public static void sendMail(String host, String account, String password, String port, String toUser, String title, String content) throws Exception {
+
+        Properties props = System.getProperties();
+        props.setProperty("mail.host", host);
+        props.setProperty("mail.smtp.port", port);
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "false");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.port", port);
+        // 发送邮件超时时间
+        props.put("mail.smtp.writetimeout", 1000);
+        // 连接超时时间
+        props.put("mail.smtp.connectiontimeout", 1000);
+
+        Session session = Session.getInstance(props, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(account, password);
+            }
+        });
+
+        Message msg = new MimeMessage(session);
+
+        msg.setFrom(new InternetAddress(account));
+        msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toUser));
+        msg.setContent(content, "text/html;charset=utf-8");
+        msg.setSubject(title);
+        msg.setSentDate(new Date());
+        Transport.send(msg);
+    }
+```
+
+这里比较繁琐的就是邮箱服务器的配置了：
+
+- `mail.host`：这个不用说，就是邮件服务的服务器地址（域名或者`IP`）
+
+- `mail.smtp.port`：这个就是邮件服务器的端口，通常是`465`（`SSL`），当然你也可以用非`SSL`的端口，但是你需要移除`mail.smtp.socketFactory.class`的相关配置，否则会报错（不过这里还是推荐大家使用`SSL`协议，毕竟比较安全）：
+
+  ![](https://gitee.com/sysker/picBed/raw/master/2022/20220404112819.png)
+
+- `mail.smtp.auth`：`smtp`验证，这个配置项是必须的，且值必须是`true`，否则会报错：
+
+  ![](https://gitee.com/sysker/picBed/raw/master/2022/20220404140214.png)
+
+- `mail.smtp.starttls.enable`：设置`TLS`是否启用，如果是`SSL`通信协议，该设置项必须未设置或者值为`flase`，否则也会报错：![](https://gitee.com/sysker/picBed/raw/master/2022/20220404140850.png)
+
+- `mail.smtp.socketFactory.class`：设置`socket`工厂，`SSL`通信的话，必须设置为`javax.net.ssl.SSLSocketFactory`，否则会报错：
+
+  ![](https://gitee.com/sysker/picBed/raw/master/2022/20220410134326.png)
+
+- `mail.smtp.socketFactory.port`：设置`socket`的端口，实际测试中发现该配置参数可以省略
 
 #### java发送邮件
 
+其实在上面发送测试邮件那里，我们已经展示了发送邮件的方式，这里我们直接调用那个方法即可。在开始发送邮件之前，我们先来看下如何获取方法的参数，也就是邮件服务器的相关配置信息，这里我们以`163`邮箱为例，其他邮箱大同小异。
 
+首先登录到`163`邮箱网页端，点击顶部的设置菜单，选择`POP3/SMTP/IMAP`那个选项
 
-#### java接收邮件
+![](https://gitee.com/sysker/picBed/raw/master/2022/20220410140317.png)
 
+开启`IMAP/SMTP`或者`POP3/SMTP`服务中的任意一个，因为我们主要是为了实现发送邮件的需求，所以只要我们开启了`SMTP`服务即可。
 
+前面我们说了，`POP3`或者`IMAP`协议都是接收邮件的协议，发送邮件的协议是`SMTP`，所以开启其中一个，`SMTP`协议都会开启。
+
+![](https://gitee.com/sysker/picBed/raw/master/2022/20220410140428.png)
+
+开通时要求用邮箱绑定的手机号发送一行验证码，然后系统会生成一个授权码，这个授权码就是我们后面发送邮件的密码，因为只展示一次，所以务必保存下。
+
+![](https://gitee.com/sysker/picBed/raw/master/2022/20220410140934.png)
+
+然后根据我们前面说的`SMTP`的服务器和端口，既可以实现邮件发送功能，这里我主要是用于测试邮箱配置是否正确，所以我直接给自己发的邮件：
+
+![](https://gitee.com/sysker/picBed/raw/master/2022/20220410141243.png)
+
+发送成功后，我们可以在接收方邮箱中看到该邮件：
+
+![](https://gitee.com/sysker/picBed/raw/master/2022/20220410141419.png)
+至此，我们发送邮件的需求就实现了。
 
 
 
 ### 结语
+
+就整个需求的实现来说，其实代码层面还是比较简单的，真正的难点是邮件服务器配置的相关内容，由于前期对邮件服务的相关协议和配置不了解，所以踩了很多坑，当然也正是有了这样一个踩坑的过程，也才让我对邮件服务配置有了一个更全面的了解和认识。好了，今天的内容就先到这里，感兴趣的小伙伴可以自己动手实践下。

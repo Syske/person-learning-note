@@ -43,4 +43,5 @@ source ~/.profile
 java --version
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200512110706.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200512110706.png)

@@ -103,15 +103,18 @@ public class GatewayConfig {
 
 ### 创建项目
 
-这里我们选择spring Initializr来创建：![](https://gitee.com/sysker/picBed/raw/master/images/20200520153630.png)
+这里我们选择spring Initializr来创建：![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200520153630.png)
 
 填写项目信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200520153802.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200520153802.png)
 
 选择spring cloud Routing >> gateway：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200520153839.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200520153839.png)
 
 完整依赖如下：
 

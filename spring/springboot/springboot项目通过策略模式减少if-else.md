@@ -57,7 +57,8 @@ public class MyserviceImpl implements Myservice {
 https://start.aliyun.com/
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200912114510.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200912114510.png)
 
 ### 创建业务处理接口
 
@@ -322,7 +323,8 @@ public class HandlerProcessor implements BeanFactoryPostProcessor {
 
 这里需要注意的是，`HandlerContext`上不需要任何`spring`的注解，因为我们是手动注入的，所以不需要`spring`再帮我们注入，如果加了，反而会有问题（亲测，不信你试下），虽然有提示，但并不影响。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200912132428.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200912132428.png)
 
 ### 测试
 
@@ -365,7 +367,8 @@ public class HandlerProcessor implements BeanFactoryPostProcessor {
 
 分别访问，控制台打印如下信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200912134331.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200912134331.png)
 
 至此，今天的主要内容就结束了，整个过程比较顺利，下来我们做一个简单的总结。
 

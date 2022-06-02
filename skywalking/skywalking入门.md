@@ -24,35 +24,42 @@
 
 这个是首页的仪表盘
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210416230248.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210416230248.png)
 
 #### 拓扑图
 
 这一个就很神奇，它可以跟踪你的服务调用过程，然后生成你的服务的拓扑图。是不是看着就很高端，另外它还可以很直观地展示系统的架构情况，这里我起了五个服务，其中一个用到了`redis`，然后它就识别出来了
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210416230207.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210416230207.png)
 
 看下下面这个图，这个系统我用到了很多组件，包括`mysql`、`redis`、`ActiveMq`、``Zipkin`，都被它识别并且展示出来了
 
-![](https://gitee.com/sysker/picBed/raw/master/images/b54547148f4b3d50704b67a1c268829.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/b54547148f4b3d50704b67a1c268829.png)
 
 当你把鼠标放到对应的节点上时，它还会显示系统的并发和延迟信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210416230656.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210416230656.png)
 
 #### 追踪
 
 这里就更强大了，当你的系统被调用的时候，它可以跟踪请求的处理过程，统计各个过程的时长，最后让你直观地看到接口的响应情况，找到接口的性能瓶颈。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210416230327.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210416230327.png)
 
 这里是多个节点调用的情况，我这里的`cache-server`调用了`redis`
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210416230500.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210416230500.png)
 
 更优秀的是，当你的接口调用过程中报错的时候，它还会保留错误堆栈信息，当你点击对应的错误节点时，就可以很直观的看到：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210416230402.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210416230402.png)
 
 
 
@@ -66,11 +73,13 @@
 https://skywalking.apache.org/
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417174104.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417174104.png)
 
 `skywalking`提供了对多种语言的支持，这里我们选择第一个，我们用的是`java`，而`skywalking`本身也是基于`java`开发的
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417174654.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417174654.png)
 
 不知道如何下载的小伙伴可以直接访问下面的地址下载：
 
@@ -82,7 +91,8 @@ https://downloads.apache.org/skywalking/8.5.0/apache-skywalking-apm-8.5.0.tar.gz
 
 `skyWalking`不需要安装，直接解压下载好的压缩问题，解压之后的文件结构如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417175057.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417175057.png)
 
 其中，`agent`就是我们的客户端探针，具体我们后面再解释；`bin`是运行命令存放的地方，这一个大部分的工具都是一样的；`config`存放的是配置文件，`logs`存放日志；其他的我们暂时不需要了解。
 
@@ -90,7 +100,8 @@ https://downloads.apache.org/skywalking/8.5.0/apache-skywalking-apm-8.5.0.tar.gz
 
 进入配置文件夹，打开`application.yml`文件，这个文件就是`skywalking`的核心配置文件，配置文件内容比较多，大的配置就下面几项：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417175708.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417175708.png)
 
 ##### 数据存储
 
@@ -232,17 +243,20 @@ storage:
 
 这里需要注意的一点是`SkyWalking`默认的访问端口是`8080`，如果你要修改，需要进入`\apache-skywalking-apm-bin\webapp`，并修改`webapp.yml`:
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417182354.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417182354.png)
 
 #### 启动
 
 启动也很简单，进入`bin`目录，运行`startup.bat`即可：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417182645.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417182645.png)
 
 正常启动成功会弹出两个`dos`窗口，且窗口不会关闭，如果窗口关闭，可能是配置有问题，或者端口冲突，可以去日志文件夹查看日志信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417182925.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417182925.png)
 
 ##### 测试
 
@@ -254,7 +268,8 @@ http://localhost:8080/
 
 如果你修改了端口，记得把端口修改成你修改过的，如果正常的话，你应该会看到我们最开始展示的首页：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417183339.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417183339.png)
 
 这里因为没有添加任何应用，所以当前服务这里应该显示的是空，这样的显示是正常的，至少说明你的服务启动是`OK`的。
 
@@ -266,9 +281,11 @@ http://localhost:8080/
 
 如果你想监测`IDEA`中的项目，你需要修改项目部署配置中`environment`的虚拟器启动参数：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417184037.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417184037.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417184134.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417184134.png)
 
 添加如下配置：
 
@@ -292,7 +309,8 @@ http://localhost:8080/
 set CATALINA_OPTS=-javaagent:D:\tools\apache-skywalking-apm-bin\agent\skywalking-agent.jar -Dskywalking.agent.service_name=tomcat-10 -Dskywalking.collector.backend_service=localhost:11800
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210417190113.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210417190113.png)
 
 ##### 单点jar文件
 
@@ -306,7 +324,8 @@ $ java -javaagent:D:\tools\apache-skywalking-apm-bin\agent\skywalking-agent.jar 
 
 打开你的服务，比如`springboot`服务，访问你的服务接口，如果没什么问题的话，`skywalking`会显示相应的访问信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210416230248.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210416230248.png)
 
 如果刷新后没有，稍等下看下。我在本地测试的时候，发现`tomcat-10`不显示访问信息，但是节点是显示的，不知道是没有部署服务的问题，还是版本的问题，这个问题后面再研究，但是`springboo`项目妥妥的没问题。具体显示效果参看前面的展示。
 

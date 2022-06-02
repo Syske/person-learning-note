@@ -113,7 +113,8 @@ $ nginx
 
 如果提示不是有效的命令，你可以进入到nginx的安装目录下进行启动，比如我的路径`/usr/local/nginx `，然后执行如上命令即可启动，默认端口80，然后你就可以在在浏览器输入localhost或者127.0.0.1来访问nginx了，可以在浏览器看下效果：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200822092906.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200822092906.png)
 
 ### windows
 
@@ -127,13 +128,15 @@ $ nginx
 http://nginx.org/en/download.html
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200822090741.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200822090741.png)
 
 #### 2. 解压
 
 解压刚刚下载的windows版本nginx，你可以看到如下目录结构：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200822091007.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200822091007.png)
 
 目录与Linux下一致，这里就不做过多说明。
 

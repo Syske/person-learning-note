@@ -178,7 +178,8 @@ filter配置类：
 
 其实spring boot原生提供了异常集中处理，我们经常会看到：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200408224651.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200408224651.png)
 
 但是这种方式不够友好，而且大部分情况不满足我们的需求，我们可以通过继承这个controller，然后重写error方法或者errorHtml方法，或者两个都重写，区别是errorHtml是处理请求头为`text/html`的请求发生的异常，而error是除了这个之外的其他异常。
 

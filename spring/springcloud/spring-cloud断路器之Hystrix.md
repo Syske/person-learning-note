@@ -73,11 +73,13 @@ public Object hystrix(@PathVariable(name = "name") String name) {
 
 `@HystrixCommand`注解是支持指定熔断器回调方法的，也就是熔断触发时调用的方法，如果不指定回调方法的话，默认返回的是`500`错误，下面是前端页面的返回结果：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210804083229.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210804083229.png)
 
 后端也有错误抛出，我们可以看到`hsystrix timed-out and fallback failed`错误提示：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210804083200.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210804083200.png)
 
 这也就是说如果启用断路器，必须指定回调方法，否则虽然也触发了熔断机制，但对调用方而言并不友好，当然如果你只是需要触发断路器，报错也无所谓，那不指定回调方法也不影响。
 
@@ -100,7 +102,8 @@ public Object error(String name) {
 
 回调方法的名字可以根据自己的需要自定义，但是参数必须与接口保持一致，否则会报错：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210804083708.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210804083708.png)
 
 以上配置完成后，我们的服务提供者就配置好了，下面我们来看下调用方的一些配置。
 
@@ -125,11 +128,13 @@ public Object testHystrix() {
 
 测试也很简单，我们先启动服务提供者（加了熔断配置的服务提供者），然后访问我们的`/testHy`，我们可以看到，在所有请求中，只有`4`个是成功返回的，其余的都因为超时触发熔断机制。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210804134103.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210804134103.png)
 
 关于这一点，我们从后台打印的睡眠时间也可以看出来：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210804134040.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210804134040.png)
 
 前面我们也说了，默认情况下，超时熔断时间为`1000ms`（有的书上说是`3000`，可能是版本问题，也有可能是作者搞错了，我实测的结论是`1000ms`），如果超过这个时间，就会触发熔断机制，执行并返回熔断回调方法。
 

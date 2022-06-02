@@ -14,12 +14,14 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 cnpm install --global vue-cli  
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211128162704.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211128162704.png)
 
 #### 验证
 
 安装完成后，输入`vue`验证是否安装成功：
-![](https://gitee.com/sysker/picBed/raw/master/images/20211128162809.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211128162809.png)
 
 #### 创建项目
 
@@ -31,7 +33,8 @@ vue init webpack demo
 
 之后根据提示信息操作即可
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211128162958.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211128162958.png)
 
 #### 运行项目
 
@@ -42,9 +45,11 @@ cd demo
 npm run dev
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211128163249.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211128163249.png)
 
 然后根据提示的地址访问服务即可：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211128163359.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211128163359.png)
 

@@ -12,7 +12,8 @@
 
 这一款工具是`Apache`开源基金会下的一个开源项目，是由纯`java`开发的，在测试圈比较知名，对于做过测试工作的小伙伴，这个工具应该不陌生。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529084622.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529084622.png)
 
 百度百科的解释：
 
@@ -68,7 +69,8 @@ https://jmeter.apache.org/download_jmeter.cgi
 
 最新版本是`5.4.1`，运行环境基于`jdk1.8+`
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529090333.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529090333.png)
 
 `windows`环境下选择`zip`那个版本，不过也不影响，都是`java`开发的，解压工具能解压就行。
 
@@ -76,19 +78,23 @@ https://jmeter.apache.org/download_jmeter.cgi
 
 直接解压，然后进入`bin`目录，然后运行`jmeter.bat`脚本就可以了，当然前提条件是你要先配置本地的`JDK`环境，不会的小伙伴自行百度。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529090913.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529090913.png)
 
 打开之后，它是这样的
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529091112.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529091112.png)
 
 不习惯英文界面的小伙伴可以修改成中文
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529091447.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529091447.png)
 
 我不喜欢深色主题，所以我把它改成浅色了，想改的小伙伴自己改：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529091626.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529091626.png)
 
 ### 开始测试
 
@@ -100,35 +106,41 @@ https://jmeter.apache.org/download_jmeter.cgi
 
 设置名称和注释，这里的配置主要是方便你管理测试计划，你不设置也不影响
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529102848.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529102848.png)
 
 #### 创建线程组
 
 选中测试计划，右键选择添加`->`线程`->`线程组
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529103247.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529103247.png)
 
 #### 设置线程组配置
 
 这里设置的就是我们的并发量，包括线程数、单个线程循环次数、延迟时间、持续时间等
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529103622.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529103622.png)
 
 #### 添加测试请求
 
 选中线程组，右键选择添加`->`取样器`->`HTTP请求。这里需要注意的是添加的时候必须在线程组下创建，否则是没法测试的，因为所有的测试请求都是通过线程组发起的。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529103916.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529103916.png)
 
 #### 配置测试请求
 
 这里就是配置我们接口的请求参数，包括协议、接口地址、请求方式、请求参数等
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529104519.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529104519.png)
 
 这时候就可以选中测试计划开始测试了，运行之前会提示我们保存测试计划：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529104858.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529104858.png)
 
 保存完成后，测试自动运行，这时候测试虽然启动了，但是是不会显示测试报告的，所以我们还需要增加报告。
 
@@ -136,7 +148,8 @@ https://jmeter.apache.org/download_jmeter.cgi
 
 同样是选中线程组，右键选择添加`->`监听器`->`选择需要的报告。这里我添加了两个报告，一个是汇总图，一个是汇总报告，你也可以根据自己的需要选择。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529105252.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529105252.png)
 
 然后再次运行，我们会发现汇总图和汇总报告这里就有结果了：
 
@@ -144,21 +157,25 @@ https://jmeter.apache.org/download_jmeter.cgi
 
 报告里面包含了接口响应时间的统计，包括平均响应时间、最大响应时间、异常率、系统吞吐量、发送/接受数据的统计等，还是比较详细的。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529105711.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529105711.png)
 
 ##### 汇总图
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529105850.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529105850.png)
 
 图表是支持配置的，你可以根据自己的需要进行设置，选择图形左上角的设置菜单即可
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529110118.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529110118.png)
 
 图表和数据都是可以保存的
 
 ##### 其他图表
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529110722.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529110722.png)
 
 #### 增加断言
 
@@ -168,31 +185,37 @@ https://jmeter.apache.org/download_jmeter.cgi
 
 `jmeter`添加断言很简单，选中线程组，右键选择添加`->`断言`->`选择你需要的断言方式。这里我们选择`json`断言
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529111052.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529111052.png)
 
 ##### 简单配置
 
 `Assert josn path exists`设置`json`中你也校验的`key`，如果你只校验`key`存在即可，那可以去掉`Additionally assert value`的勾，这个配置勾选的话，会校验上面配置的`key`的值，而且你需要在`expected value`设置预期的值。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529112520.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529112520.png)
 
 这时候直接运行的话，是看不到断言结果的，我们还需要增加断言报告：
 
 直接在监听器下选择断言结果就可以了。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529113036.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529113036.png)
 
 然后再次运行，断言结果这里就有数据了，断言如果通过是没有数据显示的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529113310.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529113310.png)
 
 但如果你指定的`key`不存在，就会有错误提示了，提示结果中不存在这个字段：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529113424.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529113424.png)
 
 如果你的返回值与断言预期结果不一致，则会提示，结果不匹配：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210529113610.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210529113610.png)
 
 ### 补充
 

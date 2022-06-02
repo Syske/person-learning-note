@@ -14,9 +14,11 @@
 
 #### 创建BeanDefinitionLoader
 
-![](https://gitee.com/sysker/picBed/raw/master/20210907211014.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210907211014.png)
 
-  首先是创建`bean`的定义加载器，创建`beanDefiniton`加载器的时候，首先是一个赋值操作，然后创建了`AnnotatedBeanDefinitionReader`，它的创建就稍微有点复杂。 ![](https://gitee.com/sysker/picBed/raw/master/20210907211446.png)
+  首先是创建`bean`的定义加载器，创建`beanDefiniton`加载器的时候，首先是一个赋值操作，然后创建了`AnnotatedBeanDefinitionReader`，它的创建就稍微有点复杂。 ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210907211446.png)
 
 ##### 实例化ConditionEvaluator
 
@@ -24,23 +26,29 @@
 
   最后一步都是赋值操作，就没啥好讲的了。
 
-  ![](https://gitee.com/sysker/picBed/raw/master/20210907212256.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210907212256.png)
 
-  另外，在`load`方法中调用了另一个方法`registerAnnotationConfigProcessors`。就说这方法看着眼熟，原来我们昨天分析`beanDefinitionMap`初始化的时候，已经研究过了。  ![](https://gitee.com/sysker/picBed/raw/master/20210907214219.png)
+  另外，在`load`方法中调用了另一个方法`registerAnnotationConfigProcessors`。就说这方法看着眼熟，原来我们昨天分析`beanDefinitionMap`初始化的时候，已经研究过了。  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210907214219.png)
 
-  这里注册完成后`beanDefinitionMap`会多出`5`个元素。  ![](https://gitee.com/sysker/picBed/raw/master/20210906212208.png)
+  这里注册完成后`beanDefinitionMap`会多出`5`个元素。  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906212208.png)
 
-  下面两个`Reader`的初始化就不再详细分析了，基本上都是简单的实例化和赋值操作：  ![](https://gitee.com/sysker/picBed/raw/master/20210907214756.png)
+  下面两个`Reader`的初始化就不再详细分析了，基本上都是简单的实例化和赋值操作：  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210907214756.png)
 
 ##### 实例化scanner
 
   后面两个操作有必要讲一下，首先实例化了`scanner`，在实例化过程中，注册了三个注解类型过滤器（`AnnotationTypeFilter`）
 
-![](https://gitee.com/sysker/picBed/raw/master/20210908082829.png) 
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210908082829.png) 
 
 事实上，`javax.inject.Named`，并没有被注册成功，因为当前`class`并不存在，关于这一点，下面的截图可以很清楚地说明，因为在注册`JSR-330`的`class`时候报了`java.lang.ClassNotFoundException`异常，所以最终的结果就是`@Component`和`@ManagedBean`这两种注解类型拦截器被成功注入，我们通过`includeFilters`的大小也可以看出这一点。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210908083456.png) 
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210908083456.png) 
 
 ##### 注册排除过滤器
 
@@ -48,23 +56,27 @@
 
 这里需要注意的是，`excludeFilters`本身是个`List`，所以这里`add`的时候其实是把新的排除注册器放在`excludeFilters`的最前面。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210908084904.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210908084904.png)
 
 #### 设置loader属性
 
 下面就是这只`loader`的属性，包括`beanNameGennerator`、`resourceLoader`和`environment`。但是由于这些参数都是空的，所以默认情况下这些设置方法并不会被执行：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210908130336.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210908130336.png)
 
 #### loader加载资源
 
 下面是`load`方法最核心的执行流程，核心部分就是注册`Bean`
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210908131728.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210908131728.png)
 
 由于一张截图无法完整体现`registerBean`的流程，所以我分成了两张截图，这里最核心的就是`doRegisterBean`方法，这个方法内部会构建当前`class`的`BeanDefinition`。其中`AnnotatedGenericBeanDefinition`是根据注解信息生成的`bean`的`definition`信息，包括`beanClass`、`AnnotationMetadata`（注解元数据）、`scope`（范围）等，总之就是凡是通过注解方式配置的类，都是通过`AnnotatedGenericBeanDefinition`来构建它的`definition`信息的，它本身也就是为了支持注解元数据而生的。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210908132127.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210908132127.png)
 
 上面这些操作执行完毕后会往`beanFactory`的`beanDefinitionMap`和`beanDefinitionNames`分别保存`beanClass`的`beanName`和`beanDefinition`信息
 
@@ -72,19 +84,23 @@
 
 这里调用的是监听器容器的`contextLoaded`方法，其方法内部本质上是触发对应的事件，从方法名上我们可以看出来这个方法其实发的就是容器已经加载完成的事件。下面是`Logger`
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210908144903.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210908144903.png)
 
 `debug`过程中，我发现这里触发的时间类型是`ApplicationPeparedEvent`事件，这里的事件类别挺多的，不同的监听器会执行各自的`onApplicationEvent`方法，上面的流程中我们就是以`LoggingApplicationListener`为例，剖析其执行流程的
 
-![](https://gitee.com/sysker/picBed/raw/master/20210908214555.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210908214555.png)
 
 对于`LoggingApplicationListener`总共会处理`5`种事件，这里处理的是`ApplicationPreparedEvent`事件，也就是我们前面看到的类型
 
-![](https://gitee.com/sysker/picBed/raw/master/20210908214752.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210908214752.png)
 
 在当前事件类型下，`LoggingApplicationListener`的`onApplicationEvent`方法会往容器中注册两个单例实例，中间的`logFile`为空，所以并未成功注入。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210908215403.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210908215403.png)
 
 
 

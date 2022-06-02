@@ -26,7 +26,8 @@
 
 引入`zuul`的依赖后，我发现`zuul`还依赖了`ribbon`、`feign`、`hystrix`等组件，说明`zuul`本身也为我们提供负载均衡的相关实现，关于这一点，后面我们会演示。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210807154031.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210807154031.png)
 
 ##### eureka依赖
 
@@ -60,7 +61,8 @@ public class SpirngCloudZuulDemoApplication {
 
 关于启用`Hystrix`断路器，从业务上也很好理解，应用网关作为对外提供服务的窗口，在前后端交互方面是绝对的挑大梁角色，如果因为某个服务长时间未响应，导致请求阻塞，最后导致网关宕机，这种情景是不敢想象的，网关一挂，意味着企业服务都凉凉了，所以集成断路器就很有必要了。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210806085128.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210806085128.png)
 
 这里就是应用网关的配置文件了，配置内容也很简单，一个是指定端口，一个是设定`eureka`注册中心的地址。用`80`端口的好处，就是可以省掉端口，就很方便了
 
@@ -75,11 +77,13 @@ eureka.client.service-url.defaultZone=http://localhost:8999/eureka/
 
 下面我们来进行一些简单的测试，首先启动我们的注册中心，为了方便测试，这里我们就启动一个注册中心，同时我们启动应用网关服务`spring-cloud-zuul`和产品服务`product-service`。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210806082539.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210806082539.png)
 
 在产品服务中，我们有一个简单的`controller`接口，这个接口就是上次我们测试`feign`负载均衡组件的时候用的，这里就直接用了。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210806082615.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210806082615.png)
 
 下面我们通过应用网关访问下我们的产品服务，地址如下：
 
@@ -91,15 +95,18 @@ http://localhost/product-service/feign
 
 下面就是我们访问结果：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210806082415.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210806082415.png)
 
 和我们直接访问服务实际地址返回的结果也是一致的：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210807160745.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210807160745.png)
 
 同时在后端控制台，我们会发现`zuul`的负载均衡默认是通过`ribbon`实现的：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210807162141.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210807162141.png)
 
 #### 内容扩展
 
@@ -128,7 +135,8 @@ zuul.routes.product-service.service-id=product-service
 
 只是上面这种配置式的访问规则，并不会触发负载均衡，只是单纯的请求转发。关于这一点，各位小伙伴可以访问同一个服务试下，配置式的访问规则，服务访问的时候只会访问我们设定的`url`，而通过`serviceId`的方式访问，则会默认走负载均衡：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210807165827.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210807165827.png)
 
 ### 总结
 

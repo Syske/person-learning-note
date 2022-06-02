@@ -16,7 +16,8 @@
 
 **注册中心**，简单来说就是微服务的管理中心，他不仅要负责服务的注册（服务提供者）、服务发现（服务消费者），还要服务的监测，服务的治理，举个例子来说，注册中心就类似之前的号码百事通，如果你想知道某个机构的服务电话，你只需要拨打114(号码百事通)，他就会告诉你相应的电话号码，然后你再打给对应的机构即可。这里你就是服务的调用方，号码百事通就是注册中心，对应的机构就是服务提供者，我们看下面的图就更容易理解了：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308213512.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308213512.png)
 
 服务提供者和服务调用者在服务初始化时，向服务中心提交注册，同时调用者要向注册中心发生心跳请求，便于注册中心进行监测（当然不同组件实现方式会有所不同）
 
@@ -26,27 +27,32 @@
 
 ZooKeeper是非常经典的服务注册中心中间件，在国内环境下，由于受到Dubbo框架的影响，大部分情况下认为Zookeeper是RPC服务框架下注册中心最好选择
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308214238.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308214238.png)
 
 #### Eureka
 
 SpringCloud框架生态中最原生的深度结合组件，Eureka是Netflix开发的服务发现框架，基于REST的服务，主要用于服务注册，管理，负载均衡和服务故障转移。但是官方声明在Eureka2.0版本停止维护，不建议使用。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308214328.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308214328.png)
 
 #### Consul
 
 Consul是用于服务发现和配置的工具。Consul是分布式的，高度可用的，并且具有极高的可伸缩性，而且开发使用都很简便。它提供了一个功能齐全的控制面板，主要特点是：服务发现、健康检查、键值存储、安全服务通信、多数据中心、ServiceMesh。Consul在设计上把很多分布式服务治理上要用到的功能都包含在内了
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308214448.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308214448.png)
 
 #### nacos
 
 nacso是我们今天的主角，今天我们的`demo`就是基于他实现的。阿里出品，还是值得信赖的，而且一如既往优秀，在国内特别流行。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308214528.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308214528.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308215153.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308215153.png)
 
 
 
@@ -151,7 +157,8 @@ curl -X PUT "http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=example&ip=1
 
 首先我们先启动前面写好的示例：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308220641.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308220641.png)
 
 可以在浏览器打开如下地址：
 
@@ -201,7 +208,8 @@ curl -X PUT "http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=hello&ip=127
 
 然后访问我们的`getService`这个接口即可返回`hello`服务的调用结果：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210308222502.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210308222502.png)
 
 这里要安利下`spring`的`restfull`调用工具`RestTemplate`，我也是最近发现`spring`还有这个工具，可怜的我还在用自己的`httpUtil`，使用方式也很简单，在配置类中加入如下配置：
 

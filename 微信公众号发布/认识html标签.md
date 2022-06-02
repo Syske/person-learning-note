@@ -4,7 +4,8 @@ tags: [#html]
 
 让我们通过一个网页的学习，来对html标签有一个初步理解。平常大家说的上网就是浏览各种各式各样的网页，这些网页都是由**html标签**组成的。下面就是一个简单的网页。效果图如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/1077694-20161209113848147-981300864.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1077694-20161209113848147-981300864.png)
 
 我们来分析一下，这个网页由哪些html标签组成：
 
@@ -16,7 +17,8 @@ tags: [#html]
 
 网页的完整代码如下图： 
 
- ![](https://gitee.com/sysker/picBed/raw/master/images/1077694-20161209113924538-87687929.jpg)
+ ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1077694-20161209113924538-87687929.jpg)
 
 #### HTML 基本文档
 

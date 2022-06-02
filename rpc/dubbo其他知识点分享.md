@@ -13,7 +13,8 @@ tags: [#rpc, #dubbo]
 https://dubbo.apache.org/zh/docs/advanced/
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210818124801.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210818124801.png)
 
 #### 启动时检查
 
@@ -65,7 +66,8 @@ java -Ddubbo.registry.check=false
 
 下面是官方给出的集群调用流程图：
 
-![](https://gitee.com/sysker/picBed/raw/master/cluster.jpg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/cluster.jpg)
 
 各节点关系官方也给出了说明：
 

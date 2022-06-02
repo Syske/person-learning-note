@@ -6,11 +6,13 @@
 npm install -g @electron-forge/cli
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220110232658.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110232658.png)
 
 安装完成后简单测试下：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220110232746.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110232746.png)
 
 #### 项目中安装
 

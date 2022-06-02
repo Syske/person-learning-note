@@ -27,7 +27,8 @@
 
 目前`markdown`编辑器的核心技术解决方案是`electron`，这是目前比较流程的桌面端应用开发解决方案，基于`nodejs`实现，跨平台，而且降低了桌面应用开发难度，感兴趣的小伙伴可以自己去研究下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211204235614.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211204235614.png)
 
 ##### 目前进展
 
@@ -35,20 +36,25 @@
 
 - 首页截图
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211204234611.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211204234611.png)
 
 - 打开文件（支持快捷键操作）
 
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20211204234653.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211204234653.png)
 
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20211204234757.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211204234757.png)
 
 - `markdown`预览效果
 
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20211204235118.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211204235118.png)
 
   关于编辑器的话，后面考虑用下面这款，但是还需要进一步改造（毕竟和我想要的所见即所得还有差距）：
 
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20211205000049.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211205000049.png)
 
   好了，今天就先分享这么多，等后面编辑这块解决了，可以分享出来让各位小伙伴体验下。

@@ -22,7 +22,8 @@
 
 简单来说，消息队列就是一种平衡系统并发量的系统组件，主要的作用就是削峰填谷。我们假设这张图中红色表示没有加入消息队列组件的系统并发时序图（这里的图是随意画的，只是为了说明问题），蓝色表示架构中加入了消息队列组件：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210309225021.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210309225021.png)
 
 
 
@@ -32,7 +33,8 @@
 
 我们来想象这样一个应用场景，我们要做一个购票系统，购票成功后要短信告知用户购票结果，如果采用串行方式（也就是同步调用），我们的调用方式是这样的：用户提交购票订单后，订单系统受理购票订单后，调用短信系统发送购票结果。这里我们放一个图，大家就更清楚了：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310204920.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310204920.png)
 
 串行架构下系统的响应时间是`150ms` + `150ms`，需要`300ms`，从业务流程上来说，订单受理成功后发送购票结果，这没有什么问题，但是如果短信系统在某个时间段内系统宕机，短信服务不可用，购票短信无法发送，最终导致的结果是用户是无法下单的，不仅影响用户体验，也影响公司的业务受益。
 
@@ -40,11 +42,13 @@
 
 所以，我们更合理的业务处理方式是，订单系统受理成功后，直接将受理结果返回给用户，至于订单的处理结果，可以等整个业务完成后生成，然后订单系统向短信系统发送订单处理结果的消息，短信系统收到消息后给给用户发购票结果，这里我们存放消息的容器就是消息队列，这时候我们的系统机构是这样的：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310204748.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310204748.png)
 
 上面这种架构中，我们发送短信的业务是异步的，这样不仅可以减少用户等待的时间，提高服务的响应效率，如果省去短信系统的处理时间，那么最终业务的响应时间就缩减为`150ms`，而且这种架构下系统的耦合性更低，比如如果未来业务需求发送变化，不仅需要给用户发送短信，还要将结果推送到微信公众号，业务耗时`100ms`，甚至还需要将结果以邮件的方式发送到用户，业务耗时`150ms`，如果还是第一种架构模式，那用户要等待的响应时长是`150ms` + `150ms` + `100ms` + `150ms`，但对第二种架构，用户的响应时间始终是`150ms`：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310210550.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310210550.png)
 
 ### RocketMQ入门
 
@@ -60,7 +64,8 @@
 https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.8.0/rocketmq-all-4.8.0-source-release.zip
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310225037.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310225037.png)
 
 点击上图的地址，红框内的地址是推荐的国内的镜像地址，下载比较快
 
@@ -90,9 +95,11 @@ ROCKETMQ_HOME="D:\workspace\tools\rocketmq-all-4.8.0-bin-release"
 NAMESRV_ADDR="localhost:9876"
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310230554.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310230554.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104351.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104351.png)
 
 或者在启动前的`powershell`窗口里设置，这里是临时，每次都要设置，嫌麻烦的直接设置永久的:
 
@@ -131,9 +138,11 @@ cd D:\workspace\tools\rocketmq-all-4.8.0-bin-release
 .\bin\mqnamesrv.cmd
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310231630.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310231630.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310231743.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310231743.png)
 
 ##### 启动代理服务
 
@@ -163,7 +172,8 @@ cd D:\workspace\tools\rocketmq-all-4.8.0-bin-release
 
 操作之前，一定要进入`rocketMQ`安装目录，否则回报如下红色错误
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310232411.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310232411.png)
 
 
 
@@ -190,7 +200,8 @@ cd D:\workspace\tools\rocketmq-all-4.8.0-bin-release
 
 执行命令后，会看到我们向消息队列中发送了很多消息
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310233023.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310233023.png)
 
 ##### 接收消息
 
@@ -212,7 +223,8 @@ cd D:\workspace\tools\rocketmq-all-4.8.0-bin-release
 
 执行上面命令后，可以看到控制台接收到刚才发送的消息
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310233327.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310233327.png)
 
 
 
@@ -419,7 +431,8 @@ public class Consumer {
 
 顺序消息简单来说，就是消费者的消费顺序和生产者生产顺序是一致的，比如对下面代码中的`创建订单`，消费的时候肯定是先消费`创建1`，然后是`创建2`，再是`创建3`，这里的是区分是否是同一类消息，是通过`Message`的`tag`属性的值来判断的。关于顺序消息借用网上的一个图来说明吧：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210310234923.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210310234923.png)
 
 ```java
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

@@ -112,17 +112,20 @@ new FunctionalInterfaceTest().dealThing(parameter, s -> {System.out.println("业
 
 运行结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220225082723.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220225082723.png)
 
 #### Consumer函数式接口
 
 下面我们来简单看下`Consumer`接口的基本结构：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220225083029.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220225083029.png)
 
 和我们通常定义的接口有所不同的是，函数式接口有一个`@FunctionalInterface`注解，其中的`accept`方法就是我们在调用方法时需要实现的方法。除了`Consumer`函数式接口之外，`java`还为我们提供了其他很多有用的函数式接口，比如`Function`，与`Consumer`不同的是，`Function`提供的函数式接口是可以有返回值的：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220225084212.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220225084212.png)
 
 #### 定义自己的函数式接口
 
@@ -157,13 +160,15 @@ new FunctionalInterfaceTest().functionTest("syske", "hello", FunctionalInterface
 
 需要注意的是，函数式接口中只能定义一个未实现的接口，否则会报编译错误：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220225084944.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220225084944.png)
 
 #### 多参数函数式接口
 
 上面我们演示的都是单参数的函数式接口，其实官方也提供了很多其他的函数式接口，比如带返回值的函数式接口`Function`、多参数的接口`BiFunction`
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220228084711.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220228084711.png)
 
 这里的`BiFunction`有两个入参和一个返回值，如果两个参数依然满足不了你的需要，你还可以自己定义多参数接口，这里我定义的函数式接口有`5`个参数：
 

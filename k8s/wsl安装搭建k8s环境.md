@@ -6,7 +6,8 @@
 
 不过，通过昨天晚上和今天集群的创建，我发现`k8s`集群创建这块的经验和思路已经很成熟了，所以就想趁着这股热劲，把自己的经验分享下，供大家参考，为了搞清楚`k8s`，连`ubuntu`我都安装了好几个：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626172621.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626172621.png)
 
 今天我们演示内容是基于`ubuntu 20.04`展开的，内容有点多，我们直接开始正文吧。
 
@@ -24,7 +25,8 @@ https://docs.microsoft.com/zh-cn/windows/wsl/
 
 启用成功后，打开我们的`wsl`：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626173445.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626173445.png)
 
 后期，我们分享如何美化这里的终端窗口。
 
@@ -57,7 +59,8 @@ sudo vim /etc/apt/sources.list
 
 这里用`sudo`是因为当前用户不是`root`账户，如果登录的是`root`账户，就不需要加`sudo`，不过加了也不影响，下面的命令也是一样的，后面就不再说明了，`#`表示注释该行数据。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626174648.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626174648.png)
 
 修改完镜像后，我们通过如下命令更新下系统：
 
@@ -67,9 +70,11 @@ sudo apt update & sudo apt upgrade
 
 前面的命令是更新软件列表，后面的命令是安装更新，也可以分开执行（感觉我说的好细呀），然后静静等待更新完成：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626175103.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626175103.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626175201.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626175201.png)
 
 ##### `daemonize`安装配置
 
@@ -84,7 +89,8 @@ sudo apt install -yqq fontconfig daemonize # 第一种方式需要执行
 
 因为我已经安装过了，显示得可能和你不一样：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626175913.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626175913.png)
 
 这里有两种方式。需要注意的是第一种方式需要多安装一个软件包：`fontconfig`
 
@@ -124,7 +130,8 @@ sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd -
 
 我推荐第一种，第二种虽然第一次是`ok`的，但是在实际使用中发现，`wsl`重启后（或者电脑重启），第二种方式执行`docker`和`k8s`命令的时候，会报下面的错，而且我还没找到解决方案：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626184940.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626184940.png)
 
 具体情况，各位小伙伴可以自己试验下。
 
@@ -260,13 +267,15 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 因为我已经安装过了，所以提示已经安装过了，根据提示信息我们发现安装的版本应该是`1.21.1`，应该是最新版本了。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626191049.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626191049.png)
 
 #### 创建k8s集群
 
 创建集群的方式有多种，目前我了解到的有两种，一种是用`kubeadm `，一种是用`kind`，经过多次尝试，我发现第一种方式在`wsl`下始终无法成功，刚开始是不支持`swap`交换分区，忽略这个错误后，又有其他错误，一直没跑通，所以本文我们采用后一种，即`kind`。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626191506.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626191506.png)
 
 ##### 下载安装kind
 
@@ -299,7 +308,8 @@ kind create cluster --name wslk8s
 
 然后就是漫长的等待，如果不出意外，最后会显示创建成功：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626193509.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626193509.png)
 
 我们通过下面的命令看下节点信息：
 
@@ -307,7 +317,8 @@ kind create cluster --name wslk8s
 kubectl cluster-info --context kind-wslk8s
 ```
 
-显示信息如下：![](https://gitee.com/sysker/picBed/raw/master/images/20210626193717.png)
+显示信息如下：![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626193717.png)
 
 然后我们访问如下地址看下
 
@@ -315,9 +326,11 @@ kubectl cluster-info --context kind-wslk8s
 https://127.0.0.1:45187/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626193814.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626193814.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20210626193842066.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210626193842066.png)
 
 虽然显示结果有点问题，但是也说明集群创建成功，下面我们安装`k8s`控制台。
 
@@ -331,11 +344,13 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.1/a
 
 上面的命令就是根据`yaml`构建我们的`k8s`节点
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626194249.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626194249.png)
 
 然后通过`kubectl describe pod -n kubernetes-dashboard`查看创建日志：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20210626194414457.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210626194414457.png)
 
 如上显示表明，我们的节点创建成功，然后运行如下命令：
 
@@ -343,7 +358,8 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.1/a
 kubectl proxy
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626194924.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626194924.png)
 
 再访问如下地址：
 
@@ -353,7 +369,8 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 
 如果是这样的，表面我们控制面板安装成功：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626194950.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626194950.png)
 
 但是真正要访问，还需要配置个用户信息，生成一个`token`。
 
@@ -397,7 +414,8 @@ kubectl apply -f adminuser.yaml
 
 正常情况下，会提示创建成功
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626195618.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626195618.png)
 
 然后获取授权`token`
 
@@ -407,15 +425,18 @@ kubectl apply -f adminuser.yaml
 
 下面显示的就是`token`信息，直接复制即可：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626195800.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626195800.png)
 
 然后我们把`token`填入页面，即可访问：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626200108.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626200108.png)
 
 然后，我们就可以通过`kubernetes-dashboard`管理我们的`k8s`了，可以看日志，管理服务节点等，具体各位小伙伴自己摸索吧。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210626200318.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626200318.png)
 
 ### 总结
 

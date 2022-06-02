@@ -18,7 +18,8 @@
 
 `parallelStream`中文含义并发流、平行流，和`stream`相比，它效率更高，内部采用了 `fork/join`机制，即把一个大任务拆分（`fork`）成多个子任务，子任务之间还会继续拆分，然后以多线程的方式去运行，最后运行结束后，将子任务结果进行整合（`join`），生成最后的运行结果，整体运行流程大致如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210810125405.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210810125405.png)
 
 下面是一段示例代码，在代码中我们先初始化了一个长度为`10000`的`List`，然后分别通过普通的`stream`和 `parallelStream`分别遍历`integers`，然后把其中的值转换成`string`类型，放入一个新的集合中，这里用了`map(String::valueOf)`，最后分别打印他们的运行时间，比较他们的性能
 
@@ -42,7 +43,8 @@
 
 运行结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210810131046.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210810131046.png)
 
 根据本次示例运行结果，我们可以发现`parallelStream`比普通的`stream`快了`32`倍，这数据就足以说明`parallelStream`比`stream`性能要好，当然具体的数据还是取决于你的电脑性能。
 
@@ -70,15 +72,18 @@ private static void parallelStreamTest() {
 
 同样的代码，如果用`stream()`，返回结果就是正常的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210810133444.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210810133444.png)
 
 但如果用`parallelStream`，这结果就有点离谱了，数据一半都被弄丢了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210810133642.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210810133642.png)
 
 如果`parallelStream`内部如果多加一行打印，结果会稍微好一点，但是也是有问题的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210810133847.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210810133847.png)
 
 导致线程不安全问题的原因是因为我们`parallelStream`内部用到了`integersList`这个共享变量，如果你的`parallelStream`内部没有写相关的操作，那应该是不存在线程安全问题的，总之，慎用`parallelStream`。
 
@@ -120,7 +125,8 @@ public static class TestVo {
 
 在上面的代码中，我们先初始化了一个`testVoList`，然后先通过`groupingBy`对`TypeId`分组，最终结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20210810204630726.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210810204630726.png)
 
 可以看到，最后生成的`map`就是以`TypeId`为`key`进行分组的。
 
@@ -133,7 +139,8 @@ System.out.println("projectNUmSortMap = " + projectNUmSortMap);
 
 运行结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210810221832.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210810221832.png)
 
 根据运行结果可以看出，我们的`map`已经按`ProjectNum.Sort`的形式为我们分组了，我觉得这种方式最常用，特别是在复杂业务中，数据关系比较复杂的话，用这种方式可以很方便地构建出我们需要的数据格式。
 

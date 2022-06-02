@@ -278,7 +278,8 @@ Math.round(x)
 
 3. 如果 x 与两侧整数同等接近，则结果接近 +∞方向的数字值 。(如 -5.5 将舍入为 -5; -5.52 将舍入为 -6),如下图:
 
-![](https://gitee.com/sysker/picBed/raw/master/images/lip_image112.gif)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/lip_image112.gif)
 
 把不同的数舍入为最接近的整数,代码如下：
 

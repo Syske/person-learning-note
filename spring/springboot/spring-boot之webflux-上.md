@@ -9,11 +9,13 @@ tags: [#springboot]
 
 下面是官方网站给出的对比：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210728130218.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210728130218.png)
 
 下面是`MVC`和`webFlux`的架构图对比:
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210728133517.png) 
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210728133517.png) 
 
 当然，现在我们的说法只能算是一种推理，因为我现在对`webflux`也知之甚少，不过根据我目前搜集到的资料来看，大家似乎并不认为`webflux`未来会成为一种趋势，大家诟病的缺点主要有以下几个：
 
@@ -78,7 +80,8 @@ http://localhost:8999/webflux/hi
 
 服务端口如果你没有修改的话，默认应该是`8080`。响应结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210728131526.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210728131526.png)
 
 到这里你的第一个`webflux`接口就写好了。
 
@@ -104,7 +107,8 @@ public class WebFluxController {
 http://localhost:8999/webflux/hi?name=syske
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210728131952.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210728131952.png)
 
 需要注意的是，如果`controller`和`webFlux`接口同时存在的话，`webFlux`会覆盖`controller`，也就是说`webFlux`的优先级要高于`controller`。
 

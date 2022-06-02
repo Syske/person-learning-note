@@ -16,7 +16,8 @@
 
 找到`merge`操作
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211020113317.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113317.png)
 
 
 
@@ -28,7 +29,8 @@
 git reset --hard b85bbfb424
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211020113637.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113637.png)
 
 
 
@@ -40,6 +42,7 @@ git reset --hard b85bbfb424
 git push -f
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211020113828.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113828.png)
 
 至此，`merge`操作就回滚成功了。

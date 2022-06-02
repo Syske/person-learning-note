@@ -264,7 +264,8 @@ public class WebConfig implements WebMvcConfigurer {
 
 完成以上内容之后，我们就可以进行相关测试了，首先将我们的项目启动起来，然后直接访问我们的接口即可，访问接口的时候记得带着我们的`token`（唯一`key`），最终访问结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211031232851.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211031232851.png)
 
 从结果中我们可以看出来，在第一次访问的时候，`token`的过期时间为`60`，我们连续访问`5`次之后，接口限制我们访问的，然后等到限制过期之后（`token`过期），又可以继续访问了。至此，我们的计数器限流的算法实现也算是完美达成，是不是很简单呢？
 
@@ -272,7 +273,8 @@ public class WebConfig implements WebMvcConfigurer {
 
 本次`demo`总体来说很简单，除了算法本身之外，基本上都是`java`或者`spring boot`的简单知识点应用，但是从我自己实践的感受来说，我觉得以后还是得多造轮子，因为之前比较熟悉得好多配置和写法都生疏了，好多都要翻看之前的`demo`才能想起来。当然，话句话说就是，很多看起来很简单的实例或者`demo`，其实在真正实践的时候并不简单，因为我们往往总会高估自己的能力……
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211031233839.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211031233839.png)
 
 项目完整代码：
 

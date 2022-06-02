@@ -10,29 +10,36 @@
 
 其中Deppin是国内目前做的最好的操作系统，由武汉深之度开发，全球Linux发行版排名第11位，前段时间特别火的UOS系统就是由他们主导开发的。Deppin OS系统很漂亮，也符合国人使用习惯，生态圈也比较完善，有成熟的应用商店，像我们日常用到的软件都有：微信、QQ、WPS、搜狗输入法、网易云音乐等；
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200829102320.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200829102320.png)
 
 银河麒麟操作系统是由中标麒麟软件开发的，风格类似win7，有统一软件商店，大部分国产软件都支持，如：搜狗输入法、WPS等。同时最新发布的v10，整合了技德（这个公司特别强，其开发的Renux OS因为威胁到安卓操作系统，被迫下线消费者版）开发的安卓虚拟技术Kydroid3.0，可以让pc端完美运行安卓app，目前支持2000余款安卓应用（如微信、QQ、办公、股票、游戏等）
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200829101820.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200829101820.png)
 
 Ubuntu，很多小白的Linux入门必选，优麒麟就是Ubuntu中国版，对国人比较友好，好多软件可以直接下载后安装，比如搜狗输入法、WPS、网易云音乐等
 
-![](https://gitee.com/sysker/picBed/raw/master/images/c404705c-video-youtube.jpg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/c404705c-video-youtube.jpg)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/qilin-4k.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/qilin-4k.png)
 
 elementary OS号称最美的Linux发行版，系统特别漂亮
 
-![](https://gitee.com/sysker/picBed/raw/master/images/desktop.jpg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/desktop.jpg)
 
 RedHat是红帽公司开的商业操作系统，操作系统本身开源免费，当增值服务需要付费，目前该公司已被IBM收购。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200829101940.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200829101940.png)
 
 manjaro就是我们今天的主角，我今天演示的就是它的安装。它是全球目前最流行的发行版本，排名第一，系统性能优秀。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/13.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/13.png)
 
 ## manjaro安装演示
 
@@ -45,7 +52,8 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 - 下载地址：https://manjaro.org/download/
 - 我这里演示的是xfce版本，你也可以根据自己的需要，不知道咋选的话，就下载gonme版，kde系统界面比较好看
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200829102713.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200829102713.png)
 
 #### 准备优盘
 
@@ -55,7 +63,8 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 制作工具我选的是win32ImgWriter，你也可以用其他的。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200829103239.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200829103239.png)
 
 制作完成后，直接重启电脑，然后选择优盘启动
 
@@ -65,17 +74,21 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 重启电脑后，选择优盘启动，会出现如下界面，如果你不做任何操作，他会默认进入live系统，可以作为体验版使用。也就是说你可以选择不安装直接体验。当然，这个界面你可以这只语言版本，改为中文
 
-![](https://gitee.com/sysker/picBed/raw/master/images/1.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/2.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/2.png)
 
 #### 进入live系统
 
 直接启动后，会进入如下界面，也就是桌面
 
-![](https://gitee.com/sysker/picBed/raw/master/images/3.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/3.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/4.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/4.png)
 
 在这里你可以直接体验系统各种操作，你也可以选择桌面的安装，将系统安装到你的硬盘上。
 
@@ -85,19 +98,22 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 双击桌面的安装程序，开始系统安装前的配置，首先选择语言
 
-![](https://gitee.com/sysker/picBed/raw/master/images/5.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/5.png)
 
 
 
 ##### 选择区域
 
-![](https://gitee.com/sysker/picBed/raw/master/images/6.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/6.png)
 
 
 
 ##### 选择键盘布局
 
-![](https://gitee.com/sysker/picBed/raw/master/images/7.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/7.png)
 
 
 
@@ -105,7 +121,8 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 这里你如果打算安装双系统的话，需要选择手动分区
 
-![](https://gitee.com/sysker/picBed/raw/master/images/8323.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/8323.png)
 
 
 
@@ -113,7 +130,8 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 这里包括用户名、主机名、用户密码、root用户及密码的设置
 
-![](https://gitee.com/sysker/picBed/raw/master/images/9.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/9.png)
 
 
 
@@ -121,7 +139,8 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 因为我要安装WPS，所以这我选择不安装ofiice
 
-![](https://gitee.com/sysker/picBed/raw/master/images/10.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/10.png)
 
 
 
@@ -131,7 +150,8 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 ##### 安装确认
 
-![](https://gitee.com/sysker/picBed/raw/master/images/11.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/11.png)
 
 
 
@@ -139,25 +159,29 @@ manjaro就是我们今天的主角，我今天演示的就是它的安装。它�
 
 这里要等十几二十分钟，具体时长取决于你的电脑配置。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/12.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/12.png)
 
 
 
 ##### 安装完成
 
-经过漫长等待，系统安装完成，现在让我们重启，体验刚刚安装的manjaro![](https://gitee.com/sysker/picBed/raw/master/images/14.png)
+经过漫长等待，系统安装完成，现在让我们重启，体验刚刚安装的manjaro![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/14.png)
 
 #### 开始使用
 
 ##### 用户登陆
 
-![](https://gitee.com/sysker/picBed/raw/master/images/15.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/15.png)
 
 
 
 ##### 用户桌面
 
-安装完成，登陆后页面是这样的，如果你选择的是其他版本，界面会有一些差异。![](https://gitee.com/sysker/picBed/raw/master/images/16.png)
+安装完成，登陆后页面是这样的，如果你选择的是其他版本，界面会有一些差异。![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/16.png)
 
 
 

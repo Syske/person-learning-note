@@ -12,17 +12,20 @@
 
 有时候，感觉解决一个问题往往就是如此简单，当我想要解决这个问题的时候，我在`windows`应用商店`ubuntu`的评论区竟然就找到了问题的答案，起初我是不信的，但是看到上千人点赞，我决定试一下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211008193136.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211008193136.png)
 
 #### 下载软件包
 
 我访问了评论里面提到的地址，找到了下载地址：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211008211443.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008211443.png)
 
 选择对应的版本就可以直接下载了，因为我之前安装的是`18.04`，所以我依然选择这个版本，如果不知道的话就选`20.04`或者`18.04`，然后等待下载完成，这里下载的是扩展名为`.appx`的软件包：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211008212035.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008212035.png)
 
 
 
@@ -30,7 +33,8 @@
 
 接着，修改软件包扩展名，改为`.zip`即可，然后解压（想安装到哪个磁盘，解压到哪个磁盘）：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211008212352.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008212352.png)
 
 
 
@@ -38,7 +42,8 @@
 
 直接双击我们解压的`ubuntu1804.exe`可执行文件就可以开始安装了：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211008212648.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008212648.png)
 
 然后输入用户名和密码之后，`wsl`安装成功。同时，我们可以发现，在`ubuntu1804.exe`的同级目录下，会生成一个`.vhdx`的文件，这个文件就是`wsl`的虚拟磁盘，说明我们的`wsl`已经成功的安装在了`D`盘。
 
@@ -48,7 +53,8 @@
 
 虽然整个过程很简单，但是我还是遇到了一些问题。为了偷个懒，我没有修改文件扩展名，而是用`7-zip`直接拖到本地文件加中，结果启动的时候报错了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211008194711.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211008194711.png)
 
 搜了下这个错误码，说是我没有启动`windows update`服务，然后一顿操作之后，依然不行。然后又老老实实改了下扩展名，再运行又好了，有点诡异呀。所以各位小伙伴最好老老实实改名，然后再解压运行。
 
@@ -58,7 +64,8 @@
 
 关于上面我们这种操作方式，其实`windows`官方是有说明的，我是在解决`0x80070002`这个问题的时候发现的：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211008213620.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008213620.png)
 
 它这里就是我们上面的操作，只是它是基于命令行操作的，下面是详细文档地址：
 
@@ -178,8 +185,10 @@ https://docs.microsoft.com/zh-cn/windows/wsl/install-manual
 
 其实，关注巨佬好久了，每一次都能拿出让你不得不佩服的作品，真的是太强了，让你看完之后有一种强烈的自卑感，感觉自己好像是原始人一样，当然我也深深地被巨佬所激励，我觉得我得好好努力了，因为我就特别想成为这样的极客，我对硬件开发有着一种特殊的情感……好了，下面给大家几张评论截图，自己感受：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211008221233.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008221233.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211008221939.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008221939.png)
 
 感兴趣的小伙伴可以去`B`站看下原视频，说不定你就找到前进的动力了呢！

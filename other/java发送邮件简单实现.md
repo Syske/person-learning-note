@@ -38,11 +38,13 @@
 
 比如`163`邮箱：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220323081134.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220323081134.png)
 
 再比如`qq`邮箱：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220329215944.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220329215944.png)
 
 这里需要补充说明的是，`SMTP`的端口号是`25`和`465`，但是考虑到安全性，很多服务云服务商是不允许使用非`SSL`的端口的，也就是`25`端口，我在实际测试的时候，发现阿里云就不允许通过`25`端口发送邮件，所以通常我们用更安全的`SSL`端口就可以了，基本上大部分的邮件服务商都支持这个端口，比如`QQ`、`163`、阿里企业邮箱。
 
@@ -131,17 +133,21 @@ public static boolean telnet(String host, Integer port, Integer timeout) {
 
 - `mail.smtp.port`：这个就是邮件服务器的端口，通常是`465`（`SSL`），当然你也可以用非`SSL`的端口，但是你需要移除`mail.smtp.socketFactory.class`的相关配置，否则会报错（不过这里还是推荐大家使用`SSL`协议，毕竟比较安全）：
 
-  ![](https://gitee.com/sysker/picBed/raw/master/2022/20220404112819.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220404112819.png)
 
 - `mail.smtp.auth`：`smtp`验证，这个配置项是必须的，且值必须是`true`，否则会报错：
 
-  ![](https://gitee.com/sysker/picBed/raw/master/2022/20220404140214.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220404140214.png)
 
-- `mail.smtp.starttls.enable`：设置`TLS`是否启用，如果是`SSL`通信协议，该设置项必须未设置或者值为`flase`，否则也会报错：![](https://gitee.com/sysker/picBed/raw/master/2022/20220404140850.png)
+- `mail.smtp.starttls.enable`：设置`TLS`是否启用，如果是`SSL`通信协议，该设置项必须未设置或者值为`flase`，否则也会报错：![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220404140850.png)
 
 - `mail.smtp.socketFactory.class`：设置`socket`工厂，`SSL`通信的话，必须设置为`javax.net.ssl.SSLSocketFactory`，否则会报错：
 
-  ![](https://gitee.com/sysker/picBed/raw/master/2022/20220410134326.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220410134326.png)
 
 - `mail.smtp.socketFactory.port`：设置`socket`的端口，实际测试中发现该配置参数可以省略
 
@@ -151,25 +157,30 @@ public static boolean telnet(String host, Integer port, Integer timeout) {
 
 首先登录到`163`邮箱网页端，点击顶部的设置菜单，选择`POP3/SMTP/IMAP`那个选项
 
-![](https://gitee.com/sysker/picBed/raw/master/2022/20220410140317.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220410140317.png)
 
 开启`IMAP/SMTP`或者`POP3/SMTP`服务中的任意一个，因为我们主要是为了实现发送邮件的需求，所以只要我们开启了`SMTP`服务即可。
 
 前面我们说了，`POP3`或者`IMAP`协议都是接收邮件的协议，发送邮件的协议是`SMTP`，所以开启其中一个，`SMTP`协议都会开启。
 
-![](https://gitee.com/sysker/picBed/raw/master/2022/20220410140428.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220410140428.png)
 
 开通时要求用邮箱绑定的手机号发送一行验证码，然后系统会生成一个授权码，这个授权码就是我们后面发送邮件的密码，因为只展示一次，所以务必保存下。
 
-![](https://gitee.com/sysker/picBed/raw/master/2022/20220410140934.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220410140934.png)
 
 然后根据我们前面说的`SMTP`的服务器和端口，既可以实现邮件发送功能，这里我主要是用于测试邮箱配置是否正确，所以我直接给自己发的邮件：
 
-![](https://gitee.com/sysker/picBed/raw/master/2022/20220410141243.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220410141243.png)
 
 发送成功后，我们可以在接收方邮箱中看到该邮件：
 
-![](https://gitee.com/sysker/picBed/raw/master/2022/20220410141419.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220410141419.png)
 至此，我们发送邮件的需求就实现了。
 
 

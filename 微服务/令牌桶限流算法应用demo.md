@@ -97,11 +97,13 @@ public static void main(String[] args) {
 
 运行结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211102234547.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211102234547.png)
 
 当我们的业务处理时间很短，而令牌生成很慢时，绝大多数请求都获取令牌失败（每隔`100ms`生成一个，业务只需要`5ms`），如果将业务处理时间增加或者将令牌生成时间减小，这时候就可以发现，绝大多数的业务都会处理成功，偶尔会有个别获取令牌失败：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20211102234916.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211102234916.png)
 
 至此，我们的限流目的也基本上达到了。
 

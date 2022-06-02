@@ -91,11 +91,13 @@ onclick是鼠标单击事件，当在网页上单击鼠标时，就会发生该�
 
 现实鼠标经过"确定"按钮时，触发onmouseover事件，调用函数info()，弹出消息框，代码如下:
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225441845.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225441845.png)
 
 **运行结果:**
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225500982.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225500982.png)
 
  
 
@@ -105,13 +107,15 @@ onclick是鼠标单击事件，当在网页上单击鼠标时，就会发生该�
 
 当把鼠标移动到"登录"按钮上，然后再移开时，触发onmouseout事件，调用函数message()，代码如下:
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225522572.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225522572.png)
 
 **运行结果:**
 
  
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225535552.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225535552.png)
 
  
 
@@ -121,11 +125,13 @@ onclick是鼠标单击事件，当在网页上单击鼠标时，就会发生该�
 
 如下代码, 当将光标移到文本框内时，即焦点在文本框内，触发onfocus 事件，并调用函数message()。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225558647.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225558647.png)
 
 **运行结果：**
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225617224.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225617224.png)
 
  
 
@@ -135,11 +141,13 @@ onblur事件与onfocus是相对事件，当光标离开当前获得聚焦对象�
 
 如下代码, 网页中有用户和密码两个文本框。当前光标在用户文本框内时（即焦点在文本框），在光标离开该文本框后（即失焦时），触发onblur事件，并调用函数message()。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225641746.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225641746.png)
 
 **运行结果：**
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225654408.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225654408.png)
 
  
 
@@ -149,11 +157,13 @@ onblur事件与onfocus是相对事件，当光标离开当前获得聚焦对象�
 
 如下代码,当选中用户文本框内的文字时，触发onselect 事件，并调用函数message()。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225712091.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225712091.png)
 
 **运行结果：**
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225730397.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225730397.png)
 
  
 
@@ -163,11 +173,13 @@ onblur事件与onfocus是相对事件，当光标离开当前获得聚焦对象�
 
 如下代码,当用户将文本框内的文字改变后，弹出对话框“您改变了文本内容！”。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225749283.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225749283.png)
 
 **运行结果：**
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225804402.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225804402.png)
 
  
 
@@ -184,11 +196,13 @@ onblur事件与onfocus是相对事件，当光标离开当前获得聚焦对象�
 
 如下代码,当加载一个新页面时，弹出对话框“加载中，请稍等…”。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225822751.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225822751.png)
 
 **运行结果：**
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225836580.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225836580.png)
 
  
 
@@ -200,11 +214,13 @@ onblur事件与onfocus是相对事件，当光标离开当前获得聚焦对象�
 
 如下代码,当退出页面时，弹出对话框“您确定离开该网页吗？”。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225855119.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225855119.png)
 
 **运行结果：（IE浏览器）**
 
-![](https://gitee.com/sysker/picBed/raw/master/images/image-20200209225909938.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225909938.png)
 
  
 

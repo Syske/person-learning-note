@@ -4,7 +4,8 @@
 
 先说思路，然后我们再贴代码，具体流程如下图：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200417102811.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200417102811.png)
 
 用户发出文件访问请求时，nginx将请求转发至内网前端服务，然后前端服务访问后端接口，后端接口根据用户请求的文件名，请求文件服务器，并将文件转换成base64字符串返回给前端，前端将base64还原成文件，然后模拟下载。
 

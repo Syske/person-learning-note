@@ -46,7 +46,8 @@ tags: [#springboot, #security]
 
 加入以上配置之后，我们不需要做任何配置，`security`其实已经被我们集成到`spring-boot`中了，不信你启动下看看：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210720125636.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210720125636.png)
 
 如果你的控制台也有如上信息，说明你的`spring-boot`项目已经集成了`security`，最上面打印的就是我们的登录密码，用户名默认情况下是`user`，下面我们简单测试下。
 
@@ -69,15 +70,18 @@ public class TestController {
 
 `controller`创建完成后，我们再次启动项目，然后访问`http://localhost:8989/test/security?name=syske`
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210720130522.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210720130522.png)
 
 正常情况下，会跳转到登录页面，这就说明`security`组件已经起作用了。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210720085510.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210720085510.png)
 
 这里登录的用户名是`user`，密码就是控制台打印出来的密码，输入用户名和密码，然后登录，这时候接口就正常返回了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210720130430.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210720130430.png)
 
 登录成功后，你后面再访问其他接口也是不需要再次登陆的。而且我试过，就算你关闭浏览器，再次打开，也是不需要登陆的，但是你重启`spring-boot`服务之后，就需要重新登录了，目前还不清楚具体的鉴权原理，从浏览器请求情况来看，不是`token`，后面研究下。
 
@@ -109,7 +113,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 `userDetailsService`方法的作用是配置用户信息查询服务，我们需要继承`UserDetailsService`接口，并实现其中的`loadUserByUsername`方法，这个方法会返回 `UserDetails`，也就是用户基本信息，主要是密码和用户名，还有过期时间这些：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210720132411.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210720132411.png)
 
 下面是我写的一个构建`UserDetails`的服务，后期的话，可以根据自己的需要整合数据库。
 
@@ -179,7 +184,8 @@ public class ReaderRepository implements UserDetailsService {
 
 如果你不指定密码加密器，鉴权的时候也是会报错的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210720133516.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210720133516.png)
 
 另外，还有一点比较重要，就是我们在登录的时候，其实就是调用`userDetailsService`的`loadUserByUsername`获取用户信息，然后进行鉴权操作，所以如果要修改`security`组件的相关配置，就必须实现`loadUserByUsername`方法，这样才能确保你的用户数据是可控的。
 

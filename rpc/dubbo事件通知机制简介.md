@@ -90,11 +90,13 @@ public class CallBackDemoServiceImpl implements CallBackDemoSevice {
 
 我通过注解指定了`oninvoke`的方法，但是在调用服务提供者的时候报错了，控制台错误提示如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210817134225.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210817134225.png)
 
 然后我`debug`发现，是因为`AsyncMethodInfo`的`oninvokeMethod`方法为空导致的
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210817134125.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210817134125.png)
 
 在搜集错误的过程中，我发现了下面这些很有用的知识点，各位小伙伴可以看下：
 
@@ -158,9 +160,11 @@ public class DemoConsumerApplication {
 
 然后启动运行，从控制台看出，我们的回调方法都被执行了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210817152119.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210817152119.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210817152105.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210817152105.png)
 
 根据实现机制，我推测回调方法是基于动态代理实现的，关于动态代理的应用我们前面在分享手写`rpc`的时候有讲过，最常用的场景之一就是`AOP`，据说`Spring`、`Struts`等框架就是通过动态代理技术来实现日志、切面编程这些操作的。
 
@@ -168,9 +172,11 @@ public class DemoConsumerApplication {
 
 用`xml`的方式测试完成后，我又看了下关于那个问题官方给出的回复，发现在`2021.5.12`日这个问题已经被修复了，说明之后的版本已经可以通过注解方式进行事件通知回调了，而且我亲测在`2.7.12`之后的版本就已经可以了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210817153344.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210817153344.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210817153450.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210817153450.png)
 
 感觉我可真是个小机灵鬼，这都让我发现了😊，当然我也停享受这个柳暗花明又一村的感觉的，这种学习方式感觉挺好，就像发现新大陆一样……
 

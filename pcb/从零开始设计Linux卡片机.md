@@ -35,7 +35,8 @@ https://www.cnblogs.com/twzy/p/14714651.html
 
 这篇博客好像就是他当初入坑卡片机时设计的，感兴趣的也可以借鉴下。
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220223084106.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220223084106.png)
 
 详细电路这里我就不展示了，感兴趣的小伙伴可以去看下项目，里面是包含这块内容的。
 
@@ -47,17 +48,21 @@ https://www.cnblogs.com/twzy/p/14714651.html
 
 目前效果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220220103116.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220220103116.png)
 
 
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220220103206.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220220103206.png)
 
 
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220220103842.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220220103842.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220220103917.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220220103917.png)
 
 #### 后续计划
 
@@ -69,19 +74,23 @@ https://www.cnblogs.com/twzy/p/14714651.html
 
 最近这几天又对`PCB`做了一些调整，另外我发现立创`EDA`桌面版好像是不支持`3D`预览的，至少效果是没有在线版效果好的。经过昨天的调整，我觉得电路已经没有太大问题了，已经着手买芯片、元器件这些东西了，电路再检查下没有问题就准备大半了：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220222220652.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220222220652.png)
 
 
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220222221355.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220222221355.png)
 
 
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220222221628.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220222221628.png)
 
 
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20220222221658.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220222221658.png)
 
 
 

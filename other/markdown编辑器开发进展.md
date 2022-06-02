@@ -41,7 +41,8 @@
 
 有兴趣的小伙伴可以下载下来试用下，不过目前功能还不完善，很多`markdown`语法都需要自己手写，这样体验可能不是特别好，不过可以等我慢慢打磨：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220112221041.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220112221041.png)
 
 项目地址：
 

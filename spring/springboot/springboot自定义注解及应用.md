@@ -57,7 +57,8 @@ public @interface Configuration {
 
 首先是项目结构
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200801085718.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200801085718.png)
 
 pom.xml文件
 

@@ -12,15 +12,18 @@
 
 提到`lambda`表达式，想必各位小伙伴一定不会感到陌生，`lambda`是`JDK1.8`引入的新特性，而且经常在面试的时候会被问道，更重要的是用`lambda`确实可以让我们的代码更简洁，很多场景也更容易实现。前面我们也分享过`lambda`的相关知识点，感兴趣的小伙伴可以去看下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/face-img-fd3fd6ba0f40429c91b2bfc4adffb35b.jpg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/face-img-fd3fd6ba0f40429c91b2bfc4adffb35b.jpg)
 
 https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648417789&idx=1&sn=712ded6251339a87c4f9db92a4402890&chksm=bea6cb7789d142615e152f3834523e3c83b98ddb465d902542573360e458d93b65ca0ce4bdd6&token=28080402&lang=zh_CN#rd
 
-![](https://gitee.com/sysker/picBed/raw/master/images/face-img-e34aaf627df24ca295797041291f24bb.jpg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/face-img-e34aaf627df24ca295797041291f24bb.jpg)
 
 https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648418162&idx=1&sn=ad7169e2cb9caeb0d14258b698b7343c&chksm=bea6c9f889d140ee7a25f46b50ab7704ea17bb05d02dfc52d84786dafbafa189a91c3f6558e9&token=28080402&lang=zh_CN#rd
 
-![](https://gitee.com/sysker/picBed/raw/master/images/face-img-0b47689223c9493b828893cd6ffb4285.jpg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/face-img-0b47689223c9493b828893cd6ffb4285.jpg)
 
 https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648417426&idx=1&sn=0343e6ec2838440e9cc311e102c5344f&chksm=bea6ca1889d1430e5f2f9310269c6b7983dbaa144ae059608409f4c2dbd34bd3ad213654c0ce&token=28080402&lang=zh_CN#rd
 
@@ -57,7 +60,8 @@ System.out.printf("userNameList = %s\n",userNameList);
 
 运行结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211126132527.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211126132527.png)
 
 `user`源码：
 
@@ -159,7 +163,8 @@ System.out.println(max.get());
 
 这里的`Comparator.naturalOrder`就是安装自然顺序排序，也就是`9-1`，或者`z-a`，我测试的时候发现，如果存在相同字符（但是大小写不同，针对字符串），排序的时候是按照小写大于大写的规则进行排序的，具体可以看下面的截图：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211128204848.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211128204848.png)
 
 如果数据是数字：
 
@@ -236,7 +241,8 @@ Map<Long, String> collect6 = userList.stream().collect(Collectors.toMap(User::ge
 
 这里的`(a, b) -> a`意思就是如果`key`已经存在，则保留旧的值，这一点可以从源码中看出来：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211128215402.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211128215402.png)
 
 如果旧的值为`null`，则新值直接覆盖，否则根据我们的策略取值，即用旧值。
 
@@ -303,7 +309,8 @@ Long collect13 = userList.stream().collect(Collectors.summingLong(User::getId));
 
 应该说从`jdk1.8`开始，`lambda`让`java`编程更优雅也更简便，但这并不是推荐你在日常开发中全部使用`lambda`表达式，毕竟在某些场景下，`lambda`性能并不好，关于这块我们之前是有测试结果的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/face-img-69da7c5419064e27a910b34c647ef87e.jpg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/face-img-69da7c5419064e27a910b34c647ef87e.jpg)
 
 https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648418186&idx=1&sn=25429c035e289929158814877bc03d3c&chksm=bea6c90089d14016899a5a4ab912d71d4c0f5978a16d503961291b63dcb107639a1fe9b75c00&token=340591731&lang=zh_CN#rd
 

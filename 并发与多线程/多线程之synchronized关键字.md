@@ -204,13 +204,15 @@ public class SynchronizedDemo {
 
 最终运行结果如下（大致）：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220118092022.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220118092022.png)
 
 按照我们的预期，`number`最后的值应该是`200`，但是实际为`193`，说明`this`加`synchronized`不能约束不同实例实例之间的资源共享（线程不安全）。
 
 但是如果我们把`main`方法中`new Thread(thisTest2).start()`的`thisTest2`，替换成`thisTest`，然后再运行，这时候就会发现，最终的运行结果始终就是`200`了（线程安全）：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220118092545.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220118092545.png)
 
 通过这两次测试结果对比，我们可以确定，`synchronized`在修饰`this`的时候，只能确保同一个实例下所有线程之间的同步代码块互斥（线程安全），而不同实例的线程是不受影响的（线程不安全）。
 
@@ -232,9 +234,11 @@ private void write(int change) throws InterruptedException {
 
 改成`class`之后，再次运行上面的代码，可以发现，这时候不论创建多少个实例，始终是线程安全的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119211502.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119211502.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119211557.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119211557.png)
 
 当然，通过这个实例，也可以进一步证明`synchronized`修饰`class`必须拿到`class`的锁才能执行`synchronized`代码块，同一个类下所有实例的线程都会受到影响。
 
@@ -257,7 +261,8 @@ private void write(int change) throws InterruptedException {
 
 最终运行效果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119230338.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119230338.png)
 
 从原理上来讲，`static`修饰的变量属于`class`层面的变量，所以最终形成的互斥效果和`class`类似；
 
@@ -267,23 +272,28 @@ private void write(int change) throws InterruptedException {
 
 最后一种情况是，如果`key`是局部变量，这种情况也是可以的，但是需要注意的是，局部变量能够产生的效果最多也就和`this`差不多，并不适用与不同实例的场景，同时还需要注意的是，这时`key`不能是包装类，也不能是由`new`生成的对象，具体可以看我们下面的演示效果：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119232453.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119232453.png)
 
 字符串常量是可以的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119232602.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119232602.png)
 
 但是`new`实例的字符串常量是不可以的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119232737.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119232737.png)
 
 这样`new`生成的都是不可以的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119232959.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119232959.png)
 
 但是赋值操作是可以的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20220119233139.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220119233139.png)
 
 好了，关于局部变量的演示就展示这么多，感兴趣的小伙伴可以自己尝试下。
 

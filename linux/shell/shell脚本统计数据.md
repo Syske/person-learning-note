@@ -39,7 +39,8 @@ echo "hello shell"
 
 运行这个脚本之后会在`telminal`控制台打印输出`hello shell`字符串：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107145404.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107145404.png)
 
 ##### `shell`脚本基本要点
 
@@ -127,25 +128,30 @@ chmod u+x hello.sh
 
 `18`行我们执行了一个`mysql`的命令，这行命令的作用是连接`mysql`并执行`sql`语句，`-e`表示执行并退出，后面直接跟`sql`语句，会直接打印`sql`，执行完成后会打印`sql`结果：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107163402.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107163402.png)
 
 我以前真不知道还有这种操作方式，不是这次统计数据，应该不会去了解。
 
 `-s`表示以制表符分割显示结果，不加这个参数的话，结果会包括`|`，也就是我们通常看到的结果：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107163758.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107163758.png)
 
 不加`-s`查询结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107165006.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107165006.png)
 
 加了`-s`显示结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107164825.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107164825.png)
 
 `-N`参数的作用是隐藏字段名称，也就是`title`（加上这个参数可以保证我们查询结果只有数据）:
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107165210.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107165210.png)
 
 ##### sh脚本要点
 
@@ -197,7 +203,7 @@ Sun Nov  7 16:59:58 CST 2021
 
 这里的`$1`表示分割的第一部分，也就是`Sun`，其他以此类推；`$0`表示原始数据
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107172817.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107172817.png)
 
 排序的话，可以用`sort`命令进行操作：
 
@@ -207,7 +213,7 @@ awk '{print $1, $2, $3, $4, $5, $6}' date_list | sort -rk 4
 
 排序结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107202414.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107202414.png)
 
 其中`-r`表示降序排序，默认是正序排序，`-k`表示按指定序列排序，`4`表示按第四列排序，也就是按时间排序。更多其他排序可以参考`sort`文档。
 
@@ -264,7 +270,8 @@ dir /b/s ./
 tree ./
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20211107210612.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211107210612.png)
 
 另外，我们前面说了，`win`平台也支持`>`和`>>`，这样我们就可以把上面命令的结果输出到文件中：
 

@@ -218,7 +218,8 @@ websocket兼容STOMP测试<br>
 
 我登陆了两个账号，用其中一个账号发送消息，他自己以及另一个账号都收到了发送的消息，说明我们的实例是`ok`的。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210726132032.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210726132032.png)
 
 下面，我们看下如何给指定用户发送消息。
 
@@ -306,7 +307,8 @@ websocket兼容STOMP测试<br>
 
 这次我们用哪吒的账号给女娲发了一条消息，最终的结果是只有女娲收到了消息，也和我们预期一致。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210726133342.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210726133342.png)
 
 ### 总结
 

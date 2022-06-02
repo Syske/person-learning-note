@@ -36,13 +36,15 @@
 
 下面是`SOFARPC`的架构图：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210411111551.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210411111551.png)
 
 ### 创建项目
 
 这里我们创建一个`spring boot`项目，这里我们只需要引入`starter-web`即可：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210411104743.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210411104743.png)
 
 创建完成后`pom`文件的依赖如下：
 
@@ -271,7 +273,8 @@ java.net.ConnectException: Connection refused: no further information
 
 如果注册成功，显示结果应该是这样的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210411114315.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210411114315.png)
 
 如果还有小伙伴不知道如何使用`zookeeper`可以私信我。
 

@@ -10,7 +10,8 @@
 
 在开始实例之前，我们先看下`conditionContext`的初始化过程，首先它是在创建容器的时候被初始化化的，更准确地说是在创建`AnnotatedBeanDefinitionReader`实例的时候被初始的：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20210922080354.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210922080354.png)
 
 这里实例化的是`ConditionContextImpl`，它是条件配置接口的实现类，它的初始化过程也就是一些基本属性的赋值，包括容器（`registry`）、`bean`工厂、环境配置（`environment`）、资源加载器（`resourceLoader`）、类加载器（`classLoader`），它的`5`个核心方法分别就是这`5`个属性的获取方法，所以我们也不再过多说明。
 
@@ -18,27 +19,32 @@
 
 由于`ConditionContextImpl`中并没有条件配置的相关方法，所以我们需要研究另一个持有`ConditionContextImpl`的组件——`ConditionEvaluator`。这个类名的意思是条件评估者，官方注释的意思是：评估条件注解的内部类。
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20210922082549.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210922082549.png)
 
 下面是这个类的核心方法`shouldSkip`：
 
-![](https://gitee.com/sysker/picBed/raw/master/blog/20210922085941.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210922085941.png)
 
 从这个类的`shouldSkip`方法中，我们可以得到几个核心的内容：
 
 - `@Conditional`注解：条件配置最核心的注解之一，这个注解需要一个或多个继承了`Condition`接口的参数
 
-  ![](https://gitee.com/sysker/picBed/raw/master/blog/20210922084740.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210922084740.png)
 
   这个`Condition`接口有一个`matches`方法，这个方法的返回值最终决定是否可以对当前类进行注册配置，如果同时有多个`Conditon`，则需要所有`Condition`返回`true`才能对当前类进行注册配置。
 
 - 在创建`bean`的时候，会根据`shouldSkip`判断是否进行`bean`的初始化和注册：
 
-  ![](https://gitee.com/sysker/picBed/raw/master/blog/20210922084524.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210922084524.png)
 
   如果`shouldSkip`返回`true`，则会直接跳过该类的初始化，`shouldSkip`要返回`true`，则`condition`的返回值必须为`false`:
 
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922131244.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210922131244.png)
 
   #### 条件配置实例
 
@@ -85,11 +91,13 @@
   
   下面我们简单测试下，因为我已经在相关代码中加了打印输出，所以我们直接启动看效果即可，当`matches`方法返回`true`时，我们可以看到`Result`的实例化配置被执行了：
   
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922132004.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210922132004.png)
   
   然后我们把`matches`方法返回值改成`false`再看下，这时候我们会发现`Result`的实例化配置并没有被执行：
   
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922132402.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210922132402.png)
   
   综上，我们可以看出来，`conditionContext`其实就是通过`Condition`接口来实现有条件的配置，这样的好处是，可以动态地调整优化配置，即灵活又方便，更重要的是，这种方式还可以有效降低组件的耦合性，便于扩展，而且可以提高系统启动效率（`condition`可以直接过滤不需要实例化的组件）。
   
@@ -103,7 +111,8 @@
   
   类似的注解还有很多，有兴趣的小伙伴可以自己去看下：
   
-  ![](https://gitee.com/sysker/picBed/raw/master/images/20210922140257.png)
+  ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210922140257.png)
   
   关于`@ConditionalOnClass`注解的用法，可以参考我们前面分享过的`spring-boot-starter`自定义相关内容：
   

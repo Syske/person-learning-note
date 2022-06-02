@@ -65,11 +65,13 @@ public class SyskeLogoutSuccessHandler implements LogoutSuccessHandler {
 
 和上次线程池总结一样，我们先贴一张脑图（公众号回复【`spring-boot-security`】获取脑图源文件），今天的总结内容有就是围绕脑图展开。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210724095345.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210724095345.png)
 
 `security`组件的核心内容基本上就是我们这几天分享的知识点，主要以`security`配置为主，包括配置组件的自定义、常用的配置项等，另外`security`还对第三方安全框架做了支持，比如`oauth2`、`openid`、`saml2`，好像目前就支持这三种，不过这三种已经算是比较流行的安全框架了。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210724115421.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210724115421.png)
 
 以下就是我们`security`相关的知识点，获取脑图公众号回复【`spring-boot-security`】获取脑图源文件即可。
 

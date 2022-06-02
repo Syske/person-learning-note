@@ -212,7 +212,8 @@ chgrp [OPTION]... --reference=RFILE FILE...
 
 vi是linux下的一个编辑器
 
-![](https://gitee.com/sysker/picBed/raw/master/20210319201823.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210319201823.png)
 
 #### vi/vim 的使用
 

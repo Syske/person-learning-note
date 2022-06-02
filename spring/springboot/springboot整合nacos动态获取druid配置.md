@@ -16,7 +16,8 @@
 
 > 一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228145418.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228145418.png)
 
 也就是说，它可以实现动态的服务发现，能够实现配置管理，可以作为服务管理平台，简介就到这里，更多信息直接去看官方文档：
 
@@ -24,7 +25,8 @@
 https://nacos.io/zh-cn/docs/what-is-nacos.html
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228145802.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228145802.png)
 
 ### 如何使用nacos
 
@@ -38,17 +40,20 @@ https://nacos.io/zh-cn/docs/what-is-nacos.html
 https://github.com/alibaba/nacos/releases
 ```
 
-最新版本是`2.0.0-BETA`，是个测试版本，目前最新的稳定版本是`1.4.0`，本次示例也是这个版本![](https://gitee.com/sysker/picBed/raw/master/20210228150337.png)
+最新版本是`2.0.0-BETA`，是个测试版本，目前最新的稳定版本是`1.4.0`，本次示例也是这个版本![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228150337.png)
 
 点击`Assets`，选择`.zip`文件，然后应该就开始下载了，下载可能比较慢
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228150634.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228150634.png)
 
 #### 解压zip文件
 
 `zip`文件结构是这样的，直接解压就行，也不需要配置环境变量
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228151253.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228151253.png)
 
 #### 运行启动nacos服务
 
@@ -120,11 +125,13 @@ curl -X GET "http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&g
 
 #### 修改`nacos`服务端配置信息
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228153436.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228153436.png)
 
 这个配置文件里面还可以设置`nacos`的数据存储，默认的数据存储是`derby`，这是个完全用java编写的数据库，非常小巧，核心部分*derby*.jar只有2M，所以既可以做为单独的数据库服务器使用，也可以内嵌在应用程序中使用。如果要启用`mysql`，可以修改相关配置文件，进行启用：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228153637.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228153637.png)
 
 #### 访问nacos服务
 
@@ -134,7 +141,8 @@ curl -X GET "http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&g
 http://127.0.0.1:8848/nacos
 ```
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228155254.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228155254.png)
 
 默认用户名和密码都是`nacos`，登陆成功之后就可以发布你的配置信息了。
 
@@ -142,13 +150,16 @@ http://127.0.0.1:8848/nacos
 
 因为我已经加过配置信息了，如果是第一次访问，应该是没有配置信息的。点击右边的`+`号进行创建
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228155428.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228155428.png)
 
 输入`data-id`，必须唯一，类似于主键，不能重复；选择配置格式，这里我选择`properties`；然后点击发布，一个配置信息就发布成功了
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228160100.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228160100.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228160246.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228160246.png)
 
 我们现在来测试下，我们用如下命令：
 
@@ -158,7 +169,8 @@ curl -X GET "http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos-test-demo&gr
 
 返回结果：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228160639.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228160639.png)
 
 ### springboot整合nacos和druid
 
@@ -314,7 +326,8 @@ spring:
 
 `data-id`我前面说了，已经很清楚了。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228161945.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228161945.png)
 
 
 
@@ -448,11 +461,13 @@ public class NacosConfigConfiguration {
 
 到这里，核心代码就全部完了，我们启动`demo`测试下：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228163300.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228163300.png)
 
 如上日志信息，我们可以看到`springboot`启动的时候加载了`nacos`发布的配置信息，然后还会有数据源初始成功的提示信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228163557.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228163557.png)
 
 然后我们写一个`controller`测试下：
 
@@ -479,29 +494,36 @@ public class TestController {
 
 我这里有两个数据库，都有`user`表，我现在的数据库地址配的是`userlogin`这个库，我先访问下，后台打印信息如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228164430.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228164430.png)
 
 然后我们将数据库改成`my_db_test`，然后发布配置，再次访问：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228164752.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228164752.png)
 
 配置发布完成后，`springboot`后台已经打印了配置更新的日志，说明配置已经被刷新：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228164920.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228164920.png)
 
 然后我们再访问：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228165024.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228165024.png)
 
 从日志记录来看，我们再次访问的时候，数据源重新初始化，当然最后打印的结果也和我们预期的一样，打印了我们刚加的配置对应的数据表里面的用户信息。当然再改回，也是可以的：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228164024.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228164024.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228165314.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228165314.png)
 
 再次访问：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210228165437.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210228165437.png)
 
 而且后台也有数据库`url`修改的提示信息
 

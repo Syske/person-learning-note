@@ -12,29 +12,35 @@
 
 `ApplicationContextInitializer`的初始化操作是在 `prepareContext`方法中被执行的，默认情况下，会有`7`个 `ApplicationContextInitializer`被执行
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210906132331.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210906132331.png)
 
 下面是第一个`ApplicationContextInitializer`的方法源码其他类似，需要注意的是`ApplicationContextInitializer`本身是顺序的，而且方法内部也有排序操作：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210906133135.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210906133135.png)
 
 在第二个`ApplicationContextInitializer`初始化方法内容，它往容器中注册了`BeanFactory`的后置处理器
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210906133753.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210906133753.png)
 
 #### 回到容器初始化开始的地方
 
 根据下面的截图，我们可以看出来，`beanFactory`其实在容器创建完成后，已经完成了一部分初始化操作，所以想要搞清楚`beanFactroy`的初始，必须要回到`beanFactory`初始化的地方。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210906131949.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210906131949.png)
 
 #### 发现ignoredDependencyInterfaces
 
 `ignoredDependencyInterfaces`是`BeanFactory`的一个核心属性，用于屏蔽我们不需要进行依赖检查和自动注入的接口，下面是`BeanFactory`初始化` ignoredDependencyInterfaces`的代码，这段代码也是在创建容器的时候被执行的。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210906134241.png)`ignoredDependencyInterfaces`存放的是需要忽略的依赖接口，默认情况下只会加入`BeanFactoryAware`的接口，根据官方解释，加入`ignoredDependencyInterfaces`中的接口，会忽略依赖检查，并且不会被`autowire`
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210906134241.png)`ignoredDependencyInterfaces`存放的是需要忽略的依赖接口，默认情况下只会加入`BeanFactoryAware`的接口，根据官方解释，加入`ignoredDependencyInterfaces`中的接口，会忽略依赖检查，并且不会被`autowire`
 
-![](https://gitee.com/sysker/picBed/raw/master/20210906213753.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906213753.png)
 
 #### 找到beanDefinitionMap初始化开始的地方
 
@@ -42,19 +48,25 @@
 
 下面是`registerAnnotationConfigProcessors`方法的完整截图：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210906211558.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906211558.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210906211930.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906211930.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210906212005.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906212005.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210906212208.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906212208.png)
 
 这个方法在`AnnotationConfigUtils`这个类中，它是在实例化`AnnotationConfigServletWebServerApplicationContext`的`reader`属性的时候被执行的。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210906214657.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906214657.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210906214742.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210906214742.png)
 
 这个方法的作用是注册给定的注解后置处理器，从包名上我们可以看出来，这五个类有两个是和事件监听器相关的，有三个是和注解相关的，其中还有一个类没有被注入，是和`jpa`相关的组件，应该和我们没有引入`jpa`的依赖和配置有关系。关于`beanDefinitionMap`我们暂时就先说这么多，至于这五个最先被注册的元老级类，我们后面再来详细了解。
 

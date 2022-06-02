@@ -21,9 +21,11 @@ https://github.com/apache/dubbo-admin
 
 首先，我们要下载`dubbo-admin`的源码包或者部署包，如果下载源码包的话，需要你自己打包，由于又是前后端分离的项目，所以这里我就偷个懒，直接下载部署包：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815180225.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815180225.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815180355.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815180355.png)
 
 #### 修改配置
 
@@ -84,11 +86,13 @@ server.compression.min-response-size=10240
 
 完成以上内容配置，我们就可以启动测序下了。首先，我们要先启动`zk`，然后启动我们的管理平台，直接访问我们`dubbo-admin`的服务地址即可，我配置的端口是`8001`，所以我访问的地址是`http://localhost:8001`，然后会自动跳转到登录页面：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815182040.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815182040.png)
 
 输入我们配置的用户名和密码，即可登录成功：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815182129.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815182129.png)
 
 这个页面和我们之前分享的`k8s`的官方管理控制台很像。左侧是菜单栏，右侧是操作区域。
 
@@ -98,17 +102,20 @@ server.compression.min-response-size=10240
 
 在服务查询菜单下，我们可以看到我们刚刚启动好的服务，我们可以对这些服务进行测试、查看 详情以及其他操作。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815182639.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815182639.png)
 
 这里我们就只演示下测试，因为路由、黑白名单、负载均衡、权重这些，我们目前还没深入了解过。
 
 ##### 服务测试
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815182827.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815182827.png)
 
 输入请求参数，点击执行，即可显示调用结果，这对我们平时觉得`rpc`不好测试的小伙伴简直就是福音，我们再也不用为`rpc`的测试而发愁了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815182927.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815182927.png)
 
 ##### 接口文档
 
@@ -118,15 +125,18 @@ server.compression.min-response-size=10240
 
 写过单元测试的小伙伴应该对`mock`不陌生，这里应该也是一样的，主要是对服务的一些模拟调用，但是现在好像还不支持。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815183629.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815183629.png)
 
 ##### 服务统计
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815184213.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815184213.png)
 
 服务统计这里包括两块功能，一个是服务统计，可以展示服务的提供者、消费者、线程等信息
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210815184412.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210815184412.png)
 
 ### 扩展
 

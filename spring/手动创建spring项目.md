@@ -19,32 +19,37 @@
 
   这里创建的是maven项目，关于maven这里不做详细介绍，后面可以考虑出一篇关于maven的文章
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104643.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104643.png)
 
 - 选择maven的模板
 
   这里选择的是maven-archetype-webapp，因为我们创建的web应用，其他的模板没有详细了解过，有兴趣的同学可以自己去查下资料
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104710.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104710.png)
 
 - 设置包名
   - GroupId：项目的公有前缀，一般指定为公司一级域名反写，比如com.baidu。如果你自己观察过maven的pom.xml文件的话，你会发现`<dependency>`标签下有个标签就有这个标签，对一个公司来说，这个值是不会轻易改变的，maven项目中jar包引用就是根据这个标签和包名来定位的，如果改变了，在其他项目用到这个包的时候，就要相应的改变，当然也不绝对，如果你不想通过工具来将本项目最后打成的jar安装到公司的仓库里，那就不影响。
   - ArtifactId：项目特有的名字，也就是包名，一般来说要唯一。这个标签也是maven里面的，用于定位jar包
   - Version：项目版本号，这个标签也是maven里面的，用于定位jar包
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104723.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104723.png)
 
 - 设置项目的maven的配置信息、maven仓库路径（会从maven配置文件中获取）
 
   首先要确保你本机有maven，maven home directory就是你本地maven的安装路径；User settings file指的是你maven下面的配置，里面可以设置本地、远程仓库，如果没有更改可以不设置；local repository设置的是本地仓库，也就是jar包存放路径，如果在配置文件里面设置了，这里不用管。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104736.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104736.png)
 
 - 设置项目名、项目保存路径
 
   这里就不再详细说了，根据字面意思大家都知道了
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104749.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104749.png)
 
 - 创建各个文件夹
 
@@ -71,7 +76,8 @@
     ```
 
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104836.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104836.png)
 
 ### 2、配置pom.xml
 
@@ -308,34 +314,41 @@
 下面是本项目创建完成后的结构，需要注意的是配置文件的存放路径
 
 - 这里要格外注意spring核心配置的路径，上面我说到存放到resources文件夹，如果没有创建这个文件夹，存放到src底下也是一样的，考虑到后续项目拓展，涉及到的配置文件比较多，建议大家还是创建resources文件夹
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104921.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104921.png)
 
 ### 6、项目部署
 - 这里部署的环境是tomcat，如果本地还没有tomcat或者插件没启用，要先把本地服务器配置好，不然你可能找不到tomcat这个选项
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104934.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104934.png)
 
 - 添加新的配置，选择tomcat，因为我是本地的所以选local，如果你是远程的tomcat，就选下面的remote，前提是你已经配置过了
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928104944.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928104944.png)
 
 - 配置tomcat服务器的基本信息，这里配置的和你项目相关的
 
   - 第三步这里设置的是项目访问路径，如果你不知道项目名，那项目的访问路径就是localhost:8080/
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928105211.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928105211.png)
 
 - 部署项目
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928105201.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928105201.png)
 
 - 选择部署形式
   - 如果部署这里没有下面的选项，在项目结构（快捷键CTRL + alt + shift + s）下Artifacts配置，具体的可以查询相关资料，不清楚的可以留言
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928105148.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928105148.png)
 
 - 运行
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210928105136.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210928105136.png)
 
 以上步骤完成了，整个项目就已经创建完成，是不是感觉很简单，赶快动手自己做一下吧，好记性不如烂笔头，动手行动起来，不要你觉得，我要我觉得……

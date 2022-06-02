@@ -23,7 +23,8 @@ cd /wls/Oracle/Middleware/Oracle_Home/wlserver/common/bin
 export DISPLAY=localhost:10.0
 ```
 见下图
-![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-01.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-01.png)
 
 - 4、执行如下命令：
 ```
@@ -79,19 +80,26 @@ Exception in thread "main" java.awt.AWTError: Can't connect to X11 window server
 - 5、然后会弹出和windows环境相同的界面，后续操作同windows
 - 具体步骤
     - 第一步：<br>
-![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-02.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-02.png)
     - 第二步<br>
-    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-03.png)
+    ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-03.png)
     - 第三步<br>
-    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-04.png)
+    ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-04.png)
     - 第四步<br>
-    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-05.png)
+    ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-05.png)
     - 第五步<br>
-    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-06.png)
+    ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-06.png)
     - 第六步<br>
-    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-07.png)
+    ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-07.png)
     - 第七步<br>
-    ![](https://gitee.com/sysker/picBed/raw/master/images/weblogic-linux-08.png)
+    ![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-linux-08.png)
 - 至此，domain创建完成
 
 ## 结语

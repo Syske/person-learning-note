@@ -9,7 +9,8 @@ tags: [#rpc, #dubbo]
 
 开始之前，我们先看下`dubbo`的架构原理图：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210819083948.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210819083948.png)
 
 从这张原理图，我们可以看出`dubbo`的启动过程、调用过程，以及整体的架构：
 
@@ -23,11 +24,13 @@ tags: [#rpc, #dubbo]
 
 这里需要提一点的是，`dubbo`官方其实为我们默认提供了一个`container`容器，这个容器是可以独立运行的，官方为我们默认提供了三种容器的实现，包括`springContainer`、`LogbackCOntainer`和`Log4jContainer`
 
-![](https://gitee.com/sysker/picBed/raw/master/20210819085843.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210819085843.png)
 
 其中`springContainer`默认会加载`classpath*:META-INF/spring/*.xml`，也就是说只要我们把`dubbo`相关配置放在这个路径下，我们是可以直接通过`dubbo`自己的容器启动的，而不需要借助第三方容器，而且官方默认为我们指定的就是`springContainer`。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210819090040.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210819090040.png)
 
 好了，关于容器我们就说这么多，有兴趣的小伙伴可以深入了解下。
 
@@ -35,7 +38,8 @@ tags: [#rpc, #dubbo]
 
 本次`dubbo`的知识总结我们主要通过一张脑图展开，详细的知识点可以参考我们之前分享的内容，同时对于我们没有分享到的知识点，各位小伙伴可以参考官方文档。脑图获取方式：公众号回复【dubbo脑图】即可获取源文件。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210819133334.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210819133334.png)
 
 下面是所有`dubbo`的知识点索引，大家可以按照下面的索引，对相关知识点进行回顾：
 

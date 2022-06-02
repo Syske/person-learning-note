@@ -8,7 +8,8 @@
 
 昨天晚上我说过今天要先画一个时序图，所以开始之前，我们先看下`run`方法的执行过程时序图：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/run方法运行时序图.svg)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/run方法运行时序图.svg)
 
 从上面这张时序图中，我们很直观地看出`run`方法的执行过程。其中最关键的内容有两部分，一个是和监听器相关的操作，另一个是和应用容器相关的操作，从图上我们也可以看出这一点，这两个的内容和操作都很多，而且基本上贯穿了整个`run`方法，所以下一步我们要分析的就是监听器和应用容器这两块的内容，但是今天可能来不及分享了。
 
@@ -23,7 +24,8 @@ exceptionReporters = getSpringFactoriesInstances(SpringBootExceptionReporter.cla
 
 这段代码在这里的作用是构建`SpringBootExceptionReporter`的实例对象，构建的对象是在`catch`中用的，详细查看源代码的话，你会发现其实它是用来分析启动过程中错误的。下面的这段代码，各位小伙伴看着肯定不陌生，在启动`spring boot`报错的时候会经常看到：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210831140824.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210831140824.png)
 
 说到这里，我们再补充点`spring boot`启动异常处理的相关知识点。如果在启动过程中发生异常，`spring boot`会调用`handleRunFailure`方法处理异常，其中一个核心参数就是我们前面创建的`SpringBootExceptionReporter`实例集合，在方法内部主要进行了以下几步操作：
 
@@ -35,7 +37,8 @@ exceptionReporters = getSpringFactoriesInstances(SpringBootExceptionReporter.cla
 
 方法源码如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210831143149.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210831143149.png)
 
 好了，`spring boot`启动主流程暂时就先分享这么多。
 

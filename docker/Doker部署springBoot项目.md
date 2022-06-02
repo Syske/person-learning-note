@@ -6,7 +6,8 @@
 
 首先，我们要编写这样一份`Dockfile`，文件名就就是`Dockerfile`，没有后缀名，这个文件在项目的根目录下，可以先看我的项目结构：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629130049.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629130049.png)
 
 然后在`Dockerfile`中写入如下内容，项目不同，配置有所不同，可根据自己的需要进行修改：
 
@@ -60,7 +61,8 @@ https://www.runoob.com/docker/docker-dockerfile.html
 
 在编写`Dockerfile`的时候，我们指定了`jar`文件的名字，所以在运行`Dockerfil`之前，我们要先打包好项目的`jar`文件，确保`Dockerfile`中指定的`jar`文件已经编译好：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629130232.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629130232.png)
 
 打包完成后，我们就可以制作我们的`springboot`项目的镜像了。
 
@@ -68,7 +70,8 @@ https://www.runoob.com/docker/docker-dockerfile.html
 
 首先确保本地`docker`已经启动，然后在项目根目录，即`Dockerfile`所在目录
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629130912.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629130912.png)
 
 执行如下命令：
 
@@ -80,7 +83,8 @@ docker build -t springboot-learning:v1 .
 
 如果有如下提示，则表面`springboot`项目的镜像构建完成，如果你是第一次构建，要拉取`java8`的镜像，所以时间可能会比较长：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629131144.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629131144.png)
 
 然后我们可以通过下面的命令查看本地镜像:
 
@@ -90,7 +94,8 @@ docker images
 
 其中就有我们刚刚构建完成的镜像：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629131510.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629131510.png)
 
 #### 启动springboot镜像
 
@@ -102,7 +107,8 @@ docker run --rm --name springboot-learning -p 8089:8089 springboot-learning:v1
 
 另外这里的镜像版本号，也要和构建文件保持一致。回车之后，你就会看到熟悉的`springboot`启动日志信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629132036.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629132036.png)
 
 这里我为了方便查看，没有加`-d`（后台运行），所以你`ctrl+c`后，容器会自动停止，一般我们线上运行都是后台运行的。
 
@@ -110,9 +116,11 @@ docker run --rm --name springboot-learning -p 8089:8089 springboot-learning:v1
 
 我的项目中有测试的`controller`，我们浏览器访问下看看：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629132317.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629132317.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210629132430.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210629132430.png)
 
 和我们直接在本地`java -jar`启动一样，没有任何区别。
 

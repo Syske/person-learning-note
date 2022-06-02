@@ -30,7 +30,8 @@ tags: [#springboot, #webflux]
 
 `interval`是一个延迟回调方法，当达到指定的延迟时间`period`，方法返回值是循环的次数，从`0`开始。下面是官方文档给出的`interval`方法的示意图，还是比较形象的
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210730141835.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210730141835.png)
 
 `map`方法应该不需要过多说明吧，用过`lambda`表达式的小伙伴，应该很熟悉，在这里它的作用也是做类型转换，这里的写法是`lambda`的写法，完整写法是这样的：
 
@@ -63,23 +64,28 @@ tags: [#springboot, #webflux]
 
 访问我们的接口，你会发现，虽然前端之访问了一次，数据一直在持续输出，当然如果你点击浏览器上面的`X`，就相当于本次请求结束，数据也就不再传输了。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210730083452.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210730083452.png)
 
 而且后端也在持续输出，就像水管一样，水一直在流动。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210730175922.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210730175922.png)
 
 另外根据我们运行结果来看，我们发现`Flux`类型的响应数据和之前的响应类型（`Mono`）相比是不一样的，在`Flux`的响应数据中，我们会发现接口的响应头变成了`text/event-stream;charset=UTF-8`，也就是我们前面执行的响应头，而且多了一个请求头`transfer-encoding: chunked`，这个请求头表明我们的响应数据长度是不确定的，据说这种方式占用的资源更少，可以让数据一块一块输出。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210730182103.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210730182103.png)
 
 
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210730181316.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210730181316.png)
 
 关于两者区别，我暂时还不清楚，但是如果把`Mono`的响应体改成`TEXT_EVENT_STREAM`，返回结果依然正常，但是如果把`Flux`的响应类型改成`APPLICATION_JSON`，虽然页面依然会持续有数据输出，但是看起来比刚才奇怪了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210730183335.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210730183335.png)
 
 好了， 关于`webflux`的流式编程就先演示到这里，后面我们看情况继续深入。
 

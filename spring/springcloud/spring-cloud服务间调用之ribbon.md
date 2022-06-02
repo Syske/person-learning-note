@@ -68,7 +68,8 @@ public Object queryUserByProductId() {
 
 这里我们通过前面配置的`restTemplate`来调用我们的用户服务，接口的地址就是我们`eureka`注册中心显示的地址：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210802130731.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210802130731.png)
 
 这里的地址不区分大小写，都可以正常访问。调用十次，主要是为了测试负载均衡的效果。
 
@@ -82,7 +83,8 @@ eureka.client.service-url.defaultZone=http://localhost:8999/eureka, http://local
 ```
 
 第一个配置是指定服务的端口，如果在本地启动的话，需要每启动一次改一个端口，否则会提示端口冲突，如果你用的是`IDEA`的话，要先运行多应用启动：
-![](https://gitee.com/sysker/picBed/raw/master/images/20210802132933.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210802132933.png)
 
 第二个配置就是设定我们的注册中心，我们有两个注册中心，所以指定了两个地址。
 
@@ -118,9 +120,11 @@ Consider defining a bean of type 'com.netflix.discovery.DiscoveryClient' in your
 
 我们分别启动服务调用发和被调用方，这里我启动了`5`个`user-center`，同时`eureka`服务也启动了两个，这个两个注册中心互相注册监控，在实际应用中也可以确保服务稳定性。`5`个`user-center`有`2`个注册在`8999`的注册中心上，有`3`个注册在`9000`的注册中心上：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210802085532.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210802085532.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210802085621.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210802085621.png)
 
 然后，我们访问`product`的`ribbon`接口：
 
@@ -130,17 +134,21 @@ http://localhost:8881/ribbon
 
 浏览器返回结果如下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210802133217.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210802133217.png)
 
 同时，在`user-center`端口为`8771`和`8775`的控制台，会看到如下信息：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210802085436.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210802085436.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210802085349.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210802085349.png)
 
 为什么只有`8771`和`8775`收到了请求，因为`8771`和`8775`都注册到了`8999`的注册中心，而且我们的`product-service`也注册在该服务中心，所以就只调用了`8771`和`8775`这两个服务：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210802085532.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210802085532.png)
 
 根据运行结果，我们还发现在`10`次请求中，`8771`和`8775`各处理五次，这里面还有一个潜藏的知识点：`Ribbon`默认的负载策略是轮询策略，这样可以确保同一个注册中心下的所有服务节点接收到同样的请求频次。
 
@@ -150,6 +158,7 @@ http://localhost:8881/ribbon
 
 总体来说，`Ribbon`对用户来说感知确实不够强，而且经过我的测试，我发现就算拿掉`ribbon`的依赖，依然可以正常负载均衡，这是因为`eureka-client`的依赖，已经添加过`ribbon`的依赖了：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210802141228.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210802141228.png)
 
 好了，今天的`Ribbon`分享就先到这里吧，我们明天分享基于`Feign`的声明式调用。

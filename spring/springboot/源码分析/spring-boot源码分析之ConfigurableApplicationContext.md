@@ -47,15 +47,18 @@
 
 下面我们简单调几个方法看下效果：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210901192845.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210901192845.png)
 
 然后我们再调一下`close`方法看下：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210901193023.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210901193023.png)
 
 根据输出的日志我们可以看出来，执行完`close`方法之后，容器成功关闭，关闭之前`isActive`是`true`，关闭之后变成了`false`。我们调用`close`方法实际上调用的是关闭的钩子函数：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210901211952.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210901211952.png)
 
 另外，在测试过程中，我发现`bean`注入容器是在`refresh`方法中进行的，但是目前还没有梳理清楚。
 

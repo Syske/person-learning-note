@@ -26,5 +26,6 @@
 
 
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20201011093454.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011093454.png)
 

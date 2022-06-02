@@ -7,11 +7,13 @@ tags: [#markdown, #typora, #安利]
 
 我们先贴一张`Typora`的高颜值截图：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210929185235.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929185235.png)
 
 而且它自带了非常丰富的主题：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210929185402.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929185402.png)
 
 默认主题颜值也很高有么有？
 
@@ -23,7 +25,8 @@ https://www.typora.io/
 
 需要强调的是，它本身是支持跨平台的，不仅支持`windows`、`mac`，就连`linux`环境也是支持的：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210929190441.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929190441.png)
 
 ### 如何写用Typora写markdown?
 
@@ -45,7 +48,8 @@ CTRL + 数字键（字母键盘上方的数字）
 
 #### 插入表格
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210929191022.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929191022.png)
 
 ```
 CTRL + T
@@ -69,7 +73,8 @@ CTRL + ]
 
 有序列表：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210929191633.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929191633.png)
 
 ```
 CTRL + shift + [
@@ -77,7 +82,8 @@ CTRL + shift + [
 
 无序列表：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210929191808.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929191808.png)
 
 ```
 CTRL + shift + ]

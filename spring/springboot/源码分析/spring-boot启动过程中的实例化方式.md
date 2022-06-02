@@ -31,11 +31,14 @@ try {
 
 这里最典型的就是`spring boot`在创建容器实例的时候，当然`spring boot`的实例化要比我这里写的高级，它是调用`class`的构造方法进行实例化的，是可以指定参数的，我这里演示的调用的是无参构造方法：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210914221328.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914221328.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210914221417.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914221417.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210914221254.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914221254.png)
 
 
 
@@ -43,9 +46,11 @@ try {
 
 这种方式在`spring boot`初始化过程中也经常出现，通常是在初始化相关组件的属性的时候。
 
-![](https://gitee.com/sysker/picBed/raw/master/20210914221804.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914221804.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/20210914221620.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914221620.png)
 
 这种方式就不需要过多解释了，我们通常情况下都是通过`new`的方式实例化对象的。
 
@@ -54,7 +59,8 @@ try {
 #### supplier
 
 这种方式相比前面两种，要高级一点，首先是它比较新，是`jdk 1.8`引入的新功能，在使用方面也很简单：
-![](https://gitee.com/sysker/picBed/raw/master/20210914223046.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914223046.png)
 
 和前面两种初始化比起来，它更灵活，下面我们看下关于它的示例：
 
@@ -71,15 +77,18 @@ try {
 
 下面就是`spring boot`中使用`supplier`这种方式的几个方法，可以看到全部都是在注册`bean`的时候调用的：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210914222914.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914222914.png)
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20210914133038.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210914133038.png)
 
 这些方法都是在`spring 5.0`以后引入的，这可能也是我没有找到`spring boot`集中实例化对象然后再注入容器的相关代码的原因。
 
 `bean`的`supplier`通常被绑定在其`BeanDefainition`信息下的`instanceSupplier`属性下：
 
-![](https://gitee.com/sysker/picBed/raw/master/20210914224352.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914224352.png)
 
 比如下面这个注册`BeanDefinitionRegistry`的方法就是通过这种方式将`supplier`注入`beanDefinition`中的
 
@@ -95,7 +104,8 @@ private void register(BeanDefinitionRegistry registry) {
 #### 工厂方法
 
 这种方式虽然存在，但是不太好找，所以这里就不展示了，但是在`beanDefinition`信息中我们看到了`factoryMethodName`，这个就是`bean`的工厂方法名称：
-![](https://gitee.com/sysker/picBed/raw/master/20210914230344.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210914230344.png)
 
 ### 总结
 

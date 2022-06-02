@@ -12,7 +12,8 @@ github国内访问比较慢，我放下自己的百度云下载地址链接: htt
 
 下载完，双击安装，然后打开，软件大概长这样：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200330234921.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200330234921.png)
 
 安装完以后，先不要管，我们稍后再讲如何配置图床，先往下看。
 
@@ -24,29 +25,35 @@ github国内访问比较慢，我放下自己的百度云下载地址链接: htt
 
 #### 创建仓库
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331214136.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331214136.png)
 
 #### 填写仓库信息
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331214644.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331214644.png)
 
 #### 创建token
 
 点击github头像，找到settings
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331215523.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331215523.png)
 
 找到开发者设置（Developer settings）
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331215603.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331215603.png)
 
 找到个人访问token，然后点击创建新的token
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331215624.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331215624.png)
 
 填写token描述，设置token权限，然后点击最下面的创建按钮，这里需要注意的是，token只会显示一次，你最好复制保存下，丢失了需要重新生成，很麻烦
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331220213.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331220213.png)
 
 到这里githu图床仓库就创建完成了，接下来我们来配置图床软件。
 
@@ -54,15 +61,18 @@ github国内访问比较慢，我放下自己的百度云下载地址链接: htt
 
 打开刚刚安装的picGO，点到picGo设置，确保github图床开启，然后回到图床设置，点击GitHub图床
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331221211.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331221211.png)
 
 #### 设置图床信息
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331222217.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331222217.png)
 
 这是我的图床仓库
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331221616.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331221616.png)
 
 #### 测试
 
@@ -78,27 +88,32 @@ github国内访问比较慢，我放下自己的百度云下载地址链接: htt
 
 和GitHub类似，先创建仓库，当然首先你要有个账户，没有的话先注册，然后登陆，创建仓库：
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331223649.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331223649.png)
 
 #### 填写仓库信息
 
 和GitHub类似，这里就不赘述了，而且是中文环境
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331223834.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331223834.png)
 
 和前面一样，创建完成后，我们要创建token
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331224152.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331224152.png)
 
 设置权限，和前面一样，token只显示一次，所以保存好
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331224300.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331224300.png)
 
 #### 安装gitee插件
 
 根据我们创建的仓库和token，配置我们gitee的图床，和GitHub不一样的是，gitee图床需要安装一个插件，安装这个插件前，本地要先配置npm环境。搜索gitee，我安装的是gitee，当然你也可以选另一个，没有太大区别。
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331224959.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331224959.png)
 
 安装完成后，我们接下来开始配置图床
 
@@ -106,7 +121,8 @@ github国内访问比较慢，我放下自己的百度云下载地址链接: htt
 
 根据我们的创建的仓库和token，配置我们的图床服务器，和GitHub类似
 
-![](https://gitee.com/sysker/picBed/raw/master/images/20200331225446.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331225446.png)
 
 #### 测试
 
@@ -118,7 +134,8 @@ github国内访问比较慢，我放下自己的百度云下载地址链接: htt
 
 #### 安装github-plus
 
-![](https://gitee.com/sysker/picBed/raw/master/20210123131600.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210123131600.png)
 
 手动安装命令：
 
@@ -132,7 +149,8 @@ npm install picgo-plugin-github-plus
 
 配置方法大同小异，根据类型选择origin
 
-![](https://gitee.com/sysker/picBed/raw/master/20210123132246.png)
+![](
+https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210123132246.png)
 
 ### 总结
 

@@ -3,6 +3,7 @@
 ### arduino
 - [8266搭建微型服务器](./arduino/8266搭建微型服务器.md)：8266搭建微型服务器
 - [开始入坑硬件开发……Arduino点亮oled小屏](./arduino/开始入坑硬件开发……Arduino点亮oled小屏.md)：开始入坑硬件开发……Arduino点亮oled小屏
+- [搭建轻量级智能家居系统](./arduino/搭建轻量级智能家居系统.md)：搭建轻量级智能家居系统
 - [CONTENTS](./CONTENTS.md)：CONTENTS
 ### db
 - [Cassandra数据库常用操作](./db/Cassandra数据库常用操作.md)：Cassandra数据库常用操作
@@ -13,14 +14,17 @@
 - [Oracle数据库操作](./db/Oracle数据库操作.md)：Oracle数据库操作
 - [SQL常用函数](./db/SQL常用函数.md)：SQL常用函数
 - [关于MYSQL你该知道的](./db/关于MYSQL你该知道的.md)：关于MYSQL你该知道的
+- [多数据源切换实现](./db/多数据源切换实现.md)：多数据源切换实现
 - [多表连接查询](./db/多表连接查询.md)：多表连接查询
 - [数据库驱动配置引发的惨案](./db/数据库驱动配置引发的惨案.md)：数据库驱动配置引发的惨案
 - [数据连接池——JNDI](./db/数据连接池——JNDI.md)：数据连接池——JNDI
 ### docker
 - [Docker-compose常用命令](./docker/Docker-compose常用命令.md)：Docker-compose常用命令
 - [docker入门](./docker/docker入门.md)：docker入门
+- [docker构建python项目镜像](./docker/docker构建python项目镜像.md)：docker构建python项目镜像
 - [docker运行网易云音乐接口](./docker/docker运行网易云音乐接口.md)：docker运行网易云音乐接口
 - [Doker部署springBoot项目](./docker/Doker部署springBoot项目.md)：Doker部署springBoot项目
+- [harbor镜像构建推送流程](./docker/harbor镜像构建推送流程.md)：harbor镜像构建推送流程
 - [linux环境下docker报错汇总](./docker/linux环境下docker报错汇总.md)：linux环境下docker报错汇总
 - [Portainer使用指南](./docker/Portainer使用指南.md)：Portainer使用指南
 - [sonar安装阿里插件](./docker/sonar安装阿里插件.md)：sonar安装阿里插件
@@ -31,11 +35,13 @@
 - [druid数据库明文密码加密](./druid/druid数据库明文密码加密.md)：druid数据库明文密码加密
 ### elasticsearch
 - [elasticsearch专用术语及基本用法](./elasticsearch/elasticsearch专用术语及基本用法.md)：elasticsearch专用术语及基本用法
+- [elasticsearch搜索梳理](./elasticsearch/elasticsearch搜索梳理.md)：elasticsearch搜索梳理
 - [elasticsearch搜索的那些事](./elasticsearch/elasticsearch搜索的那些事.md)：elasticsearch搜索的那些事
 - [elasticsearch搜索语法梳理-贰](./elasticsearch/elasticsearch搜索语法梳理-贰.md)：elasticsearch搜索语法梳理-贰
 - [elasticsearch搜索语法梳理](./elasticsearch/elasticsearch搜索语法梳理.md)：elasticsearch搜索语法梳理
 - [开始步入Elasticsearch的世界：初探elasticsearch](./elasticsearch/开始步入Elasticsearch的世界：初探elasticsearch.md)：开始步入Elasticsearch的世界：初探elasticsearch
 ### electron
+- [electron-forge安装及配置](./electron/electron-forge安装及配置.md)：electron-forge安装及配置
 - [electron-forge安装配置](./electron/electron-forge安装配置.md)：electron-forge安装配置
 ### git
 - [git优化美化](./git/git优化美化.md)：git优化美化
@@ -90,6 +96,7 @@
 - [wsl安装搭建k8s环境](./k8s/wsl安装搭建k8s环境.md)：wsl安装搭建k8s环境
 - [wsl搭建k8s集群补充内容](./k8s/wsl搭建k8s集群补充内容.md)：wsl搭建k8s集群补充内容
 ### lambda
+- [lambda表达式之函数入参](./lambda/lambda表达式之函数入参.md)：lambda表达式之函数入参
 - [lambda表达式使用总结](./lambda/lambda表达式使用总结.md)：lambda表达式使用总结
 - [lambda表达式知识点补充](./lambda/lambda表达式知识点补充.md)：lambda表达式知识点补充
 - [lamubda表达式之foreach](./lambda/lamubda表达式之foreach.md)：lamubda表达式之foreach
@@ -110,8 +117,12 @@
 - [manjaro常用软件安装命令](./linux/manjaro常用软件安装命令.md)：manjaro常用软件安装命令
 - [manjaro搭建k8s集群](./linux/manjaro搭建k8s集群.md)：manjaro搭建k8s集群
 - [pacman常用命令](./linux/pacman常用命令.md)：pacman常用命令
-- [shell脚本统计数据](./linux/shell脚本统计数据.md)：shell脚本统计数据
+#### shell
+- [shell常用操作](./linux/shell/shell常用操作.md)：shell常用操作
+- [shell数组传参示例](./linux/shell/shell数组传参示例.md)：shell数组传参示例
+- [shell脚本统计数据](./linux/shell/shell脚本统计数据.md)：shell脚本统计数据
 - [ubuntu常用操作](./linux/ubuntu常用操作.md)：ubuntu常用操作
+- [vim使用技巧](./linux/vim使用技巧.md)：vim使用技巧
 - [win10开启wsl系统，让我们愉快的使用Linux](./linux/win10开启wsl系统，让我们愉快的使用Linux.md)：win10开启wsl系统，让我们愉快的使用Linux
 - [wsl安装Docker](./linux/wsl安装Docker.md)：wsl安装Docker
 - [wsl安装jdk](./linux/wsl安装jdk.md)：wsl安装jdk
@@ -131,6 +142,8 @@
 ### mq
 - [activeMQ消息ACK简单探索](./mq/activeMQ消息ACK简单探索.md)：activeMQ消息ACK简单探索
 - [ActiveMQ简单示例](./mq/ActiveMQ简单示例.md)：ActiveMQ简单示例
+- [docker部署RocketMq](./mq/docker部署RocketMq.md)：docker部署RocketMq
+- [RocketMQ基本概念](./mq/RocketMQ基本概念.md)：RocketMQ基本概念
 - [RocketMQ快速开始文档](./mq/RocketMQ快速开始文档.md)：RocketMQ快速开始文档
 - [rocketMQ简单示例](./mq/rocketMQ简单示例.md)：rocketMQ简单示例
 - [spring-boot整合activeMQ实现异步延迟消费](./mq/spring-boot整合activeMQ实现异步延迟消费.md)：spring-boot整合activeMQ实现异步延迟消费
@@ -150,9 +163,11 @@
 - [nodejs搭建es6开发环境](./nodeJS/nodejs搭建es6开发环境.md)：nodejs搭建es6开发环境
 - [配置安装vue-electron开发环境](./nodeJS/配置安装vue-electron开发环境.md)：配置安装vue-electron开发环境
 ### other
+- [2022新年祝福](./other/2022新年祝福.md)：2022新年祝福
 - [base64内外网文件下载解决方案](./other/base64内外网文件下载解决方案.md)：base64内外网文件下载解决方案
 - [Excel常用函数](./other/Excel常用函数.md)：Excel常用函数
 - [FastDFS文件服务器部署](./other/FastDFS文件服务器部署.md)：FastDFS文件服务器部署
+- [java发送邮件简单实现](./other/java发送邮件简单实现.md)：java发送邮件简单实现
 - [java调用dll动态库](./other/java调用dll动态库.md)：java调用dll动态库
 - [markdown编辑器开发中……](./other/markdown编辑器开发中…….md)：markdown编辑器开发中……
 - [markdown编辑器开发进展](./other/markdown编辑器开发进展.md)：markdown编辑器开发进展
@@ -171,6 +186,7 @@
 - [安利一款markdown编辑利器——Typora](./other/安利一款markdown编辑利器——Typora.md)：安利一款markdown编辑利器——Typora
 - [安利一款超强截图工具——snipaste](./other/安利一款超强截图工具——snipaste.md)：安利一款超强截图工具——snipaste
 - [实现个人服务器自由：内网穿透解决方案](./other/实现个人服务器自由：内网穿透解决方案.md)：实现个人服务器自由：内网穿透解决方案
+- [常用正则表达式](./other/常用正则表达式.md)：常用正则表达式
 - [并发测试工具jmeter了解下？](./other/并发测试工具jmeter了解下？.md)：并发测试工具jmeter了解下？
 - [开源协议简介](./other/开源协议简介.md)：开源协议简介
 - [快来康康你是哪一种？](./other/快来康康你是哪一种？.md)：快来康康你是哪一种？
@@ -184,9 +200,12 @@
 - [生产环境jdk升级至1.8的坑](./other/生产环境jdk升级至1.8的坑.md)：生产环境jdk升级至1.8的坑
 - [软件推荐](./other/软件推荐.md)：软件推荐
 - [轻量级文件服务器filebrowser](./other/轻量级文件服务器filebrowser.md)：轻量级文件服务器filebrowser
+### pcb
+- [从零开始设计Linux卡片机](./pcb/从零开始设计Linux卡片机.md)：从零开始设计Linux卡片机
 ### pdf-document
 - [python学习笔记](./pdf-document/python学习笔记.pdf)：python学习笔记
 ### python
+- [Flask开发环境搭建](./python/Flask开发环境搭建.md)：Flask开发环境搭建
 - [python其他技巧](./python/python其他技巧.md)：python其他技巧
 - [python学习笔记](./python/python学习笔记.md)：python学习笔记
 - [python抓取、解析、下载、转换m3u8视频](./python/python抓取、解析、下载、转换m3u8视频.md)：python抓取、解析、下载、转换m3u8视频
@@ -227,6 +246,7 @@
 ### skywalking
 - [skywalking入门](./skywalking/skywalking入门.md)：skywalking入门
 ### sofa
+- [sofa服务启动报错](./sofa/sofa服务启动报错.md)：sofa服务启动报错
 - [分享一个微服务框架sofaboot](./sofa/分享一个微服务框架sofaboot.md)：分享一个微服务框架sofaboot
 ### sonar
 - [sonar扫描本地代码](./sonar/sonar扫描本地代码.md)：sonar扫描本地代码
@@ -235,6 +255,7 @@
 - [AOP常用注解](./spring/AOP常用注解.md)：AOP常用注解
 - [spring5.0api-WebOnServletStack](./spring/spring5.0api-WebOnServletStack.md)：spring5.0api-WebOnServletStack
 #### springboot
+- [mybatis多数据源动态切换实现](./spring/springboot/mybatis多数据源动态切换实现.md)：mybatis多数据源动态切换实现
 - [spring-boot-security组件总结补充](./spring/springboot/spring-boot-security组件总结补充.md)：spring-boot-security组件总结补充
 - [spring-boot-websocket总结回顾](./spring/springboot/spring-boot-websocket总结回顾.md)：spring-boot-websocket总结回顾
 - [spring-boot之webflux-上](./spring/springboot/spring-boot之webflux-上.md)：spring-boot之webflux-上
@@ -282,6 +303,7 @@
 - [spring-boot源码分析小结-壹](./spring/springboot/源码分析/spring-boot源码分析小结-壹.md)：spring-boot源码分析小结-壹
 - [spring-boot源码分析小结-贰](./spring/springboot/源码分析/spring-boot源码分析小结-贰.md)：spring-boot源码分析小结-贰
 - [spring-boot源码分析小结](./spring/springboot/源码分析/spring-boot源码分析小结.md)：spring-boot源码分析小结
+- [Springboot启动之SpringApplicationRunListener](./spring/springboot/源码分析/Springboot启动之SpringApplicationRunListener.md)：Springboot启动之SpringApplicationRunListener
 - [从代码层面看spring-boot启动过程](./spring/springboot/源码分析/从代码层面看spring-boot启动过程.md)：从代码层面看spring-boot启动过程
 - [编写你的第一个spring-boot-starter](./spring/springboot/编写你的第一个spring-boot-starter.md)：编写你的第一个spring-boot-starter
 #### springcloud
@@ -493,6 +515,7 @@
 - [idea、eclipse快捷键对比](./工具使用/idea、eclipse快捷键对比.md)：idea、eclipse快捷键对比
 - [IDEA快捷键](./工具使用/IDEA快捷键.md)：IDEA快捷键
 - [MyEclipse2014安装svn插件的方式：](./工具使用/MyEclipse2014安装svn插件的方式：.md)：MyEclipse2014安装svn插件的方式：
+- [power-shell美化](./工具使用/power-shell美化.md)：power-shell美化
 - [常用工具链接](./工具使用/常用工具链接.md)：常用工具链接
 ### 并发与多线程
 - [java多线程](./并发与多线程/java多线程.md)：java多线程
@@ -598,6 +621,7 @@
 - [树莓派+摄像头变监控](./树莓派把玩笔记/树莓派+摄像头变监控.md)：树莓派+摄像头变监控
 - [树莓派定时重启](./树莓派把玩笔记/树莓派定时重启.md)：树莓派定时重启
 - [树莓派开机启动chrome并全屏](./树莓派把玩笔记/树莓派开机启动chrome并全屏.md)：树莓派开机启动chrome并全屏
+- [树莓派开机运行脚本](./树莓派把玩笔记/树莓派开机运行脚本.md)：树莓派开机运行脚本
 - [树莓派简介](./树莓派把玩笔记/树莓派简介.md)：树莓派简介
 ### 管理
 - [世界格局分析笔记](./管理/世界格局分析笔记.md)：世界格局分析笔记
@@ -645,6 +669,7 @@
 - [设计模式详解——适配器模式](./设计模式/设计模式详解——适配器模式.md)：设计模式详解——适配器模式
 ### 读书笔记
 - [无问西东](./读书笔记/无问西东.md)：无问西东
+- [豁达古诗词](./读书笔记/豁达古诗词.md)：豁达古诗词
 ### 面试
 - [java基础](./面试/java基础.md)：java基础
 - [分享一些面试题](./面试/分享一些面试题.md)：分享一些面试题

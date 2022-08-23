@@ -61,7 +61,25 @@ export GOPROXY=https://goproxy.io
 至此，我们树莓派`2b`的`go`环境就构建完成了，然后我们就可以愉快地在树莓派上使用`go`语言了
 
 
-### go web简单示例
+### 创建项目
+`go`语言创建项目比较简单。
+第一步，我们需要创建项目文件夹，然后在项目文件夹下通过`go mod init`命令进行项目初始化：
+```sh
+$ mkdir go-web-test
+$ cd go-web-test
+$ go mod init github.io/syske/go/web-test
+```
+`go mod init`需要指定我们的模块名称，类似`java`的`package`，如果不指定的话，会有错误提示
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20220823080343.png)
+执行完`go mod init`命令后，会在当前文件夹下生成一个名为`go.mod`文件，文件内容如下：
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20220823081519.png)
+从这个文件内容，我们可以看出，主要是项目的一些配置信息，包括当前项目的`module`和`golang`的版本信息。
+
+下面我们来开始写代码吧。
+关于`go`的语法和基础的知识，我们这里就不做过多说明了，有兴趣的小伙伴可以自己研究，需要学习资料的小伙伴也可以私信我。
+
+#### go web简单示例
+下面这段代码构建了一个简易的`web`服务器，端口是`9090`，我们可以通过浏览器访问，程序控制台会打印请求信息，同时会给客户端返回响应结果
 
 ```go
 package main
@@ -94,8 +112,16 @@ func main() {
     }
 }
 ```
+客户端：
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20220823083138.png)
 
+控制台输出：
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20220823083040.png)
+
+好了，到这里，我们整个内容就结束了，后面有时间我们再继续分享
 
 参考内容 
 
-1.  https://blog.csdn.net/yinjl123456/article/details/118229692
+1. https://blog.csdn.net/yinjl123456/article/details/118229692
+2. https://learnku.com/docs/build-web-application-with-golang/032-go-builds-a-web-server/3169

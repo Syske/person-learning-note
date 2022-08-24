@@ -23,7 +23,7 @@ import mysql.connector
 安装命令
 
 ```shell
-pip3 install PyMySQLpip3 install PyMySQL
+pip3 install PyMySQL
 ```
 
 测试是否安装成功

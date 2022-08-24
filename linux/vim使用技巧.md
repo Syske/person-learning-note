@@ -11,6 +11,15 @@
 #### 启用鼠标复制粘贴
 
 ```
-set mouse=
+:set mouse=
 ```
 
+#### 设置文件编码
+```
+:set ff=unix
+```
+
+#### 文件编码转换
+```
+:set fileencoding=utf-8
+```

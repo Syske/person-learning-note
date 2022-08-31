@@ -85,6 +85,18 @@ org.springframework.context.ApplicationListener=io.github.syske.springbootbeanli
 
 
 #### 知识扩展
+
+##### 事件
 除了今天我们介绍的`ApplicationEvent`之外，还有很多优秀的开源事件组件，比如`guava`的`eventBus`，后面有机会的话，我们可以单独分享下`eventBus`的用法。
 
 
+##### spring.factories
+在今天的内容中，我们在`resouces/META-INF`文件夹下，创建了`spring.factories`文件，其实在`spring-boot`的核心`jar`文件的`META-INF`文件夹也是有这个文件的，当然文件的内容更完整，它包括了以下配置：
+- 资源加载器（`org.springframework.boot.env.PropertySourceLoader`）
+- 运行监听器（`org.springframework.boot.SpringApplicationRunListener`）
+- 错误报告器（`org.springframework.boot.SpringBootExceptionReporter`）
+- 应用上下文初始化组件（`org.springframework.context.ApplicationContextInitializer`）
+- 应用监听器（`org.springframework.context.ApplicationListener`）
+- 环境后置处理器（`org.springframework.boot.env.EnvironmentPostProcessor`）
+- 失败分析组件（`org.springframework.boot.diagnostics.FailureAnalyzer`）
+- 失败分析报告组件（`org.springframework.boot.diagnostics.FailureAnalysisReporter`）

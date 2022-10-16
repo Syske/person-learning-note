@@ -424,4 +424,4 @@ invoke-interface | 调用接口方法
 
 在梳理这些知识点的时候，我发现有位大佬的笔记写的很完整，感兴趣的小伙伴可以去看下：
 
-(Android逆向开发之smali语言的学习)[https://code.newban.cn/169.html]
+[Android逆向开发之smali语言的学习](https://code.newban.cn/169.html)

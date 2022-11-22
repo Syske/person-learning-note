@@ -28,8 +28,7 @@
 
 大名鼎鼎的前端代码编辑器，很多`IDE`工具都集成了他，比如`IDEA`，`typora`编辑器在编辑`markdown`源码时，也用的它，当时我用它实现了`markdown`的源码编辑，但是考虑到反向解析不好做，最后也放弃了，有考虑做在线编辑器的小伙伴可以了解下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212225321.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212225321.png)
 
 #### `turndown`
 
@@ -55,8 +54,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212225321.pn
 
 `mark text`是一款开源的`markdown`编辑器，号称永远开源，界面也很简洁，可能是用惯了`typora`这样的`markdown`编辑器，我觉得还是差点感觉，而且软件启动很慢：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212231552.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212231552.png)
 
 下载地址：
 
@@ -66,8 +64,7 @@ https://marktext.app/
 
 官网也很简洁：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212231925.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212231925.png)
 
 
 
@@ -75,13 +72,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212231925.pn
 
 也就是我上面说的链滴的产品，这款软件对我来说有点臃肿，感觉有点像`notion`，而且创建的文档并不是原生的`markdown`（不过提供了导出功能）
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212232328.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212232328.png)
 
 我还是比较追求轻量级的`markdown`编辑器，喜欢那种沉浸式的感觉，所以我觉得思源笔记并不适合我。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212232905.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211212232905.png)
 
 下载地址：
 

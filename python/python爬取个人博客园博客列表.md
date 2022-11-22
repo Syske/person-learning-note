@@ -18,13 +18,11 @@
 
 安装方式有很多，用`win10`的小伙伴可以直接在应用商店搜索安装，但这里并不推荐这种方式，因为这种方式不好找`python`安装路径，特别是对`windows`平台不是特别熟悉的小伙伴：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017224009.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017224009.png)
 
 另外一种安装方式就是官网下载，然后安装：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017224516.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017224516.png)
 
 官方最新版本是`3.10`，如果觉得官方网站下载慢的话，可以去华为镜像站下载，选择对应的版本即可（华为好像没有`3.10`版本的）：
 
@@ -38,18 +36,15 @@ https://repo.huaweicloud.com/python/
 
 安装完成后，我们需要对`python`设置一些环境变量。首先，打开`python`安装路径，如果不知到可以搜下`python`，然后打开文件路径即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017224945.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017224945.png)
 
 打开之后其实还不是安装位置，还需要再次右键打开安装路径：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225053.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225053.png)
 
 然后才是真正的安装路径（我这里就是在应用市场下载的，看这路径是不是不好找）：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225209.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225209.png)
 
 然后打开环境变量设置，添加两个环境变量设置：
 
@@ -62,25 +57,21 @@ C:\Users\syske\AppData\Local\Programs\Python\Python39\Scripts
 
 这里需要注意的是，环境变量要设置在系统变量的`path`下面，否则如果是用户变量则无法被识别（也可能是我操作方式不对，但是系统变量肯定是可以的）：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225330.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225330.png)
 
 ##### 验证
 
 安装完成后，重新打开一个新的`cmd`窗口，输入`python`命令，如果显示如下在，则表明已经安装配置完成，否则配置有问题：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225914.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017225914.png)
 
 然后再执行了经典的`hello world`试下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017230037.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017230037.png)
 
 当然，还需要测试下`pip`是否配置`ok`，这个工具是用了管理`python`的依赖库的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017230223.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017230223.png)
 
 至此，`python`环境搭建完成。
 
@@ -112,22 +103,19 @@ pip install lxml
 
 如果没有这个库，在解析`html`的时候会报如下错误
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017172909.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017172909.png)
 
 #### 最终完成效果
 
 简单来说，就是我们想通过这个爬虫，拿到我的个人博客的所有列表，包括标题和链接地址，这里我是直接生成了一个`markdown`文档，所以链接的效果就是`markdown`的可点击链接，最终的效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017230439.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017230439.png)
 
 #### 页面源码
 
 首先我们要先分析要抓取的页面`html`，确定具体解析方案：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017232431.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211017232431.png)
 
 从页面源码可以看出来，我们其实只需要拿到`class`为`postTitle`的`div`，然后解析其中的文字内容及`a`标签的`url`即可，所以下面的实现就是基于这个思路展开的。
 

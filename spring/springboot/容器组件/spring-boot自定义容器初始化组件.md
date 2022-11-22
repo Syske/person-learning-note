@@ -37,8 +37,7 @@ public class SyskeInitializer implements ApplicationContextInitializer {
 
 在`resources`文件夹下创建`META-INF`文件夹，并在其下创建`sping.factories`文件，具体结构如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915083035.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915083035.png)
 
 然后在`spring.factories`文件中加入初始化组件的配置：
 
@@ -72,18 +71,15 @@ org.springframework.context.ApplicationContextInitializer=io.github.syske.spring
 
 完成以上代码编写和配置工作以后，我们直接运行启动`spring boot`，然后会在控制台输出我们在`initialize`方法输出的内容：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081858.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081858.png)
 
 从上面的启动日志中，我们可以发现，`ApplicationContextInitializer`组件是紧挨着`banner`打印被执行的，结合我们最近分析的启动过程，我们可以知道，初始化组件是在`prepareContext`方法中被执行的，而这个方法是紧挨着容器创建的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915085854.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915085854.png)
 
 从`setInitializer`方法这里我们可以看到，我们自己定义的`ApplicationContextInitalizer`已经被注册到`initializers`中了
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081441.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081441.png)
 
 
 
@@ -95,28 +91,23 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081441.png)
 
 首先我们在程序主入口中调用了`SpringApplication`的静态方法`run`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081735.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081735.png)
 
 然后静态`run`方法调用了另一个静态`run`，并在第二个静态`run`方法内部实例化`SpringApplication`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081608.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081608.png)
 
 实例化`SpringApplication`的时候，会同步调用`setInitializers`（紧挨着的`setListeners`是设置应用监听器的），这里设置的就是容器初始化组件（包括我们自定义的），这里获取初始化组件的方法`getSpringFactoriesInstances`其内部进行了`spring.factories`文件的解析操作：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081523.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915081523.png)
 
 下面就是`getSpringFactoriesInstances`方法的内部实现：
 
 其中的`SpringFactoriesLoader.loadFactoryNames`就是解析并获取`spring.factories`文件中的`Factory`的名字，然后将最终结果放进缓存中并返回：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915082048.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210915082048.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/loadFactoryNames.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/loadFactoryNames.jpg)
 
 ### 总结
 

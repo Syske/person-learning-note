@@ -10,8 +10,7 @@ tags: [#电子签章]
 
 参照公章部分的实现方式，同时也参考了很多博客[1]，查了很多资料，也搞清楚了电子签章的基本流程：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200104084727316.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200104084727316.png)
 
 因为我要实现的功能很简单就是个人签章，而且我的签名是手写的，所以创建签名部分就省略了，核心部分就是确定签名坐标和签名，确定坐标部分我根据自己查找的资料，实现了根据关键字确定坐标，因为确定坐标很麻烦，也不够灵活。
 
@@ -798,8 +797,7 @@ public class SignPdf {
 
 签名预览
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200104103808061.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200104103808061.png)
 
 #### 总结
 

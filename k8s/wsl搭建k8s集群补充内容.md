@@ -12,8 +12,7 @@
 kubectl get option optionName [-n][-namespace] [namespaceName]
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627132002.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627132002.png)
 
 这个命令的作用是获取`option`的信息，`option`可以是`node`、`pod`、`service`，在获取`pod`和`service`的时候，是需要通过`－namespace`指定命名空间的;
 
@@ -25,8 +24,7 @@ kubectl svc -n 命名空间名称
 
 如果要获取具体的`option`，可以指定`optionName`
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627134949.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627134949.png)
 
 如果要获取所有命名空间下的`svc`或者`pod`，可以通过：
 
@@ -36,14 +34,11 @@ kubectl get svc -A
 kubectl get pod -A
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627132707.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627132707.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627132927.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627132927.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627133004.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627133004.png)
 
 我们通常访问的是`service`，所以最常用的是`kubectl get svc -n kubernetes-dashboard`通过这个命令，我们可以查看服务对外提供的端口。
 
@@ -55,14 +50,11 @@ kubectl describe option [-n][-namespace] [namespaceName]
 
 这里的参数和前面`kubectl get`是一样的，只是`describe`获取到的信息更详细，包括日志信息，所以在实际使用过程中，我们经常用这个命令查看日志信息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627134130.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627134130.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627135229.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627135229.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627135404.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627135404.png)
 
 #### 创建服务
 
@@ -84,8 +76,7 @@ kubectl apply -f kuboard/kuboard-v3.yaml
 
 `yaml`文件结构如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627145111.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627145111.png)
 
 对于`k8s`的`yaml`文件，我目前只了解常用的节点的作用，还不知道如何编写一个`yaml`文件，但是如果你用了`kuboard`这样的管理工具之后，是不需要自己编写`yaml`文件的。
 
@@ -107,8 +98,7 @@ kubectl delete -f https://addons.kuboard.cn/kuboard/kuboard-v3.yaml
 kubectl proxy
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627141018.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627141018.png)
 
 `k8s`代理启动后，我们就可以通过代理服务访问我们`k8s`里面的服务了，访问地址如下：
 
@@ -118,8 +108,7 @@ http://localhost:8001/api/v1/namespaces/[Namespace]/services/[Name]:[Port]/proxy
 
 我们把将地址中的`[namespace]`、`[name]`和`[port]`替换成我们自己的服务就可以了。我们可以通过`describe`命令获取这些信息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627142456.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627142456.png)
 
 所以上面图片中的服务，访问地址是这样的：
 
@@ -127,18 +116,15 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627142456.png)
 http://localhost:8001/api/v1/namespaces/kuboard/services/kuboard-v3:80/proxy/
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/kuboard-login.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/kuboard-login.png)
 
 这个服务也是一个控制台，这个控制台是国人开发的，很多公司线上环境就用的这款管理工具，我们公司也是刚刚切换到`k8s`，也用的是`kuboard`，从体验上来说，确实比官方的控制台好用，可能也是我用官方的管理工具时间短。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627143544.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627143544.png)
 
 关于`kuboard`的使用，今天我们就不分享了，因为`kuboard`本身不支持代理访问，虽然能登陆上，但是后面访问的时候，会报404的错误：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627150451.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210627150451.png)
 
 主要还是地址的问题，我们代理之后服务的根目录应该是：
 

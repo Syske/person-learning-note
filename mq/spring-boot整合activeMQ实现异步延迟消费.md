@@ -16,8 +16,7 @@
 
 首先需要注意的是，`activeMQ`是从`5.4`才开始支持延迟消费的，所以想要实现今天的示例，你的`activeMQ`的版本至少是`5,4`，我本次示例用到的是`5.16.2`:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220103221617.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220103221617.png)
 
 #### 配置
 
@@ -43,8 +42,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220103221617.png)
 
 https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648418144&idx=1&sn=fd53a4456a246f3ee88d7de74f466cda&chksm=bea6c9ea89d140fc9cec281063442df7058e756fd3c87a31b30631aa67f823b452f2211c4cd5&token=1044120974&lang=zh_CN#rd
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-ae667680ae554f118f5d2f840442b43e.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-ae667680ae554f118f5d2f840442b43e.jpg)
 
 这里的内容完成之后，我们就可以开始今天示例最核心的内容了。
 
@@ -141,11 +139,9 @@ send(final Destination destination, final MessageCreator messageCreator)
 
 这里之所以如此简洁优雅，其实是因为`JmsBaseTemplate`已经帮我们封装了`session`之外的其他操作，包括关闭资源等：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103185514.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103185514.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103190057.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103190057.png)
 
 #### 消息消费者
 
@@ -167,13 +163,11 @@ public void dealDelayMessage(String message) {
 
 不论原始方式还是`JmsTemplate`，最终的运行效果都没有本质区别，运行效果大致如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103174200.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103174200.png)
 
 在测试的开始，我把延迟消费的时间设置为`1min`，可以看到我们发送的消息在`1`分钟在之后才被消费，当我们将延迟时间改成`5min`，那么我们的消息会在发送`5`分钟后会被消费：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103191710.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20220103191710.png)
 
 
 

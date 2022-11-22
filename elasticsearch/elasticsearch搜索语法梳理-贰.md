@@ -46,8 +46,7 @@ WHERE  age = 25
 
 运行结果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210829221945.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210829221945.png)
 
 在测试的过程中，我发现下面这样查询，结果和上面的结果是一致的：
 
@@ -64,8 +63,7 @@ curl -X GET "localhost:9200/megacorp/employee/_search?pretty" -H 'Content-Type: 
 
 返回结果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210829222144.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210829222144.png)
 
 也不知道这两种查询方式有啥区别（有的懵逼）。
 

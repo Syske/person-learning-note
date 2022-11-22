@@ -4,13 +4,11 @@ tags: [#javascript, #css, #html ]
 
 如果把前端web比作一栋房子的话，那么html就好比房子的架构，类似房子的承重墙、柱子、屋顶、楼梯等，是最基本的必须元素；
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200123131944318_3895.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200123131944318_3895.png)
 
 而css就好比房子的装修，类似房子的地砖、墙面、装饰面等的装饰材料，不是必须的，但如果合理使用的话，会让你的网页看起来很漂亮，当然如果使用不合理就适得其反。本质上来说，css就好比设计师的画笔，就看你如何发挥，取决于你的审美。（这里css修饰的网页就不放图片了，基本上我们平时看到的内容都是css修饰过的，放一张网上搞笑的对比图片大家感受下）
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200123132009842_11928.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200123132009842_11928.png)
 
 至于javascript，他的作用是赋予html和css活力，让他们每一个元素都可以移动、变化、甚至消失。想象一下，如果有一个工具，可以让你们家墙面改变颜色，让你们家地板改变样式，让你们家墙面自由移动，甚至可以动态地改变房子空间，是不是很炫酷。JavaScript做的就是这样的事，在javascript的世界，很多事都是可能的，有个叫法布里斯·贝拉（FabriceBellard）的大佬，2011年，他单用JavaScript写了一个PC虚拟机Jslinux   。这个虚拟机仿真了一个32位的x86兼容处理器，一个8259可编程中断控制器，一个8254可编程中断计时器，和一个16450 UART。让你可以在Web浏览器中启动Linux。
 

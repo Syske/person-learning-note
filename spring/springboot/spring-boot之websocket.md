@@ -20,11 +20,9 @@ tags: [#springboot, #websocket]
 
 在以前的网络协议中，服务端只能被动接受客户端的请求，然后才能给客户端发送数据，但是有了`webSocket`协议，我们就可以实现类似于打电话这样的双工通信，确实方便了很多。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725163500.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725163500.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725163532.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725163532.png)
 
 #### 简易聊天室
 
@@ -181,8 +179,7 @@ ws://localhost:8080/ws
 
 `@service`注解也就是我们最常用的服务注解，就是把他标记成`springboot`可以管理的组件，没有这个注解，`websocket`是访问不到的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725165754.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725165754.png)
 
 紧接着，我们写了四个监听方法，方法上都有对应的注解标注：
 
@@ -324,8 +321,7 @@ websocket测试<br>
 
 下面我们简单测试下，我们分别登录三个账号：`nezha`，`nvwa`、`伏羲`，然后用三个账号分别发送消息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725171429.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210725171429.png)
 
 效果还是可以的，首先是哪吒三太子加入群聊，然后时女娲加入群聊，然后他们分别发送消息，接着伏羲加入群聊，发送消息。第一个进群的人，会收到后面进群的所有人的消息，是不是和我们的微信差不多呢？
 

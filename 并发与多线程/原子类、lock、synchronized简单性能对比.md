@@ -93,8 +93,7 @@ public class CountDownLatchTest {
 
 我们定义了一个可重入锁，在`run`方法中加锁，然后在`finally`代码块中释放锁，运行以上代码，我们会得到如下运行结果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210707085239.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210707085239.png)
 
 整个运行过程特别慢，大概需要`90`秒，具体取决于电脑性能。
 
@@ -142,8 +141,7 @@ public class CountDownLatchTest {
 
 关于`synchrronized`这里就不过多说明了，应该算特别基础的知识，它能修饰变量、方法、代码块，在应用层面也比较灵活。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210707085427.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210707085427.png)
 
 运行结果很感人，时间直接比`lock`快了`90`倍，但是运行过程中出现了并发的情况（翻车了），因为`i++`操作不是原子的，所以单`synchrioned`并不能保证线程安全。继续往后看，后面有最终解决方案。
 
@@ -189,8 +187,7 @@ public class CountDownLatchTest {
 
 运行结果如下，性能方面确实要比`lock`优秀的多，但是运行结果依然翻车，出现了线程安全问题。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210707085555.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210707085555.png)
 
 然后再一次测试的机缘巧合之下，我发现把原子类和`synchronized`组合一下，就可以完美地解决这个问题，代码调整如下：
 
@@ -234,8 +231,7 @@ public class CountDownLatchTest {
 
 然后运行结果就正常了，而且性能一点也不弱，可以吊打`lock`了
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210707131336.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210707131336.png)
 
 ### 总结
 

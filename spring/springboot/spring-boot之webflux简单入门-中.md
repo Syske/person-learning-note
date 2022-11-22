@@ -35,8 +35,7 @@ WebClient client = WebClient.create();
 ```
 
 如果不指定服务器地址，且`uri`填写相对接口地址，则会报如下错误信息：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729132108.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729132108.png)
 
 #### 示例讲解
 
@@ -46,8 +45,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729132108.pn
 
 `client.get()`表示创建一个`get`请求对象（本质上是一个`RequestHeadersUriSpec`对象），他还支持`post`、`put`、`delete`和`options`，也就是我们`restful`的所有协议。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729132522.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729132522.png)
 
 对于不同的请求类型，我们配置的请求参数是不一样的，但是`uri`方法都是通用的。
 
@@ -153,13 +151,11 @@ Mono<String> stringMono2 = client.post()
 
 首选是我们的接口，第一个是`get`接口，第二个是`post`接口：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729201601.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729201601.png)
 
 接口路由配置
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729201714.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729201714.png)
 
 测试代码如下
 
@@ -198,21 +194,17 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729201714.pn
 
 然后运行下看看：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729202900.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729202900.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729202951.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729202951.png)
 
 可以看到我们前面设置的数据都可以可到，比如`cookie`、`contentType`。
 
 下面是运行结果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729203120.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729203120.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729203151.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210729203151.png)
 
 ### 总结
 

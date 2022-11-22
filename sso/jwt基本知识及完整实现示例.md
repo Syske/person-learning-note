@@ -87,8 +87,7 @@ HMACSHA256(
 
 输出是三个由点分隔的Base64-URL字符串，可以在HTML和HTTP环境中轻松传递这些字符串，与基于XML的标准（例如SAML）相比，它更紧凑。
 
-下面显示了一个JWT，它已对先前的标头和有效负载进行了编码，并用一个秘密进行签名。 ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331094307.png)
+下面显示了一个JWT，它已对先前的标头和有效负载进行了编码，并用一个秘密进行签名。 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200331094307.png)
 
 如果您想使用JWT并将这些概念付诸实践，则可以使用[jwt.io Debugger](https://jwt.io/#debugger-io)解码，验证和生成JWT。
 

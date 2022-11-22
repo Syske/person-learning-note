@@ -18,13 +18,11 @@ http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421482&idx=1&sn=538ca03
 
 系统安装完成后，第一次进来效果如下，因为我选择的是`gnome`版本的，所以和`kde`、`xface`显示会有一些差异。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233626.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233626.png)
 
 然后打开终端，这里可以看到终端应该已经安装了`oh-my-zsh`，后面我们有时间了看下具体如何优化：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233531.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233531.png)
 
 #### 基本配置
 
@@ -37,8 +35,7 @@ sudo pacman-mirrors -i -c China -m rank
 ```sh
 sudo pacman-mirrors -g
 ```
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233734.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233734.png)
 
 ##### 更新软件库
 
@@ -72,8 +69,7 @@ sudo pacman -S fcitx-sogoupinyin
 
 但我这里是不行的，直接安装的话，会提示无法找到软件包（真后悔上次安装的时候没有形成文档，那会我安装的还可以安装官方皮肤，不知道是不是版本的问题）：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233748.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233748.png)
 
 不过这个问题我们可以通过`yay`包管理工具来解决这个问题，关于`yay`我们后面还会讲到它的安装。
 
@@ -115,8 +111,7 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233803.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233803.png)
 
 我当时在安装签名的时候就报错了，当时忘记截图了，错误提示类似下面：
 
@@ -139,8 +134,7 @@ sudo pacman-key --populate archlinuxcn
 
 这个是我搜的解决方法，也是`Arch`给出的解决方案：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027055611.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027055611.png)
 
 地址如下：
 
@@ -180,18 +174,15 @@ sudo pacman -Sy yay
 
  这里如果在安装过程中报如下错误的话：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233844.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233844.png)
 
 可以将`/etc/pacman.conf`中的`community`的`SigLevel`改成`Optional TurstAll`
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027064006.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027064006.png)
 
 然后再次执行安装命令就可以安装成功：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027064413.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027064413.png)
 
 ##### 安装搜狗拼音
 
@@ -203,23 +194,19 @@ yay -S fcitx-sogoupinyin
 
 这里如果安装还是报错，好好检查下`pacman.conf`文件中软件源的配置项是否正常：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233904.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233904.png)
 
 前天晚上，我为了装好搜狗拼音，一直熬到凌晨，最后的解决方法很粗暴，直接将所有软件源的`SigLevel`改成`Optional TrustAll`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233919.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233919.png)
 
 然后搜狗拼音就完美安装成功了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/image-20211027064851922.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/image-20211027064851922.png)
 
 可以看到安装日志中有词库的解压操作：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027065231.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027065231.png)
 
 ##### 添加启动配置
 
@@ -239,8 +226,7 @@ XMODIFIERS=@im=fcitx
 
 最后重启电脑，再然后就可以看到搜狗输入法了，除了不能安装好看的皮肤，其他的都还好，还挺稳定的。今天这篇内容，我就是在`manjaro`环境下，用搜狗拼音敲出来的。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233936.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211026233936.png)
 
 
 
@@ -260,5 +246,4 @@ https://sourceforge.net/projects/manjarolinux/files/gnome/
 
 另外需要补充说明的是，我当期的`manjaro`是基于`gnome`的，它的版本是`21.1.6`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027070132.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027070132.png)

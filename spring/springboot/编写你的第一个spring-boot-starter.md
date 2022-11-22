@@ -25,8 +25,7 @@ tags: [#springboot, #stater]
 
 因为`starter`的核心其实是配置类，而这些配置类注解都在`spring-boot-starter`包下。创建完成后的项目结构如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718180009.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718180009.png)
 
 我的这个组件是一个通用的消息发送组件，所以我还引入`activemq`的相关包，对`demo`感兴趣的小伙伴可以直接去看项目源码，文末有地址。
 
@@ -145,25 +144,21 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.github.syske.s
 
 这里打包也很简单，我们直接使用`maven`的`install`工具就可以，需要注意的是，我们要在`pom.xml`中指定打包类型：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718183419.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718183419.png)
 
 点击`install`菜单后，我们的`start`会被安装到本地`maven`仓库中
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718183519.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718183519.png)
 
 #### 测试
 
 因为`stater`是要引入`spring-boot`项目中才能使用的，所以我们要先创建一个`spring-boot`项目，然后引入我们刚才打的`starter`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718183957.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718183957.png)
 
 这里我们还要在配置文件中添加`mq`的地址：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718184227.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718184227.png)
 
 然后我们直接在单元测试中测试下我们的`stater`:
 
@@ -184,8 +179,7 @@ class SpringBootSraterTestApplicationTests {
 
 直接运行这个方法，然后我们登录`mq`的管理台看下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718184502.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210718184502.png)
 
 可以看到我们的消息已经成功发送到`mq`中了，说明我们的`starter`组件已经运行成功了。
 

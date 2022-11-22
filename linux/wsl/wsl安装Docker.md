@@ -8,8 +8,7 @@
 
 对`WSL`有所了解的小伙伴应该都知道，关于`wsl`其实是有两个版本的，而且官方文档也给出了详细的对比：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211014112138.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211014112138.png)
 
 详细对比可以看下官方说明：
 
@@ -29,11 +28,9 @@ https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions
 
 不过`windows`和`wsl2`之间是可以实现便捷的文件传输的，只是他们之间的传输类似于虚拟机的文件传输，是基于网络进行的。如果我们需要在`windows`访问`wsl`中的文件，直接通过文件管理器访问`\\wsl$`，然后选择对应的系统即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211014114204.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211014114204.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211014114313.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211014114313.png)
 
 #### 准备工作
 
@@ -50,8 +47,7 @@ sudo apt install -yqq fontconfig daemonize # 第一种方式需要执行
 
 因为我已经安装过了，显示得可能和你不一样：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626175913.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626175913.png)
 
 这里有两种方式。需要注意的是第一种方式需要多安装一个软件包：`fontconfig`
 
@@ -91,8 +87,7 @@ sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd -
 
 我推荐第一种，第二种虽然第一次是`ok`的，但是在实际使用中发现，`wsl`重启后（或者电脑重启），第二种方式执行`docker`命令的时候，会报下面的错，而且我还没找到解决方案：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626184940.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210626184940.png)
 
 
 

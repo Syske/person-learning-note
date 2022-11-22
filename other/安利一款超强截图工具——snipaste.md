@@ -7,8 +7,7 @@ tags: [#截图工具, #snipaste, #安利]
 
 首先是官网的截图，从截图中我们可以看出来，它也是跨平台的，支持`windows`和`mac`，`linux`正在开发中，当然它本身也是一个开源软件，基于`qt gui`构建的，所以颜值也是杠杠的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929193210.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929193210.png)
 
 ### snipaste能干什么？
 
@@ -18,13 +17,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929193210.pn
 
 截图的时候右下角会有一个放大的小窗，方便我们精确截图。截图完成后，我们可以在工具栏选择对应的菜单对截图进行操作：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929194441.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929194441.png)
 
 #### 工具栏
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929195245.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929195245.png)
 
 工具栏第一个菜单是框选标注；
 
@@ -54,11 +51,9 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929195245.pn
 
 支持方形圆形，以及填充的实体，选择标记之后可以在二级菜单下设置标注样式，包括颜色、形状等，在标记过程中可以通过鼠标滚轮调整标注线的粗细：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929201223.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929201223.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929201041.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929201041.png)
 
 其他菜单就不一一展示了，操作起来都很简单，下面看下它的设置和设置技巧。
 
@@ -72,15 +67,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929201041.pn
 
 关于固定到桌面有两种方式，一种是截图完毕后直接点击那个小钉子图标，另一种是点击复制，然后通过贴图固定到桌面（快捷键`F3`，可以自己设置），固定到桌面效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929202006.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929202006.png)
 
 
 
 贴到桌面以后，可以把鼠标放在截图上，通过鼠标滚轮进行缩放，如果想销毁固定在桌面的截图，可以右键点击销毁，或者直接鼠标双击截图：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210929202244873.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210929202244873.png)
 
 这里还可以对截图进行二次标注，也可以将图像另存或者复制。
 
@@ -90,18 +83,15 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210929202
 
 这个功能也很强大，我们通过贴图功能可以将剪贴板的内容直接以截图的方式贴到桌面，不论它是文字还是图片：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929202704.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929202704.png)
 
 有了这个功能加持，我们可以将一个超出屏幕高度的文本内容直接以截图方式发送，还可以标注，是不是美滋滋：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203045.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203045.png)
 
 当然有了它，我们可以一次多个截图：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203407.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203407.png)
 
 
 
@@ -109,16 +99,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203407.pn
 
 这个截图软件启动后，在状态栏右侧会有一个小图标，右键可以看到菜单选项：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203922.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203922.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203848.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929203848.png)
 
 点击首选项可以进入设置菜单：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929204507.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210929204507.png)
 
 设置就不详细讲了，简单试下就知道了，核心的可能就是快捷键设置了。
 

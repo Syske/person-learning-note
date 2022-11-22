@@ -17,8 +17,7 @@ ssh syske@192.168.0.101
 
 其中`syske`是我的用户名，`@`后面是机器的`ip`地址：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106234705.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106234705.png)
 
 #### 2.关闭笔记本盒盖休眠
 
@@ -28,8 +27,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106234705.png)
 sudo vim /etc/systemd/logind.conf
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106234408.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106234408.png)
 
 然后重启`systemd-logind`服务：
 

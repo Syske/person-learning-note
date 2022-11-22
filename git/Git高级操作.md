@@ -16,8 +16,7 @@
 
 找到`merge`操作
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113317.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113317.png)
 
 
 
@@ -29,8 +28,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113317.pn
 git reset --hard b85bbfb424
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113637.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113637.png)
 
 
 
@@ -42,7 +40,6 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113637.pn
 git push -f
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113828.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211020113828.png)
 
 至此，`merge`操作就回滚成功了。

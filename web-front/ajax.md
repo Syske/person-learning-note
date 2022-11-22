@@ -84,8 +84,7 @@ alert(data);
 
 jQuery.get()回调函数里面的 this ，指向的是Ajax请求的选项配置信息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100427.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100427.png)
 
  
 
@@ -132,8 +131,7 @@ alert(data.result);
 
 这里设置了请求的格式为"json"：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100332.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100332.png)
 
 如果你设置了请求的格式为"json"，此时你没有设置Response回来的ContentType 为：Response.ContentType = "application/json"; 那么你将无法捕捉到返回的数据。
 
@@ -433,12 +431,10 @@ HTML代码：
 </form>
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100846.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100846.png)
 
 **serializeArray()** **结果为：**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100919.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011100919.png)
 
  

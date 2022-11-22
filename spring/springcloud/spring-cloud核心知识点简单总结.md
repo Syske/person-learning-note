@@ -10,8 +10,7 @@
 
 今天回顾的方式也是从一张脑图开始，这张脑图主要展示了各个组件的启用流程和步骤，需要脑图源文件的小伙伴，公众号回复【spring-cloud总结】即可获取。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210808163210.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210808163210.png)
 
 #### 内容纲要
 

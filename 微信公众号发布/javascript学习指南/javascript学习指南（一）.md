@@ -364,27 +364,23 @@ var num3=true;    //布尔值true（真），false(假)
 
 我们先看看下面的JavaScript语句：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image012.jpeg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image012.jpeg)
 
 生活中“再见”表达方法很多，如:英语(goodbye）、网络语（88）、肢体语（挥挥手）等。在JavaScript表达式无处不在，所以一定要知道可以表达哪些内容，看看下面几种情况:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image014.jpeg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image014.jpeg)
 
 注意:串表达式中mychar是变量
 
  
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image016.jpeg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image016.jpeg)
 
 注意:数值表达式中num是变量
 
  
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image018.jpeg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/ip_image018.jpeg)
 
 **注意：**布尔表达式中num是变量
 

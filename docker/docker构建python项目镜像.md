@@ -24,8 +24,7 @@ https://dormousehole.readthedocs.io/en/latest/
 
 项目的结构也很简单：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220125223717.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220125223717.png)
 
 其中，`static`存放的是`js`、`css`以及图片等静态资源；`templates`就是`html`的模板文件，和`spring boot`的`templates`类似；`venv`是`python`的虚拟环境；`arduino-index.py`是项目的主入口，其中代码很简单就是一个`controller`，也就是说，这个项目就只有一个页面：
 
@@ -87,8 +86,7 @@ CMD ["/bin/bash", "run.sh"]
 
 `Dockerfile`其实就是为了告诉`Docker`构建镜像的具体步骤，比如我们这里的`Dockerfile`，第一步就是先去拉取`python:3.7`的镜像，然后第二步是创建`code`文件夹，再然后是把我们要打包的文件复制到`code`文件夹下，接着设置工作目录，最后就是设置我们项目的启动命令，而且按照上面这些步骤，你一样可以通过手动的方式启动我们的项目：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/docker-file.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/docker-file.png)
 
 完成上面的`Dockerfile`编写之后，我们直接通过下面的命令来构建我们的镜像即可：
 
@@ -102,8 +100,7 @@ docker build -t arduino-control-center .
 docker images
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220125231340.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220125231340.png)
 
 然后通过`docker run`运行我们构建成功后的镜像即可：
 
@@ -113,13 +110,11 @@ docker run -p 5000:5000 -d arduino-control-center:latest
 
 我们还可以通过`docker ps`看下镜像的运行信息，可以看到我这里的端口指定的是`5000`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/docker-file1.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/docker-file1.png)
 
 最后再通过浏览器访问下我们的服务：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220125232030.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220125232030.png)
 
 效果很完美，当然唯一的不足是，这个镜像稍微有点大，后面看下如何缩减镜像尺寸。
 

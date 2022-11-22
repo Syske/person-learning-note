@@ -16,8 +16,7 @@
 
 定义很是简洁，同时文档中也说明了`caffeine`是受`Google guava`启发的本地缓存（青出于蓝而胜于蓝），在`Cafeine`的改进设计中借鉴了 `Guava` 缓存和 `ConcurrentLinkedHashMap`
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211215212317.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211215212317.png)
 
 ##### 项目地址
 
@@ -54,8 +53,7 @@ https://github.com/ben-manes/caffeine/wiki/Population-zh-CN
 
 这里需要注意的是，`Caffeine`的版本需要和`JDK`对应，比如最新版本（`3.0.5`）对应的`jdk`为`11`，如果`jdk`版本太低，会报如下错误：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211215225359.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211215225359.png)
 
 ##### 手动加载
 
@@ -193,14 +191,11 @@ CompletableFuture<Map<String, Object>> graphs = cache4.getAll(keys);
 
 但从官方文档来看，这块缓存组件的性能还是非常棒的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211216232050.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211216232050.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211216232149.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211216232149.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211216232212.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211216232212.png)
 
 当然一款工具是否好用，往往是需要经得起实践检验的，而不仅仅简单的测试，所以`Caffeine`是否好用，还得我们自己亲自实测。
 

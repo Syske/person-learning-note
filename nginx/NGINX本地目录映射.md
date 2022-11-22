@@ -39,8 +39,7 @@ D:\software\server\nginx-1.17.9
 
   访问效果如下：
   
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210225203822.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210225203822.png)
 
  `nginx`完整配置如下：
 

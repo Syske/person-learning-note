@@ -54,8 +54,7 @@ npm init -y
 
 其实也就是生成`package.json`文件，然后根据需要修改其中的内容。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209222818.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209222818.png)
 
 
 
@@ -81,8 +80,7 @@ babel .\src\index.js -o .\dist\index.js
 
 这时候你会发现`dist`文件夹下的文件和`src`文件夹下的源文件是没有任何区别：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209230141.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209230141.png)
 
 根据我查到的资料，但`babel-cli`是不够的，还需要安装`babel-preset-es2015`，安装这个依赖主要是为了兼容`es-2015`的语法（从这一点看，前端东西确实比较杂，也比较乱），当然也可以一步安装：
 
@@ -92,8 +90,7 @@ cnpm install --save-dev babel-preset-es2015 babel-cli
 
 有所不同的是，上面的安装是针对项目安装的，也就是项目的依赖，所以建议先全局安装，然后再进入项目目录安装，安装之后，`package.json`会多出来两个依赖：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209224200.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209224200.png)
 
 感觉这个和`java`的`maven`依赖很像（更准确说是`gradle`）
 
@@ -120,13 +117,11 @@ babel .\src\index.js -o .\dist\index.js
 
 这时候，编译之后的文件（`dist`下的文件）会多一行代码：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209230256.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209230256.png)
 
 如果编译过程中报如下错误，考虑`.babelrc`文件存在编码文件：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209230410.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211209230410.png)
 
 更换编辑器就可以解决
 

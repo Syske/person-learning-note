@@ -8,8 +8,7 @@
 
 今天我们就来看下`googlg` 的`guava`中提供的一款限流组件——`RateLimiter`，关于`guava`这个工具包，我们之前已经分享过其中集合部分的应用，感兴趣的小伙伴可以去看下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-cb6bcf37e7ce49879104ba69d4909e3f.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-cb6bcf37e7ce49879104ba69d4909e3f.jpg)
 
 https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648417486&idx=1&sn=eb5aeaa688345cd64e3b77e527e95901&chksm=bea6ca4489d14352265b659325965918ad148ef932ad60af0baeaa85525afea0d2d31a2e0539&token=643197278&lang=zh_CN#rd
 
@@ -17,8 +16,7 @@ https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648417486&idx=1&sn=eb5aea
 
 另外，因为`Semaphore`之前已经分享过了，所以今天就不再赘述了，感兴趣的小伙伴自己可以去看下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-16e960fb24364c81849607aab7d6c429.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-16e960fb24364c81849607aab7d6c429.jpg)
 
 https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648419288&idx=1&sn=e893e3ee0877070fe541ce3add98781a&chksm=bea6c55289d14c44b11d27ac99a3c19d0ca1ba12bad8ecaf4671200e7d743f896a477da69195&token=643197278&lang=zh_CN#rd
 
@@ -46,20 +44,17 @@ https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648419288&idx=1&sn=e893e3
 
 从源码来看，`RateLimiter`是一个抽象类，而且它并没有直接对外提供构造方法，所以我们只能通过静态方法`create`来创建`RateLimiter`的实例：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028215055.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028215055.png)
 
 另外，从源码中发现，这个组件的使用环境必须大于等于`jdk13`，所以各位小伙伴在测试的时候一定要注意：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028220458.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028220458.png)
 
 #### 简单使用
 
 其实关于`RateLimter`的使用，在源码的注释中，官方已经给出了相应的示例：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028221548.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028221548.png)
 
 第一的示例的作用是，限制线程的执行速率，也就是每秒执行不能超过两次。下面我们通过简单的代码演示下这个示例，然后从实例中体会`RateLimiter`的应用场景。
 
@@ -71,8 +66,7 @@ rateLimiter.acquire()
 
 这行代码的作用就是控制速率，这个方法就更过分了，它需要`jdk16`以上才能运行，我这里刚好是`16`， `13`的版本返回值是`void`:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028222246.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028222246.png)
 
 根据这段代码，以及我们的多线程使用经验来说，这个方法本身是阻塞的，而且阻塞是基于`stopwatch`来实现的，而且这里阻塞的时长是根据我们的速率计算的，关于速率我们等下会说到。
 
@@ -98,13 +92,11 @@ public class RateLimiterTest {
 
 运行结果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028222717.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028222717.png)
 
 从运行结果可以看出来，不论运行多少次，每一秒始终只会运行两次，而且两次的间隔时间刚好是`500ms`，这说明时间间隔的算法是`1000ms / 2`（`2`就是我们上面指定的速率），我们可以测试下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028223105.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211028223105.png)
 
 当我们将速率设置为`4`时，线程之间间隔的时间接近`250ms`，说明我们上面的推断基本正确，但是速率的具体控制算法还需要进一步研究源码。
 

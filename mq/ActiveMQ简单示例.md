@@ -36,8 +36,7 @@
 https://activemq.apache.org/
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424121057.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424121057.png)
 
 这里我选择`classic`，也就是主流版本，`Artemis`是下一代的`ActiveMQ`，类似于开发版。
 
@@ -51,13 +50,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424121057.pn
 
 进入`bin`目录，直接双击运行，这时候我们会看到，有个`cmd`窗口一闪而过，说明报错了，这时候我们打开`cmd`，这里有个小技巧，在当前文件夹直接输入`cmd`即可打开`cmd`窗口：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424121819.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424121819.png)
 
 然后我们在`cmd`中再次执行`activemq.bat`，这时候会发现，`cmd`中回显如下提示信息
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122125.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122125.png)
 
 根据提示信息，我们知道之前没有添加参数(`Usage`才是最好的文档，一定要习惯命令行，没看明白的小伙伴继续面壁)，这时候我们知道启动的命令应该是这样的：
 
@@ -67,8 +64,7 @@ activemq.bat start
 
 回车键入，完美启动：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122545.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122545.png)
 
 #### 测试
 
@@ -80,14 +76,11 @@ localhost:8161
 
 用户名和密码都是`admin`，如何修改我们后面再说：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122724.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122724.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122927.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122927.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122956.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424122956.png)
 
 这时候，我们的`ActiveMQ`就正常启动了。
 
@@ -228,13 +221,11 @@ public class ActiveMqConsumer {
 
 运行上面的测试代码，然后打开`ActiveMQ`的管理页面，我们会看到，多了一个消息队列：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424142711.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424142711.png)
 
 消息队列名称就是我们上面指定的`test-queue`，待消费消息（`pending`）数量`1`，因为我们暂时没有启动消费者（`consumer`），所以消费者数量是`0`，队列中排队的消息（`enqueued`）数量`1`，被消费消息（`dequeued`）数量`0`。如果你再次启动生产者，消息队列中的数据会变成`2`:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143521.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143521.png)
 
 ##### 消费者测试
 
@@ -253,13 +244,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143521.pn
 
 然后我们会看到控制台输出如下信息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143725.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143725.png)
 
 这些消息就是我们在生产者中发送的消息。我们再访问队列管理页面看一下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143937.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143937.png)
 
 和上面消费者启动之前相比，消息已经被消费，未消费消息数量`0`，以消费`2`，消费者数量`1`。
 
@@ -273,15 +262,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424143937.pn
 
 这里我们再简单说下`activemq`的配置，进入`conf`文件夹，可以看到如下文件：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424145808.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424145808.png)
 
 ##### 端口配置
 
 其中，端口的配置在`jetty.xml`中：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424150224.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424150224.png)
 
 ##### 管理账户配置
 
@@ -289,8 +276,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424150224.pn
 
 用户名: 密码， 角色
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424150554.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210424150554.png)
 
 ##### 其他配置
 

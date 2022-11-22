@@ -11,8 +11,7 @@ tags: [#springboot, #websocket]
 
 今天我们的核心内容也是从一张脑图开始，公众号后台回复【spring-websocket】获取脑图源文件：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210727124514.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210727124514.png)
 
 #### 核心依赖
 

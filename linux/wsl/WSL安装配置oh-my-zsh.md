@@ -26,8 +26,7 @@ cp ~/.oh-my-zsh/themes/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/agnoster_ws
 
 修改配色，这里改的是文件夹的颜色，原来的颜色是`blue`，但是在黑色背景下看着极其不友好：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008233850.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008233850.png)
 
 #### 修改主题
 
@@ -37,8 +36,7 @@ vim ~/.zshrc
 
 找到`ZSH_THEME`，修改皮肤：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008234232.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008234232.png)
 
 #### 重载配置
 
@@ -48,18 +46,15 @@ source ~/.zshrc
 
 至此大功告成！
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008234414.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211008234414.png)
 
 如果你的终端修改之后，显示异常，可能是这样：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211010224641.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211010224641.png)
 
 那大概率是你的字体没有修改，这里推荐使用更纱黑体
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211010224807.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211010224807.png)
 
 这是一款开源字体，是可以商用的，下载地址如下：
 

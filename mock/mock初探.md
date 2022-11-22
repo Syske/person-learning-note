@@ -276,8 +276,7 @@ public class EnterpriseServiceTest {
 
 但很不幸的是，第一步我就失败了（出师未捷身先死，太难了），红色的提示告诉我问题没这么难，不就是空指针吗：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210429072518.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210429072518.png)
 
 #### 第N次尝试
 

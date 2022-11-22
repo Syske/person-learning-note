@@ -12,8 +12,7 @@ python抓取、解析、下载、转换m3u8视频
 
 在此之前，我仅仅知道`m3u8`是一种网络串流，在平时娱乐时候会找一些`m3u8`的资源，看看直播啥的，直到今天要分享`m3u8`的相关内容，才真正开始搜集`m3u8`的相关知识点。关于`m3u8`连百度百科都没有说明，搜到知乎一篇内容（【全网最全】m3u8到底是什么格式？一篇文章搞定m3u8下载），下面的原理图也是参照的这篇内容：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023154111.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023154111.png)
 
 从上面的原理图中我们可以得到以下知识点：
 
@@ -84,8 +83,7 @@ http://tools.ietf.org/html/draft-pantos-http-live-streaming-06
 
 通常会有两个`m3u8`，第一个是获取视频码率列表的，也就是多码率`m3u8`，这个文件我们是没办法直接解析的，我们要找的是包含`ts`视频资源的`m3u8`文件。这里我随便在网上搜了一个葫芦娃的视频，然后通过控制台拿到`m3u8`文件地址：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023161658.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023161658.png)
 
 ```
 https://vod1.bdzybf1.com/20200819/wMgIH6RN/1000kb/hls/index.m3u8
@@ -99,8 +97,7 @@ https://vod1.bdzybf1.com/20200819/wMgIH6RN/1000kb/hls/index.m3u8
 
 这里的以我们上面`m3u8`文件为例响应结果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023164625.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023164625.png)
 
 可以清晰地看出，这个`m3u8`文件是通过换行符`\n`分割的，有部分`m3u8`文件中会出现制表符和换行符组合的情况，所以具体情况具体分析。
 
@@ -184,8 +181,7 @@ def decrypt(context):
 
 关于密文，在`m3u8`文件里面已经有了，直接下载就可以拿到，这里我就不通过代码拿了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023175827.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023175827.png)
 
 这里下载视频会比较费时间，为了提高下效率可以用多线程，但是由于时间的关系就不演示了。
 
@@ -211,13 +207,11 @@ def fileMerge(filePath):
 
 我看了下，短短的一集葫芦娃，总共被分割成`272`个`ts`文件（好像比这个多，我没下载完就把网断了）：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023185049.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023185049.png)
 
 `272`个`ts`文件合并成一个视频文件:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023194412.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211023194412.png)
 
 好了，到这里我们`python`爬取`m3u8`视频资源的实例就结束了，今天的示例还算比较完美，目标也比较完美的达成了。
 

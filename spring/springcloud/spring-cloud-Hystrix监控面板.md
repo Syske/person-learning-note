@@ -33,8 +33,7 @@
 
 如果这个包添加成功后，访问服务的`/actuator`，应该是有数据正常返回的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805133236.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805133236.png)
 
 #### 项目配置
 
@@ -62,8 +61,7 @@ http://localhost:9991/hystrix
 
 页面效果如下
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805084625.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805084625.png)
 
 然后我们需要在页面上配置我们需要访问的服务，下面我们简单介绍下`Hystrix Dashboard`的简单用法。
 
@@ -103,15 +101,13 @@ http://localhost:9991/actuator/hystrix.stream
 
 填写完成后，直接点击底下`Monitor Stream`按钮就可进入监控页：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805083421.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805083421.png)
 
 ##### 扩展
 
 我用浏览器访问了下我们刚刚输入的监控地址，发现它的请求方式就是`text/event-stream`，也就是`webflux`，这也是`webflux`最典型的应用场景。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805133435.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805133435.png)
 
 这也表面，如果你觉得`hystrix-dashboard`面板做的丑的话，你是可以自定义监控页面的，直接调用`actuator/hystrix.stream`接口即可。
 
@@ -123,8 +119,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805133435.pn
 
 如果访问之后，你的页面有如下提示：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/image-20210805083752789.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/image-20210805083752789.png)
 
 这时候你需要先看下后端控制台提示信息
 
@@ -132,8 +127,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/image-20210805083752789.
 
 这个错误通常是因为你的监控地址填写不正确，好好检查下应该就可以解决
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805131629.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805131629.png)
 
 如果检查完，发现地址也没有问题，那应该是因为断路器服务未添加`actuator`的依赖导致的，你只需要添加下面的依赖即可：
 
@@ -150,8 +144,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805131629.pn
 
 如果控制台有如下提示信息，表面你没有配置允许访问熔断监控页面的地址：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805084005.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805084005.png)
 
 你只需要在你的`hystrix-dashBoard`配置文件中添加如下配置即可：
 
@@ -163,13 +156,11 @@ hystrix.dashboard.proxy-stream-allow-list= localhost
 
 如果一直如下显示，这是因为你的服务一直没有被访问，所以没有监控数据
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/image-20210805083500577.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/image-20210805083500577.png)
 
 只要你调用一下服务中用到断路器的接口，就会看到监控数据：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805083421.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805083421.png)
 
 ### 总结
 
@@ -213,6 +204,5 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210805083421.png)
 
 - 项目截图
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805185936.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210805185936.png)
 

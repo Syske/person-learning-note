@@ -24,27 +24,23 @@ https://www.docker.com/products/docker-desktop
 
 选择选择对应的版本，这里我的操作系统是`windows`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406212217.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406212217.png)
 
 ### 安装
 
 安装过程很简单，双击下载好的`exe`文件，其他操作系统类似，然后等待安装完成，因为当前系统已经安装过了，所以我就没法演示了，网上爬了一张图：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406213701.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406213701.png)
 
 ### 启停docker服务
 
 一般安装成功后会自动启动docker服务，如果没有启动，你可以手动启动，这里以`win10`为例：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406214226.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406214226.png)
 
 在任务栏右边找到`docker`的小图标，右键选择自己需要的操作，即可对`docker`服务进行启停。如果任务栏没有`docker`的小图标，可以在桌面双击运行`docker`应用快捷方式进行启动
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406214606.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406214606.png)
 
 
 
@@ -52,13 +48,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406214606.pn
 
 因为`docker`并非国内产物，所以在下载相关镜像资源的时候特别慢，为了提高我们资源的下载速度，我们需要配置`docker`的镜像信息，右键任务栏`docker`小图标，打开`docker`的控制面板（或者双击小图标）：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406215055.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406215055.png)
 
 点击设置按钮，选择`docker Engine`，修改其中`registry-mirrors`的配置信息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406215358.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406215358.png)
 
 配置信息是`json`格式：
 
@@ -100,8 +94,7 @@ $ docker images
 
 上面这个命令就很简单，就是展示本地已经拉取的镜像资源：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406220312.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210406220312.png)
 
 #### 3. 运行容器
 

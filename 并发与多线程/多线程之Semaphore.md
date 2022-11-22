@@ -43,32 +43,27 @@ public class Example {
 
 在线程内部，在线程运行最开始，我们通过`Semaphore`的`acquire`方法获取运行许可（拿不到运行凭证是无法运行的），你也可以通过`tryAcquire`方法获取运行凭证，两个方法的区别是`tryAcquire`有一个布尔的返回值，是非阻塞的，而`acquire`是阻塞的，如果拿不到会一直等，关于这一点，官方文档说的很清楚：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712081920.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712081920.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082048.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082048.png)
 
 线程内部我们休眠了两秒，然后通过`release`方法释放`Semaphore`资源，这样其他的线程才能拿到这个凭证。
 
 最后，我们用一个`for`循环来运行线程，循环次数我们设定为线程池大小的两倍，然后我们运行上面的代码，运行结果大致如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082442.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082442.png)
 
 从运行结果中我们可以看到，虽然线程池大小是`30`，但是同一时间运行的线程只有`5`个，也就是我们`Semaphore`的初始化大小。我们可以试着把`Semaphore`的大小修改下看下运行结果：
 
 ##### 初始化大小为`10`
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082743.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082743.png)
 
 同一时间有`10`个线程在运行
 
 ##### 初始化大小为2
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082900.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082900.png)
 
 同一时间有`2`个线程在运行。
 
@@ -76,23 +71,19 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712082900.png)
 
 下面我们把代码做一些简单调整：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712083610.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712083610.png)
 
 我们分别在`acquire`方法前和`release`方法后加一行代码，这时候我们的`semaphore`初始化还是`2`，然后运行下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712084001.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712084001.png)
 
 我们发现，虽然`acquire`方法前和`release`方法之间以及之后的代码虽然同一时间只有两个线程在运行，但是之前的代码同一时间是有多于两个线程在运行的，这就是说`Semaphore`只会影响`acquire`方法前和`release`方法之间和之后区域的线程并发数，影响之后的代码是因为`acquire`方法是阻塞的，如果我们换成`tryAcquire`应该就是另外一番场景了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712085555.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712085555.png)
 
 然后运行：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712085705.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210712085705.png)
 
 根据运行结果我们发现，这时候`acquire`方法前和`release`方法之间以及之后的代码都不受限制了，都出现了并发数超过限制数的情况。具体原因，我们前面说了，`tryAcquire`方法是非阻塞的，所以这时候我们需要人为根据`tryAcquire`来控制代码逻辑，比如直接结束或者进行其他操作：
 

@@ -17,8 +17,7 @@
 
 第二步，导出成功后，用户可以在文件下载中心进行下载。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523151728.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523151728.png)
 
 为了演示方便，我把所有数据都存放在`reids`里面了，一般实际项目中会把文件信息存放在数据库中，处理成功后才会放进缓存。项目的完整源码附在文末，有兴趣的小伙伴自己去看。
 
@@ -63,16 +62,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523151728.pn
 
 后面两个依赖是可选的，如果你启用了`activeMQ`连接池（`spring.activemq.pool.enabled=true`时），那你就必须依赖，没有依赖的话，`sprinbgoot`启动会报错：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523134208.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523134208.png)
 
 主要原因是`activemq`的自动配置时依赖了这个包，没有这个包`Jms`的连接工厂是无法被初始化的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523134319.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523134319.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523134425.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523134425.png)
 
 有兴趣的小伙伴可以自己把这个依赖先拿掉试下。
 
@@ -106,8 +102,7 @@ public class JmsSendService {
 
 `ActiveMQ`支持有返回值和无返回值两种会话形式，你可以根据自己的需要选择，`JmsMessagingTemplate`都是支持的，提供的模板方法也比较丰富：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523141400.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523141400.png)
 
 这里我们只用到了`convertAndSend`，字面意思就是方法的意思，`object`是消息内容，`destination`是消息队列名称，看下源码你就知道，方法内部会把我们的消息内容转换成`Message`对象，当然如果你有特殊需求，你也可以自己组装`Message`，只是过程比较繁琐，简单业务的话，用我这种方式就比较简便了。
 
@@ -285,8 +280,7 @@ public class ExcuterConfig {
 
 这里名称随便输，数据是写死的。导出请求提交成功后，会返回文件`id`，我把文件`id`展示在页面上，点击链接就可以下载
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523152532.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210523152532.png)
 
 ## 总结
 

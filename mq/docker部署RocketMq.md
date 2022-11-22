@@ -115,8 +115,7 @@ sh mqbroker -c /opt/rocketmq-4.4.0/conf/broker.conf
 
 由于这里我们把`rocketmq`的日志映射到了本机目录，所以我们可以直接通过`tail`查看`broker`的启动日志，比如`broker.log`:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306212426.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306212426.png)
 
 当然，你也可以通过`docker exec`命令的方式查看日志，当然就是没有上面这种方式方便。
 
@@ -126,11 +125,9 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306212426.png)
 
 `console`是`rocketmq`的扩展组件，`console`组件提供了图形化的界面，便于我们管理和监控`rocketmq`，界面截图如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306203735.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306203735.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306203802.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306203802.png)
 
 官方文档：
 
@@ -166,28 +163,23 @@ docker run -e "JAVA_OPTS=-Drocketmq.namesrv.addr=192.168.0.103:9876 -Dcom.rocket
 
 - 映射路径配置错误，导致容器无限重启。表现就是执行`docker ps`的时候，`mqbroker`服务状态一直是`Restarting`：
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306195542.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306195542.png)
 
   最后几经检查，发现是映射的本地文件夹不存在导致的。本地的路径是`/home/syske/docker/mq/data/broker`，但是启动命令里面映射的路径少了`docker`目录，所以导致日志和配置文件路径都错误了，所以报错了
 
 - 版本问题导致配置文件读取不到：也就是在启动`boker`服务地时候，`broker.conf`的路径配置不正确，导致启动直接报错：
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306200618.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306200618.png)
 
   进入容器中查看了`rocketmq`的版本才知道这里的路径需要配置成`rocketmq-4.4.0`，所以各位小伙伴在拉取镜像的时候一定要指定版本，这样在设置配置的时候也就不会出错了。
 
-- 如果你在客户端调用`rocketmq`时有如下错误：![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306201826.png)
+- 如果你在客户端调用`rocketmq`时有如下错误：![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306201826.png)
 
   你需要在`broker`的配置文件中指定`brokerIP1`的相关配置，因为`172.17.0.5`是`docker`的内网`ip`，我们需要在外部调用`broker`，所以需要配置一个外部`ip`（`docker`主机的局域网`ip`）
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306201922.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306201922.png)
 
-- 如果客户端调用`rocketmq`报错的话，那大概率是因为`broker`服务没有正常启动导致的（我就是应为第一个坑导致的）![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306201013.png)
+- 如果客户端调用`rocketmq`报错的话，那大概率是因为`broker`服务没有正常启动导致的（我就是应为第一个坑导致的）![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220306201013.png)
 
 
 

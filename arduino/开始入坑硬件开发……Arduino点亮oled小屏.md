@@ -54,8 +54,7 @@
 
 下面是官网给出的`arduion uno r3`的`I/O`引脚图，我买到的不是官方原板，所以价格低，意大利官方原板价格`120`左右，国产的可以卖十块了。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/pinout.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/pinout.png)
 
 对`arduion`而言，点亮`oled`的话，只需要把`oled`的四个引脚分别接到`arduion`开发板上即可，接线对应关系如下：
 
@@ -78,8 +77,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/pinout.png)
 
 下面是卖家提供的引脚图：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210821215118.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210821215118.png)
 
 `oled`连接`8266`接线对应关系如下如下：
 

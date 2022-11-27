@@ -184,3 +184,18 @@ out_filename = args[0] + ".xlsx"
 
 `sys.argv`是用来存在传参参数的，第一个参数表示他自己的文件名，我们通过脚本传入的参数是从第二个开始的，所以我们需要截取下：
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221125193411.png)
+
+### 发送websocket请求
+
+```python
+from websocket import create_connection
+
+ws = create_connection("ws://192.168.43.41:80")
+print("Sending 'Hello, World'...")
+ws.send("syske master\n ha ha ha ha......hello world!!!")
+print("Sent")
+print("Receiving...")
+result = ws.recv()
+print("Received '%s'" % result)
+ws.close()
+```

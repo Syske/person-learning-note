@@ -51,3 +51,26 @@
 4. 打开一个已经创建好的`arduino`项目，初始化配置。
 
     ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221127200225.png)
+
+### 遇到的问题
+
+如果你注意留意上面截图的话，会发现控制台报错了：
+
+   ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221129214414.png)
+
+
+对于这个错误，我找了很多资料，但是并没有找到和我一样的问题，最终在一次偶然的调试过程中，我找到了问题——开发板`exceptions`设置问题：
+
+![发现问题](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221129214829.png)
+
+
+默认情况下`exceptions`的设置`Legay(new can return nullptr)`，从上面的截图可以看到控制台提示的是非法的设置，说明是因为控制板de`exceptions`设置不正确，这里选择`Enabled`，然后再次运行就可以看到具体的错误信息，如果代码没有编译错误，可以直接看到成功提示：
+
+![编译错误](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221129215720.png)
+
+![编译成功](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221129220011.png)
+
+
+如果在上传代码过程中报错，需要检查串口监听是否关闭：
+
+![串口被占用](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221130003959.png)

@@ -50,7 +50,12 @@
 
 4. 打开一个已经创建好的`arduino`项目，初始化配置。
 
-    ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221127200225.png)
+    ![修改配置](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221127200225.png)
+
+
+5. 之后创建新的`arduino`项目，首次编译时会自动创建相关环境文件
+
+![环境配置](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221205000208.png)
 
 ### 遇到的问题
 

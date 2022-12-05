@@ -3,12 +3,16 @@
 
  这里再补充下`vscode arduino`开发环境的设置。
 
- 1. 确保本地安装了`arduino`环境
- 2. 打开`vscode`，安装`arduino`扩展：
+#### 前期准备
+
+- 确保本地安装了`arduino`环境
+- 打开`vscode`，安装`arduino`扩展：
    
     ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221127194308.png)
 
- 3. 配置`arduino`环境。打开`vscode`设置（快捷键`ctrl+,`），找到`arduino configuration`:
+#### 添加配置
+
+- 配置`arduino`环境。打开`vscode`设置（快捷键`ctrl+,`），找到`arduino configuration`:
    
     ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221127194731.png)
 
@@ -28,7 +32,8 @@
     ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221127195614.png)
 
     这里附上我的完整配置：
-     ```json
+
+```json
     {
         "arduino.path": "D:\\workspace\\dev-tools\\arduion-tools\\arduino-nightly",
         "arduino.commandPath": "arduino_debug.exe",
@@ -46,16 +51,18 @@
             "editor.formatOnType": true
         }
     }
-    ```
+```
 
-4. 打开一个已经创建好的`arduino`项目，初始化配置。
+#### 项目初始化
+
+- 打开一个已经创建好的`arduino`项目，初始化配置。
 
     ![修改配置](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221127200225.png)
 
 
-5. 之后创建新的`arduino`项目，首次编译时会自动创建相关环境文件
+- 之后创建新的`arduino`项目，首次编译时会自动创建相关环境文件
 
-![环境配置](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221205000208.png)
+    ![环境配置](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221205000208.png)
 
 ### 遇到的问题
 

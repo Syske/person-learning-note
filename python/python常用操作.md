@@ -63,6 +63,7 @@ def get_conn():
             port=3306,  # 端口
             user='root',  # 用户名
             passwd='root',  # 数据库密码
+            db='user',
             charset='utf8',  # 使用字符集
     )
     return conn
@@ -199,3 +200,14 @@ result = ws.recv()
 print("Received '%s'" % result)
 ws.close()
 ```
+
+### json
+
+读取文件，并将文件中的内容转为`json`
+
+```python
+f = open("./json.txt", encoding='utf-8',errors='ignore')
+  content = f.read()
+  text = json.loads(content)
+```
+

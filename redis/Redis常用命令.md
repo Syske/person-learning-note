@@ -52,7 +52,7 @@ HDEL key field1 [field2]
 
 查看哈希表 key 中，指定的字段是否存在。
 
-```
+```sh
 HEXISTS key field
 ```
 
@@ -60,13 +60,13 @@ HEXISTS key field
 
 获取存储在哈希表中指定字段的值。
 
-```
+```sh
 HGET key field
 ```
 
 获取所有元素
 
-```
+```sh
 HGETALL key
 ```
 
@@ -74,7 +74,7 @@ HGETALL key
 
 获取指定范围资源：
 
-```
+```sh
 lrange key 0 -1
 ```
 
@@ -82,4 +82,12 @@ lrange key 0 -1
 
 ```
 LREM key count value
+```
+
+### 其他操作
+
+#### 查询key剩余过期时间
+
+```sh
+ttl key
 ```

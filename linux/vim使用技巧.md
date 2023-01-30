@@ -23,3 +23,13 @@
 ```
 :set fileencoding=utf-8
 ```
+
+#### 显示行号
+```
+:set nu
+```
+
+#### 取消显示行号
+```
+set nonu
+```

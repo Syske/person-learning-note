@@ -34,13 +34,11 @@ while read line
 
 其中的`ids.txt`是我们要传入的参数，其结构如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220310171046.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220310171046.png)
 
 `cut -f1`是为了获取第一列数据，如果你有多个参数，你可以通过`cut -f2`获取第二个参数一次类推，需要注意的是参数之间是通过制表符分割的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220310171602.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/2022/20220310171602.png)
 
 你可以将它理解为二维的表格数据。
 

@@ -12,13 +12,11 @@
 
 #### oh-my-posh
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111223348.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111223348.png)
 
 什么是`oh-my-posh`？它是一个自定义提示引擎，适用于任何能够使用函数或变量调整提示字符串的 `shell`，它一个开源项目，出了支持`windows`系统之外，它还支持`linux`和`mac`系统，从项目的代码占比中，我们可以发现`oh-my-posh`是主要基于`go`开发的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111225100.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111225100.png)
 
 目前这个项目已经有`4k`的小星星了，感兴趣的小伙伴可以研究下，项目地址如下：
 
@@ -40,13 +38,11 @@ https://ohmyposh.dev/docs
 
 在开始美化之前，我们要先安装`windows terminal`，`Terminal`是微软开源的一个终端工具，据听说已经是`win11`的默认终端了。相比于系统自带的`power shell`和`CMD`，`terminal`颜值就高多了。安装方式也很简单，只需要在应用商店搜索`windows Terminal`，然后点击安装即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111130257.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111130257.png)
 
 安装完成之后，它是这个样子的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111224039.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111224039.png)
 
 虽然比`cmd`和`power shell`原生的终端好看了很多，而且支持很多自定义的美化设置，但是还是不是很好看，反正就是没有`oh-my-zsh`看着顺眼，所以下面我们就开始对它进行进一步的美化设置，让它比`oh-my-zsh`更好看。
 
@@ -78,8 +74,7 @@ Install-Module posh-git -Scope CurrentUser
 
 这行命令的作用是为当前用户安装`posh-git`
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110233441.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110233441.png)
 
 执行完成后，根据提示输入对应的选项，然后默默等待安装完成。
 
@@ -93,8 +88,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110233441.png)
 Install-Module oh-my-posh -Scope CurrentUser
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110233652.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110233652.png)
 
 操作类似，根据提示输入，然后静静等待安装完成。
 
@@ -111,8 +105,7 @@ Import-Module oh-my-posh
 
 但是导入这两个模块之后，我们的终端还是不会有任何变化，因为我们还没有设置主题：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110234517.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110234517.png)
 
 
 
@@ -124,15 +117,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110234517.png)
 Set-PoshPrompt -Theme JanDeDobbeleer
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110234621.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220110234621.png)
 
 输完这个名称之后，可以看到终端的样式已经出来了，但是由于字体没有修改，所以看着还很怪异。
 
 这里的`JanDeDobbeleer`是我们的主题名称，从名字可以看出来，这个主题应该就是官网现实的主题，因为它就是作者的名字。`oh-my-posh`的主题样式还是很丰富的，除了我这里选择的`JanDeDobbeleer`，它还支持很多其他的样式和风格，各位小伙伴可以根据自己的喜好选择，具体的可以看项目文档或者`github`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111134434.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111134434.png)
 
 
 
@@ -144,32 +135,27 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111134434.png)
 https://www.nerdfonts.com/
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111134143.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111134143.png)
 
 这里我选择的是`DejaVuSansMono Nerd Font`，显示效果还行。
 
 字体下载之后解压，然后安装即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111231727.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111231727.png)
 
 ##### 设置字体
 
 字体的设置也很简单，点击`windows Terminal`标题栏的下拉菜单，然后点击设置即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111231822.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111231822.png)
 
 然后选中`power shell`，选择外观，修改字体，选择我们刚刚安装的` Nerd Fonts`字体即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111000002.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111000002.png)
 
 然后点击保存之后，就可以看到`oh-my-posh`的效果已经出来了，颜值真的杠杠的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111000133.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111000133.png)
 
 
 
@@ -197,8 +183,7 @@ notepad $PROFILE
 
 并在其中加入如下内容：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111133313.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111133313.png)
 
 也就是我们上面说的三行配置命令，然后保存，这样在我们下次打开`power shell`的时候，就会自动进行配置了。
 
@@ -210,8 +195,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111133313.png)
 
 当然，我们也可以不安装`windows Terminal`，不过需要修改`power shell`的显示字体：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111232855.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111232855.png)
 
 另外在`windows Terminal`的官方文档中也介绍了`oh-my-post`的安装配置方式，各位小伙伴也可以参考下：
 
@@ -225,7 +209,6 @@ https://docs.microsoft.com/zh-cn/windows/terminal/tutorials/custom-prompt-setup
 
 关于`power shell`的美化，我觉得没有什么总结的，唯一想说的是，终于找到了一款自己满意的`windows`的终端美化，看来真的是颜值才是第一生产力呀，最后放上`power shell`美化成果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111233349.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111233349.png)
 
 最后，再插播一个小小的好消息，就是我之前说的`markdown`编辑器第一个可用版本已经出来了，打包也基本完成，明天我打算分享出来，感兴趣的小伙伴可以先尝尝鲜，好了，今天就先这样吧，各位小伙伴，晚安！

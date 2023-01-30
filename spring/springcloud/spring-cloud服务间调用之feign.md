@@ -61,15 +61,13 @@ public interface UserService {
 
 `@GetMapping("/user/{id}")`指定的是接口的地址，这里的接口地址必须与被调用方保持一致，否则调不通，下面是我的被调用方的方法实现：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803132304.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803132304.png)
 
 还是昨天的代码，啥都没变。
 
 对比接口和被调用方实现，我们可以看出了，接口的方法名不必和方法一致，但是参数列表必须保持一致，否则也是会报错的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803132645.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803132645.png)
 
 #### 调用方实现
 
@@ -97,18 +95,15 @@ public class ProductController {
 
 下面我们启动`5`个服务提供者，启动一个服务消费者。为了方便测试，我们就直接注册到同一个`Eureka`注册中心:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803133441.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803133441.png)
 
 然后访问`localhost:9002/feign`，结果正常返回：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803133637.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803133637.png)
 
 同时每个服务都被调用两次，说明我们的负载效果也达到了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803133819.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803133819.png)
 
 好了，测试就到这里，下面我们看下今天的踩坑记录。
 
@@ -118,8 +113,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210803133819.pn
 
 ##### 版本不一致导致启动报错
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082224.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082224.png)
 
 这个错误是由于版本问题导致，下面是我之前`pom`依赖的版本，可以看出`spring-cloud`和`feign`的版本是不一致的
 
@@ -143,8 +137,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082224.png)
 
 后台虽然没有报错，但是服务未成功启动
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082522.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082522.png)
 
 查询了一些资料，发现这个问题也是由于依赖不正确导致的，如果你的`spring-boot`依赖是:
 
@@ -157,25 +150,21 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082522.png)
 
 那么你需要把`starter`改成`starter-web`，然后再次启动即可。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082815.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082815.png)
 
 然后再看下我们的注册中心`Eureka`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082856.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803082856.png)
 
 ##### 服务Id不正确导致调用服务时报错
 
 这个错误是调用的时候报的，查了一些资料发现是我的服务`id`写错了，我注册的服务是`user-service`，但是我写的是`user`，所报错了，下面是错误截图：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803083600.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803083600.png)
 
 上面这个报错有两个原因，一个可能是服务名写错了；另一个就是你可能把`ribbon.eureka.enabled`设置成`false`，这个配置默认是`true`。不过通过这个错误，我发现`feign`应该是基于`ribbon`实现的，或者说它是基于`ribbon`实现的，关于这一点，我们后期可以研究下源码。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803084522.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210803084522.png)
 
 ### 总结
 

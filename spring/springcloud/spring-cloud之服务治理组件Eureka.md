@@ -90,8 +90,7 @@ eureka服务地址:服务端口/eureka
 
 否则，客户端的启动会报错：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184042.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184042.png)
 
 根据错误来看，应该是服务发现的时候报错了。
 
@@ -142,27 +141,23 @@ spring.application.name=spring-webflux-demo
 
 启动成功后，访问`http://localhost:8999`（`eureka`服务地址），即可看到我们的服务注册情况：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184013.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184013.png)
 
 中间就是我们注册的服务，这里的服务名就是我们在`properties`文件中配置的名称，状态`status`表示服务状态，`up`表示状态正常。
 
 我们可以看到`DALIY-NOTE`服务我们注册了两个服务，所以在右侧显示了两个服务节点，点击右侧节点就可以看到服务健康信息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801183924.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801183924.png)
 
 因为我们配置的原因，所以数据显示是空的，但是你可以访问`http://laptop-u2emgb33:8081/actuator/`，这时候是有数据的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184233.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184233.png)
 
 这里的健康其实和`spring-cloud`没关系，是`spring boot`的监控组件，这一款我们后期专门分享吧。
 
 如果访问提示`404`，表示你的项目缺少`actuator`监控的依赖：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184125.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210801184125.png)
 
 添加下面的依赖，然后重新启动就好了。
 

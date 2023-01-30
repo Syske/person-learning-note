@@ -58,29 +58,25 @@ public class Example {
 
 然后我们在`main`方法中循环启动`100`个线程，运行上面的代码，结果大致如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709083035.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709083035.png)
 
 根据运行结果，我们可以看出来，`count`每增加`10`，也就是启动十个线程，会触发`CyclicBarrier`中我们定义的操作，这个数值也就是我们在`CyclicBarrier`指定的触发值。
 
 如果我们把触发值设置为`5`，那应该每隔`5`次就会打印一次，我们验证下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709084125.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709084125.png)
 
 事实也确实如此，我想到这里大家应该都清楚`CyclicBarrier`的用法了吧。
 
 关于`CyclicBarrier`的构造方法我在多说两句，`CyclicBarrier`有两种构造方法，但是第二种最常用，也就是我们演示的这种：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709084457.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709084457.png)
 
 入参有两个，一个就是触发次数，一个就是触发操作。
 
 另外还需要注意的是，它的`await()`方法和`countDownLatch`的方法是不一样的，在它的`await()`方法中，有一个`--count`的操作，也就是每次都会把我们设定的数值减一，直至为零，如果`--count`为`0`，它就会触发我们的`barrierAction`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709084928.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210709084928.png)
 
 对于它的应用场景，我想大家应该能够想到很多，比如固定条数保存数据，多线程提交保存操作，然后达到固定条数提交数据库保存，当然还有很多其他的应用场景，大家可以结合自己的应用需求，好好想一想。
 

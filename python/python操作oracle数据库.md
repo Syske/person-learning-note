@@ -69,8 +69,7 @@ E:\app\myUserName\product\11.2.0_64bit
 ```
 
 那么，我的环境变量设置如下：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210128103625.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210128103625.png)
 
 上面的环境变量是添加在path这个变量底下的。
 

@@ -15,8 +15,7 @@ tags: [#springboot]
 
 首先我们要修改配置类，我们先说`configure(HttpSecurity http)`方法：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210722154951.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210722154951.png)
 
 下面我们分块讲解，先说资源权限配置。
 
@@ -72,13 +71,11 @@ http.authorizeRequests()
 
 这里，我们简单解释下，第三行设置的是登录页面，也就是我们前天分享内容中的登录页：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210720085510.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210720085510.png)
 
 第四行设置的是登录处理接口，这里必须是`post`接口，如果是`get`接口登录的时候，返回是有问题的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210722183413.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210722183413.png)
 
 经过我的实测，发现前端请求的时候必须是`post`（不论后端是`post`还是`get`，这也说明在`spring-boot`中，`get`接口是支持`post`方式请求，但是反过来不行），如果是`get`请求，就是上面的错误。
 

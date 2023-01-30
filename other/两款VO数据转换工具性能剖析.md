@@ -163,8 +163,7 @@ System.out.printf("反射耗时：%s", System.currentTimeMillis() - start4);
 
 下面我们就分别针对不同的数据量做一个简单的测试，对比下各种方案的性能，首先是三个字段在不同数据量下的性能比较：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211202233220.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211202233220.png)
 
 三个字段进行数据转换时，我们可以得出以下结论：
 
@@ -174,8 +173,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211202233220.png)
 
 下面我们再看下字段数量增多的情况：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211202233332.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211202233332.png)
 
 相比于`3`个字段，`12`个字段的性能并没有发生太大改变，变化比较大的是反射这种方式，其他三种方式并没有太大变化，甚至还出现新能更好的情况，但是再`100`万数据量的时候，反射性能比`BeanMap`差，不过也能想明白，毕竟字段越多，反射需要循环的次数就越多，所以性能会下降。好了，关于测试我们就到这里吧。
 

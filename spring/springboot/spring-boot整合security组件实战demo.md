@@ -9,8 +9,7 @@ tags: [#springboot]
 
 开始之前，我们先看下项目结构：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210723075156.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210723075156.png)
 
 #### 创建项目
 
@@ -146,13 +145,11 @@ public class SyskeAuthenticationProvider implements AuthenticationProvider {
 实际测试过程中我发现，如果指定了登录认证管理器，登录的时候虽然调用的时登录接口，但是并不会进入接口内部，而是由认证处理器处理登录请求，登录成功后会调用登录成功处理器，登录失败会调用登录失败处理器。
 
 但是需要注意的是，`security`的登录处理接口必须指定，而且指定的接口地址必须存在，哪怕是个空接口也可以，但必须得有：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210723082513.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210723082513.png)
 
 第二个方法一般直接返回`true`即可，本次示例下，如果返回`false`，登录的时候前端会有异常提示：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210723080223.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210723080223.png)
 
 当这个方法的返回值为`true`时，当我们的`AuthenticationProvider`提供的处理机制不够全面的时候， `security`会根据我们的配置，为我们提供更合理的`AuthenticationProvider`，确保我们的处理结果正常。
 

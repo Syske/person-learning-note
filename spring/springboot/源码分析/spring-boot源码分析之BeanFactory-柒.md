@@ -18,8 +18,7 @@
 
 ​	这个方法的实际作用就是获取`beanFactory`，其内部调用流程如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210910083102.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210910083102.png)
 
 首先，它的内部调用了`AbstractApplicationContext`的`refreshBeanFactory`方法，由于在我们当前容器`AnnotationConfigServletWebServerApplicationContext`的所有父类（或者父类的父类）中，只有`GenericApplicationContext`重写了这个方法，所以实际调用的是`GenericApplicationContext`的`refreshBeanFactory`。
 
@@ -41,8 +40,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210910083102.png)
 
 - 最后，往`beanFactory`中注册了环境相关的`bean`
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/prepareBeanFactory.jpg)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/prepareBeanFactory.jpg)
 
   #### postProcessBeanFactory
 
@@ -52,8 +50,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/prepareBeanFactor
 
   意思就是说，这个方法是在标准初始化之后，修改应用容器的内部`beanFactory`，这时候，所有`bean`定义都已加载，但尚未实例化任何`bean`，是允许往容器中注册特殊的`BeanPostProcessor`的。所以这个方法其实就是在`bean`实例化前，往`beanFactory`中注册`BeanPostProcessor`（`bean`后置处理器）。
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210910224239.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210910224239.png)
 
 ### 总结
 

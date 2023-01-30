@@ -87,11 +87,9 @@ public class Example {
 
 然后，我们运行上面的代码，会得到如下结果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210708085806.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210708085806.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210708085829.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210708085829.png)
 
 在以上结果中，我们可以看到，不论你执行多少次，线程运行顺序都是`task1`、`task2`、`task3`，当然`await`方法之前的执行顺序我们是没有办法控制的。
 

@@ -20,8 +20,7 @@ spring.security.user.password=l23456
 
 但是，需要把我们昨天加的配置类和`service`先注释掉，否则会有冲突。在我实际测试过程中，我发现只要实现了`UserDetailsService`类，加上`@service`注解（不需要配置类），其实已经相当于自定义了`security`组件的用户数据，只是后台会报错误：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210721082251.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210721082251.png)
 
 所以我们还是需要通过配置类设定加密器，关于用户名和密码配置，还有另外一种方式，也是基于配置类的：
 
@@ -73,8 +72,7 @@ http.authorizeRequests()
 
 这里我们简单介绍下，`authorizeRequests()`方法的作用是创建权限配置对象，并把配置对象注入`spring boot`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721132103.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721132103.png)
 
 其他的配置操作都是基于这个配置对象展开的。
 
@@ -88,15 +86,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721132103.pn
 - `anonymous`表示对请求（具体看请求类别）允许匿名访问
 - `formLogin`表示启用`security`默认登录页，我们也可以设定自己的登录页和登录成功的页面
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721134604.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721134604.png)
 
 - `httpBasic`表示启用浏览器的`http`基础验证
 
 更多配置方法可以参考这张图片：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721133929.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721133929.png)
 
 
 
@@ -178,8 +174,7 @@ private static String encrypt(String password) {
 
 需要注意的是，`.successForwardUrl("/user/welcome")`的地址只能是`post`接口，如果是`get`接口的话，登录成功后会报错：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721193832.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210721193832.png)
 
 ### 总结
 

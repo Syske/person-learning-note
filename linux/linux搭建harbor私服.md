@@ -22,13 +22,11 @@ sudo pacman -S docker-compose
 sudo apt install sudo docker-compose
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227230115.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227230115.png)
 
 版本没有要求，我目前安装的是`2.2.2`:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227225514.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227225514.png)
 
 安装完成后可以通过下面的命令测试下：
 
@@ -60,13 +58,11 @@ wget https://github.com/goharbor/harbor/releases/download/v2.4.1/harbor-offline-
 tar -zxvf harbor-offline-installer-v2.4.1.tgz
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227230348.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227230348.png)
 
 解压之后文件目录如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227230507.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227230507.png)
 
 下面我们只需要修改配置文件即可。
 
@@ -158,11 +154,9 @@ sudo ./install.sh
 
 然后静静等待安装完成即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233109.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233109.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233207.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233207.png)
 
 看到`started successfully`，就说明`harbor`已经安装完成了，我们可以通过浏览器访问下。
 
@@ -170,8 +164,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233207.pn
 
 用浏览器打开我们刚才配置的地址和端口，可以看到如下页面：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233426.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233426.png)
 
 至此，我们的`harbor`就安装完成了，是不是很简单呢？
 
@@ -183,8 +176,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233426.pn
 
 通过我们前面配置的密码和用户名（默认`admin`），登录之后我们会看到如下页面：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233639.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227233639.png)
 
 正常情况下，你应该只能看到`library`这个项目，你可以在这里创建自己的项目，然后后面我们可以通过`docker`往`harbor`的项目中推送镜像。
 
@@ -206,8 +198,7 @@ sudo vim /etc/docker/daemon.json
 
 最终配置完的效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227234347.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227234347.png)
 
 这里的`http://192.168.0.102:88`就是我前面配置的`harbor`的地址和端口，配置完成后我们才能通过`docker`正常登录，否则会报错。
 
@@ -221,8 +212,7 @@ sudo docker login -u admin -p Harbor12345 192.168.0.102:88
 
 这里简单解释下，`-u`后面是登录用户名，`-p`是登录密码，再后面是地址和端口
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227234941.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211227234941.png)
 
 正常情况下，最后会提示`Login Succeeded`，表明配置都是`ok`的，这时候我们就可以通过`dokcer`命令向`harbor`中推送镜像了。
 
@@ -234,13 +224,11 @@ https://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648419079&idx=1&sn=077f24
 
 首先我们通过`docker build`构建镜像：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228000244.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228000244.png)
 
 然后通过`tag`命令创建标签，再通过`push`命令将镜像推送到`harbor`仓库中，这里以我刚创建的`syske`项目为例。其实，`harbor`的项目下面是有镜像推送命令的，我们只需要复制出来替换其中的`REPOSITORY`和`TAG`即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001040.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001040.png)
 
 ##### tag命令
 
@@ -258,8 +246,7 @@ docker tag springboot-learning:v1 192.168.0.102:88/syske/springboot-learning:v1
 
 如果在执行`tag`命令过程中提示权限不足，可以通过`sudo`操作：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001432.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001432.png)
 
 操作不报错，则表明操作成功。
 
@@ -279,30 +266,25 @@ docker push 192.168.0.102:88/syske/springboot-learning:v1
 
 和`tag`命令类似，这个命令也是有权限要求的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001702.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001702.png)
 
 然后换成`sudo`重新操作即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001800.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001800.png)
 
 推送成功后，我们可以登录`harbor`看下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001853.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228001853.png)
 
 可以看到`harbor`中已经有了我们刚刚推送的镜像，这样我们就可以在`k8s`、`docker`等环境使用我们的镜像了
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228002013.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228002013.png)
 
 ##### 拉取镜像
 
 拉取镜像的命令，我们同样也可以在`harbor`页面复制：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228002136.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228002136.png)
 
 然后我们就可以通过复制到的命令拉取我们的镜像
 
@@ -312,8 +294,7 @@ docker pull 192.168.0.102:88/syske/springboot-learning:v1
 
 或者在`k8s`直接使用：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228002637.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228002637.png)
 
 ### 结语
 
@@ -323,7 +304,6 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228002637.pn
 
 当然，`harbor`也只能算企业应用开发部署中的一个小组件，毕竟目前很多公司已经上了集成开发环境，也就是我们经常听到的`CI/CD`（持续集成/持续交付），这里我放上一张我们公司目前`CI/CD`的大致流程图（`docker`环境目前已经弃用了），目前很多公司可能都是这样的开发部署流程，只是工具上会有一些小差异：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228234758.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211228234758.png)
 
 当然，有些公司可能是通过`jenkins`手动打包（包括生成镜像并推送到私服），然后通过手动重启容器，这一套手动操作和上面的自动化操作都没有本质上区别，只是效率更高，流程更规范而已。

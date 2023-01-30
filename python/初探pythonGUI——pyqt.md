@@ -22,15 +22,13 @@ pyqt也有很多优势，首先它有基于GPL许可证的开源版本，从**Py
 
 先去python官网下载最新安装包，这里我选择的是安装包，当然你也可以选择压缩版，下载完直接解压也行。区别就是压缩版需要手动配置环境变量。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530091628.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530091628.png)
 
 #### 配置环境变量
 
 这是我本地的安装目录和环境变量配置，一般安装版会自动设置，如果没有，可以参照设置
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530092121.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530092121.png)
 
 配置完后，需要测试下看我们的环境变量设置是否正确，在任意目录打开cmd命令窗口，输入如下命令：
 
@@ -40,8 +38,7 @@ python --version
 
 如果显示类似如下，那基本上你的环境就ok了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530092530.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530092530.png)
 
 #### 安装pip
 
@@ -71,8 +68,7 @@ pip --version
 
 如果如下结果，那安装就ok了
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200530093301683.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200530093301683.png)
 
 #### 更改pip源
 
@@ -132,8 +128,7 @@ sys.exit(app.exec_())
 
 运行上面的脚本，如果有如下窗口弹出，那么恭喜你，pyqt5环境已经就位
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530100703.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530100703.png)
 
 下来，我们用pycharm来创建项目，做一些简单配置
 
@@ -145,13 +140,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530100703.pn
 
 首先打开工具，在`External Tools`中增加pyqt的两个工具，一个是`qtDesigner`，也就是我们说的设计器，另一个就是把qt的ui转成py脚本的。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530101507.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530101507.png)
 
 我们先看`qtDesginer`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530102025.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530102025.png)
 
 参照图片配置即可，需要注意的是pyqt5设计器的路径，很多博客说的是`python`安装目录下的`Lib\site-packages\pyqt5_tools\Qt\bin`，但我在实际使用的时候发现并不是，当然更多的原因可能是版本不一样，我这里是`pyqt5`，上面的配置信息如下：
 
@@ -162,8 +155,7 @@ Working directory:		$ProjectFileDir$
 
 再下来就是ui转py脚本的工具配置：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530102813.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530102813.png)
 
 这里的`program`配置的是`python.exe`，也就是在你的`python`安装目录`bin`下，其他参数如下：
 
@@ -176,8 +168,7 @@ Working directory:	    $FileDir$
 
 上面这些配置完成，就可以开始我们的项目了。首先创建一个项目，填写项目相关信息
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530101149.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530101149.png)
 
 这里需要注意的是，要勾选上图两项，保证pyqt的包可以正常导入
 
@@ -185,13 +176,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530101149.pn
 
 项目右键，选择External Tools下我们刚刚配置的共，打开设计器
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530103401.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530103401.png)
 
 然后我们的设计器就启动了，它是这个样子的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530103557.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530103557.png)
 
 左侧侧是组件区，包括常用的各类组件，中间是设计核心区，右侧就是属性显示，我们先创建个主窗口，然后什么都不做，然后输入文件名保存。
 
@@ -199,8 +188,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530103557.pn
 
 如果配置没有问题，我们的ui文件默认是在我们项目根目录的，我们直接选中要转换的ui，右键选择我们配置好的转换工具。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200530104606791.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200530104606791.png)
 
 不出意外，我们会发现项目根目录多了一个和UI同名的`py`文件，但是这个文件并不能直接执行，我们先看下文件内部吧:
 
@@ -263,8 +251,7 @@ if __name__ == '__main__':
 
 如果你的窗口类名和我的不一致，把上面的脚本改成和你的对应的，然后双击运行，一个新的窗口出来了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530105225.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200530105225.png)
 
 因为我这里的示例加了一个按钮，所以他可能和你的不一样，不过没关系，能正常运行就好。
 

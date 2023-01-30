@@ -4,8 +4,7 @@
 
 ### 数组存储特点
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150038.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150038.png)
 
 1. 必须指定初始化大小，方能分配存储空间
 2. 数据连续存储
@@ -18,8 +17,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150038.png)
 
 这里我们以删除索引为5的元素为例:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150253.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150253.png)
 
 当删除索引为5的元素时，其后所有的元素都需要向前移位；如果删除的是索引为0的元素，那整个数组要移位的元素个数是N-1，从性能上讲就是O(N)；当然如果删除数组尾部的元素，那数组的元素是不需要移位的，从性能上讲是O(1)
 
@@ -29,8 +27,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150253.png)
 
 这里我们以在索引5和6之间插入元素为例:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150451.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150451.png)
 
 插入新的元素和删除元素类似，当在索引为6处插入新的元素时，其后所有的元素都需要向后移位（忽略扩容）；
 如果在索引为0处插入新的元素，那整个数组要移位的元素个数是N，从性能上讲就是O(N)；当然如果在数组的尾
@@ -55,18 +52,15 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150451.png)
 
 链表分为单链表和双链表，我们先来看下单链表：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150759.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150759.png)
 
 这时候如果需要删除元素，只需要将该节点的链接关系重新设置即可，并不需要移动元素：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150846.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150846.png)
 
 插入新的元素和删除类型，只需要改变链接关系即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150922.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150922.png)
 
 接下来我们看下双链表
 
@@ -74,18 +68,15 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306150922.png)
 
 双链表是相对于单链表来说的，在单链表中，当前元素只和下一个元素链接，所以单链表中只能获取`next`（下一个）节点，并不能获取`previous`（上一个）节点，但在双链表是都可以获取的。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306151256.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306151256.png)
 
 删除的情况和单链表类似：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306152745.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306152745.png)
 
 插入新元素也和单链表类似
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306153719.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210306153719.png)
 
 
 

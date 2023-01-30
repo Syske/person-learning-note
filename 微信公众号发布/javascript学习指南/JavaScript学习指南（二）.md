@@ -4,8 +4,7 @@ tags: [#javascript]
 
 我们知道变量用来存储数据，一个变量只能存储一个内容。假设你想存储10个人的姓名或者存储20个人的数学成绩，就需要10个或20个变量来存储，如果需要存储更多数据，那就会变的更麻烦。我们用数组解决问题，一个数组变量可以存放多个数据。好比一个团，团里有很多人，如下我们使用数组存储5个学生成绩。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224526969.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224526969.png)
 
 数组是一个值的集合，每个值都有一个索引号，从0开始，每个索引都有一个相应的值，根据需要添加更多数值。
 
@@ -23,8 +22,7 @@ var myarray=new Array();
 
   
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224636717.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224636717.png)
 
 ​        
 
@@ -110,8 +108,7 @@ var myarray = new Array(66,80,90,77,59);//创建数组同时赋值
 
 上一节中，我们使用myarray变量存储了5个人的成绩，现在多出一个人的成绩，如何存储呢？ 
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224701329.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224701329.png)
 
 只需使用下一个未用的索引，任何时刻可以不断向数组增加新元素。
 
@@ -133,8 +130,7 @@ myarray[5]=88; //使用一个新索引，为数组增加一个新元素
 
  
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224723832.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224723832.png)
 
  
 
@@ -326,8 +322,7 @@ if(条件1){
 
 **代码表示如下:**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224801275.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224801275.png)
 
 **结果:**
 
@@ -365,8 +360,7 @@ Switch必须赋初始值，值与每个case值匹配。满足执行该 case 后�
 
 - **代码如下:**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224854626.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224854626.png)
 
 **执行结果:**
 
@@ -376,8 +370,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224
 
 **注意:**记得在case所执行的语句后添加上一个break语句。否则就直接继续执行下面的case中的语句，看以下代码:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224922586.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224922586.png)
 
 - **执行结果:**
 
@@ -419,13 +412,11 @@ document.write("取出第"+num+"个球<br />");
 
 - **结果:**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224959927.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209224959927.png)
 
 - **执行思路:**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225027023.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225027023.png)
 
  
 
@@ -493,13 +484,11 @@ num++; //更新条件
 
 - **执行结果:**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225052371.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225052371.png)
 
 为什么呢?我们来看下执行思路：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225106258.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225106258.png)
 
  
 
@@ -522,13 +511,11 @@ for(初始条件;判断条件;循环后条件值更新) {
 
  
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225126946.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225126946.png)
 
 - **执行结果:**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225143476.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225143476.png)
 
 **注:**当num=5的时候循环就会结束，不会输出后面循环的内容。
 
@@ -553,13 +540,11 @@ for(初始条件;判断条件;循环后条件值更新) {
 
 上面的循环中，当特殊情况发生的时候，本次循环将被跳过，而后续的循环则不会受到影响。好比输出10个数字，如果数字为5就不输出了。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225206096.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225206096.png)
 
 - **执行结果:**
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225221047.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225221047.png)
 
 **注:**上面的代码中，num=5的那次循环将被跳过。
 
@@ -627,8 +612,7 @@ add2();
 
 - **结果:** 
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225247357.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200209225247357.png)
 
  
 

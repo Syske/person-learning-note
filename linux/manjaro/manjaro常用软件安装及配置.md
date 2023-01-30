@@ -10,8 +10,7 @@
 
 经常写博客的小伙伴应该都知道图床，我们这里安装的`picGo`就是一个图床工具，而且我们之前也分享过关于利用 `picGo`搭建基于`gitee`和`github`搭建个人图床，感兴趣的小伙伴可以去看下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-a5baeb44acd2480e94278a7580c979f6.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-a5baeb44acd2480e94278a7580c979f6.jpg)
 
 http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421467&idx=1&sn=9d37abe76ed2f61ab1df1a9a0507e07f&chksm=bea6dad189d153c733901ce3669411a6ae06e9327cd62f6d1824a936118a80d67efa0b818b13#rd
 
@@ -25,8 +24,7 @@ https://github.com/Molunerfinn/PicGo/releases
 
 这里我们下载`AppImage`格式的安装文件，因为这个版本的可以直接在`manjaro`环境下运行：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211027131953.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211027131953.png)
 
 下载完成后，将下载文件移动到目标文件夹下，然后授予软件运行权限就行了：
 
@@ -36,8 +34,7 @@ sudo chmod u+x ./PicGo-2.3.AppImage
 
 然后直接执行`./PicGo-2.3.AppImage`即可运行`picGo`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027221317.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027221317.png)
 
 安装了`manjaro`之后，电脑基本上不关机，所以我就没有设置`picGo`的自动启动，所以下面的方式来源于网络，而且我并没有验证，感兴趣的小伙伴可以自己试下。
 
@@ -100,8 +97,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027221317.p
 
 这里安装`nodeJs`是为了后面安装`picGo`的`gitee`插件，没有`nodeJs`插件是装不上的，而且提示信息会告知你安装`nodeJs`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027221542.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027221542.png)
 
 这里推荐手动下载病配置环境变量，命令行安装的方式好像没有用，当然也可能是我这边没有设置好。
 
@@ -115,8 +111,7 @@ http://nodejs.cn/download/
 
 这里我下载的是`v14`，这个是长期支持版本，属于比较稳定的版本：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027221855.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027221855.png)
 
 下载完成后，直接解压
 
@@ -161,18 +156,15 @@ yay deepin-wine-wechat
 
 从下面的截图中可以看到，我这里就是先试了`pacman`的方式，然后又用了`yay`工具：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027213321.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027213321.png)
 
 如果安装过程中报类似我这里的报错：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027214739.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027214739.png)
 
 可以试着将软件源的`SigLevel`限制放开，这里我只是将`multilib`的`SigLevel`改成了`Optional TrustAll`然后就好了。如果你改完还不行，可以试着也将其他的也改成`Optional TrustAll`试下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027214843.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027214843.png)
 
 安装过程中根据提示信息选择即可，过程不是很复杂。
 
@@ -180,18 +172,15 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027214843.p
 
 经过漫长的等待，`manjaro`的程序列表会多出一个微信图标：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027215643.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027215643.png)
 
 运行之后，会弹出微信的安装界面，然后一直下一步，最终安装成功后效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027214620.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027214620.png)
 
 登录完成后的效果和`windows`的`PC`端没有本质区别：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027215956.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027215956.png)
 
 
 
@@ -207,23 +196,19 @@ yay google-chrome
 
 如果安装过程中提示“无效或已损坏的软件包”，可以参考微信安装那里的报错信息处理方式。这里我们选择第二个，其中`3`和`4`是测试版本，其他几个是`chrome`的驱动软件，这个驱动软件是给爬虫模拟`chrome`浏览器用的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027220327.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027220327.png)
 
 提示是否显示差异，我一般直接输入`n`，因为看差异也看不出来啥：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027220848.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027220848.png)
 
 然后静静等待安装完成即可，安装过程中可能会让你输入密码，正常输入即可。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223113.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223113.png)
 
 如果安装过程中报如下错误：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211028130249.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211028130249.png)
 
 请先确认`base-devel`是否安装，如果没有安装，先通过如下命令进行安装：
 
@@ -243,13 +228,11 @@ sudo pacman -S netease-cloud-music
 
 安装完成后会多出网易云音乐的图标：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027222841.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027222841.png)
 
 界面效果和`win`环境下基本一致：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223003.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223003.png)
 
 
 
@@ -257,8 +240,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223003.p
 
 `Typora`是一款特别好用的`markdown`编辑器，我现在基本上所有的博客都是通过它完成的，关于它的用法我之前有分享过它的内容，感兴趣的小伙伴可以去看看：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-f6e5d3b18e2147fea7f296a0cf72c55f.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/face-img-f6e5d3b18e2147fea7f296a0cf72c55f.jpg)
 
 http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648421449&idx=1&sn=e7efa7a9012579fda56b852f823572ec&chksm=bea6dac389d153d5c1d10f96a06183cc0982510dfaae825e9060032ff587a992e34bc3a854b8#rd
 
@@ -270,8 +252,7 @@ sudo pacman -S typora
 
 使用效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223611.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223611.png)
 
 
 
@@ -279,15 +260,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223611.p
 
 关于截图工具，其实`manjaro`系统本身有自带的，但是系统自带的是没办法对图片做标记，而且没法贴图，真的是特别期待`snipaste`，目前`linux`版本还在开发：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223942.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027223942.png)
 
 今天在写这篇文章的时候，我全程用的是系统自带的截图工具，虽然凑活能用，但是体验确实太差了。
 
 目前我所知道的`linux`截图工具中，数`flameshot`还可以，可以实现标记注释等操作：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027224853.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027224853.png)
 
 刚刚又安装了，然后研究了下，发现它某些功能和`snipaste`还挺像的，而且已经支持贴图了，其他功能也基本上支持，具体后面研究下再说。
 
@@ -305,16 +284,13 @@ flameshot gui
 
 然后制定快捷键即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027230300.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027230300.png)
 
-设置完之后就可以体验到类似于`snipaste`的截图快感，然后复制：![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027230117.png)
+设置完之后就可以体验到类似于`snipaste`的截图快感，然后复制：![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027230117.png)
 
 选择`picGo`的剪贴板图片，直接上传，简直不要太爽：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027230550.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027230550.png)
 
 好了，以后`linux`我就用`flameshot`截图了，总体体验还不错。
 

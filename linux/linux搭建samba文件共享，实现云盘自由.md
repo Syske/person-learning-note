@@ -73,8 +73,7 @@ smbpasswd -a  syske
 sudo smbpasswd syske
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211106220850.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211106220850.png)
 
 ##### 创建samba用户组
 
@@ -150,8 +149,7 @@ sudo systemctl stop smb nmb
 
 启动成功后，我们可以先通过如下命令测试下效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106225513.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106225513.png)
 
 如上显示则表明，`samba`服务已经启动成功，且可以正常访问，下面我们看下各个平台具体如何访问：
 
@@ -159,16 +157,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106225513.png)
 
 安卓端可以通过`es`文件管理器进行访问，操作也很方便：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106231135.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106231135.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106231307.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106231307.png)
 
 这款软件不知道`ios`平台是否有，不过应该可以找到替代软件。这一款软件的不好之处是有广告，优点是可以自动扫描，操作上便捷很多，安卓平台还有另一款软件`Solid Explorer`，是一款国外的软件，只能通过`google play`下载，需要的小伙伴可以私信，我放几张截图：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106231841.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106231841.png)
 
 这款软件的优势是轻量，而且没广告，云盘这块支持的也挺多的，我是今天刚发现的。
 
@@ -182,8 +177,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106231841.png)
 
 其中`192.168.0.101`是我`manjaro`的主机地址，`syskeshare`是我的分享名称，显示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106232144.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20211106232144.png)
 
 由于手里没有`mac`系统的设备，感兴趣的小伙伴自己尝试下，应该也不会太难。
 

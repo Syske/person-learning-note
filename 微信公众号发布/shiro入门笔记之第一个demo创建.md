@@ -16,23 +16,19 @@ Apache Shiro™是一个功能强大且易于使用的Java安全框架，它执�
 
 选择maven，这里我选择的模板是quickstart
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571455743716.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571455743716.png)
 
 填写项目信息
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571455915103.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571455915103.png)
 
 设置项目maven配置，如果没有特殊设置，直接下一步
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571456044986.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571456044986.png)
 
 设置项目保存路径
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571456154116.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/1571456154116.png)
 
 maven项目到此创建完成，下面开始shiro demo
 

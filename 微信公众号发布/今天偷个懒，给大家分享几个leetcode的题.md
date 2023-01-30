@@ -26,8 +26,7 @@ https://leetcode-cn.com/problems/two-sum/
 
 有兴趣的小伙伴们都去试试，这是我的提交历史：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712081029.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712081029.png)
 
 ### 2、整数反转
 
@@ -61,8 +60,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712081029.pn
 
 这次提交的代码就比较菜了，提交记录：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712081832.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712081832.png)
 
 ### 3、回文数
 
@@ -101,8 +99,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712081832.pn
 
 提交记录：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712082249.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712082249.png)
 
 ### 4、最长公共前缀
 
@@ -134,8 +131,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712082249.pn
 
 提交记录：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712082628.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200712082628.png)
 
 好了，废话少说，show me code:
 

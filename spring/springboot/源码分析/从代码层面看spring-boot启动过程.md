@@ -31,15 +31,13 @@ public class DailyNoteApplication {
 
 在`run`方法内部，首先实例化了一个`springApplication`对象，然后又调用了另一个`run`方法：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830084931.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830084931.png)
 
 ###### springApplication实例化
 
 我们先看`springApplication`的实例化过程：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830085231.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830085231.png)
 
 前两个`this`都是简单的赋值，这里暂时先不过多研究，第三个`this`这里的`WebApplicationType.deduceFromClasspath()`是判断我们的服务器类别，在`spring boot`中，有两种服务器一种就是传统的`sevlet`，也就是基于`tomcat`（其中一种）这种，另一种就是`reactive`，也就是我们前面分享的`webflux`这种流式服务器。
 
@@ -108,8 +106,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830085231.pn
   context = createApplicationContext();
   ```
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830193403.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830193403.png)
 
 - 创建`spring`工厂实例
 
@@ -132,8 +129,7 @@ refreshContext(context);
 
 从源码中可以很明显看出这一点：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830212720.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830212720.png)
 
 
 
@@ -143,8 +139,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830212720.png)
   afterRefresh(context, applicationArguments);
   ```
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830212928.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830212928.png)
 
 - 停止秒表。这个秒表的作用应该就是计时
 
@@ -158,8 +153,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830212928.png)
   listeners.started(context);
   ```
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830213921.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830213921.png)
 
 - 运行容器中的`runner`，这里的`runner`主要有两类，一类是继承`ApplicationRunner`的，一类是继承`CommandLineRunner`。我猜测这个应该是为了方便我们实现更复杂的需求实现的，目前还没用到过，后面可以找时间研究下
 
@@ -167,8 +161,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830213921.png)
   callRunners(context, applicationArguments);
   ```
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830214854.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830214854.png)
 
 - 最后一步还是监听器的操作。这个方法最后将容器的状态改为`ACCEPTING_TRAFFIC`，表示可以接受请求
 
@@ -178,8 +171,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210830214854.png)
 
   到这里，`spring boot`就启动成功了。下面是整个`run`方法的源码，虽然不长，但是我感觉读起来还是有点吃力，想想自己模仿`spring boot`写的`demo`，真的是小巫见大巫。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830131800.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210830131800.png)
 
 ### 总结
 

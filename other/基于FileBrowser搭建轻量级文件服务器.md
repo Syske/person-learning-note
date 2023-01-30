@@ -138,13 +138,10 @@ http://192.168.1.1:8088
 
 #### 效果预览
 登录之后的效果：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211111132747.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211111132747.png)
 
 修改语言：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211111132927.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211111132927.png)
 还可以对文件进行管理，包括分享、重命名、移动、删除、下载、上传等操作：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211111133024.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211111133024.png)
 如果当作简易版的网盘来用也还不错

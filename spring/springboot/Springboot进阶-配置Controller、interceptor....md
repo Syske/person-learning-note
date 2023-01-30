@@ -144,8 +144,7 @@ public class DateFomaters implements Converter<String, Date> {
 根据官方说法，这种方式是线程安全的，而且很灵活，具体等我们分享完`ConversionService`相关内容，大家就清楚了
 
 最终返回结果如下：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916221527.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916221527.png)
 
 
 ### 5、配置拦截器
@@ -223,17 +222,14 @@ public class LoginController {
 
 关于`converter`的用法，除了我们前面演示的那种直接用法，在前后端进行参数传递的时候，也可以使用，我想这应该才是它真正的用武之地。比如下面这个测试，我在前端调用`login`接口，传了两个参数——`username`和`logindate`，这里我的`logindate`是`String`，但是到后台直接变成了`Date`，而这一步就是`spring boot`的`ConversionService`帮我们完成的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916224351.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916224351.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916224322.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916224322.png)
 
 看到这我突然感觉自己捂了，明白为啥默认启动的时候，`spring boot`默认为我们提供了好几种转换器，原来就是为了前后端进行数据转换的，呀，我可真是个小机灵鬼！！！
 
 可以看到，`spring boot`启动的时候，已经为我们提供了`134`中类型转换器了，而且种类特别丰富，忽然直接感觉早上的疑问都解开了，有时候搞清楚一个东西可能就是在这一瞬间：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916225158.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210916225158.png)
 
 好了，今天的内容就先到这里吧！

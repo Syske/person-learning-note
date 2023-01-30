@@ -27,13 +27,11 @@ sudo docker run -d \
 
 大家注意下面启动命令中的内网`ip`，根据官方文档说明，这个`ip`不建议使用 `127.0.0.1` 或者 `localhost` ，所以我用的`ip`地址是`127.0.0.2`，你可以和我保持一致
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628125008.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628125008.png)
 
 然后运行上面的脚本，建议将上面的脚本存储成`sh`脚本，方便后续启动使用，这是我的`sh`脚本内容：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628125225.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628125225.png)
 
 #### 测试
 
@@ -45,18 +43,15 @@ curl 127.0.0.2:80
 
 这里的`127.0.0.2`就是我们前面配置的内网`ip`，如果启动正常，应该会返回这样的内容：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628125605.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628125605.png)
 
 这时候如果你`curl 127.0.0.1:80`也是可以正常返回的，而且返回内容和上面的是一样的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628130148.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628130148.png)
 
 到这里`kuboard`就启动成功了，这时候我们就可以在`windows`的浏览器中通过`127.0.0.1:80`访问`kuboard`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628095610.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628095610.png)
 
 默认的登录信息如下：
 
@@ -65,20 +60,17 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628095610.pn
 
 第一次访问因为我们还没有添加`k8s`集群信息，控制台是没有任何数据展示的，所以我们要先添加`k8s`集群
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628133051.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628133051.png)
 
 #### 添加k8s配置
 
 点击添加集群，然后填入集群信息，点击确认：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628133211.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628133211.png)
 
 然后复制下面的命令，先复制第一行：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628133329.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628133329.png)
 
 在`k8s`集群的集群上执行：
 
@@ -94,8 +86,7 @@ vim kuboard-agent.yaml
 
 在文件中找到`KUBOARD_ENDPOINT`和`KUBORAD_AGENT_HOST`，把下面的`value`中的`ip`改成我们`wsl`中`docker`的地址，具体如何获取，后面有说明。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628151309.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628151309.png)
 
 `KUBOARD_ENDPOINT`和`KUBORAD_AGENT_HOST`有两处，都要修改，否则在创建探针服务的时候会报错，创建探针服务的命令如下，也就是页面上的第二行命令：
 
@@ -105,8 +96,7 @@ kubectl apply -f kuboard-agent.yaml
 
 如果不修改上面的地址，回报下面的错，也就是获取`TOKEN`的时候，地址访问不到：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628150355.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628150355.png)
 
 为什么要改成`docker`的地址，因为我们的`kuboard`部署在`dokcer`环境下，下面我们看下如何查看`wsl`环境下`docker`的`ip`地址。
 
@@ -120,8 +110,7 @@ ip addr
 
 在显示结果中，找到`docker0`网卡，其中的`ip`地址就是我们需要的`ip`，如下图，我的`docker ip`是`172.18.0.1`
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628110355.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628110355.png)
 
 然后把`kuboard-agent.yaml`修改后，重新执行创建命令：
 
@@ -131,16 +120,13 @@ kubectl apply -f kuboard-agent.yaml
 
 再次访问`kuboard`，你会发现我们的集群已经导入成功：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628152402.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628152402.png)
 
 这时候，我们在面板的右侧选择管理角色后，就可以进入我们的`k8s`集群管理中心了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628153125.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628153125.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628153155.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210628153155.png)
 
 到这里我们今天的内容就结束了，关于`kuboard`的使用，我们下次再说。
 

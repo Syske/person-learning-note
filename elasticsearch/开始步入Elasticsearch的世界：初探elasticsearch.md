@@ -18,8 +18,7 @@
 
 > `Elasticsearch `是一个分布式的免费开源搜索和分析引擎，适用于包括文本、数字、地理空间、结构化和非结构化数据等在内的所有类型的数据。`Elasticsearch `在 `Apache Lucene `的基础上开发而成，由 `Elasticsearch N.V.`（即现在的 Elastic）于 `2010` 年首次发布。`Elasticsearch `以其简单的 `REST` 风格 `API`、分布式特性、速度和可扩展性而闻名，是 `Elastic Stack `的核心组件；`Elastic Stack `是一套适用于数据采集、扩充、存储、分析和可视化的免费开源工具。人们通常将` Elastic Stack` 称为 `ELK Stack`（代指` Elasticsearch`、`Logstash `和 `Kibana`），目前 `Elastic Stack `包括一系列丰富的轻量型数据采集代理，这些代理统称为 `Beats`，可用来向 `Elasticsearch `发送数据。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825125256.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825125256.png)
 
 简单来说，`elasticsearch`可以用以下几个关键字概括：
 
@@ -41,15 +40,13 @@ https://www.elastic.co/cn/downloads/elasticsearch
 
 这里我直接选择`windows`，各位小伙伴根据自己的操作系统进行选择。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825083231.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825083231.png)
 
 #### 安装
 
 下载过程还是很快的，下载完成后直接解压压缩文件即可：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825083652.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825083652.png)
 
 下面我们简单介绍下，`elasticsearch`的文件结构：
 
@@ -59,8 +56,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825083652.png)
 
 - `jdk`：这个各位小伙伴应该很熟悉，目前`elasticsearch-7.14.0`下的`jdk`版本比较高是`16.0.1`
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825084335.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825084335.png)
 
   
 
@@ -81,8 +77,7 @@ elasticsearch.bat
 
 如果启动报错，检查下本地`jdk`版本，最好选择`16`及以上版本，因为我本地安装的就是`16`，所以启动没有报错，但是在控制台有如下提示：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825085557.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825085557.png)
 
 按照提示信息，`elasticsearch`的`JAVA_HOME`需要设置未`ES_JAVA_HOME`，`JAVA_HOME`不推荐使用，应该是怕和`jdk`冲突吧。
 
@@ -92,11 +87,9 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210825085557.png)
 
 - `elasticsearch`服务默认情况下会用到`9300`和`9200`，其中`9300`的端口协议未知，但是肯定不是`http`协议，`9200`是可以直接访问的：
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825123436.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825123436.png)
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825123552.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825123552.png)
 
 - 访问`127.0.0.1:9200`，如果返回值结果如上，则表明`elasticsearch`启动成功。
 
@@ -123,8 +116,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825123552.pn
 
 以上这些请求中，`es`只支持`GET`,  `PUT`,  `DELETE`,  `HEAD`，其他的是不支持的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825132837.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210825132837.png)
 
 ##### 创建索引
 

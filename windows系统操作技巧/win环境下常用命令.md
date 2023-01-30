@@ -8,8 +8,7 @@
 tracert 127.0.0.1
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210526105045.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210526105045.png)
 
 
 
@@ -19,8 +18,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210526105045.pn
 wmic bios
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211102141619.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211102141619.png)
 
 比如查询序列号：
 
@@ -28,5 +26,4 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211102141619.pn
 wmic bios get SerialNumber
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211102141443.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211102141443.png)

@@ -37,8 +37,7 @@ mkdir /wls/beanfs
 - 对应文件夹上传对应的资源文件
 
 #### 三、在domain上创建服务
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-publish-ydjy-01.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/weblogic-publish-ydjy-01.png)
 
 #### 四、创建启动脚本，修改StartManager脚本
 

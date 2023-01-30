@@ -11,8 +11,7 @@ tags: [#rpc, #dubbo]
 
 下面是`rpc`的调用原理，这里放上百度百科的一张图片，供大家参考：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210616082500.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210616082500.png)
 
 好了，关于`rpc`的理论介绍，我们先说这么多，下面我们通过一个实例来分享下`dubbo`的简答用法。
 
@@ -28,15 +27,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210616082500.pn
 https://dubbo.apache.org/zh/
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210811082136.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210811082136.png)
 
 #### 创建项目
 
 首先我们要创建一个`maven`项目，然后分别创建三个模块：`common-facade`、`service-provider`和`service-consumer` 。其中`service-provider`和`service-consumer`是`spring-boot`项目，他们分别是服务提供者和服务消费者；`common-facade`是普通`maven`项目，它主要用来存放我们的`facade`接口，创建完成后，项目结构如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811133944.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811133944.png)
 
 #### facade接口
 
@@ -97,21 +94,17 @@ public interface DemoService {
 
 这里我们还需要指定`ApplicationConfig`，也就是服务提供者配置信息，如果缺少这个配置，启动的时候会报错：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811175923.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811175923.png)
 
 另外还有服务注册配置`RegistryConfig`需要指定，这里主要指定的是`zk`的地址、`zk`客户端类型，`zk`客户端类型在`dubbo-2.1.1`及以后的版本只能选`curator`，在`dubbo-2.7.0`及以前的版本应该有两种，这也是我们为什么要引入`curator-recipes`客户端的原因。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811181451.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811181451.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811181710.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811181710.png)
 
 如果你这里设置的是`zkclient`，启动的时候是会报错的：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811181951.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811181951.png)
 
 下面是完整配置：
 
@@ -172,8 +165,7 @@ public class DemoServiceImpl implements DemoService {
 
 完成以上工作，我们的服务提供者就配置完成了，这时候只需要先启动`zk`组件，然后再运行我们的服务提供者即可，正常情况下，服务启动成功后，会在`zk`中查到：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811183752.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811183752.png)
 
 #### 服务消费者
 
@@ -264,25 +256,21 @@ public class DemoController {
 
 完成相关配置后，启动服务消费者，然后去`zk`看下注册信息：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811193738.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811193738.png)
 
 #### 测试
 
 下面我们直接访问消费者的接口`/dubbo/test`看下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811193951.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811193951.png)
 
 消费者控制台：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811194020.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811194020.png)
 
 服务提供者控制台：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811194058.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811194058.png)
 
 可以看到服务已经访问成功了，数据也成功返回了。
 
@@ -290,11 +278,9 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811194058.pn
 
 如果你在本地启动过程中，有如下报错，请检查本地`zookeeper`依赖版本，根据提示信息，`zookeeper`的版本必须大于`3.3.3`。默认情况下，`curator-recipes`是会为我们引入`zk`的，所以我们一般不需要引用。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811140507.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811140507.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811174940.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210811174940.png)
 
 
 

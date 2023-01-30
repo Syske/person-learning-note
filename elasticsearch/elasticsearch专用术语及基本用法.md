@@ -51,13 +51,11 @@ curl -X PUT "localhost:9200/megacorp/employee/2?pretty" -H 'Content-Type: applic
 
 为了方便测试，我们后期的内容直接在`git bash`下执行`curl`命令了，`windows`下`cmd`体验太差：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210826085728.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210826085728.png)
 
 从上面返回结果来看，当文档（`json`数据）不存在的时候，它返回的`result`是`created`，但如果文档已经存在，它返回的结果是`updated`:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210826085916.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210826085916.png)
 
 #### 数据检索
 
@@ -103,20 +101,17 @@ curl -X GET "localhost:9200/megacorp/employee/1?pretty"
 
 这里说下请求地址后面这个参数`pretty`，这个参数的意思是对请求参数和返回结果进行美化，如果没有这个参数，我们看到的数据就会是一坨，不方便查看：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826131422.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826131422.png)
 
 加了这个参数，返回结果就好看多了：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826131505.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826131505.png)
 
 #### 数据更新
 
 更新操作和新增是一模一样的，这里我们就不做过多说明，唯一的区别是，如果返回结果`result`为`updated`，则表示数据更新成功：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826133705.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826133705.png)
 
 
 
@@ -130,13 +125,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826133705.pn
 
 返回结果`result`为`deleted`表示删除成功。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826133845.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826133845.png)
 
 如果数据不存在，则返回结果为`not_found`:
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826134215.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210826134215.png)
 
 ### 总结
 

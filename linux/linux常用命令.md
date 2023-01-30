@@ -212,8 +212,7 @@ chgrp [OPTION]... --reference=RFILE FILE...
 
 vi是linux下的一个编辑器
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210319201823.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210319201823.png)
 
 #### vi/vim 的使用
 
@@ -360,6 +359,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210319201823.png)
 举例来说，要删除 50 行，则是用 『50dd』 对吧！ 数字加在动作之前，如我要向下移动 20 行呢？那就是『20j』或者是『20↓』即可。
 
 
+### 其他
+
+#### 后台运行脚本
+
+```shell
+ nohup python3.5  py/check_wechat_user.py &
+```
 
 
 

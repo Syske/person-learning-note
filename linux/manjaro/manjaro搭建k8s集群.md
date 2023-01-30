@@ -22,8 +22,7 @@ sudo pacman -Syu
 
 
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/image-20211225143139622.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/image-20211225143139622.png)
 
 #### 安装docker
 
@@ -33,8 +32,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/image-2021122514
  sudo pacman -S docker
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211225165714.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211225165714.png)
 
 ##### docker配置
 
@@ -87,8 +85,7 @@ sudo systemctl enable docker
 sudo pacman -S kubelet kubeadm kubectl
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211225165803.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211225165803.png)
 
 ##### 下载安装kind
 
@@ -142,8 +139,7 @@ sudo ./kind create cluster --name syske-k8s --config kind.yaml
 
 这里的`kind.yaml`就是我们前面创建的文件，然后就是漫长的等待，如果不出意外，最后会显示创建成功，如果一直创建不成功，可以考虑换下仓库镜像地址：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211225165503.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211225165503.png)
 
 我们通过下面的命令看下节点信息：
 
@@ -153,8 +149,7 @@ kubectl cluster-info --context kind-wslk8s
 
 显示信息如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226224511.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226224511.png)
 
 然后我们访问如下地址看下
 
@@ -162,8 +157,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226224511.pn
 https://127.0.0.1:39879/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226224621.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226224621.png)
 
 虽然显示结果有点问题，但是也说明集群创建成功，关于安装`kuboard`的操作可以直接看下之前的内容，链接如下：
 
@@ -179,6 +173,4 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226224621.pn
 
 不过，在搭建`k8s`的过程中，顺手搭建了`harbor`平台，后面得空了分享下，这里简单解释下`harbor`，它是一个镜像的私服开源项目，通过在`harbor`我们可以构建自己的内网环境下的镜像服务器，比如公司自己的项目都可以放在上面管理，一方面更安全，另一方面拉取镜像更快，最后我们先放上`harbor`的靓照：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226230559.png)![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226230636.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226230559.png)![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211226230636.png)

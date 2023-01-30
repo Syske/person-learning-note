@@ -14,34 +14,28 @@
 
 首先我搜索了全局有用到`Bean.class`的地方，找到以下结果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210923132356.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210923132356.png)
 
 总共找到`10`条记录，其中前两条和我们昨天分享的条件配置有关，主要是判断方法是否存在`@Bean`注解，但是这里并不进行实例化操作，所以我们这里就不深入研究了；
 
 第三行、第四行是获取所有包含`@Bean`注解的方法的元数据，但是由于这个类是和异常报告相关的（`NoSuchBeanDefinitionFailureAnalyzer`，从名字可以看出来是个失败分析器，找不到`bean`的定义信息时触发），所以我们也不做过多说明。不过从调用的方法名来看，这个方法的作用是获取所有的`beanMethod`：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210923134626.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210923134626.png)
 
 第五行是判断某个方法是否包含`@Bean`注解：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923205411.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923205411.png)
 
 第六行是获取注解的属性，并从属性中拿到`name`属性，这个属性最后会变成我们的`beanName`
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923212240.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923212240.png)
 
 第七行是从方法的元数据中获取`@Bean`注解的属性信息，然后将这些属性信息赋值给`bean`的定义信息。这个方法很长，信息量也很多，不仅包括了工厂方法的设置，还包括`autowire`、`initMethod`、`destroyMethod`等信息的配置。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/Snipaste_2021-09-23_22-07-37.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/Snipaste_2021-09-23_22-07-37.jpg)
 
 然后沿着这个方法我最后进入了`refresh`方法中，也就是说其实在`refresh`方法中会调用我们上面这个方法，下面是它的调用流程：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/Snipaste_2021-09-23_22-27-10.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/Snipaste_2021-09-23_22-27-10.jpg)
 
 看着这个方法，看着有点眼熟，但是感觉我上次好像没有讲到，然后我又回去翻了下上次源码分享的内容，最终确认这块的内容当时确实没有讲到，当时并没有将这么细。
 
@@ -51,15 +45,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/Snipaste_2021-09-23
 
 下面我们通过一个`@Bean`配置实例来看下。首先是我们通过`@Bean`注解配置的一个过滤器：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923084430.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923084430.png)
 
 然后在一个偶然情况下，我找到了通过工厂方法实例化的方式（我到现在都不知道当时咋发现的，这就是机缘吧），这正是这一发现，我们才有今天的内容，总之就是很偶然。
 
 这是位于`SimpleInstantiationStrategy`的一个实例化方法，从名字可以看出来，这个类是一种实例化策略，方法的作用就是根据工厂方法实例化对象，从`debug`截图可以看出来，这里的`factoryMethod`就是我们加了`@Bean`注解的方法名，`beanName`默认就是我们的方法名：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923084335.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20210923084335.png)
 
 关于这个方法的调用流程，我们后面有机会再讲，今天确实有点太晚了，我们目前只需要搞清楚工厂方法的基本实例化方式就可以了。
 

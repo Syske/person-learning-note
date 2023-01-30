@@ -497,8 +497,7 @@ where username=$P{username}]]>
 
 项目结构如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20191228132908308.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20191228132908308.png)
 
 ##### 总结
 

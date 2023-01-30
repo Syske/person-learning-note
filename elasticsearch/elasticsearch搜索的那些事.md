@@ -94,8 +94,7 @@ curl -X GET "localhost:9200/megacorp/employee/_search?pretty"
 
 - `hits.hits._source`：最终的搜索结果
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210827081432.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210827081432.png)
 
   #### 根据关键字搜索
 
@@ -152,13 +151,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210827081432.png)
 
   具体返回结果如下：
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210827085515.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210827085515.png)
 
   查询不到结果时，返回结果如下：
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210827085442.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20210827085442.png)
   
   #### 查询表达式搜索
   

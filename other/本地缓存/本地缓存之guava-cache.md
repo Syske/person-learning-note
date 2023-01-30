@@ -53,8 +53,7 @@ System.out.println(cache.getIfPresent("cache10"));
 ```
 
 最终运行结果：
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211219165506.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211219165506.png)
 
 ##### concurrencyLevel
 
@@ -117,7 +116,6 @@ String getCache = cache.get("cache0", () -> buildCache("cache0"));
 
 最后再给各位小伙伴安利一本高赞的数，我最近也打算好好研读下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211219230324.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20211219230324.png)
 
 没有资源的小伙伴可以联系我！

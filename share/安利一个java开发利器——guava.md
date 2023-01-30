@@ -10,8 +10,7 @@
 
 `Guava`是`Google`提供的一组核心`Java`库，包括新的集合类型（如`multimap`和`multiset`）、不可变集合、图形库以及用于并发、`I/O`、哈希、缓存、原语、字符串等的实用程序！它广泛应用于`Google`内部的大多数`Java`项目，也被许多其他公司广泛使用。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210501163756.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210501163756.png)
 
 ## guava的应用
 

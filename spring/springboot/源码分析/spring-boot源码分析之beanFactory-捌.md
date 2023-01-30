@@ -23,13 +23,11 @@
 
 另一部分操作是往`beanFactory`中添加了`LoadTimeWeaverAwareProcessor`处理器，从名字可以看出这个处理器和切面编程有关，同时包含了`loadTime`，说明它和加载时间有关系，应该是统计资源或者类的加载时间的的切面处理器，这里还往容器中`set`了一个临时类加载器。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911145730753.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911145730753.png)
 
 下面我们展开看下静态处理方法`invokeBeanFactoryPostProcessors`。下面是这个方法的完整代码：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/Snipaste_2021-09-11_20-12-04.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/Snipaste_2021-09-11_20-12-04.jpg)
 
 ##### part1
 
@@ -49,13 +47,11 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/Snipaste_2021-09-
 
 这个方法从名字来看，它应该是注册`bean`的后置处理器的，这里它调用的也是`PostProcessorRegistrationDelegate`静态方法，不过它调用的是`registerBeanPostProcessors`，这个静态方法内容实现还挺多的，所以我们也需要展开分析下。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911185454382.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911185454382.png)
 
 下面我们就展开这个方法讲一下，这个方法我也把它分为四个部分，我们先看`part 1`。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/Snipaste_2021-09-11_20-13-59.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/Snipaste_2021-09-11_20-13-59.jpg)
 
 ##### part1
 
@@ -79,15 +75,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/Snipaste_2021-09-
 
 从名字看，这个方法进行的是消息源的初始化，我记得我们前面好像提到过，这个方法是和国际化有关的。这个方法其实就做了一件事，注册`messageSource`，如果已经被注册，则需要把注册的值赋给容器的`messageSource`属性
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911195152210.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911195152210.png)
 
 #### initApplicationEventMulticaster
 
 初始化应用事件的广播器（多播）。与消息源初始化类似，这里就是简单的注册和赋值，不存在就实例化然后注册，存在就直接赋值。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911195430590.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20210911195430590.png)
 
 
 

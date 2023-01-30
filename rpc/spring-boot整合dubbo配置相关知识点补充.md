@@ -146,31 +146,25 @@ tags: [#springboot, #dubbo]
 
 - `protocol`：注册中心支持的协议类型，我发现`dubbo`支持的类型还挺多的，包括`dubbo`、`rest`、`http`、`redis`等，具体大家可以看下图：
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813125641.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813125641.png)
 
 - `transporter`：网络传输协议也比较多，默认应该是`netty`，因为`dubbo`默认引入了`netty`的包
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813125752.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813125752.png)
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813130011.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813130011.png)
 
 - `group`：注册的服务默认情况下（不指定`group`）所属服务组。通常我们在注册服务的时候，会指定服务所属服务组，如果你不指定所属服务组，则会取当前设置的值，这个配置的默认值目前还没研究
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813131101.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813131101.png)
 
 - `version`：这个配置和`group`类似，不过这个设定的是服务的版本，如果不指定就会取该值，这个值可以在服务注册时设定，但是设定的只是单个服务的版本
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813130947.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813130947.png)
 
 - `timeout`：这个设置的是`rpc`请求的超时时间，也是个默认值，这个值可以在服务注册的时候指定，如果你不指定，就会取这个值
 
-  ![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813130913.png)
+  ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813130913.png)
 
 ##### 应用配置
 
@@ -352,8 +346,7 @@ public RegistryConfig registryConfig() {
 
 另一个需要注意的是，如果配置项是`isXXX`，则需要确认`isXXX`的设置方法是否是`setIsXXX`，如果是，`properties`配置就可以写成`isXXX`，总之要和`set`方法一致，否则会报错：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813135825.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813135825.png)
 
 #### 注解
 
@@ -363,31 +356,25 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210813135825.pn
 
 `@DubboService`注解是`2.7.7`引入的，其主要作用就是为了标记和配置服务提供者，它的前任是`@Service`，这个注解也算是个新人，它是`2.7.0`引入的，从注解属性上看，他们没有本质区别，`@Service`目前已经被弃用，我猜测弃用应该是注解名称太容易被混淆了，不利于服务代码开发维护，毕竟`spring`的原生注解也就`@Service`：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812125920.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812125920.png)
 
 文档也说的很清楚，`DubboService`是`Serivce`的继任者。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812130021.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812130021.png)
 
 ##### DubboReference
 
 `@Reference`注解也是`dubbo 2.7.7`引入的，主要是用来发现服务的，也就是标记服务消费者。这个注解的继任者是`Reference`，也是`2.7.0`引入的。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812190902.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812190902.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812190159.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812190159.png)
 
 说明，在`dubbo 2.7.0`之前的版本是不支持注解式配置，而且我发现`2.7.0`以前的版本是属于`com.alibaba`这个`groupId`的，之后的版本是`org.apache.dubbo`这个`groupId`的，这是因为在`2.7.0`之后，阿里巴巴把`dubbo`捐献给`apache`基金会了，现在它是`apache`旗下的顶级项目之一。
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812191439.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812191439.png)
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812191522.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20210812191522.png)
 
 
 

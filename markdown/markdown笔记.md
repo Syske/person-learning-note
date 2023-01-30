@@ -41,8 +41,7 @@ Markdown 能被使用来撰写电子书，如：Gitbook。
 
 解释一下，标题的样式是#加空格加标题内容，#数量越多，表示标题层级越低（字体越小），上面标题预览效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223183223758.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223183223758.png)
 
 ### Markdown段落
 
@@ -63,8 +62,7 @@ ___粗斜体文本___
 
 显示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222357380.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222357380.png)
 
 #### 分割线
 
@@ -84,8 +82,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222
 
 显示效果如下所示：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222609701.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222609701.png)
 
 #### 删除线
 
@@ -99,8 +96,7 @@ GOOGLE.COM
 
 显示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222816192.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222816192.png)
 
 #### 下划线
 
@@ -112,8 +108,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223222
 
 先试下效果如下所示：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223223029945.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223223029945.png)
 
 #### 脚注
 
@@ -135,8 +130,7 @@ Markdown 脚注的格式如下:
 
 演示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223223423466.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223223423466.png)
 
 ### Markdown列表
 
@@ -161,8 +155,7 @@ Markdown 支持有序列表和无序列表。
 
 演示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223223753158.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223223753158.png)
 
 有序列表使用数字并加上 **.** 号来表示，如：
 
@@ -174,8 +167,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223223
 
 演示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224041251.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224041251.png)
 
 #### 列表嵌套
 
@@ -192,8 +184,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224
 
 演示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224218540.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224218540.png)
 ### Markdown区块
 
 Markdown 区块引用是在段落开头使用 **>** 符号 ，然后后面紧跟一个**空格**符号：
@@ -206,8 +197,7 @@ Markdown 区块引用是在段落开头使用 **>** 符号 ，然后后面紧跟
 
 显示结果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224520186.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224520186.png)
 
 另外区块是可以嵌套的，一个 **>** 符号是最外层，两个 **>** 符号是第一层嵌套，以此类推：
 
@@ -219,8 +209,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224
 
 演示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224633670.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224633670.png)
 #### 区块中使用列表
 
 区块中使用列表实例如下：
@@ -236,8 +225,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224
 
 演示如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224808695.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224808695.png)
 
 #### 列表中使用区块
 
@@ -254,8 +242,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224
 
 演示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224943935.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200223224943935.png)
 ### Markdown代码
 
 如果是段落上的一个函数或片段的代码可以用反引号把它包起来（**`**），例如：
@@ -308,8 +295,7 @@ $(document).ready(function () {
 
 显示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224195203274.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224195203274.png)
 
 直接使用链接地址：
 
@@ -319,8 +305,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224195
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224195754412.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224195754412.png)
 
 #### 高级链接
 
@@ -336,8 +321,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224195
 
 显示效果如下：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224200041744.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224200041744.png)
 
 ### Markdown图片
 
@@ -363,8 +347,7 @@ Markdown 图片语法格式如下：
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224200626861.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224200626861.png)
 
 当然，你也可以像网址那样对图片网址使用变量:
 
@@ -377,8 +360,7 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224200
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224201059184.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224201059184.png)
 
 Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 <img> 标签。
 
@@ -441,8 +423,7 @@ Markdown 制作表格使用 **|** 来分隔不同的单元格，使用 **-** 来
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224201915441.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224201915441.png)
 
 #### 转义
 
@@ -455,8 +436,7 @@ Markdown 使用了很多特殊符号来表示特定的意义，如果需要显�
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224202036587.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224202036587.png)
 
 Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：
 
@@ -492,8 +472,7 @@ $$
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224202225160.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224202225160.png)
 
 #### 图表绘制
 
@@ -562,8 +541,7 @@ cond(no)->sub1(right)->op
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224210943088.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224210943088.png)
 
 
 
@@ -585,8 +563,7 @@ cond(no)->sub1(right)->op
 
 演示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224210742869.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224210742869.png)
 
 
 
@@ -604,8 +581,7 @@ Note left of 对象A: 对象A的描述(提示)
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224211250383.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224211250383.png)
 
 ##### UML时序图（复杂）
 
@@ -627,8 +603,7 @@ Note right of C: 没人陪我玩
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224211310649.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224211310649.png)
 
 ##### UML标准时序图
 
@@ -694,15 +669,13 @@ https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224211
 
 显示效果：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224211445673.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/image-20200224211445673.png)
 
 #### 内容目录
 
 使用[TOC]引用目录，例如本文目录：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201010184652.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201010184652.png)
 
 #### 代办列表
 

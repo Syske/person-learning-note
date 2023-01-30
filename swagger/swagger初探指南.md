@@ -13,8 +13,7 @@
 
 我们先来预览下，swagger2长什么样：
 
-![](
-https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200513222212.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20200513222212.png)
 
 ### 如何使用
 

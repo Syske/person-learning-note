@@ -19,7 +19,8 @@ monitor -c 5 net.coolcollege.isv.api.controller.IsvController getSuiteToken
 - `getSuiteToken`表示方法名，
 - `-c`表示统计周期，默认是`120`秒，这里我们指定的是`5`秒
 
-##### watch 
+### wathch
+#### 描述
 查看方法入参、返回结果以及当前类的信息
 ```sh
 watch demo.MathGame primeFactors "{params,returnObj}" -x 2 -b
@@ -41,9 +42,10 @@ _condition-express_ |条件表达式
 [E] |开启正则表达式匹配，默认为通配符匹配
 [x:] | 指定输出结果的属性遍历深度，默认为 1，最大值是 4
 
-##### 将日志结果输出
+#### 将日志结果输出
 ```
 options save-result true
 ```
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221122215837.png)
+

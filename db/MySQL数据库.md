@@ -21,7 +21,7 @@ tags: [#db, #mysql]
 ```
 - 创建数据库
 ```
-  CREATE {DATABASE | SCHEMA} [IF NOT EXOSTS] db_name [DEFAULT] CHATABASER SET [=] charset_name;
+  CREATE {DATABASE | SCHEMA} [IF NOT EXOSTS] db_name [DEFAULT] CHARACTER SET [=] charset_name;
 ```
 - 打开数据库：
 

@@ -178,7 +178,7 @@ sudo apt install libfuse2
 ```
 
 
-
+之后再次运行即可。
 
 
 

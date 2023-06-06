@@ -1,3 +1,5 @@
+#redis 
+
 # Redis数据结构
 ## keys
 -	keys [pattern]	– 匹配当前实例中的key.

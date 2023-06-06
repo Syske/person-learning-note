@@ -36,6 +36,8 @@ JRE_HOME=$JAVA_HOME/jre
 
 CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
 
+PATH=$PATH:$JAVA_HOME/bin
+
 export JAVA_HOME JRE_HOME PATH CLASSPATH
 
 ```

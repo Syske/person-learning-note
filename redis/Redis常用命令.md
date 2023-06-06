@@ -1,3 +1,5 @@
+#redis
+
 # Redis常用命令
 
 ### set常用操作

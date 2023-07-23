@@ -3,6 +3,12 @@
 
 官方文档：[点击这里](https://arthas.aliyun.com/doc/)
 
+
+```
+curl -O https://arthas.aliyun.com/arthas-boot.jar
+java -jar arthas-boot.jar
+```
+
 ### monitor
 #### 描述
 方法执行监控

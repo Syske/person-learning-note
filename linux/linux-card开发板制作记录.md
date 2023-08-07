@@ -33,7 +33,7 @@ https://zadig.akeo.ie/
 #### 安装芯片工具
 
 ```sh
-sudo apt install pkg-config pkgconf zlib1g-dev libusb-1.0-0-dev
+sudo apt install pkg-config pkgconf zlib1g-dev libusb-1.0-0-dev swig python-dev
 ```
 
 获取`sunxi-tools`:

@@ -92,7 +92,7 @@ tags: [#db, #mysql]
 
 #### 3、数据表操作：
 
-　　-（1）、创建表：
+##### （1）、创建表：
 
 ```sql
 
@@ -100,7 +100,7 @@ CREATE TABLE [IF NOT EXISTS] table_name(column_name1 data_type , column_name2 da
 
 ```
 
-　　-（2）、查看当前数据库表列表：
+##### （2）、查看当前数据库表列表：
 
 ```sql
 
@@ -108,7 +108,7 @@ SHOW TABLES [FROM db_name];
 　　
 ```
 
-　　-（3）、查看表结构：
+##### （3）、查看表结构：
 
 ```sql
 // 1、方式一
@@ -119,14 +119,14 @@ desc table_name;
 
 ```
 
-　　-（4）、向数据表中插入数据：
+##### （4）、向数据表中插入数据：
 
 ```sql
 INSERT [INTO]  tb_name  [(col_name1,col_name2,……)]  VALUES(val1,val2,……);
 
 ```
 
-　　-（5）、查询表数据：
+##### （5）、查询表数据：
 
 ```sql
 // 方法一 查询所有数据
@@ -137,18 +137,18 @@ SELECT column_name1,column_name2,... FROM tb_name;
 
 
 ```
-　　-（6）、查看索引：
+##### （6）、查看索引：
 
 ```sql
 SHOW INDEXES FROM table_name \G;
 
 ```
-   -（7）、修改表格的字符编码：
+##### （7）、修改表格的字符编码：
 
 ```
 alter table {table_name} default character set utf8;
 ```
-   -（8）、修改表格中字段的字符编码：
+##### （8）、修改表格中字段的字符编码：
 
 ```
 // 修改单个字段字符编码
@@ -159,9 +159,23 @@ ALTER TABLE tbl_name CONVERT TO CHARACTER SET charset_name;
 ALTER TABLE pmy CONVERT TO CHARACTER SET utf8; 
 ```
 
-> 警告： 
+- 警告： 
 
-- - 上述操作是在字符集中转换列值。如果用户在字符集（如 gb2312）中有一个列，但存储的值使用的是其它的一些不兼容的字符集（如 utf8），那么该操作将不会得到用户期望的结果。在这种情况下，用户必须对每一列做如下操作： 
+> 上述操作是在字符集中转换列值。如果用户在字符集（如 gb2312）中有一个列，但存储的值使用的是其它的一些不兼容的字符集（如 utf8），那么该操作将不会得到用户期望的结果。在这种情况下，用户必须对每一列操作
+
+##### （9）、修改字段默认值
+
+修改：
+
+```sql
+ALTER TABLE 表名 ALTER COLUMN 字段名 SET DEFAULT 默认值
+```
+
+删除：
+
+```sql
+ALTER TABLE 表名 ALTER COLUMN 字段名 DROP DEFAULT
+```
 
 
 ####  4、约束：

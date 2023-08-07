@@ -1,3 +1,5 @@
+#redis
+
 # [Windows下搭建Redis集群](https://www.cnblogs.com/tommy-huang/p/6240083.html)
 
 

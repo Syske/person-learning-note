@@ -364,6 +364,33 @@ sudo ln -f /usr/bin/python2 /usr/bin/python
 apt install python-dev
 ```
 
+- `multiple definition of 'yylloc'`：这个问题是因为`gcc`版本的问题，导致语法不能识别
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202308262339536.png)
+
+解决方法：
+编辑`scripts/dtc/dtc-lexer.lex.c_shipped`文件
+
+```sh
+vim scripts/dtc/dtc-lexer.lex.c_shipped
+# 并在634行 YYLTYPE yylloc 前面加上extern
+```
+
+并在634行 `YYLTYPE yylloc `前面加上`extern`
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202308262342857.png)
+
+
+- `Unable to parse input tree`：这个也是因为版本的问题
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202308262349092.png)
+
+解决方法：
+
+修改`scripts/Makefile.lib`，找到下面这行代码，删除其中的`/`
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202308262346239.png)
+
 解决完这些问题之后，`u-boot`就编译成功了。至此，`u-boot`的编译就完成了，下面我们开始`u-boot`烧录。
 
 ### 镜像烧录

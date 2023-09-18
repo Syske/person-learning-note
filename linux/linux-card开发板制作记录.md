@@ -173,6 +173,8 @@ fatal error: mpc.h: No such file or directory
 sudo apt-get install libmpc-dev
 ```
 
+
+
 #### sd卡分区
 
 BOOT

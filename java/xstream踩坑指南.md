@@ -106,7 +106,7 @@ Exception in thread "main" java.lang.ClassCastException: lss.test.reckoner.util.
 
 然后，这时候我才恍然大悟，原来报文根对象必须是根节点（result），接着我把最后一行代码改成如下:
 
-```
+```java
 Result fromXML = (Result)xstream.fromXML(result);
 ```
 

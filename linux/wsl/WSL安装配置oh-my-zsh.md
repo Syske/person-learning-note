@@ -12,6 +12,10 @@ sudo apt-get install zsh
 
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# 国内镜像地址
+sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"
+
 ```
 
 #### 配置主题

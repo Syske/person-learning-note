@@ -238,3 +238,20 @@ public class CountDownLatchTest {
 在以前的认知里，我一直觉得`synchronized`比显式的`lock`要重，但是通过今天的测试，我发现自己以前的认知是有问题的，`synchronized`要比显式的`lock`性能好的多，同时也意识到单独使用原子类或者`synchronized`都是存在线程安全问题的，所以在日常开发中，更多时候是需要把两者完美组合的。
 
 在此之前，我一直以为原子类是可以单独使用的，但是踩了今天的坑才知道，就算你用了`synchronized`或者原子类线程安全问题依然存在。总之，凡事多实践多总结，共勉！
+
+### 勘误
+这里同一回复下，评论区的小伙伴别骂了，这是之前一次学艺不精的分享，让大家见笑了，下面我们来看下上面翻车的几个点：
+
+1. synchronized展示的"线程不安全"：
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231030075502.png)
+这里其实是一种假象，synchronized修饰的是count，所以不安全的是count++后面的代码，而不是count++本身，从运行结果也可以证明这一点：
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231030075440.png)
+
+2. 原子类线程”不安全“
+
+这里的错误和上面synchronized错的一样离谱，原子类本身是安全的，但是没法确保后续代码线程安全
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231030075422.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231030075404.png)
+
+这里统一对以上内容勘误，感谢评论区的小伙伴

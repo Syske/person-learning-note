@@ -66,3 +66,16 @@ ffmpeg -i sunraise1.avi sunraise1.avi
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231003092312.png)
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231003092447.png)
+
+手动合并视频：
+
+```sh
+ffmpeg -loglevel quiet -f concat  -safe 0  -i 凶案深处-第01集.txt -vcodec copy -acodec copy 第01集.mp4
+```
+需要注意的是，这里的`txt`文件中的路径，如果是相对路径，则必须要是相对于`txt`文件的路径：
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231211225106.png)
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231211225211.png)
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20231211225302.png)

@@ -1,5 +1,7 @@
 # python常用操作
 
+#python
+
 ## 文件夹
 
 ### 创建文件夹
@@ -211,3 +213,9 @@ f = open("./json.txt", encoding='utf-8',errors='ignore')
   text = json.loads(content)
 ```
 
+将对象序列化为`json`:
+
+```python
+data = ['syske', 'lei', 'yingying']
+data_str = json.dumps(data)
+```

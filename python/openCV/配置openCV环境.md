@@ -1,5 +1,7 @@
 # openCV环境配置
 
+#python #openCV
+
 ## 安装依赖
 
 #### `python`数值计算扩展
@@ -13,13 +15,13 @@ pip install opencv-python
 ```
 
 #### 图片的工具包
-```
+```sh
 pip instll imutils
 ```
 
 ## 测试
 
-```
+```python
 import cv2
 import numpy as np
 import imutils
@@ -39,7 +41,7 @@ cv2.destroyAllWindows()
 ```
 
 #### 颜色替换 
-```
+```python
 import cv2
 import numpy as np
 import imutils

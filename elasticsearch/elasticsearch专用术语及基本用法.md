@@ -29,7 +29,7 @@
 首先创建所以的语法如下：
 
 ```sh
-curl -X PUT "localhost:9200/megacorp/employee/2?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "localhost:9200/megacorp/employee/1?pretty" -H 'Content-Type: application/json' -d'
 {
     "name" :  "syske",
     "age" :        25,

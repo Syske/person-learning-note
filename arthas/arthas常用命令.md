@@ -55,3 +55,20 @@ options save-result true
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221122215837.png)
 
+
+### 查看类的属性值
+
+#### 查看类加载器的16进制值
+
+```sh
+sc -d net.coolcollege.incentive.service.business.restful.comment.CommentService
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240313203614.png)
+#### 查看属性值
+
+```sh
+vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service.business.restful.comment.CommentService --express '#val=instances[0].resourceIds'
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240313203706.png)

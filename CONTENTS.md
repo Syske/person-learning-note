@@ -184,6 +184,8 @@
 - [自定义标签——带标签体](./servlet&JSP/自定义标签——带标签体.md)：自定义标签——带标签体
 - [自定义标签——带属性的标签](./servlet&JSP/自定义标签——带属性的标签.md)：自定义标签——带属性的标签
 - [JSP九大内置对象](./servlet&JSP/JSP九大内置对象.md)：JSP九大内置对象
+### 调色
+- [基本调色技巧](./调色/基本调色技巧.md)：基本调色技巧
 - [LICENSE](./LICENSE)：LICENSE
 ### to-do-list
 - [构建个人知识库](./to-do-list/构建个人知识库.md)：构建个人知识库
@@ -406,7 +408,9 @@
 - [Flask开发环境搭建](./python/Flask开发环境搭建.md)：Flask开发环境搭建
 #### ffmpeg
 - [python使用ffmpeg转换视频格式](./python/ffmpeg/python使用ffmpeg转换视频格式.md)：python使用ffmpeg转换视频格式
+- [python常用库之tqdm](./python/python常用库之tqdm.md)：python常用库之tqdm
 - [python常见容器总结](./python/python常见容器总结.md)：python常见容器总结
+- [python构建基础镜像](./python/python构建基础镜像.md)：python构建基础镜像
 - [python学习笔记](./python/python学习笔记.md)：python学习笔记
 - [python配置PIL环境](./python/python配置PIL环境.md)：python配置PIL环境
 - [pdf转word](./python/pdf转word.md)：pdf转word

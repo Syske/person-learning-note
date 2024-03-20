@@ -1,3 +1,4 @@
+#python #mysql
 ## 安装mysql驱动
 
 ### mysql-connector

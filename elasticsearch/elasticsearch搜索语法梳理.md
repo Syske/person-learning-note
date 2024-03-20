@@ -29,7 +29,7 @@ curl -X GET "localhost:9200/megacorp/employee/_search?pretty" -H 'Content-Type: 
 返回结果：
 
 ```json
-7{
+{
   "took" : 220,
   "timed_out" : false,
   "_shards" : {

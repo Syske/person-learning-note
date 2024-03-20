@@ -1,5 +1,7 @@
 # Flask开发环境搭建
 
+#python #flask
+
 #### 创建虚拟环境
 
 ```sh

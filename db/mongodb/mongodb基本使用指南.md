@@ -15,6 +15,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][
     
 -   **?options** 是连接选项。如果不使用/database，则前面需要加上/。所有连接选项都是键值对name=value，键值对之间通过&或;（分号）隔开
 
+
 ### 使用
 
 #### 查看数据库
@@ -53,3 +54,9 @@ db.thirdOaSyncRecordPo.find({$and:[{"sync_detail._id":{$eq: "yh0310011"}},{"ente
 数据结构如下：
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221213162746.png)
+
+## 报错梳理
+
+执行查询时提示没有权限，通常是由于配置了多个节点，我们连接到的节点没有权限，在shell脚本中建议链接主节点
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240401110839.png)

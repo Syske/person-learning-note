@@ -46,5 +46,44 @@ D:\workspace\dev-tools\python\python39
 
 #### 文件属性
 
-- **只读**：
-- **读写**
+- **只读**：只能对文件内容进行读取，无法写入
+- **读写**: 可以对文件内容进行读取或者写入
+
+
+#### 文件后缀
+
+常见的文件后缀有 *.jpg, *.txt, *.exe, *.xls, *.doc, *.py
+
+展示文件后缀的方式
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240407143348.png)
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240407143334.png)
+
+
+### python环境安装
+
+#### 下载安装
+
+下载地址：
+
+```
+https://www.python.org/downloads/
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240407143854.png)
+
+
+
+#### 配置环境变量
+
+
+
+#### 编写第一个脚本
+
+```python
+print("hello word")
+
+```
+
+

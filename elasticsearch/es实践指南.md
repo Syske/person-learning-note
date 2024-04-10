@@ -20,7 +20,7 @@ GET _analyze
 
 ### 进阶查询
 
-下面这个查询语句可以实现分词匹配，同时针对特定字段做了加权处理(`fields`字段)
+下面这个查询语句可以实现分词匹配，同时针对特定字段做了加权处理(`fields`字段)，通过`analyzer`指定分词器
 
 ```json
 GET /100101951057547274620933/_search
@@ -32,6 +32,7 @@ GET /100101951057547274620933/_search
             "must": {
                 "multi_match": {
                     "query": "全文测试参股222过不长度测试的关键词搜索测试关键词再次长度",
+                    "analyzer": "ik_smart",
                     "operator": "or",
                     "fields": [
                         "title^3",
@@ -59,5 +60,75 @@ GET /100101951057547274620933/_search
     },
     "from": 0,
     "size": 1000
+}
+```
+
+
+### 创建索引（高级用法）
+
+通过`analyzer`指定分词器，通过`search_analyzer`指定搜索分词器
+
+```json
+PUT /2512-new/
+{
+ "mappings": {
+      "doc": {
+        "properties": {
+          "cover_url": {
+            "type": "keyword"
+          },
+          "creator_id": {
+            "type": "keyword"
+          },
+          "creator_name": {
+            "type": "keyword"
+          },
+          "enterprise_id": {
+            "type": "keyword"
+          },
+          "id": {
+            "type": "keyword"
+          },
+          "summary": {
+            "type": "text",
+            "analyzer": "ik_smart"
+          },
+          "tag": {
+            "type": "text"
+          },
+          "text": {
+            "type": "text",
+            "analyzer": "ik_smart"
+          },
+          "title": {
+            "type": "text",
+            "analyzer": "ik_smart"
+          },
+          "type": {
+            "type": "integer"
+          },
+          "update_time": {
+            "type": "date"
+          },
+          "url": {
+            "type": "keyword"
+          }
+        }
+      }
+    }
+    }
+```
+
+### 将旧数据复制到新索引结构
+
+```json
+POST _reindex
+{
+  "source": {
+    "index": "2512-new"
+  },
+  "dest": {
+    "index": "2512-new2"
+  }
 }
 ```

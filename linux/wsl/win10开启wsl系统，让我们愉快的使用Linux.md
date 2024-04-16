@@ -60,6 +60,55 @@
 https://docs.microsoft.com/zh-cn/windows/wsl/install-win10
 ```
 
+
+#### 其他异常补充
+
+##### 错误码`0x80070050`
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240408225014.png)
+
+这个错误的原因是，本地已经存在了`vhdx`虚拟磁盘文件：
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240408225149.png)
+
+解决方法，将文件名后缀先改下就可以了
+
+##### 错误码0x800701bc
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240408225546.png)
+
+解决方案：
+
+请以PowerShell（管理员）运行所有指令：
+
+1. 开启Windows Subsystem for Linux
+```powershell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+2. 开启虚拟机特性
+```text
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+3. 下载并安装WSL2更新包
+	下载地址：https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+4. 设置wsl版本为2
+```text
+wsl --set-default-version 2
+```
+
+参考文档：https://zhuanlan.zhihu.com/p/599286889
+
+##### 错误码 0x8000000d
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240408230705.png)
+
+解决方案：管理员方式运行powershell，并执行下面的命令
+
+```sh
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
 ### 安装Windows Terminal
 
 虽然安装完成了，但是原生的`linux`的终端确实不够美观，毕竟爱使用`bash`的小伙伴哪个不希望自己的`teminal`更好看呢？这一点`windows`已经替你想好了，我们可以使用`windows`的另一个开源项目`Windows Terminal`来让我们的命令终端更好看。

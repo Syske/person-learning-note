@@ -45,8 +45,11 @@
 ### 第八章 excel操作
 
 - 常用的包: 
-	- `OpenPyXL`: https://zhuanlan.zhihu.com/p/351998173
-	- `pandas`: https://www.runoob.com/pandas/pandas-tutorial.html
+	- `OpenPyXL`:
+		- https://zhuanlan.zhihu.com/p/351998173 
+		-  https://zhuanlan.zhihu.com/p/342422919
+	- `pandas`
+		- https://www.runoob.com/pandas/pandas-tutorial.html
 
 ### 第八章 python网络编程
 

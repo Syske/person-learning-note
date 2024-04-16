@@ -77,13 +77,12 @@ https://www.python.org/downloads/
 
 #### 配置环境变量
 
-
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240408210911.png)
 
 #### 编写第一个脚本
 
 ```python
 print("hello word")
-
 ```
 
 

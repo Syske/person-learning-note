@@ -52,3 +52,195 @@
 
 
 
+### 办公自动化应用
+
+
+#### 操作pdf
+
+##### 合并
+
+```python
+import PyPDF2
+
+local = './'
+
+pdf_files = ['1.pdf', '2.pdf']
+output_pdf = PyPDF2.PdfWriter()
+for pdf_file in pdf_files:
+    # 循环读取需要合并pdf文件
+    with open(local+pdf_file, 'rb') as file:
+        pdf_reader = PyPDF2.PdfReader(file)
+    # 遍历每个pdf的每一页
+        for page_num in range(len(pdf_reader.pages)):
+            page = pdf_reader.pages[page_num]
+            if pdf_file == '1.pdf':
+                # 旋转90度
+                page.rotate(90)
+            output_pdf.add_page(page)
+with open(local+'装修图2.pdf', 'wb') as file:
+    output_pdf.write(file)
+```
+##### 分割
+
+```python
+import PyPDF2
+
+local = './'
+
+pdf_file = '1.pdf'
+output_pdf = PyPDF2.PdfWriter()
+  # 循环读取需要合并pdf文件
+with open(local+pdf_file, 'rb') as file:
+    pdf_reader = PyPDF2.PdfReader(file)
+# 遍历每个pdf的每一页
+    for page_num in range(len(pdf_reader.pages)):
+	    # 截取第三页
+        if page_num == 2:
+            page = pdf_reader.pages[page_num]
+            output_pdf.add_page(page)
+            
+with open(local+'3.pdf', 'wb') as file:
+  output_pdf.write(file)
+```
+
+
+#### pdf转word
+
+```python
+# 导入pdf2docx模块
+from pdf2docx import parse
+
+pdf_file = '1.pdf'
+
+docx_file = '1.docx'
+
+# convert pdf to docx
+
+parse(pdf_file, docx_file)
+```
+
+#### word转pdf
+
+```python
+# pip install python-docx docx2pdf unoconv -i https://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+# 需要安装LibreOffice/OpenOffice
+import docx2pdf
+
+conversion = docx2pdf.convert("2.docx", "2.pdf")
+```
+#### pptx转pdf
+
+```python
+
+#  pip install pypandoc -i https://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+# 需要安装 pandoc https://pandoc.org/
+import pypandoc  
+  
+def ppt_to_pdf_with_pandoc(ppt_path, pdf_path):  
+    output = pypandoc.convert_file(ppt_path, 'pdf', outputfile=pdf_path)  
+    return output  
+  
+# 使用函数进行转换  
+ppt_to_pdf_with_pandoc('123.pptx', '123.pdf')
+```
+
+#### pdf转图片
+
+```python
+# coding=utf-8
+#安装库 pip install pymupdf
+import fitz
+import os
+
+def convert_pdf2img(file_relative_path):
+
+    """
+
+    file_relative_path : 文件相对路径
+
+    """
+
+    page_num = 1
+
+    filename = file_relative_path.split('.')[-2]
+
+    if not os.path.exists(filename):
+
+        os.makedirs(filename)
+
+    pdf = fitz.open(file_relative_path)
+
+    for page in pdf:
+
+        rotate = int(0)
+
+        # 每个尺寸的缩放系数为2，这将为我们生成分辨率提高4的图像。
+
+        # 此处若是不做设置，默认图片大小为：792X612, dpi=96
+
+        zoom_x = 2 # (2-->1584x1224)
+
+        zoom_y = 2
+
+        mat = fitz.Matrix(zoom_x, zoom_y)
+
+        pixmap = page.get_pixmap(matrix=mat, alpha=False)
+
+        pixmap.pil_save(f"{filename}/{page_num}.png")
+
+        print(f"{filename}.pdf 第{page_num}页保存图片完成")
+
+        page_num = page_num + 1
+
+
+if __name__ =="__main__":
+
+    # 文件夹中文件名
+
+    file_list = os.listdir('./')
+
+    for file in file_list:
+
+        #print(file)
+
+        if os.path.isfile(file) and file.endswith('.pdf'):
+
+            convert_pdf2img(file)
+```
+
+
+### 操作图片
+
+#### 图片格式转换
+
+```python
+import rawpy
+
+import os
+
+import imageio
+
+file_path = ".\\100D5300\\"
+
+file_list = os.listdir(file_path)
+
+for file in file_list:
+
+    print(file, str(file).endswith('.NEF'))
+
+    if file.endswith('.NEF'):
+
+       with rawpy.imread(file_path + file) as raw:
+
+          rgb = raw.postprocess()
+
+          #print(rgb)
+
+          filename = file.split('.')[-2]
+
+          imagename = file_path + filename+".jpg"
+
+          imageio.imsave(imagename, rgb)
+```
+
+

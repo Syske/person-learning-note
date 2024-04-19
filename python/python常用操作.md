@@ -219,3 +219,12 @@ f = open("./json.txt", encoding='utf-8',errors='ignore')
 data = ['syske', 'lei', 'yingying']
 data_str = json.dumps(data)
 ```
+
+#### list分割
+
+```python
+# 将list分割为200一组的小列表，类似java的Lists.partion(list, 200)
+for i in range(0, len(eids), 200):
+    # 分割后的list
+    batch_data = eids[i:i + 200]
+```

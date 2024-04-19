@@ -35,3 +35,8 @@ for i in tqdm(range(10000)):
 效果
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202403122333761.png)
+我们还可以设置进度条的描述信息：
+```python
+for i in tqdm(range(len(eids)), desc='batch Processing'):
+    print(eids[i])
+```

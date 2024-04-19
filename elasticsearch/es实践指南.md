@@ -132,3 +132,26 @@ POST _reindex
   }
 }
 ```
+
+### 批量删除索引
+
+```json
+// 同时删除多个索引
+DELETE /index100101,index100102,index100103
+```
+
+
+### 查询索引setting信息
+
+```json
+// 只看某个值
+GET /_all/_settings?filter_path=**.creation_date
+```
+
+### 查询索引信息
+
+#### 按时间排序
+
+```json
+ GET /_cat/indices?v&s=creation.date:desc
+```

@@ -30,3 +30,70 @@ index-url = http://mirrors.aliyun.com/pypi/simple/
 trusted-host=mirrors.aliyun.com
 ```
 
+### 变量和常量 
+
+#### 常量
+
+字面意思，不会发生变化的数据，例如：
+```python
+pi = 3.141592
+```
+
+#### 变量
+
+不确定的数据，在程序运行时，其值才能确定，例如：
+```python
+y = 10
+x = y + 1
+```
+
+### python代码规范
+
+#### 注释
+
+##### 单行注释
+
+```python
+# 我是一行注释，为了说明下面的代码，定义一个变量x，赋值为10
+x = 10
+```
+
+##### 多行注释
+
+多行注释有两种方式，一种是通过`'''`（三个单引号）包裹，另一种是通过`"""`（三个双引号）包裹：
+
+单引号方式
+
+```python
+'''
+我是多行注释
+我是多行注释
+我是多行注释
+'''
+y = 20
+```
+
+双引号方式
+```python
+"""
+我也是多行注释
+我也是多行注释
+我也是多行注释
+"""
+z = 30
+```
+
+
+#### 缩进
+
+`python`的代码基本结构就是缩进，通过缩进我们可以确认代码块和方法
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240420212418.png)
+
+通过缩进来实现代码块的区分是`python`的一个特点，其他语言中，通常都是通过`{}`和`;`来区分代码块的，比如`java`和`c`:
+
+`java`
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240420212812.png)
+
+`c`
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240420212942.png)

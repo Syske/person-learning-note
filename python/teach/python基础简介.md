@@ -71,6 +71,12 @@ D:\workspace\dev-tools\python\python39
 https://www.python.org/downloads/
 ```
 
+国内推荐下面的地址：
+
+```sh
+https://mirrors.huaweicloud.com/python/3.9.9/python-3.9.9-amd64.exe
+```
+
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240407143854.png)
 
 

@@ -162,6 +162,15 @@ print(type(a))
 	
 	```
 
+### 布尔类型
+
+逻辑类似，只有两种值：`True`/`Flase`
+
+布尔类型只能进行逻辑运算：
+
+- `not`：非
+- `and`：且
+- `or`：或
 
 ### 容器
 
@@ -233,7 +242,7 @@ print(type(tup1))     # 加上逗号，类型为元组
 
 ```
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240510205443.png)
-#### set
+#### set(集合)
 
 集合（set）是一个无序的不重复元素序列。
 
@@ -255,7 +264,6 @@ s.update( x )
 ```python
 d = {key1 : value1, key2 : value2, key3 : value3 }
 ```
-#### 集合
 
 
 

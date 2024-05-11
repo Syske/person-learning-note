@@ -51,6 +51,10 @@ print(name[-3:])
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240510205706.png)
 
 **包前不包后**：包括开始下标的字符，不包括结束下标的字符
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240511171303.png)
+
+更多方法，参考文档：[菜鸟驿站](https://www.runoob.com/python3/python3-string.html)
 #### 数字
 
 包括整数（正/负数）、小数（浮点数）、复数
@@ -124,6 +128,8 @@ print(c)
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240510201555.png)
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240510201640.png)
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240510201702.png)
+
+更多内容，参考如下文档：[菜鸟教程](https://www.runoob.com/python3/python3-number.html)
 
 #### 数据类型转换
 
@@ -214,6 +220,7 @@ print( list1[:3])
 print(list1[:-3])
 ```
 
+参考文档：[菜鸟教程](https://www.runoob.com/python3/python3-list.html)
 
 #### 元组
 
@@ -242,6 +249,9 @@ print(type(tup1))     # 加上逗号，类型为元组
 
 ```
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240510205443.png)
+
+更多内容，参考文档：[菜鸟教程](https://www.runoob.com/python3/python3-tuple.html)
+
 #### set(集合)
 
 集合（set）是一个无序的不重复元素序列。
@@ -259,11 +269,19 @@ set1.add( x )
 s.update( x )
 ```
 
+更多内容，参考文档：[菜鸟教程](https://www.runoob.com/python3/python3-set.html)
 #### 字典
 
 ```python
 d = {key1 : value1, key2 : value2, key3 : value3 }
 ```
 
+访问字典元素：
 
+```python
+d = {"name" : "syske", "age" : 18, "sex" : "男" }
+# 结果：syske
+print(d["name"])
+```
 
+更多内容，参考文档：[菜鸟教程](https://www.runoob.com/python3/python3-dictionary.html)

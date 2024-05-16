@@ -618,13 +618,13 @@
 - [html、css、js之间的关系](./微信公众号发布/html、css、js之间的关系.md)：html、css、js之间的关系
 - [shiro入门笔记之第一个demo创建](./微信公众号发布/shiro入门笔记之第一个demo创建.md)：shiro入门笔记之第一个demo创建
 - [java资料-链接版](./微信公众号发布/java资料-链接版.md)：java资料-链接版
-- [Springboot进阶-配置Controller、interceptor](./微信公众号发布/Springboot进阶-配置Controller、interceptor.md)：Springboot进阶-配置Controller、interceptor
+- [Springboot进阶-配置Controller、interceptor](Springboot进阶-配置Controller、interceptor.md)：Springboot进阶-配置Controller、interceptor
 - [2021新年快乐](./微信公众号发布/2021新年快乐.md)：2021新年快乐
 - [java后端学习流程](./微信公众号发布/java后端学习流程.md)：java后端学习流程
 - [java中的访问修饰符（访问权限）](./微信公众号发布/java中的访问修饰符（访问权限）.md)：java中的访问修饰符（访问权限）
 - [认识html标签](./微信公众号发布/认识html标签.md)：认识html标签
 - [冬天的第一次推送，今天我们不谈技术……](./微信公众号发布/冬天的第一次推送，今天我们不谈技术…….md)：冬天的第一次推送，今天我们不谈技术……
-- [springboot基于DRUID数据源密码加密及数据源监控实现](./微信公众号发布/springboot基于DRUID数据源密码加密及数据源监控实现.md)：springboot基于DRUID数据源密码加密及数据源监控实现
+- [springboot基于DRUID数据源密码加密及数据源监控实现](springboot基于DRUID数据源密码加密及数据源监控实现.md)：springboot基于DRUID数据源密码加密及数据源监控实现
 - [IReport与web项目整合](./微信公众号发布/IReport与web项目整合.md)：IReport与web项目整合
 - [java电子签章功能实现](./微信公众号发布/java电子签章功能实现.md)：java电子签章功能实现
 - [shiro与spring项目整合](./微信公众号发布/shiro与spring项目整合.md)：shiro与spring项目整合
@@ -636,9 +636,9 @@
 - [javacript学习指南（五）](./微信公众号发布/javascript学习指南/javacript学习指南（五）.md)：javacript学习指南（五）
 - [javascript学习指南（一）](./微信公众号发布/javascript学习指南/javascript学习指南（一）.md)：javascript学习指南（一）
 - [javacript学习指南（三）](./微信公众号发布/javascript学习指南/javacript学习指南（三）.md)：javacript学习指南（三）
-- [springboot第一个Demo](./微信公众号发布/springboot第一个Demo.md)：springboot第一个Demo
-- [spring零配置AOP踩坑指南](./微信公众号发布/spring零配置AOP踩坑指南.md)：spring零配置AOP踩坑指南
-- [今天偷个懒，给大家分享几个leetcode的题](./微信公众号发布/今天偷个懒，给大家分享几个leetcode的题.md)：今天偷个懒，给大家分享几个leetcode的题
+- [springboot第一个Demo](springboot第一个Demo.md)：springboot第一个Demo
+- [spring零配置AOP踩坑指南](spring/springboot/spring零配置AOP踩坑指南.md)：spring零配置AOP踩坑指南
+- [今天偷个懒，给大家分享几个leetcode的题](今天偷个懒，给大家分享几个leetcode的题.md)：今天偷个懒，给大家分享几个leetcode的题
 - [学习资源分享](./微信公众号发布/学习资源分享.md)：学习资源分享
 #### 小黄鸭java学习法
 - [1.序章](./微信公众号发布/小黄鸭java学习法/1.序章.md)：1.序章
@@ -655,7 +655,7 @@
 - [2.目录](./微信公众号发布/小黄鸭java学习法/2.目录.md)：2.目录
 - [13.java的操作符](./微信公众号发布/小黄鸭java学习法/13.java的操作符.md)：13.java的操作符
 - [IReport实践指南](./微信公众号发布/IReport实践指南.md)：IReport实践指南
-- [springboot日志及Log4j日志配置](./微信公众号发布/springboot日志及Log4j日志配置.md)：springboot日志及Log4j日志配置
+- [springboot日志及Log4j日志配置 1](springboot日志及Log4j日志配置%201.md)：springboot日志及Log4j日志配置
 - [xstream采坑](./微信公众号发布/xstream采坑.md)：xstream采坑
 - [小黄鸭后期更新计划](./微信公众号发布/小黄鸭后期更新计划.md)：小黄鸭后期更新计划
 ### electron

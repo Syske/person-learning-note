@@ -212,3 +212,30 @@ https://docs.microsoft.com/zh-cn/windows/terminal/tutorials/custom-prompt-setup
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/blog/20220111233349.png)
 
 最后，再插播一个小小的好消息，就是我之前说的`markdown`编辑器第一个可用版本已经出来了，打包也基本完成，明天我打算分享出来，感兴趣的小伙伴可以先尝尝鲜，好了，今天就先这样吧，各位小伙伴，晚安！
+
+### 踩坑积累
+
+
+#### 策略问题
+
+导入`module`时报错，这个错误的原因是运行策略的问题，默认情况下`powershell`不允许访问三方包，需要修改策略
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240508194148.png)
+
+修改方式很简单，以管理员方式运行`powershell`，然后运行如下代码：
+```sh
+Set-ExecutionPolicy RemoteSigned
+```
+之后就可以正常导入三方包。
+
+#### 导包无效
+
+如果导入`oh-my-posh`时有如下提示，则说明我们的应用安装有问题
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240508194702.png)
+
+只需要通过如下命令重新安装即可：
+
+```sh
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```

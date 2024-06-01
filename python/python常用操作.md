@@ -2,44 +2,6 @@
 
 #python
 
-## 文件夹
-
-### 创建文件夹
-
-```python
-import os
-os.mkdir('folder')
-```
-
-### 获取当前位置
-
-```python
-import os
-os.getcwd()
-```
-
-### 改变默认目录
-
-```python
-import os
-os.chdir('../')
-```
-
-### 获取目录列表
-
-```python
-import os
-os.listdir('./')
-```
-
-### 删除文件夹
-
-```python
-import os
-os.rmdir('folder')
-```
-
-
 ## 异常处理
 
 ### try
@@ -52,79 +14,6 @@ except Exception as re:
     print(re)
 ```
 
-## 数据库增删改查
-
-### 获取数据库连接
-
-```python
-import pymysql
-
-def get_conn():
-    conn = pymysql.connect(
-            host= '192.168.0.100',  # mysql的主机ip
-            port=3306,  # 端口
-            user='root',  # 用户名
-            passwd='root',  # 数据库密码
-            db='user',
-            charset='utf8',  # 使用字符集
-    )
-    return conn
-```
-
-### 查询
-
-查询全部
-
-```python
-# 获取数据库连接
-conn = get_conn()
-# 获取数据库游标
-cur=conn.cursor()
-
-# 查询全部
-# sql表示查询语句
-def query_all(cur, sql, args):
-    cur.execute(sql, args)
-    return cur.fetchall()
-```
-
-查询单个，参数同上
-
-```python
-def query_one(cur, sql, args):
-    cur.execute(sql, args)
-    return cur.fetchone()
-```
-
-
-### 更新数据
-
-更新数据，参数同上
-
-```python
-
-def update_data(cur, conn,sql, args):
-  try:
-      cur.execute(sql, args)
-      conn.commit()
-  except Exception as re:
-      conn.rollback()
-      print(re)
-```
-
-### 删除数据
-
-参数同上
-
-```python
-def delete_data(cursor, conn, sql, args):
-    try:
-        cursor.execute(sql, args)
-        conn.commit()
-    except Exception as re:
-        conn.rollback()
-        print(re)
-```
 
 ## csv操作
 
@@ -145,32 +34,6 @@ def read_mysql_to_csv(sql, filename):
             write.writerow(result)
 ```
 
-## 操作excel
-
-### csv转excel
-
-```python
-import os, csv, sys, openpyxl
-from openpyxl import Workbook
-from openpyxl.utils import get_column_letter
-
-def csv2excel(csv_filename, excel_filename):
-  # new work book
-  wb2 = Workbook()
-  # active sheet
-  ws2 = wb2.active
-  #Copy in csv
-  f = open(csv_filename, encoding='utf-8',errors='ignore')
-  reader = csv.reader(f)
-  for row_index, row in enumerate(reader):
-    for column_index, cell in enumerate(row):
-      column_letter = get_column_letter((column_index + 1))
-      ws2.cell(row_index + 1, (column_index + 1)).value = cell
-    print('line:' + str(row_index+1))
-
-  wb2.save(filename = excel_filename)
-  print("new Cashflow created")
-```
 
 ## 其他常用
 

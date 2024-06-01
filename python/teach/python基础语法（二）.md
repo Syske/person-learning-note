@@ -145,7 +145,7 @@ a = 10
 # 结果：<class 'int'>
 print(type(a))
 
-a = 10。0
+a = 10.0
 # 结果：<class 'float'>
 print(type(a))
 

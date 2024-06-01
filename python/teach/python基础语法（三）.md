@@ -23,9 +23,17 @@ if var2:
     print (var2)
 print ("Good bye!")
 ```
+逻辑运算
+
+var1 = None  >  var1 = False
+var1 = 0   > var1 = False
+
+var1 = 1/100/-1 > True
 
 
 #### match...case
+
+`Python 3.10` 增加了 `match...case` 的条件判断，不需要再使用一连串的 `if-else` 来判断了。
 
 ```python
  match status:  
@@ -39,6 +47,8 @@ print ("Good bye!")
             print("Something's wrong with the internet")
 ```
 `case _:` 类似于 `C` 和 `Java` 中的 `default:`，当其他 `case` 都无法匹配时，匹配这条，保证永远会匹配成功
+
+参考文档：[条件语句](https://www.runoob.com/python3/python3-conditional-statements.html)
 
 ### 循环语句
 
@@ -126,6 +136,7 @@ else:
 4
 ```
 
+参考文档：[菜鸟教程](https://www.runoob.com/python3/python3-loop.html)
 
 ### 迭代器
 迭代是 Python 最强大的功能之一，是访问集合元素的一种方式。
@@ -143,3 +154,5 @@ print (next(it))   # 输出迭代器的下一个元素
 # 结果： 2
 print (next(it))
 ```
+
+注意：迭代器只能对列表、元组、有序列表生效，对字典不生效

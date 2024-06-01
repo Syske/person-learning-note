@@ -121,7 +121,7 @@ python 函数的参数传递：
 
 `lambda` 函数的语法只包含一个语句，如下：
 
-```
+```python
 lambda [arg1 [,arg2,.....argn]]:expression
 ```
 

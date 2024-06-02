@@ -1,0 +1,467 @@
+<mxfile host="Electron" modified="2024-06-02T15:31:23.325Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.8 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="V57LPiob55I0H47Tp7jh" version="24.4.8" type="device">
+  <diagram name="第 1 页" id="ZqNjL_K8Im9qK2xLSMIL">
+    <mxGraphModel dx="3420" dy="1896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;jumpStyle=arc;startArrow=none;startFill=0;endArrow=classic;endFill=0;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-1" target="rC6IXBAPnmrYtki4_dMj-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-59" value="关门弟子" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-33">
+          <mxGeometry x="-0.1615" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;jumpStyle=arc;startArrow=classic;startFill=1;endArrow=classic;endFill=0;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-1" target="rC6IXBAPnmrYtki4_dMj-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-54" value="官配" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-34">
+          <mxGeometry x="-0.37" y="8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;dashed=1;strokeWidth=2;startArrow=classic;startFill=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-1" target="rC6IXBAPnmrYtki4_dMj-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-40" y="430" />
+              <mxPoint x="-40" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-50" value="朋友" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-49">
+          <mxGeometry x="-0.0759" y="4" relative="1" as="geometry">
+            <mxPoint x="-4" y="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-1" target="rC6IXBAPnmrYtki4_dMj-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-52" value="朋友" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-51">
+          <mxGeometry x="0.5613" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;curved=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-1" target="rC6IXBAPnmrYtki4_dMj-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-56" value="小师叔" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-55">
+          <mxGeometry x="0.2431" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-1" value="陈平安" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="200" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-2" value="剑来人物关系" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=4;fontSize=27;" vertex="1" parent="1">
+          <mxGeometry x="170" y="10" width="266" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;startArrow=none;startFill=0;endArrow=classic;endFill=0;dashed=1;strokeWidth=2;jumpStyle=arc;curved=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-3" target="rC6IXBAPnmrYtki4_dMj-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-3" target="rC6IXBAPnmrYtki4_dMj-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-58" value="传道人" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-57">
+          <mxGeometry x="-0.2462" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-3" value="齐景春" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="600" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;jumpStyle=arc;startArrow=none;startFill=0;endArrow=classic;endFill=1;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-4" target="rC6IXBAPnmrYtki4_dMj-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-48" value="&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%E5%B8%88%E7%88%B6%22%20style%3D%22edgeLabel%3Bhtml%3D1%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3Bresizable%3D0%3Bpoints%3D%5B%5D%3BfontSize%3D15%3B%22%20vertex%3D%221%22%20connectable%3D%220%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22-90.58620689655163%22%20y%3D%22680%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;rounded=0;dashed=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-47">
+          <mxGeometry x="-0.3533" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-91" value="师父" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-47">
+          <mxGeometry x="-0.1048" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-4" target="rC6IXBAPnmrYtki4_dMj-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-93" value="暗恋" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-92">
+          <mxGeometry x="0.1238" y="15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-4" target="rC6IXBAPnmrYtki4_dMj-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-99" value="师父" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-98">
+          <mxGeometry x="0.2696" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-4" value="刘羡阳" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0cee2;strokeColor=#56517e;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-330" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-5" target="rC6IXBAPnmrYtki4_dMj-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-86" value="师父" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-85">
+          <mxGeometry x="0.0424" y="1" relative="1" as="geometry">
+            <mxPoint x="-3" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-5" target="rC6IXBAPnmrYtki4_dMj-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-119" value="父亲" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-118">
+          <mxGeometry x="0.2952" y="-7" relative="1" as="geometry">
+            <mxPoint x="-16" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-5" value="顾璨&lt;div&gt;（鼻涕虫）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="100" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-6" target="rC6IXBAPnmrYtki4_dMj-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-83" value="婢女" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-82">
+          <mxGeometry x="-0.04" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-6" target="rC6IXBAPnmrYtki4_dMj-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-95" value="小蛟龙（土）" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-94">
+          <mxGeometry x="-0.1556" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-6" target="rC6IXBAPnmrYtki4_dMj-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-102" value="叔叔" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-101">
+          <mxGeometry x="-0.2061" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-6" value="宋集薪&lt;div&gt;（宋睦）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-710" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=#000000;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-7" target="rC6IXBAPnmrYtki4_dMj-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-97" value="邻居" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-96">
+          <mxGeometry x="-0.8036" y="9" relative="1" as="geometry">
+            <mxPoint x="151" y="-131" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-7" value="稚圭&lt;div&gt;（王朱）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFBFFF;strokeColor=#ae4132;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-390" y="730" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-8" target="rC6IXBAPnmrYtki4_dMj-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-106" value="大哥" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-103">
+          <mxGeometry x="0.0446" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-8" target="rC6IXBAPnmrYtki4_dMj-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-107" value="二哥" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-105">
+          <mxGeometry x="0.0445" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-8" value="李宝瓶" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="610" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-9" target="rC6IXBAPnmrYtki4_dMj-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-80" value="父亲" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-78">
+          <mxGeometry x="0.0571" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-9" value="李槐" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-10" target="rC6IXBAPnmrYtki4_dMj-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-110" value="暗恋" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-108">
+          <mxGeometry x="-0.0469" y="17" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-10" value="林守一" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-11" target="rC6IXBAPnmrYtki4_dMj-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-111" value="暗恋" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-109">
+          <mxGeometry x="-0.2872" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-11" value="董水井" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="710" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="rC6IXBAPnmrYtki4_dMj-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1100" y="260" as="targetPoint" />
+            <mxPoint x="1260" y="310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-81" value="父亲" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-79">
+          <mxGeometry x="-0.3931" y="-8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-12" value="李柳" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-15" target="rC6IXBAPnmrYtki4_dMj-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-76" value="师父" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-73">
+          <mxGeometry x="-0.2267" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-15" value="李二" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="970" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-18" value="李希圣" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="800" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-19" value="李宝箴" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="810" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-20" value="陆沉" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="660" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-21" value="宁姚" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="270" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-22" value="文圣" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;jumpStyle=arc;startArrow=none;startFill=0;endArrow=classic;endFill=0;curved=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-24" target="rC6IXBAPnmrYtki4_dMj-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="150" as="targetPoint" />
+            <mxPoint x="-190" y="180" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-70" y="210" />
+              <mxPoint x="-70" y="190" />
+              <mxPoint x="260" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-60" value="首徒" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-28">
+          <mxGeometry x="-0.2333" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-24" target="rC6IXBAPnmrYtki4_dMj-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-63" value="身外化身" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-62">
+          <mxGeometry x="-0.1714" y="9" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-24" value="崔巉" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;jumpStyle=arc;startArrow=none;startFill=0;endArrow=classic;endFill=0;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-25" target="rC6IXBAPnmrYtki4_dMj-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-25" value="茅小东" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-170" y="-50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;jumpStyle=arc;startArrow=none;startFill=0;endArrow=classic;endFill=0;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-29" target="rC6IXBAPnmrYtki4_dMj-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-29" value="左右" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="520" y="-20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-35" value="姚老头" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-36" value="杨老头" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="890" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-37" value="阮邛" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-530" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;jumpStyle=arc;startArrow=none;startFill=0;endArrow=classic;endFill=1;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-38" target="rC6IXBAPnmrYtki4_dMj-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-46" value="父亲" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;rounded=0;dashed=1;strokeColor=default;strokeWidth=2;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-45">
+          <mxGeometry x="-0.0667" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-38" value="阮秀" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-39" target="rC6IXBAPnmrYtki4_dMj-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-71" value="主人" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-70">
+          <mxGeometry x="-0.0842" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-39" value="老剑条" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="400" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;curved=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-40" target="rC6IXBAPnmrYtki4_dMj-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-69" value="扈从蛟龙" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-68">
+          <mxGeometry x="-0.1079" y="11" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-40" value="小泥鳅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-90" y="930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-41" target="rC6IXBAPnmrYtki4_dMj-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-74" value="师父" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-72">
+          <mxGeometry x="-0.0464" y="1" relative="1" as="geometry">
+            <mxPoint x="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-41" value="郑大风" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="780" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-42" value="四脚蛇" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-440" y="980" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;curved=1;startArrow=classic;startFill=1;endFill=0;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-43" target="rC6IXBAPnmrYtki4_dMj-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-67" value="母亲" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-66">
+          <mxGeometry x="-0.1846" y="-7" relative="1" as="geometry">
+            <mxPoint x="-7" y="27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-43" value="顾璨娘亲" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="240" y="900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-44" value="刘致茂" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-150" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-61" target="rC6IXBAPnmrYtki4_dMj-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-65" value="学生" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-64">
+          <mxGeometry x="-0.4255" y="-16" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-61" value="崔东山" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-100" value="宋长镜" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-970" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;strokeColor=default;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;curved=1;" edge="1" parent="1" source="rC6IXBAPnmrYtki4_dMj-112" target="rC6IXBAPnmrYtki4_dMj-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-115" value="师父" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="rC6IXBAPnmrYtki4_dMj-114">
+          <mxGeometry x="-0.0212" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-112" value="贺小梁" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="660" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-116" value="魏檗" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-630" y="1420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-117" value="赵阴神" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="420" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-120" value="马苦玄" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1030" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-121" value="马婆婆&lt;div&gt;（马兰花）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-122" value="姜尚真&lt;div&gt;（周肥）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="1180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-123" value="裴钱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="1180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-124" value="朱敛" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-300" y="1180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-125" value="隋右边" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-430" y="1180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-126" value="魏羡" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-570" y="1180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-127" value="卢白象" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-710" y="1180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-128" value="种秋" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-850" y="1180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-129" value="钟馗" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-130" value="埋河水神" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="290" y="1360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-131" value="姚镇" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="1360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-132" value="姚进之" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="1470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-133" value="姚仙之" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="1560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-134" value="青衣小童" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-450" y="1360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-135" value="粉裙女童" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-450" y="1470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-136" value="姚九娘" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="1720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-137" value="姚岭之" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="1640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-138" value="谢谢" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="620" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-139" value="于禄" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="450" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-140" value="杜懋" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-350" y="1900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-141" value="符南华" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="-60" y="1900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-142" value="蔡金简" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1900" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

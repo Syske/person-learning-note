@@ -1,0 +1,31 @@
+<mxfile host="Electron" modified="2024-06-02T14:23:16.269Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.8 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="fhbxJuZTLkUi7_Ppoumj" version="24.4.8" type="device">
+  <diagram name="第 1 页" id="ZqNjL_K8Im9qK2xLSMIL">
+    <mxGraphModel dx="1221" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-1" value="陈平安" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="130" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-2" value="剑来人物关系" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=4;fontSize=27;" vertex="1" parent="1">
+          <mxGeometry x="180" y="60" width="266" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-3" value="齐景春" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="300" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-4" value="刘羡阳" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0cee2;strokeColor=#56517e;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="130" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-5" value="顾璨" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="130" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-6" value="宋集薪&lt;div&gt;（宋睦）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="130" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rC6IXBAPnmrYtki4_dMj-7" value="稚圭&lt;div&gt;（王朱）&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;dashed=1;fontSize=20;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="130" y="610" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

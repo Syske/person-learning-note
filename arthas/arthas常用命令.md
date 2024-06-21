@@ -29,7 +29,7 @@ monitor -c 5 net.coolcollege.isv.api.controller.IsvController getSuiteToken
 #### 描述
 查看方法入参、返回结果以及当前类的信息
 ```sh
-watch demo.MathGame primeFactors "{params,returnObj}" -x 2 -b
+watch demo.MathGame primeFactors "{params,returnObj}" -x 2 -s
 ```
 其中，`primeFactors`表示方法名，`demo.MathGame`表示全类名
 

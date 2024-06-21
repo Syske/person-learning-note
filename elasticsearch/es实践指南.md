@@ -115,9 +115,15 @@ PUT /2512-new/
           }
         }
       }
-    }
+    },
+    "settings": {
+            "number_of_replicas": 1,
+            "number_of_shards": 1
+            }
     }
 ```
+
+其中`setting`设置的是分片数等配置，需要根据实际机器配置设置
 
 ### 将旧数据复制到新索引结构
 

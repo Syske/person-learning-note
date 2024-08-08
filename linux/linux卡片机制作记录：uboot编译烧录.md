@@ -52,7 +52,7 @@ https://wiki.sipeed.com/hardware/zh/lichee/Nano/Nano.html
 
    我最早就是参考的这个文档，最开始的原理图就是参考的这个博主的，虽然是直接抄的，但是还是踩了很多坑，当然主要还是自己太菜了。
 
-   第二个文档：https://zhuanlan.zhihu.com/p/634442525
+   第二个文档：https://zhuanlan.zhihu.com/p/633291939
 
    `linux`编译和烧录的时候参考过这个文档，解决了我编译配置的相关困惑
 

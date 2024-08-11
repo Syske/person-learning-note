@@ -171,8 +171,14 @@ sudo apt-get install libmpc-dev
 ##### Gparted
 
 `Gparted`作为一款优秀的磁盘管理工具，在我们项目中出现频率还是很高的
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202408090847641.png)
 
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202408090853915.png)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202408090857422.png)e
 
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202408090855586.png)
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/202408090855534.png)
 ##### fdisk
 
 该部分的分区操作，参考的是稚晖君`Planck-Pi`项目中的分区方式：

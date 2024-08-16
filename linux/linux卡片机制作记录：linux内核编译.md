@@ -4,6 +4,8 @@
 
 相比于`u-boot`的编译，`linux`的内核编译要相对简单一点，唯一踩坑的点，就是编译过程中的各种报错，下面就让我们一起来看看如何编译`linux`内核吧。
 
+以下编译过程在`wsl`环境下进行，版本是`ubuntu 20.04 TSL`
+
 ## linux内核编译
 
 
@@ -251,5 +253,12 @@ sudo mkfs.ext4 /dev/sdb3 # 将第3分区格式化成EXT4
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240809012228.png)
 
-至此，我们的`linux`交叉编译完美收官
+至此，我们的`linux`内核交叉编译完美收官
 ## 结语
+
+`linux`内核编译的核心其实就是环境的配置，整个过程就是疯狂踩坑。甚至如果选择的是`6.X`的版本，甚至省去了配置文件的修改过程，就更简单了。
+好了，有兴趣的小伙伴快去动手吧。
+
+另外，项目的电路设计部分已经开源了，感兴趣的小伙伴可以去看看：
+https://oshwhub.com/syske/7L5S3cM12t8euqRi6ylftf59yqr5j7Js
+

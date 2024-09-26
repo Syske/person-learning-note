@@ -1,6 +1,6 @@
 # spring boot 第一个Demo
 
-tags: [#springboot]
+tags: [#springboot，#maven]
 
 ### 1、创建Maven项目
 

@@ -55,8 +55,13 @@ db.thirdOaSyncRecordPo.find({$and:[{"sync_detail._id":{$eq: "yh0310011"}},{"ente
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20221213162746.png)
 
+`evaluate_content_1610544642527465554`类似表名，也就是我们的`collections`
+```js
+db.evaluate_content_1610544642527465554.find({"refId": "2105665551681589248", "userId":"2105666173705261056"})
+```
 ## 报错梳理
 
 执行查询时提示没有权限，通常是由于配置了多个节点，我们连接到的节点没有权限，在shell脚本中建议链接主节点
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240401110839.png)
+\

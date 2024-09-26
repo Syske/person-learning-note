@@ -1,8 +1,9 @@
 tags: [#springboot, #日志]
+
 ### 1、默认实现的日志配置
 Spring boot默认已经集成了logging，同时也是默认开启的，如果想根据自己的需求对日志进行配置，方法很简单——只需要在配置文件中进行相应设置，这里提供我自己的配置如下(配置文件采用了yml)：
 
-```properties
+```yml
 logging:
   #指定日志的等级，可以对不同包采用不同的等级，比如如下配置就是将root的等级设置为info，将com.example设置为debug
   level: {root: info,com.example: debug}

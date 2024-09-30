@@ -379,19 +379,19 @@ invoke-interface | 调用接口方法
 
 #### 条件语句
 
-| 语句                     | 说明                                              |
-| ------------------------ | ------------------------------------------------- |
-| if-eq vA, vB, :cond_** | 如果vA等于vB则跳转到:cond_** #equal               |
-| if-ne vA, vB, :cond_** | 如果vA不等于vB则跳转到:cond_**  # not  equal      |
-| if-lt vA, vB, :cond_** | 如果vA小于vB则跳转到:cond_**    #less than        |
+| 语句                     | 说明                                      |
+| ---------------------- | --------------------------------------- |
+| if-eq vA, vB, :cond_** | 如果vA等于vB则跳转到:cond_** #equal             |
+| if-ne vA, vB, :cond_** | 如果vA不等于vB则跳转到:cond_**  # not  equal     |
+| if-lt vA, vB, :cond_** | 如果vA小于vB则跳转到:cond_**    #less than      |
 | if-ge vA, vB, :cond_** | 如果vA大于等于vB则跳转到:cond_**  # greater equal |
-| if-gt vA, vB, :cond_** | 如果vA大于vB则跳转到:cond_**  # greater than      |
+| if-gt vA, vB, :cond_** | 如果vA大于vB则跳转到:cond_**  # greater than    |
 | if-le vA, vB, :cond_** | 如果vA小于等于vB则跳转到:cond_** # less equal     |
-| if-eqz vA, :cond_**    | 如果vA等于0则跳转到:cond_** #zero                 |
-| if-nez vA, :cond_**    | 如果vA不等于0则跳转到:cond_**                     |
-| if-ltz vA, :cond_**    | 如果vA小于0则跳转到:cond_**                       |
+| if-eqz vA, :cond_**    | 如果vA等于0则跳转到:cond_** #zero               |
+| if-nez vA, :cond_**    | 如果vA不等于0则跳转到:cond_**                    |
+| if-ltz vA, :cond_**    | 如果vA小于0则跳转到:cond_**                     |
 | if-gez vA, :cond_**    | 如果vA大于等于0则跳转到:cond_**                   |
-| if-gtz vA, :cond_**    | 如果vA大于0则跳转到:cond_**                       |
+| if-gtz vA, :cond_**    | 如果vA大于0则跳转到:cond_**                     |
 | if-lez vA, :cond_**    | 如果vA小于等于0则跳转到:cond_**                   |
 
 其中，代码中`:cond_**`语句对应`if`条件中的`:cond_**`，表示该条件语句结束：

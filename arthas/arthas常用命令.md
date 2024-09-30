@@ -72,3 +72,8 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
 ```
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240313203706.png)
+
+
+### 特殊用法
+
+[Arthas的一些特殊用法文档说明](https://github.com/alibaba/arthas/issues/71)

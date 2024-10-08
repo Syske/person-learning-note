@@ -19,3 +19,15 @@ output.mp4：指定输出文件为 output.mp4。
 ```shell
 ffmpeg -i test.mp4 test1.mp4
 ```
+
+
+### 丢帧视频修复
+
+```
+ffmpeg -f lavfi -i movie=国际建筑减排、碳中和发展趋势.mp4 -c:v libx264 -crf 18 -preset veryfast -c:a copy .\convert\国际建筑减排、碳中和发展趋势.mp4
+```
+
+
+```
+ffmpeg -i 国际建筑减排、碳中和发展趋势.mp4 -vf minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1 -c:a copy .\convert\国际建筑减排、碳中和发展趋势.mp4
+```

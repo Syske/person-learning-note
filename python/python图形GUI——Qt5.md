@@ -1,4 +1,4 @@
-#python #qt
+#python #gui #qt
 
 ### Qt5安装
 

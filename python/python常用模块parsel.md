@@ -1,3 +1,5 @@
+#python #html
+
 `parsel`是一个流行的`html`解析库，可以用于解析`html`的内容
 - [官方地址](https://pypi.org/project/parsel/)
 - [文档地址](https://parsel.readthedocs.io/en/latest/usage.html)

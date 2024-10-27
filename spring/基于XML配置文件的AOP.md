@@ -1,6 +1,6 @@
 ### 基本配置
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -33,7 +33,7 @@
 
  配置增强处理：
 
- ```
+ ```xml
  <aop:config>
 		<aop:aspect id="afterAdviceAspect" ref="afeterAdviceBean">
 			<aop:before method="beforeMe" pointcut="execution(* service.impl.*.*(..))" />
@@ -43,7 +43,7 @@
 
  配置切入点，并在增强处理中使用该切点：
 
- ```
+ ```xml
  <aop:config>
 
 		<aop:pointcut

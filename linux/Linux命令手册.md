@@ -12,3 +12,12 @@ systemctl set-default multi-user.target
 systemctl set-default graphical.target
 ```
 
+
+### 常用命令
+
+#### 解压
+
+指定文件夹解压，这里需要注意的是`-C`是大写，否则会报错
+```sh
+tar -xvf ffmpeg-git-amd64-static.tar.xz -C ~/workspace/dev-tools
+```

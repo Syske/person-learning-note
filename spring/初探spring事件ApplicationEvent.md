@@ -67,7 +67,7 @@ public class SyskeApplicationEvent extends ApplicationEvent {
 
 #### 事件注册
 
-因为我们是直接在`spring boot`项目中使用的`spring`的事件组件，所以我们并不需要自己去做时间的注册，因为在`spring boot`的启动过程中，会帮我们把事件进行注册，关于这块的内容，我在之前分享`spring boot`启动过程的时候已经分享过了，感兴趣的小伙伴可以去看下（时间久到我都忘记了🐶）：
+因为我们是直接在`spring boot`项目中使用的`spring`的事件组件，所以我们并不需要自己去做事件的注册，因为在`spring boot`的启动过程中，会帮我们把事件进行注册，关于这块的内容，我在之前分享`spring boot`启动过程的时候已经分享过了，感兴趣的小伙伴可以去看下（时间久到我都忘记了🐶）：
 
 这里放一个启动流程的图：
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20220904194644.png)

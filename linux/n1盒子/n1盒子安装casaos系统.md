@@ -9,21 +9,35 @@ https://github.com/ophub/amlogic-s9xxx-armbian/releases?page=1
 下载的时候选择`s905d`的版本
 ### 刻录系统
 
+我这里选择的刻录软件是`balenaEtcher`，下载地址如下：
 
-### 安装
+```
+https://github.com/balena-io/etcher/releases/
+```
+选择最新版本即可，目前最新的版本是`1.19.25`
 
-将`U`盘插入靠近`HDMI`接口的`USB`，然后插电启动
+下载完成后安装打开，然后选择镜像和`U`盘，等待烧录完成。这里需要注意的是，`U`盘需要选择`USB2.0`的，否则可能会有问题
 
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/e3c1813f-aadc-43d9-ad3d-f1cac86ada1d.jpg)
+### 安装armbian
 
-然后，通过`ssh`工具远程连接`N1`盒子，默认账号密码是：`root/1234`
+将`U`盘插入靠近`HDMI`接口的`USB`，插电启动。这里尽量在启动前连接显示器，方便我们查看日志
 
+通过`ssh`工具远程连接`N1`盒子，默认账号密码是：`root/1234`
 
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/246d7c9f-80d7-4fd9-bce8-e2eb8f076bce.jpg)
+登录成功后，输入`armbian-install`，然后按照提示安装即可，`ID`那里我们输入`101`（`N1`盒子对应的版本），等待安装`success`完成提示。
+
+最后输入`poweroff`命令，拔掉电源和`U`盘，重新插电启动，这时候在插电的同时要插入网线。首次登录可能会让你修改登录密码，按照提示修改即可。
+
+至此，`armbian`底包刷入成功，下面开始安装我们的`casaos`系统。
 ### 安装casaos
 
+通过`wget`下载安装`sh`并执行
 ```sh
 wget -qO- https://get.casaos.io | sudo bash
 ```
-然后静静等待安装完成：
+静静等待安装完成：
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/243eac96-8917-48f2-9d72-10675aeb3044.jpg)
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/22f542a8-ef27-400b-9d7f-c9d42a41e0da.jpg)

@@ -1,6 +1,44 @@
-
+最近除了折腾`N1`盒子外，还折腾了笔记本电脑的`linux`系统，从大学接触`linux`开始就一直给笔记本安装的是双系统，但是因为通过铜豌豆工具给`ubuntu`安装原生微信，导致系统进不去了（挺尴尬），尝试了多种修复方式，都不奏效，于是一不做二不休就考虑换个系统，再三考虑之后，最终选择了`arch linux`，原因有三个：
+- 稳定性高一点，滚动式发布，而且社区活跃都高
+- 生态丰富，有好多开源的软件库
+- 之前把玩过一段时间`manjaro`还算熟悉
+虽然，之前在一个老笔记本上安装过，但是最终由于太卡了，也没能折腾下来，所以这一次也踩了很多坑，下面是详细记录：
 ### 镜像下载刻录
 
+#### 下载
+直接官网下载，选择国内的镜像站
+```
+https://archlinux.org/download/#http-downloads
+```
+
+这里我强烈推荐【南阳理工学院】的开源站，速度嘎嘎好，比阿里云、清华等下载速度快，分分钟下载完成：
+
+```
+https://mirror.nyist.edu.cn/archlinux/iso/2024.12.01/
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/5ec7bcdf-49d4-4ccb-b85b-54bab8fef1b8.jpg)
+
+#### 镜像刻录
+
+这里需要准备一个`USB2.0`的`U`盘，我用的是`sd`加读卡器，然后用`balenaEtcher`刻录镜像:
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/db841b90-dcbc-4f20-80e1-b6fe45f230e1.jpg)
+
+#### 启动安装
+
+刻录完成后，选择`live`方式进入系统：
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/25508b41-49e2-4906-8f7f-0b68539de67c.jpg)
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/92c0f5d5-23b8-43f4-a67d-db1792ed84b9.jpg)
+
+从我多次实际踩坑的感受来说，安装步骤主要如下：
+- 基本设置：设置字体
+- 配置网络，修改软件源
+- 系统分区，磁盘挂载
+- arch-chroot
+- 安装桌面系统
+- 安装常用软件
 
 
 ### 系统分区
@@ -96,3 +134,5 @@ yay -S dingtalk-bin
 yay -S wechat
 ```
 
+
+[官方安装指南](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)

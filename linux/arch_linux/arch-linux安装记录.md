@@ -381,7 +381,165 @@ root@archiso ~ $ swapon /mnt/swapfile
 
 ### 系统安装
 
+#### 安装基础包
+使用 `pacstrap` 脚本，安装 `base`包 软件包和 `Linux` 内核以及常规硬件的固件：
+```sh
+pacstrap -K /mnt base linux linux-firmware
+```
+
+这时候可以同时额外安装计算机的 `CPU` 微码包。如果计算机是`Intel`的 `CPU` ，使用 `intel-ucode`包，`AMD CPU` 则使用 `amd-ucode`包。也可以暂时都不安装，等到进入系统后再安装。
+#### 生成fstab
+`fstab`文件可用于定义磁盘分区，各种其他块设备或远程文件系统应如何装入文件系统。
+
+通过以下命令生成 `fstab`文件 (用 `-U` 或 `-L` 选项设置 `UUID` 或卷标)：
+
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+**强烈建议**在执行完以上命令后，检查一下生成的 `/mnt/etc/fstab` 文件是否正确。
+
+```sh
+cat /mnt/etc/fstab
+```
+
+#### chroo到挂载的分区
+
+```sh
+arch-chroot /mnt
+```
+**提示**：此处使用的是arch-chroot而不是直接使用chroot，注意不要输错了。
+
+
+#### 设置时区
+
+```sh
+ln -sf /usr/share/zoneinfo/Region（地区名）/City（城市名） /etc/localtime
+```
+
+例如，在中国大陆需要将时区设置为北京时间，那么请运行 `# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`。时区名称是上海而非北京，是因为上海是该时区内人口最多的城市
+
+然后运行 hwclock以生成 `/etc/adjtime`：
+
+```
+ hwclock --systohc
+```
+
+#### 区域和本地化设置
+
+需要设置这两个文件：`locale.gen` 与 `locale.conf`。
+
+编辑 `/etc/locale.gen`，然后取消掉 `en_US.UTF-8 UTF-8` 和其他需要的 UTF-8 [区域设置](https://wiki.archlinuxcn.org/wiki/Locale "Locale")前的注释（#）。
+
+接着执行 `locale-gen` 以生成 locale 信息：
+
+```sh
+locale-gen
+```
+
+然后创建 `locale.conf`文件，并编辑设定 `LANG` 变量，比如：
+
+```sh
+nano /etc/locale.conf
+
+LANG=en_US.UTF-8
+```
+官方文档专门针对中文给出了说明：
+- 将系统 locale 设置为 `en_US.UTF-8` ，系统的 log 就会用英文显示，这样更容易判断和处理问题；
+    - 也可以设置为 `en_GB.UTF-8` 或 `en_SG.UTF-8`，附带以下优点：
+        - 进入桌面环境后以 24 小时制显示时间；
+        - LibreOffice 等办公软件的纸张尺寸会默认为 `A4` 而非 `Letter(US)`；
+        - 可尽量避免不必要且可能造成处理麻烦的英制单位。
+    - 设置的 LANG 变量需与 locale 设置一致，否则会出现以下错误：
+        - `Cannot set LC_CTYPE to default locale: No such file or directory`
+
+#### 网络配置
+
+设置主机名
+```sh
+nano /etc/hostname
+
+yourhostname #主机名，例如：arch-linux
+```
+安装网络管理器：
+```
+pacman -S networkmanager
+```
+
+注册网络服务：
+```sh
+systemctl enable NetworkManager.service
+```
+
+#### 设置root密码
+
+```sh
+passwd
+```
+
+
+#### 配置引导
+
+```
+# 安装必要的软件
+pacman -S grub efibootmgr os-prober
+```
+
+##### 安装`GRUB`引导配置
+```sh
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+```
+如果如下提示：
+```
+Installation finished. No error reported.
+```
+说明安装成功，可以继续下面的步骤。否则请检查错误。
+
+##### 配置 os-prober
+配置 `os-prober`，以检测 `Windows` 系统，否则将不能进入 `Windows` 系统。
+
+```text
+[root@archiso ~]# nano /etc/default/grub
+```
+
+搜索`GRUB_DISABLE_OS_PROBER=false`一行，并去掉开头的“#”注释，保存并退出。
+##### 生成`GRUB`配置
+```sh
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+#### 重启
+
+首先，退出 chroot 环境。
+
+```text
+[root@archiso ~]# exit
+```
+
+然后，关闭交换文件。
+
+```text
+root@archiso ~ # swapoff /mnt/swapfile
+```
+
+随后，取消挂载 `/mnt`。
+
+```text
+root@archiso ~ # umount -R /mnt
+```
+
+最后，重新启动计算机。
+
+```text
+root@archiso ~ # reboot
+```
+
+## 安装常用软件
 ### 安装桌面环境
+
+由于默认情况先，`arch linux`默认进入的是终端模式，当然也是由于我们没有安装桌面环境，所以上来先安装桌面环境。
+
+最早考虑安装`gnome`，后面配置过程发现中文输入法一直安装不上，于是又试了下`xorg`，中文输入法还是不行，最后就换到了`kde`，中文输入法完美解决。
 
 ```sh
 sudo pacman -S plasma kde-applications packagekit-qt5
@@ -394,7 +552,6 @@ sudo pacman -S plasma kde-applications packagekit-qt5
 
 ```sh
 sudo pacman -S fcitx5 fcitx5-gtk fcitx5-configtool fcitx5-qt fcitx5-chinese-addons fcitx5-material-color kcm-fcitx5 fcitx5-lua
-
 ```
 
 #### 配置环境

@@ -602,4 +602,7 @@ yay -S wechat
 
 - 除了 `/etc/pacman.d/mirrorlist` 之外的软件或配置不会从 Live 环境传递到安装的系统中。
 
+
+参考文档：
 [官方安装指南](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
+https://zhuanlan.zhihu.com/p/596227524

@@ -3,7 +3,7 @@
 - 生态丰富，有好多开源的软件库
 - 之前把玩过一段时间`manjaro`还算熟悉
 虽然，之前在一个老笔记本上安装过，但是最终由于太卡了，也没能折腾下来，所以这一次也踩了很多坑，下面是详细记录：
-### 镜像下载刻录
+## 镜像下载刻录
 
 #### 下载
 直接官网下载，选择国内的镜像站
@@ -32,8 +32,8 @@ https://mirror.nyist.edu.cn/archlinux/iso/2024.12.01/
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/92c0f5d5-23b8-43f4-a67d-db1792ed84b9.jpg)
 
-### 安装
-#### 安装准备 
+## 安装
+### 安装准备 
 
 从我多次实际踩坑的感受来说，安装步骤主要如下：
 - 基本设置：设置字体
@@ -118,10 +118,12 @@ timedatectl
 ```
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/527e97a5-5d21-4c02-82b6-8ac4df33a1dd.jpg)
+使用 `curl` 下载位于中国大陆的 `HTTPS` 镜像站：
+```
+curl -L "[https://archlinux.org/mirrorlist/?country=CN&protocol=https](https://archlinux.org/mirrorlist/?country=CN&protocol=https)" -o /etc/pacman.d/mirrorlist
+```
 
-
-
-修改`mirrorlist`文件，在最上面的`Server`前面加入镜像站，我这里还是用的南阳理工学院的开源软件镜像站。
+也可以手动修改`mirrorlist`文件，在最上面的`Server`前面加入镜像站，我这里还是用的南阳理工学院的开源软件镜像站。
 
 这里用的软件是`nano`，`ctrl + o`保存，`ctrl + x`退出
 
@@ -130,6 +132,8 @@ nano /etc/pacman.d/mirrorlist
 
 # 加入下面的地址
 Server = https://mirror.nyist.edu.cn/archlinux/$repo/os/$arch
+# 阿里云的可以配置这个
+Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
 ```
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/d640e8c0-f54e-4d9f-b8e8-bc3e2ae478ef.jpg)
@@ -235,9 +239,116 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
 
+```
+[root@archiso ~]$ sudo fdisk /dev/nvme0n1 # 这里换成自己的磁盘
+
+Welcome to fdisk (util-linux 2.40.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+This disk is currently in use - repartitioning is probably a bad idea.
+It's recommended to umount all file systems, and swapoff all swap
+partitions on this disk.
+
+
+Command (m for help): p # 打印磁盘分区
+
+Disk /dev/nvme0n1: 476.94 GiB, 512110190592 bytes, 1000215216 sectors
+Disk model: SAMSUNG MZVLB512HBJQ-000L2
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: B65CCCD6-C78A-4C65-AE97-DE9434ADDB0D
+
+Device             Start        End   Sectors   Size Type
+/dev/nvme0n1p1      2048     534527    532480   260M EFI System
+/dev/nvme0n1p2    534528     567295     32768    16M Microsoft reserved
+/dev/nvme0n1p3    567296  419997695 419430400   200G Microsoft basic data
+/dev/nvme0n1p4 419997696  683591679 263593984 125.7G Microsoft basic data
+/dev/nvme0n1p5 998166528 1000214527   2048000  1000M Windows recovery environment
+/dev/nvme0n1p6 683591680  788449279 104857600    50G Linux root (x86-64)
+/dev/nvme0n1p7 788449280  998166527 209717248   100G Linux home
+# 这里其实我已经分区完成了，所以没法展示真正的分区情况了，但是过程基本类似 
+
+Partition table entries are not in disk order.
+
+Command (m for help): n  # 输入 n 创建新的分区，这个分区将是根分区
+Partition number (6-128, default 6):  # 分区编号保持默认，直接按 Enter
+First sector (683591680-998166527, default 683591680):  # 第一个扇区，保持默认
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (683591681-998166527, default 998166527): +50G  # 创建 50 GiB 大小的根分区，您可以根据自己的硬盘空间决定根分区的大小
+
+Created a new partition 6 of type 'Linux filesystem' and of size 50 GiB.
+
+Command (m for help): t  # 输入 t 改变分区类型，请勿遗忘此步
+Partition number (1-6, default 6):   # 保持默认
+Partition type or alias (type L to list all): 23  # 输入 23 代表 Linux root (x86-64) 类型
+Changed type of partition 'Linux filesystem' to 'Linux root (x86-64)'.
+
+Command (m for help): n  # 输入 n 创建新的分区，这个分区将是 home 分区
+Partition number (7-128, default 7):   # 保持默认
+First sector (788449280-998166527, default 788449280):   # 保持默认
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (788449281-998166527, default 998166527):   # 保持默认，将剩余空间全部分给 home 分区
+
+Created a new partition 7 of type 'Linux filesystem' and of size 100 GiB.
+
+Command (m for help): t  # 输入 t 改变分区类型
+Partition number (1-7, default 7):   # 保持默认
+Partition type or alias (type L to list all): 42  # 输入 42 代表 Linux home 类型
+Changed type of partition 'Linux filesystem' to 'Linux home'.
+
+Command (m for help): p  # 输入 p 打印分区表，请检查分区是否有误，如果有误，请输入 q 直接退出
+```
+如果打印没有问题，比如我的分区如下：
+```
+Disk /dev/nvme0n1: 476.94 GiB, 512110190592 bytes, 1000215216 sectors
+Disk model: SAMSUNG MZVLB512HBJQ-000L2
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: B65CCCD6-C78A-4C65-AE97-DE9434ADDB0D
+
+Device             Start        End   Sectors   Size Type
+/dev/nvme0n1p1      2048     534527    532480   260M EFI System
+/dev/nvme0n1p2    534528     567295     32768    16M Microsoft reserved
+/dev/nvme0n1p3    567296  419997695 419430400   200G Microsoft basic data
+/dev/nvme0n1p4 419997696  683591679 263593984 125.7G Microsoft basic data
+/dev/nvme0n1p5 998166528 1000214527   2048000  1000M Windows recovery environment
+/dev/nvme0n1p6 683591680  788449279 104857600    50G Linux root (x86-64)
+/dev/nvme0n1p7 788449280  998166527 209717248   100G Linux home
+```
+确认分区没有问题，就可以写入磁盘改变：
+```
+Command (m for help): w  # 输入 w 写入分区表，该操作不可恢复
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+##### 格式化分区
+完成分区后，我们需要将上面刚创建的分区格式化成`ext4`：
+
+```sh
+# 格式化root分区
+[root@archiso ~]$ mkfs.ext4 /dev/nvme0n1p6
+# 格式化home分区
+[root@archiso ~]$ mkfs.ext4 /dev/nvme0n1p7
+```
+
+##### 问题梳理
+在最开始分区的时候，闹了个乌龙，因为我之前安装过`ubuntu`，所以当时分区`nvme0n1p6`是`ubuntu`的安装分区，当时确实对`fdisk`的分区操作不了解，于是最开始我们是直接对`nvme0n1p6`操作分区的（下面是错误演示）：
+
+```
+# 这个操作不报错，但是对分区是不能这么操作
+fdisk /dev/nvme0n1p6
+```
+然后我就开始各种`n`和`t`的操作，但是在`w`写入的时候报错了，试了好多次都是一样的报错，也查了很多资料，甚至问了`AI`，问题还是没解决，最后才赫然发现，我竟然在对一个分区进行分区，报错大致如下，大家注意避坑。
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/0347507b-b0bc-40d1-b581-a6edc1e3167e.jpg)
 
 #### 挂载目录 
-
+这里挂载目录是为了后面`arch-chroot`做准备。
 ```
 # root分区挂载
 mount /dev/nvme0n1p6 /mnt
@@ -245,8 +356,30 @@ mount /dev/nvme0n1p6 /mnt
 # EFI 分区挂载
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 # home分区挂载
-mount --mkdir /dev/sda3 /mnt/home
+mount --mkdir /dev/nvme0n1p7 /mnt/home
 ```
+
+#### 创建交换文件
+
+按照官方文档推荐，我们应该创建交换分区（`swap`），这里直接用交换文件替代，电脑的内存是`16G`，这里交换文件我给`8G`
+
+```sh
+root@archiso ~ $ dd if=/dev/zero of=/mnt/swapfile bs=1M count=8192 status=progress
+```
+
+
+```sh
+# 修改文件权限
+root@archiso ~ $ chmod 0600 /mnt/swapfile
+# 格式化swap
+root@archiso ~ $ mkswap -U clear /mnt/swapfile
+# 启用交换文件
+root@archiso ~ $ swapon /mnt/swapfile
+```
+
+至此，安装准备工作完成，下面开始正式安装
+
+### 系统安装
 
 ### 安装桌面环境
 
@@ -308,5 +441,8 @@ yay -S dingtalk-bin
 yay -S wechat
 ```
 
+### 注意点
+
+- 除了 `/etc/pacman.d/mirrorlist` 之外的软件或配置不会从 Live 环境传递到安装的系统中。
 
 [官方安装指南](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)

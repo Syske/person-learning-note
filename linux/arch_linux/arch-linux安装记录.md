@@ -388,6 +388,16 @@ pacstrap -K /mnt base linux linux-firmware
 ```
 
 这时候可以同时额外安装计算机的 `CPU` 微码包。如果计算机是`Intel`的 `CPU` ，使用 `intel-ucode`包，`AMD CPU` 则使用 `amd-ucode`包。也可以暂时都不安装，等到进入系统后再安装。
+
+#### 配置密钥
+
+这部分是确保我们可以正常安装应有的，否则系统会认为安装的应用不合法
+```sh
+root@archiso ~ $ pacman-key --init  # 初始化密钥环
+root@archiso ~ $ pacman-key --populate
+root@archiso ~ $ pacman -Sy archlinux-keyring  # 更新 archlinux-keyring
+```
+
 #### 生成fstab
 `fstab`文件可用于定义磁盘分区，各种其他块设备或远程文件系统应如何装入文件系统。
 
@@ -537,7 +547,7 @@ root@archiso ~ # reboot
 ## 安装常用软件
 ### 安装桌面环境
 
-由于默认情况先，`arch linux`默认进入的是终端模式，当然也是由于我们没有安装桌面环境，所以上来先安装桌面环境。
+由于默认情况下，`arch linux`默认进入的是终端模式，当然也是由于我们没有安装桌面环境，所以重启后先安装桌面环境。
 
 最早考虑安装`gnome`，后面配置过程发现中文输入法一直安装不上，于是又试了下`xorg`，中文输入法还是不行，最后就换到了`kde`，中文输入法完美解决。
 

@@ -439,7 +439,8 @@ ln -sf /usr/share/zoneinfo/Region（地区名）/City（城市名） /etc/localt
 
 需要设置这两个文件：`locale.gen` 与 `locale.conf`。
 
-编辑 `/etc/locale.gen`，然后取消掉 `en_US.UTF-8 UTF-8` 和其他需要的 UTF-8 [区域设置](https://wiki.archlinuxcn.org/wiki/Locale "Locale")前的注释（#）。
+编辑 `/etc/locale.gen`，然后取消掉 `en_US.UTF-8 UTF-8` 和其他需要的 `UTF-8` 区域设置前的注释（`#`），这里我把中文的语言配置打开了：
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/59c3510b-ad8a-473b-ab30-36896f4dfc90.jpg)
 
 接着执行 `locale-gen` 以生成 locale 信息：
 
@@ -552,6 +553,8 @@ root@archiso ~ # reboot
 最早考虑安装`gnome`，后面配置过程发现中文输入法一直安装不上，于是又试了下`xorg`，中文输入法还是不行，最后就换到了`kde`，中文输入法完美解决。
 
 ```sh
+# 先更新下软件包
+sudo pacman -Syu
 sudo pacman -S plasma kde-applications packagekit-qt5
 ```
 
@@ -559,6 +562,8 @@ sudo pacman -S plasma kde-applications packagekit-qt5
 ### 安装中文输入法
 
 #### 安装核心依赖
+
+这里其实安装的是小企鹅输入法
 
 ```sh
 sudo pacman -S fcitx5 fcitx5-gtk fcitx5-configtool fcitx5-qt fcitx5-chinese-addons fcitx5-material-color kcm-fcitx5 fcitx5-lua
@@ -579,6 +584,12 @@ XMODIFIERS=@im=fcitx
 
 ### 安装常用应用
 
+使用`arch`那必然是先安装`yay`：
+
+```sh
+sudo pacman -S yay
+```
+然后就可以通过`yay`安装各种常用的软件了。
 #### 知识库软件
 
 强烈推荐，我觉得很好用
@@ -587,14 +598,24 @@ XMODIFIERS=@im=fcitx
 yay -S obsidian
 ```
 
-#### 国内常用软件
+#### 常用软件
 
+##### 截图软件
+
+
+```
+yay -S flameshot
+```
+`flameshot`我感觉是目前为止`linux`下最好的截图软件，类似`snipaste`
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/manjaro/20211027224853.png)
 ##### google chrome
 
 ```sh
 yay -S google-chrome
 ```
 
+#### 国内常用软件
 ##### dingtalk
 
 ```sh
@@ -608,10 +629,16 @@ yay -S dingtalk-bin
 yay -S wechat
 ```
 
+
 ### 注意点
 
 - 除了 `/etc/pacman.d/mirrorlist` 之外的软件或配置不会从 Live 环境传递到安装的系统中。
 
+### 安装完成
+
+至此，安装完成，效果如下：
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/9ba999fb-ed8f-48a3-99bd-dffcb631c792.jpg)
+到这里，我们就可以愉快地使用我们的`arch linux`了
 
 参考文档：
 [官方安装指南](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)

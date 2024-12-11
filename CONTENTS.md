@@ -36,6 +36,7 @@
  - [mySQL例题参考.md](db/mySQL例题参考.md)
  - [mysqlbinlog操作.md](db/mysqlbinlog操作.md)
  - [mysql回表.md](db/mysql回表.md)
+ - [mysql常用操作.md](db/mysql常用操作.md)
  - [关于MYSQL你该知道的.md](db/关于MYSQL你该知道的.md)
  - [多数据源切换实现.md](db/多数据源切换实现.md)
  - [多表连接查询.md](db/多表连接查询.md)
@@ -79,6 +80,7 @@
 
 ## ffmpeg
 
+ - [ffmpeg安装配置.md](ffmpeg/ffmpeg安装配置.md)
  - [ffmpeg常用命令.md](ffmpeg/ffmpeg常用命令.md)
 
 ## git
@@ -97,6 +99,7 @@
  - [go项目构建流程.md](go学习笔记/go项目构建流程.md)
  - [json使用指南.md](go学习笔记/json使用指南.md)
  - [书籍整理.md](go学习笔记/书籍整理.md)
+ - [其他语法点.md](go学习笔记/其他语法点.md)
  - [基本语法.md](go学习笔记/基本语法.md)
  - [循环语句.md](go学习笔记/循环语句.md)
  - [条件语句.md](go学习笔记/条件语句.md)
@@ -172,12 +175,20 @@
 
 ## linux
 
+### arch_linux
+
+  - [arch-linux安装记录.md](linux/arch_linux/arch-linux安装记录.md)
+
 ### manjaro
 
   - [manjaro-gnome安装配置过程.md](linux/manjaro/manjaro-gnome安装配置过程.md)
   - [manjaro常用软件安装及配置.md](linux/manjaro/manjaro常用软件安装及配置.md)
   - [manjaro常用软件安装命令.md](linux/manjaro/manjaro常用软件安装命令.md)
   - [manjaro搭建k8s集群.md](linux/manjaro/manjaro搭建k8s集群.md)
+
+### n1盒子
+
+  - [n1盒子安装casaos系统.md](linux/n1盒子/n1盒子安装casaos系统.md)
 
 ### shell
 
@@ -216,6 +227,7 @@
  - [pacman常用命令.md](linux/pacman常用命令.md)
  - [ubuntu常用操作.md](linux/ubuntu常用操作.md)
  - [ubuntu常用软件安装.md](linux/ubuntu常用软件安装.md)
+ - [ubunt安装原生微信.md](linux/ubunt安装原生微信.md)
  - [回顾下Linux相关知识，为k8s预热…….md](linux/回顾下Linux相关知识，为k8s预热…….md)
  - [解决linux环境下问题.md](linux/解决linux环境下问题.md)
  - [还不会安装Linux？.md](linux/还不会安装Linux？.md)
@@ -394,6 +406,7 @@
  - [python构建基础镜像.md](python/python构建基础镜像.md)
  - [python爬取个人博客园博客列表.md](python/python爬取个人博客园博客列表.md)
  - [python生产epub电子书.md](python/python生产epub电子书.md)
+ - [python经典实例.md](python/python经典实例.md)
  - [python通过openpyxl操作excel.md](python/python通过openpyxl操作excel.md)
  - [python部署至k8s解决方案.md](python/python部署至k8s解决方案.md)
  - [python配置PIL环境.md](python/python配置PIL环境.md)
@@ -623,6 +636,7 @@
  - [win10企业版激活.md](windows系统操作技巧/win10企业版激活.md)
  - [win10开始菜单不显示修复代码.md](windows系统操作技巧/win10开始菜单不显示修复代码.md)
  - [win环境下常用命令.md](windows系统操作技巧/win环境下常用命令.md)
+ - [命令行格式化磁盘.md](windows系统操作技巧/命令行格式化磁盘.md)
 
 ## zookeeper
 
@@ -660,6 +674,10 @@
 ## 加密解密
 
  - [Java&keytool生成RSA密钥.md](加密解密/Java&keytool生成RSA密钥.md)
+
+## 区块链
+
+ - [以太坊生态学习资料.md](区块链/以太坊生态学习资料.md)
 
 ## 图表文件
 
@@ -841,11 +859,14 @@
  - [IDEA快捷键.md](工具管理/IDEA快捷键.md)
  - [MyEclipse2014安装svn插件的方式：.md](工具管理/MyEclipse2014安装svn插件的方式：.md)
  - [Obsidian工具使用技巧.md](工具管理/Obsidian工具使用技巧.md)
+ - [Quicker使用指南.md](工具管理/Quicker使用指南.md)
+ - [Rainmeter使用指南.md](工具管理/Rainmeter使用指南.md)
  - [idea、eclipse快捷键对比.md](工具管理/idea、eclipse快捷键对比.md)
  - [ide文件模板.md](工具管理/ide文件模板.md)
  - [power-shell美化.md](工具管理/power-shell美化.md)
  - [shell好用的工具.md](工具管理/shell好用的工具.md)
  - [vscode常用插件梳理.md](工具管理/vscode常用插件梳理.md)
+ - [一键上传剪贴板图片到阿里云图床.md](工具管理/一键上传剪贴板图片到阿里云图床.md)
  - [常用工具网站.md](工具管理/常用工具网站.md)
  - [常用工具链接.md](工具管理/常用工具链接.md)
  - [常用软件资源整理.md](工具管理/常用软件资源整理.md)
@@ -853,6 +874,7 @@
  - [手机投屏至电脑工具.md](工具管理/手机投屏至电脑工具.md)
  - [效率提升工具.md](工具管理/效率提升工具.md)
  - [电子书网站整理.md](工具管理/电子书网站整理.md)
+ - [高效办公环境分享.md](工具管理/高效办公环境分享.md)
 
 ## 并发与多线程
 
@@ -968,9 +990,12 @@
   - [2021年第三季度总结.md](总结/2021/2021年第三季度总结.md)
   - [内容更新简单总结.md](总结/2021/内容更新简单总结.md)
 
+## 数据结构
+
+ - [二叉树.md](数据结构/二叉树.md)
+
 ## 树莓派把玩笔记
 
- - [python经典实例.md](树莓派把玩笔记/python经典实例.md)
  - [树莓派+摄像头变监控.md](树莓派把玩笔记/树莓派+摄像头变监控.md)
  - [树莓派2b搭建go环境.md](树莓派把玩笔记/树莓派2b搭建go环境.md)
  - [树莓派安卓opencv.md](树莓派把玩笔记/树莓派安卓opencv.md)
@@ -1077,8 +1102,10 @@
 
 ## 面试
 
+ - [HR面试问题梳理.md](面试/HR面试问题梳理.md)
  - [java基础.md](面试/java基础.md)
  - [分享一些面试题.md](面试/分享一些面试题.md)
+ - [技术面试问题点梳理.md](面试/技术面试问题点梳理.md)
  - [滴，第二波面试来袭.md](面试/滴，第二波面试来袭.md)
  - [面试整理.md](面试/面试整理.md)
 

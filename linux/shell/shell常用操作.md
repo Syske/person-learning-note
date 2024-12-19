@@ -31,6 +31,27 @@ if [ ! $eid ]; then
 fi
 ```
 
+#### 判断是否相等
+
+```sh
+# 假设 eid 是通过某种方式设置的
+eid="hls"  # 示例赋值
+
+# 使用 [[ ]] 进行判断
+if [[ "$eid" == "hls" ]]; then
+    echo "eid 等于 hls"
+else
+    echo "eid 不等于 hls"
+fi
+
+# 单括号写法
+# 判断 eid 是否等于 hls
+if [ "$eid" = "hls" ]; then
+    echo "eid 等于 hls"
+else
+    echo "eid 不等于 hls"
+fi
+```
 
 #### 常用逻辑关系
 

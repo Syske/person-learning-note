@@ -84,3 +84,34 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
 ### 特殊用法
 
 [Arthas的一些特殊用法文档说明](https://github.com/alibaba/arthas/issues/71)
+
+### 其他异常
+#### 提示地址被占用
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/52477a68-3ec9-42b8-8718-1eea2a2a6280.jpg)
+
+```sh
+[root@t2-cmdb-api-64c69b5b9f-5td6f java]# java -jar arthas-boot.jar 
+Picked up JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+ERROR: transport error 202: bind failed: Address already in use
+ERROR: JDWP Transport dt_socket failed to initialize, TRANSPORT_INIT(510)
+JDWP exit error AGENT_ERROR_TRANSPORT_INIT(197): No transports initialized [debugInit.c:750]
+```
+
+解决方式：
+```sh
+# 指定环境变量，然后再再次运行
+export JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"
+```
+
+#### 提示需要指定pid
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/bfa508d5-2d0d-4804-a32e-bdb27db6048e.jpg)
+
+解决方法：
+```sh
+# 运行时指定pid
+java -jar arthas-boot.jar 1
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/e4e04331-2214-48db-b417-9c282e632424.jpg)

@@ -74,6 +74,11 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240313203706.png)
 
 
+```
+# 获取本地缓存中的数据
+ vmtool -c 1f2d2181 -a getInstances --className net.coolcollege.user.biz.cached.DepartmentCacheManager --express '#val=instances[0].DEPARTMENT_PARENT_CACHE.localCache.get(1878798350367723553L).value'
+```
+
 ### trace
 
 根据耗时跟踪方法：
@@ -115,3 +120,24 @@ java -jar arthas-boot.jar 1
 ```
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/e4e04331-2214-48db-b417-9c282e632424.jpg)
+
+## 监控MyBatis的SQL语句（推荐）
+
+1. 首先找到MyBatis执行SQL的类：
+
+```
+sc *StatementHandler
+```
+
+2. 然后监控RoutingStatementHandler或PreparedStatementHandler：
+```
+watch org.apache.ibatis.executor.statement.PreparedStatementHandler query '{params, target.boundSql.sql, returnObj}' -x 3
+```
+
+## 筛选参数中符合条件的数据
+
+```sh
+watch net.coolcollege.usercenter.service.strategy.impl.ImportUserByUserIdStrategy parseUserImportDto 'params[2].{?#this.userId == "ou_67be58fd131ca84ea46213ea6896207b"}' -s -x 3
+```
+
+上面的示例，是筛选入参中第三个参数（`list`）中，`userId`为`ou_67be58fd131ca84ea46213ea6896207b`的数据

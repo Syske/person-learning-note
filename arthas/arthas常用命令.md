@@ -141,3 +141,32 @@ watch net.coolcollege.usercenter.service.strategy.impl.ImportUserByUserIdStrateg
 ```
 
 上面的示例，是筛选入参中第三个参数（`list`）中，`userId`为`ou_67be58fd131ca84ea46213ea6896207b`的数据
+
+## 查看某个类中嵌套的静态类的属性
+
+类的定义如下
+
+```java
+@Configuration  
+public class ThirdComponentConfig {
+	@Configuration  
+	@ConfigurationProperties(prefix="component.ffmpeg")  
+	public static class FFmpegProperties{  
+	  
+	    /**  
+	     * 线程  
+	     */  
+	    private Integer thread;
+	}
+}
+```
+
+查看方法如下：
+```
+# 查询累的hash值
+sc -d com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegProperties
+
+# 查看具体的值
+vmtool -c 26a1ab54 -a getInstances --className com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegProperties --express '#val=instances[0].thread'
+```
+这里需要注意的是，完整类名是：外部全类名$内部嵌套类名

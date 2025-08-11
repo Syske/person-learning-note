@@ -79,6 +79,11 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
  vmtool -c 1f2d2181 -a getInstances --className net.coolcollege.user.biz.cached.DepartmentCacheManager --express '#val=instances[0].DEPARTMENT_PARENT_CACHE.localCache.get(1878798350367723553L).value'
 ```
 
+本地缓存如果是内部静态类：
+```
+ vmtool -c 7668d560 -a getInstances --className net.coolcollege.training.service.domain.study.progress.ResourceCacheService --express '#val=instances[0].COURSE_RESOURCE_MAPPING_CACHE.localCache.get(new net.coolcollege.training.service.domain.study.progress.ResourceCacheService$CourseResourceMappingCacheKey(1371843837940600987L,2209228944622882816L)).value'
+```
+核心逻辑是内部静态类与宿主类是通过`$`连接
 ### trace
 
 根据耗时跟踪方法：
@@ -170,3 +175,10 @@ sc -d com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegPrope
 vmtool -c 26a1ab54 -a getInstances --className com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegProperties --express '#val=instances[0].thread'
 ```
 这里需要注意的是，完整类名是：外部全类名$内部嵌套类名
+
+## 查看框架层面的异常
+
+```sh
+ watch org.springframework.web.servlet.HandlerAdapter handle "{throwExp}" -e 
+```
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/ad8d05ad-361d-4aeb-8f70-0d2b53c7ead3.jpg)

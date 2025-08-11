@@ -64,4 +64,3 @@ db.evaluate_content_1610544642527465554.find({"refId": "2105665551681589248", "u
 执行查询时提示没有权限，通常是由于配置了多个节点，我们连接到的节点没有权限，在shell脚本中建议链接主节点
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240401110839.png)
-\

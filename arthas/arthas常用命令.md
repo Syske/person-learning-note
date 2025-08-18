@@ -74,6 +74,14 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240313203706.png)
 
 
+<<<<<<< HEAD
+=======
+```
+# 获取本地缓存中的数据
+ vmtool -c 1f2d2181 -a getInstances --className net.coolcollege.user.biz.cached.DepartmentCacheManager --express '#val=instances[0].DEPARTMENT_PARENT_CACHE.localCache.get(1878798350367723553L).value'
+```
+
+>>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961
 ### trace
 
 根据耗时跟踪方法：
@@ -83,4 +91,89 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
 
 ### 特殊用法
 
+<<<<<<< HEAD
 [Arthas的一些特殊用法文档说明](https://github.com/alibaba/arthas/issues/71)
+=======
+[Arthas的一些特殊用法文档说明](https://github.com/alibaba/arthas/issues/71)
+
+### 其他异常
+#### 提示地址被占用
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/52477a68-3ec9-42b8-8718-1eea2a2a6280.jpg)
+
+```sh
+[root@t2-cmdb-api-64c69b5b9f-5td6f java]# java -jar arthas-boot.jar 
+Picked up JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+ERROR: transport error 202: bind failed: Address already in use
+ERROR: JDWP Transport dt_socket failed to initialize, TRANSPORT_INIT(510)
+JDWP exit error AGENT_ERROR_TRANSPORT_INIT(197): No transports initialized [debugInit.c:750]
+```
+
+解决方式：
+```sh
+# 指定环境变量，然后再再次运行
+export JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"
+```
+
+#### 提示需要指定pid
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/bfa508d5-2d0d-4804-a32e-bdb27db6048e.jpg)
+
+解决方法：
+```sh
+# 运行时指定pid
+java -jar arthas-boot.jar 1
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/e4e04331-2214-48db-b417-9c282e632424.jpg)
+
+## 监控MyBatis的SQL语句（推荐）
+
+1. 首先找到MyBatis执行SQL的类：
+
+```
+sc *StatementHandler
+```
+
+2. 然后监控RoutingStatementHandler或PreparedStatementHandler：
+```
+watch org.apache.ibatis.executor.statement.PreparedStatementHandler query '{params, target.boundSql.sql, returnObj}' -x 3
+```
+
+## 筛选参数中符合条件的数据
+
+```sh
+watch net.coolcollege.usercenter.service.strategy.impl.ImportUserByUserIdStrategy parseUserImportDto 'params[2].{?#this.userId == "ou_67be58fd131ca84ea46213ea6896207b"}' -s -x 3
+```
+
+上面的示例，是筛选入参中第三个参数（`list`）中，`userId`为`ou_67be58fd131ca84ea46213ea6896207b`的数据
+
+## 查看某个类中嵌套的静态类的属性
+
+类的定义如下
+
+```java
+@Configuration  
+public class ThirdComponentConfig {
+	@Configuration  
+	@ConfigurationProperties(prefix="component.ffmpeg")  
+	public static class FFmpegProperties{  
+	  
+	    /**  
+	     * 线程  
+	     */  
+	    private Integer thread;
+	}
+}
+```
+
+查看方法如下：
+```
+# 查询累的hash值
+sc -d com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegProperties
+
+# 查看具体的值
+vmtool -c 26a1ab54 -a getInstances --className com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegProperties --express '#val=instances[0].thread'
+```
+这里需要注意的是，完整类名是：外部全类名$内部嵌套类名
+>>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961

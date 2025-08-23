@@ -182,3 +182,15 @@ vmtool -c 26a1ab54 -a getInstances --className com.coolcollege.cn.resoucemedia.v
  watch org.springframework.web.servlet.HandlerAdapter handle "{throwExp}" -e 
 ```
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/ad8d05ad-361d-4aeb-8f70-0d2b53c7ead3.jpg)
+
+### 查看redis配置
+```sh
+sd -d net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService
+# 查看database设置
+vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService --express '#val=instances[0].redisTemplate.connectionFactory.database'
+
+# 查看连接地址
+vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService --express '#val=instances[0].redisTemplate.connectionFactory.configuration'
+```
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/657a1174-ecb7-43ff-8a57-21379a16cedf.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/b5e81a64-0a42-49c4-beb2-a472b9c830b6.jpg)

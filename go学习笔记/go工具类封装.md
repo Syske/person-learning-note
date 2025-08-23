@@ -15,7 +15,11 @@ import (
 )
 
 func GetDbConnection(host string, port string, user string, passwd string, dbName string) *sql.DB {
+<<<<<<< HEAD
+	//  "cool:Cx111111@@tcp(10.30.1.89:3306)/coolcollege"
+=======
 	//  "test:test@tcp(192.168.0.1:3306)/test"
+>>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", user, passwd, host, port, dbName)
 	fmt.Println(dsn)
 	db, err := sql.Open("mysql", dsn)
@@ -26,14 +30,24 @@ func GetDbConnection(host string, port string, user string, passwd string, dbNam
 }
 
 func GetCoolPdbConnection(host string, port string) *sql.DB {
+<<<<<<< HEAD
+	dbUser := "cool"
+	dbPassWd := "Cx111111@"
+	dbName := "coolcollege"
+=======
 	dbUser := "test"
 	dbPassWd := "test"
 	dbName := "test"
+>>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961
 	return GetDbConnection(host, port, dbUser, dbPassWd, dbName)
 }
 
 func TestPdb() {
+<<<<<<< HEAD
+	host := "10.30.1.89"
+=======
 	host := "192.168.0.1"
+>>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961
 	port := "3306"
 	db := GetCoolPdbConnection(host, port)
 	querySql := "select count(*) from enterprise"
@@ -55,11 +69,19 @@ func TestPdb() {
 }
 
 func TestDb() {
+<<<<<<< HEAD
+	host := "10.30.1.89"
+	post := "3306"
+	dbUser := "cool"
+	dbPassWd := "Cx111111@"
+	dbName := "coolcollege"
+=======
 	host := "192.168.0.1"
 	post := "3306"
 	dbUser := "test"
 	dbPassWd := "test"
 	dbName := "test"
+>>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961
 	db := GetDbConnection(host, post, dbUser, dbPassWd, dbName)
 	querySql := "select id, original_name from enterprise limit 10"
 	rows, err := db.Query(querySql)

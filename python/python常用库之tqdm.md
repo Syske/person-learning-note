@@ -39,6 +39,8 @@ for i in tqdm(range(10000)):
 ```python
 for i in tqdm(range(len(eids)), desc='batch Processing'):
     print(eids[i])
+<<<<<<< HEAD
+=======
 
 # 使用range生成批次的起始索引
 for start_idx in tqdm(
@@ -60,4 +62,5 @@ for start_idx in tqdm(
 ```python
 for i in trange(0, len(enterprises), 200):
 	batch_data = enterprises[i:i + 200]
+>>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961
 ```

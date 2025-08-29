@@ -1,4 +1,4 @@
-tags: [#javascript]
+tags: #javascript
 
 **21、一起组团（什么是数组）**
 

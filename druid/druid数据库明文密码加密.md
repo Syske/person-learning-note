@@ -1,4 +1,4 @@
-tags: [#db, #druid]
+tags: #db #druid
 
 - 1、输入下列命令
 ```

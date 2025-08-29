@@ -1,4 +1,4 @@
-tags: [#db, #sql]
+tags: #db #sql
 
 ### SQL 基础-->常用函数
 

@@ -1,4 +1,4 @@
-tags: [#javascript]
+tags: #javascript
 
 #### **81、返回前一个浏览的页面**
 

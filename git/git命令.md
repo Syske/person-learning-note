@@ -1,4 +1,4 @@
-tags: [#git]
+tags: #git
 
 - 1.设置全局用户名称
 

@@ -1,4 +1,4 @@
-tags: [#javascript]
+tags: #javascript
 
 #### **61、提取字符串substring()**
 

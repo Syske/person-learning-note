@@ -1,4 +1,4 @@
-tags: [#code]
+tags: #code
 
 ```java
 package rsa;

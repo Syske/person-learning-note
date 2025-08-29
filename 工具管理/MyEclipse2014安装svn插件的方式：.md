@@ -1,4 +1,4 @@
-tags: [#Myeclipse, #插件, #svn]
+tags: #Myeclipse #插件 #svn 
 
 MyEclipse2014安装svn插件的方式：
 

@@ -1,4 +1,4 @@
-tags: [#java, #arrayList, #vector]
+tags: #java #arrayList #vector
 
 ## Vector & ArrayList 的主要区别 
 - **1）同步性**:Vector是线程安全的，也就是说是同步的 ，而ArrayList 是线程序不安全的，不是同步的。 

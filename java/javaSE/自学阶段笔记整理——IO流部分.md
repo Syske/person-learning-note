@@ -1,4 +1,4 @@
-tags: [#java, #IO]
+tags: #java #IO
 
 ### IO流部分
 #### IO流常用的有：字符流、字节流、缓冲流、序列化流、RandomAccessFile类等

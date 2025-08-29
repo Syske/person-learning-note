@@ -1,4 +1,4 @@
-tags: [#code, #UUID]
+tags: #code #UUID
 
 ```js
 function uuid() {

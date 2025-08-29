@@ -1,4 +1,4 @@
-tags: [#java, #学习]
+tags: #java #学习
 
 ### static
 

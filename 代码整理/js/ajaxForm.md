@@ -1,4 +1,4 @@
-tags: [#code, #ajaxFrom]
+tags: #code #ajaxFrom
 
 ```js
 $(function () {

@@ -1,4 +1,4 @@
-tags: [#git]
+tags: #git
 
 ### git常用操作
 ##### 1、 定义Git全局的 .gitignore 文件

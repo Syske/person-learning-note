@@ -1,6 +1,6 @@
 # 基于mybatis-plus的代码生成
 
-tags: [#mybatis-plus, #代码生成]
+tags: #mybatis-plus #代码生成
 
 ##### 前言
 

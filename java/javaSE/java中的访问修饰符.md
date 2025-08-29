@@ -1,4 +1,4 @@
-tags: [#java, #学习]
+tags: #java #学习
 
 ### java中的访问修饰符（访问权限）
 

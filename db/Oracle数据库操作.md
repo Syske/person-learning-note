@@ -1,4 +1,4 @@
-tags: [#db, #oracle]
+tags: #db #oracle
 
 ### 1、创建自增主键
 

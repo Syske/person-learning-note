@@ -1,5 +1,4 @@
-tags: [#code, #dataTable]
-
+tags: #code #dataTable]
 ### 示例代码
 #### js
 ```js

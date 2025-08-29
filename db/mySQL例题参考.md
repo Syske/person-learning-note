@@ -1,4 +1,4 @@
-tags: [#db, #mysql]
+tags: #db #mysql
 
 ```
 /*

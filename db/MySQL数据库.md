@@ -1,4 +1,4 @@
-tags: [#db, #mysql]
+tags: #db #mysql
 
 #### 1、规范：
   - （1）、关键字与函数名称全部大写

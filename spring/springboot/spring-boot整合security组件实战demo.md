@@ -1,5 +1,5 @@
 # spring-boot整合security组件实战demo
-tags: [#springboot]
+tags: #springboot
 
 ### 前言
 

@@ -1,5 +1,5 @@
 # 安利一款markdown编辑利器——Typora
-tags: [#markdown, #typora, #安利]
+tags: #markdown #typora #安利
 
 ### Typro是什么
 

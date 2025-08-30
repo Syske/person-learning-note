@@ -1,5 +1,5 @@
 # dubbo其他知识点分享
-tags: [#rpc, #dubbo]
+tags: #rpc #dubbo
 
 ### 前言
 

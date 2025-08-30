@@ -1,5 +1,5 @@
 # 记一次Tomcat一句话木马修复
-tags: [#tomcat, #木马]
+tags: #tomcat #木马
 
 ### 起因
 

@@ -1,5 +1,5 @@
 # spring-webflux骚操作
-tags: [#springboot, #webflux]
+tags: #springboot #webflux
 
 ### 前言
 

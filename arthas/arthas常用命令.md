@@ -187,7 +187,7 @@ vmtool -c 26a1ab54 -a getInstances --className com.coolcollege.cn.resoucemedia.v
 
 ### 查看redis配置
 ```sh
-sd -d net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService
+sc -d net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService
 # 查看database设置
 vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService --express '#val=instances[0].redisTemplate.connectionFactory.database'
 

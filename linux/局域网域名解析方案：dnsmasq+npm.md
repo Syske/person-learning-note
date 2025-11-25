@@ -2,6 +2,8 @@
 因为`dnsmasq`服务需要用`53`端口，而`systemd-resolved`默认情况会占用这个端口， 所以如果机器本身有运行`systemd-resolved`，还需要禁用`systemd-resolved`的`dns`解析，方式也很简单，只需要修改配置，并重启`systemd-resolved`:
 
 ```ini
+vim /etc/systemd/resolved.conf 
+
 DNS=127.0.0.1
 DNSStubListener=no
 ```

@@ -79,6 +79,12 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
  vmtool -c 1f2d2181 -a getInstances --className net.coolcollege.user.biz.cached.DepartmentCacheManager --express '#val=instances[0].DEPARTMENT_PARENT_CACHE.localCache.get(1878798350367723553L).value'
 ```
 
+查询value为空的缓存数据：
+```
+vmtool -c 3fcdcf -a getInstances --className net.coolcollege.user.biz.UserBizService --express '#emptyKeys=instances[0].userDepartmentCache.localCache.get(1067985194709028888L).value.entrySet().{? #this.value == null || #this.value.isEmpty()}.{ #this.key }'
+```
+
+
 本地缓存如果是内部静态类：
 ```
  vmtool -c 7668d560 -a getInstances --className net.coolcollege.training.service.domain.study.progress.ResourceCacheService --express '#val=instances[0].COURSE_RESOURCE_MAPPING_CACHE.localCache.get(new net.coolcollege.training.service.domain.study.progress.ResourceCacheService$CourseResourceMappingCacheKey(1371843837940600987L,2209228944622882816L)).value'
@@ -196,3 +202,15 @@ vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.servi
 ```
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/657a1174-ecb7-43ff-8a57-21379a16cedf.jpg)
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/b5e81a64-0a42-49c4-beb2-a472b9c830b6.jpg)
+
+### 查看HikariDataSource连接信息
+```sh
+ tt -t com.zaxxer.hikari.HikariDataSource getConnection -n 5
+```
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/aec60064-1ea3-42bb-b30c-756fd69a6a7a.jpg)
+```sh
+tt -i 1000 -w 'target.getJdbcUrl()'
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/d1227866-534f-4bdf-b303-3ead486bb701.jpg)
+

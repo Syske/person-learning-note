@@ -59,6 +59,16 @@ db.thirdOaSyncRecordPo.find({$and:[{"sync_detail._id":{$eq: "yh0310011"}},{"ente
 ```js
 db.evaluate_content_1610544642527465554.find({"refId": "2105665551681589248", "userId":"2105666173705261056"})
 ```
+### 模糊查询collection
+```js
+db.getCollectionNames().forEach(function(name) {
+    if (name.indexOf("1067985194709028888") !== -1) {
+        print(name);
+    }
+});
+```
+
+
 ## 报错梳理
 
 执行查询时提示没有权限，通常是由于配置了多个节点，我们连接到的节点没有权限，在shell脚本中建议链接主节点

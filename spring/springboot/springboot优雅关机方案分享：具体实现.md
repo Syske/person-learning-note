@@ -94,7 +94,7 @@ try {
 
 ### Tomcat
 
-### 监控逻辑
+#### 监控逻辑
 
 `tomcat`优雅关机要实现`TomcatConnectorCustomizer`接口，并实现`customize`方法，主要是为了关机时能获取到连接器，同时设置`Executor`实现统计活跃请求数的逻辑：
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/92812d34-3bc5-4a73-9393-09327772ef42.jpg)

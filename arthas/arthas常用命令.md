@@ -199,6 +199,11 @@ vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.servi
 
 # 查看连接地址
 vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService --express '#val=instances[0].redisTemplate.connectionFactory.configuration'
+
+# 
+vmtool --className net.coolcollege.exam.service.rest.question.impl.QuestionServiceImpl \
+  --action getInstances \
+  --express 'instances[0].clusterRedisUtil.shardedJedisPool.internalPool.factory.shards'
 ```
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/657a1174-ecb7-43ff-8a57-21379a16cedf.jpg)
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/b5e81a64-0a42-49c4-beb2-a472b9c830b6.jpg)

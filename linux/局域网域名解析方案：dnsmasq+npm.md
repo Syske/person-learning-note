@@ -1,3 +1,8 @@
+### 前言
+
+自从买了`N1`盒子之后，我就开始了`DIY`自己的`NAS`之旅，但是随着玩法的升级，发现`N1`盒子的配置还是太低了，于是我便开始想着换配置更好的设备，刚好自己的第一台笔记本电脑还能开机启动（戴尔`N4010`），于是我便给老笔记本升级了内存，从之前的`6G`（`2G+4G`），升级为`8G`（`4G x 2`），虽然配置也不高，但是相比于`N1`盒子的`2G`，可玩性高了很多，客户部署更多的应用。
+
+把玩过程中，发现所有服务都需要通过`ip` + 端口的方式访问，及其不方便，后来接触到`homepage`，基本能满足我的诉求，但是我还是想通过域名方式访问，主要是想学习下网络相关的知识，于是在`AI`的加持下，我了解到`dnsmasq`，最开始把玩并不顺利，踩了很多坑，也一直没有搞定，直到昨天，鬼使神差之下，我又想尝试下，然后很幸运地搞定了，于是就有了今天的分享。
 
 因为`dnsmasq`服务需要用`53`端口，而`systemd-resolved`默认情况会占用这个端口， 所以如果机器本身有运行`systemd-resolved`，还需要禁用`systemd-resolved`的`dns`解析，方式也很简单，只需要修改配置，并重启`systemd-resolved`:
 
@@ -135,7 +140,7 @@ address=/test2.syske.local/192.168.0.103
 `DHCP`设置`DNS`
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/4307018e-6984-45de-b110-75a6075deb60.jpg)
 
-至此，我们的域名解析完美解决，下面我们高点有意思的——二级域名解析
+至此，我们的域名解析完美解决，下面我们搞点有意思的——二级域名解析
 ### npm
 
 这里我直接选择`Nginx Proxy Manager`，和`Nginx`没有区别，增加了`web`管理界面，可以更方便地管理`nginx`配置：
@@ -250,3 +255,26 @@ x-casaos:
 至此，我们就可以直接通过二级域名访问我们的服务了。
 有个点需要注意下，如果服务本身需要支持`websocket`，需要开启`Websockets Suppert`开关，否则会报错：
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/a07d7941-d643-4ea7-98a8-d5d976abdd9b.jpg)
+
+### 小结
+
+简单小结一下，这个事情上次其实已经搞过一次，由于当时`dnsmasq`配置问题，域名解析一直不生效，所以就搁置了，然后刚好昨天没啥事，晚上回来就研究了下，终于搞定了。
+
+现在回过头来看，其实问题就出在端口上，和`systemd-resolved`端口冲突了，当时虽然将端口修改为`5353`，但是由于`dns`服务默认服务端口是`53`，所以`dns`解析实际没生效。
+
+另外一点是，当时一直依赖`AI`解决问题，并不清楚其中原理，所以疯狂踩坑，从这一点来说，我们其实也不能太过依赖`AI`工具，特别是我们不清楚不了解的情况下。
+
+好了，今天的分享就到这里，给大家分享几款适合在`Casaos`跑的软件，有兴趣的小伙伴可以把玩下，后面我可以详细分享下：
+
+- `homepage`：搭建自己的首页导航，颜值也是能打的
+	![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/9108c83b-22ba-4b87-9326-c547554b60a1.jpg)
+
+- Syncthing：贼好用的局域网数据备份软件，可以将手机数据同步并备份，而且还支持跨平台，安卓、 `windows`、苹果都可以
+	![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/7738286d-7ac8-4192-8448-80d90ad72539.jpg)
+- Emby：个人媒体解决方案的扛把子，实现在线追剧自由
+	![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/6a70a0bc-7fb3-4634-a04e-fbc3ff5d14c5.jpg)
+- PhotoPrism：如果你还在烦恼照片管理问题，那这个工具无疑是你最好的选择，支持按场景和任务、地点等管理图片，组合`syncthing`，简直不要太好
+	![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/b5c37c21-6af5-4c8e-94ac-d5e1de01b761.jpg)
+- Next Terminal：轻量级的堡垒机，方便管理多个资产
+	![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/82236df1-be93-4822-98d3-68e6ec3ce5f5.jpg)
+好了，今天的内容就分享到这里，感谢你看到这里，国庆节快乐呀~

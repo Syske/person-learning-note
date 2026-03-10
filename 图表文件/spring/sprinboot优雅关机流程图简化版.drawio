@@ -1,0 +1,220 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="第 1 页" id="4xXiTSDGiSys3jZnDxWU">
+    <mxGraphModel dx="1268" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-1" value="Kubernetes" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="150" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-2" value="SimpleK8sSignalHandler" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="220" y="20" width="206" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-3" value="PreShutdownHealthManager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="476" y="20" width="236" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-4" value="ShutdownHealthIndicator" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="762" y="20" width="214" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-5" value="GracefulShutdownManager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="1026" y="20" width="224" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-6" value="TomcatGracefulShutdown" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="20" width="214" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-7" value="SofaRpcGracefulShutdown" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="1564" y="20" width="220" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-8" value="RocketMQListenerShutdown" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="1834" y="20" width="232" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-9" value="ActiveMQGracefulShutdown" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="2116" y="20" width="229" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-10" value="ThreadPoolGracefulShutdown" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="2395" y="20" width="245" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-11" value="SofaRpcRunTimeGracefulShutdown" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="20" width="287" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-12" value="Spring Context" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="3027" y="20" width="150" height="1686" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-13" value="发送SIGTERM信号" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-1" target="KS6z_JH7KiFyiGdc6rdj-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="218" y="179" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-14" value="接收并处理信号" style="curved=1;endArrow=block;rounded=0;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-2" target="KS6z_JH7KiFyiGdc6rdj-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="374" y="233" />
+              <mxPoint x="374" y="263" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-15" value="触发预关机流程" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-2" target="KS6z_JH7KiFyiGdc6rdj-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="467" y="317" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-16" value="标记服务为不健康状态" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-3" target="KS6z_JH7KiFyiGdc6rdj-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="371" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-17" value="等待负载均衡器感知(5秒)" style="curved=1;endArrow=block;rounded=0;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-3" target="KS6z_JH7KiFyiGdc6rdj-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="475" />
+              <mxPoint x="645" y="505" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-18" value="执行优雅关机" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-3" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="875" y="559" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-19" value="按优先级排序关机阶段" style="curved=1;endArrow=block;rounded=0;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1189" y="613" />
+              <mxPoint x="1189" y="643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-20" value="执行关机(优先级:3000)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1281" y="699" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-21" value="关机完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-6" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1284" y="753" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-22" value="执行关机(优先级:4000)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1415" y="809" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-23" value="关机完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-7" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1418" y="863" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-24" value="执行关机(优先级:5000)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1553" y="919" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-25" value="关机完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-8" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1556" y="973" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-26" value="执行关机(优先级:5000)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1693" y="1029" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-27" value="关机完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-9" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1696" y="1083" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-28" value="执行关机(优先级:6000)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1836" y="1139" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-29" value="关机完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-10" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1839" y="1193" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-30" value="执行关机(优先级:7000)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1994" y="1249" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-31" value="销毁SOFA-RPC运行时环境" style="curved=1;endArrow=block;rounded=0;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-11" target="KS6z_JH7KiFyiGdc6rdj-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2885" y="1305" />
+              <mxPoint x="2885" y="1335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-32" value="关机完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-11" target="KS6z_JH7KiFyiGdc6rdj-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1997" y="1389" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-33" value="优雅关机流程完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-5" target="KS6z_JH7KiFyiGdc6rdj-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="878" y="1443" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-34" value="关闭Spring应用上下文" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-3" target="KS6z_JH7KiFyiGdc6rdj-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1857" y="1499" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-35" value="关闭完成" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" edge="1" parent="1" source="KS6z_JH7KiFyiGdc6rdj-12" target="KS6z_JH7KiFyiGdc6rdj-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1860" y="1553" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-36" value="优雅关机时序图" style="fillColor=#ffff88;strokeColor=#9E916F;" vertex="1" parent="1">
+          <mxGeometry x="70" y="95" width="3057" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-37" value="负载均衡器将停止发送新请求" style="fillColor=#ffff88;strokeColor=#9E916F;" vertex="1" parent="1">
+          <mxGeometry x="755" y="391" width="229" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="KS6z_JH7KiFyiGdc6rdj-38" value="整个优雅关机流程完成" style="fillColor=#ffff88;strokeColor=#9E916F;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1573" width="3057" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

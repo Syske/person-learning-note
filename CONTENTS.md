@@ -361,10 +361,6 @@
  - [软件推荐.md](other/软件推荐.md)
  - [轻量级文件服务器filebrowser.md](other/轻量级文件服务器filebrowser.md)
 
-## pages
-
- - [contents.md](pages/contents.md)
-
 ## pcb
 
  - [从零开始设计Linux卡片机.md](pcb/从零开始设计Linux卡片机.md)

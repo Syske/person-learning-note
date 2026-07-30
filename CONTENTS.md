@@ -195,6 +195,7 @@
 
 ### arch_linux
 
+  - [Arch Linux 磁盘空间清理与优化.md](linux/arch_linux/Arch Linux 磁盘空间清理与优化.md)
   - [Arch Linux 输入法配置（Fcitx5 + Rime 雾凇拼音）.md](linux/arch_linux/Arch Linux 输入法配置（Fcitx5 + Rime 雾凇拼音）.md)
   - [arch-linux安装deb软件.md](linux/arch_linux/arch-linux安装deb软件.md)
   - [arch-linux安装记录.md](linux/arch_linux/arch-linux安装记录.md)

@@ -1,5 +1,5 @@
 # dubbo的负载均衡以及配置方式补充
-tags: [#rpc, #dubbo]
+tags: #rpc #dubbo
 
 ### 前言
 

@@ -1,6 +1,6 @@
 # 知识点积累
 
-tags: [#java, #学习]
+tags: #java #学习
 
 ### 1、关于final的重要知识点：
 

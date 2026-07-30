@@ -1,4 +1,4 @@
-tags: [#db, #hikari]
+tags: #db #hikari
 
 - 在配置application.yml时，对hikari的配置会有这样一个字段validationQuery。
 - validationQuery是用来验证数据库连接的查询语句，这个查询语句必须是至少返回一条数据的SELECT语句。每种数据库都有各自的验证语句。

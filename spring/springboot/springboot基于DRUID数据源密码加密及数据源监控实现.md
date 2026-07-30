@@ -1,6 +1,6 @@
 # spring boot基于DRUID数据源密码加密及数据源监控实现
 
-tags: [#springboot]
+tags: #springboot
 
 ##### 前言
 

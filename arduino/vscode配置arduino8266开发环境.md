@@ -1,4 +1,3 @@
-
 ### vscode配置arduino环境
 
  这里再补充下`vscode arduino`开发环境的设置。

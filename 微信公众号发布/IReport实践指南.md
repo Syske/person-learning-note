@@ -1,6 +1,6 @@
 # IReport实践指南
 
-tags: [#ireport]
+tags: #ireport
 
 #### 前言
 

@@ -1,5 +1,5 @@
 # JAVA SE
-tags: [#java, #面试]
+tags: #java #面试
 
 ## 一、面向对象
 

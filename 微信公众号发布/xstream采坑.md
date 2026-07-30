@@ -1,4 +1,4 @@
-tags: [#xstream]
+tags: #xstream
 
 ### 前言
 

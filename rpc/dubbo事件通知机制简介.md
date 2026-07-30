@@ -1,7 +1,7 @@
 
 
 # dubbo事件通知机制简介
-tags: [#rpc, #dubbo]
+tags: #rpc, #dubbo
 
 ### 前言
 

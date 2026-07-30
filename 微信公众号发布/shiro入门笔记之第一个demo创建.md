@@ -1,6 +1,6 @@
 # shiro入门笔记之第一个demo创建
 
-tags: [#shiro, #demo]
+tags: #shiro #demo
 
 #### 前言
 

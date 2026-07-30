@@ -1,4 +1,4 @@
-tags: [#java, #string]
+tags: #java #string
 
 刚才看见一个兄弟在为Java的String传值/传引用问题困惑，翻箱倒柜找到了这篇我很久以前写的文章，发在这里，希望能对迷惑的朋友有些帮助。
 

@@ -74,6 +74,23 @@ vmtool -c 117e0fe5 -a getInstances --className net.coolcollege.incentive.service
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/20240313203706.png)
 
 
+```
+# 获取本地缓存中的数据
+ vmtool -c 1f2d2181 -a getInstances --className net.coolcollege.user.biz.cached.DepartmentCacheManager --express '#val=instances[0].DEPARTMENT_PARENT_CACHE.localCache.get(1878798350367723553L).value'
+```
+
+查询value为空的缓存数据：
+```
+vmtool -c 3fcdcf -a getInstances --className net.coolcollege.user.biz.UserBizService --express '#emptyKeys=instances[0].userDepartmentCache.localCache.get(1067985194709028888L).value.entrySet().{? #this.value == null || #this.value.isEmpty()}.{ #this.key }'
+```
+
+
+本地缓存如果是内部静态类：
+```
+ vmtool -c 7668d560 -a getInstances --className net.coolcollege.training.service.domain.study.progress.ResourceCacheService --express '#val=instances[0].COURSE_RESOURCE_MAPPING_CACHE.localCache.get(new net.coolcollege.training.service.domain.study.progress.ResourceCacheService$CourseResourceMappingCacheKey(1371843837940600987L,2209228944622882816L)).value'
+```
+核心逻辑是内部静态类与宿主类是通过`$`连接
+
 ### trace
 
 根据耗时跟踪方法：
@@ -115,3 +132,89 @@ java -jar arthas-boot.jar 1
 ```
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/e4e04331-2214-48db-b417-9c282e632424.jpg)
+
+## 监控MyBatis的SQL语句（推荐）
+
+1. 首先找到MyBatis执行SQL的类：
+
+```
+sc *StatementHandler
+```
+
+2. 然后监控RoutingStatementHandler或PreparedStatementHandler：
+```
+watch org.apache.ibatis.executor.statement.PreparedStatementHandler query '{params, target.boundSql.sql, returnObj}' -x 3
+```
+
+## 筛选参数中符合条件的数据
+
+```sh
+watch net.coolcollege.usercenter.service.strategy.impl.ImportUserByUserIdStrategy parseUserImportDto 'params[2].{?#this.userId == "ou_67be58fd131ca84ea46213ea6896207b"}' -s -x 3
+```
+
+上面的示例，是筛选入参中第三个参数（`list`）中，`userId`为`ou_67be58fd131ca84ea46213ea6896207b`的数据
+
+## 查看某个类中嵌套的静态类的属性
+
+类的定义如下
+
+```java
+@Configuration  
+public class ThirdComponentConfig {
+	@Configuration  
+	@ConfigurationProperties(prefix="component.ffmpeg")  
+	public static class FFmpegProperties{  
+	  
+	    /**  
+	     * 线程  
+	     */  
+	    private Integer thread;
+	}
+}
+```
+
+查看方法如下：
+```
+# 查询累的hash值
+sc -d com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegProperties
+
+# 查看具体的值
+vmtool -c 26a1ab54 -a getInstances --className com.coolcollege.cn.resoucemedia.v2.config.ThirdComponentConfig$FFmpegProperties --express '#val=instances[0].thread'
+```
+这里需要注意的是，完整类名是：外部全类名$内部嵌套类名
+
+## 查看框架层面的异常
+
+```sh
+ watch org.springframework.web.servlet.HandlerAdapter handle "{throwExp}" -e 
+```
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/ad8d05ad-361d-4aeb-8f70-0d2b53c7ead3.jpg)
+
+
+### 查看redis配置
+```sh
+sc -d net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService
+# 查看database设置
+vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService --express '#val=instances[0].redisTemplate.connectionFactory.database'
+
+# 查看连接地址
+vmtool -c 6d2260db -a getInstances --className net.coolcollege.login.cache.service.impl.EnterpriseConfigCacheService --express '#val=instances[0].redisTemplate.connectionFactory.configuration'
+
+# 
+vmtool --className net.coolcollege.exam.service.rest.question.impl.QuestionServiceImpl \
+  --action getInstances \
+  --express 'instances[0].clusterRedisUtil.shardedJedisPool.internalPool.factory.shards'
+```
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/657a1174-ecb7-43ff-8a57-21379a16cedf.jpg)
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/b5e81a64-0a42-49c4-beb2-a472b9c830b6.jpg)
+
+### 查看HikariDataSource连接信息
+```sh
+ tt -t com.zaxxer.hikari.HikariDataSource getConnection -n 5
+```
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/aec60064-1ea3-42bb-b30c-756fd69a6a7a.jpg)
+```sh
+tt -i 1000 -w 'target.getJdbcUrl()'
+```
+
+![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/d1227866-534f-4bdf-b303-3ead486bb701.jpg)

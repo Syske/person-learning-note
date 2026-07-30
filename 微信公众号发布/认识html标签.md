@@ -1,4 +1,4 @@
-tags: [#html]
+tags: #html
 
 #### 示例
 

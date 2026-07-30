@@ -1,4 +1,4 @@
-tags: [#ireport]
+tags: #ireport
 
 #### 前言
 

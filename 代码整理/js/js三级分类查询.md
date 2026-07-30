@@ -1,4 +1,4 @@
-tags: [#code, #三级分类]
+tags: #code #三级分类
 
 # 1、html
 ```html

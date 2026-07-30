@@ -1,4 +1,4 @@
-tags: [#javascript, #css, #html ]
+tags: #javascript #css #html 
 
 学习web前端开发基础技术需要掌握：HTML、CSS、JavaScript语言。下面我们就来了解下这三门技术都是用来实现什么的：
 

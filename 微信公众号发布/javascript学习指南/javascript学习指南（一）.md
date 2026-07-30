@@ -1,4 +1,4 @@
-tags: [#javascript]
+tags: #javascript
 
 1、**`document.write()`  **：可用于直接向 HTML 输出流写内容。简单的说就是直接在网页中输出内容。
 

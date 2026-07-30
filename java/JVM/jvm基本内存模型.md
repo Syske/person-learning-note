@@ -1,3 +1,4 @@
+
 # jvm基本内存模型
 
 #### 堆（Heap）
@@ -27,4 +28,3 @@
 
 
 ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/images/20201011093454.png)
-

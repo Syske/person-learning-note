@@ -1,4 +1,4 @@
-tags: [#python]
+tags: #python
 
 **1** **输出你好**
 

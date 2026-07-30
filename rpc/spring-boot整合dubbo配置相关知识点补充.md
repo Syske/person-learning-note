@@ -1,5 +1,5 @@
 # spring-boot整合dubbo相关知识点补充
-tags: [#springboot, #dubbo]
+tags: #springboot #dubbo
 
 ### 前言
 

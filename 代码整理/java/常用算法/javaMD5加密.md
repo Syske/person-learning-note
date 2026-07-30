@@ -1,4 +1,4 @@
-tags: [#code]
+tags: #code
 
 ```java
 import java.io.UnsupportedEncodingException;

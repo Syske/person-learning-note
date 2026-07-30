@@ -1,5 +1,5 @@
 # 安利一款超强截图工具——snipaste
-tags: [#截图工具, #snipaste, #安利]
+tags: #截图工具 #snipaste #安利
 
 ### snipaste是什么
 

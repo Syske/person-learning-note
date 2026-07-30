@@ -1,6 +1,6 @@
 # 树莓派开机启动chrome并屏
 
-tags: [#树莓派, #chrome, #全屏]
+tags: #树莓派 #chrome #全屏
 
 - 进入autostart文件夹：
 

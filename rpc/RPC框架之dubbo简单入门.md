@@ -1,5 +1,5 @@
 # RPC框架之dubbo简单入门
-tags: [#rpc, #dubbo]
+tags: #rpc #dubbo
 
 ## 前言
 

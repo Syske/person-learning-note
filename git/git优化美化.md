@@ -1,6 +1,6 @@
 # git 优化美化
 
-tags: [#git]
+tags: #git
 
 ### 1、中文乱码
 

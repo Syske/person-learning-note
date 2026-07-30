@@ -1,5 +1,5 @@
 # 多线程之CyclicBarrier
-tags: [#多线程]
+tags: #多线程
 
 ### 前言
 

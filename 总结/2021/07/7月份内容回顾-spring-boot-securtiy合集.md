@@ -1,10 +1,8 @@
 # 7月份内容回顾 | spring-boot securtiy合集
 
 
-
-- [spring-boot启用security组件 · 上
-
   ![](https://syske-pic-bed.oss-cn-hangzhou.aliyuncs.com/imgs/face-img-808db09d2e6e4e48aa728f862b7f02df.jpg)
+- spring-boot启用security组件 · 上
 
   http://mp.weixin.qq.com/s?__biz=MjM5NDMwNzA0NQ==&mid=2648419468&idx=1&sn=b661a1f0ef0ec66b392932d1baa0dfd5&chksm=bea6c20689d14b10dcc17cf7767616ab19400e55420089018e7a3bc27a81f2d90a530d486434&token=1371102985&lang=zh_CN#rd
 

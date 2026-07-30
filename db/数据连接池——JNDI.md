@@ -1,4 +1,4 @@
-tags: [#db, #jndi]
+tags: #db #jndi
 
 - 数据库连接有很多中方式，JDBC数据库的连接方式，前边我们已经介绍过了，而开发中我们经常使用的是DataBaseConnectionPool(数据库连接池,DBCP)。数据库连接池到底是什么？它比jdbc数据库连接有什么优势呢？它又怎么使用呢？
 

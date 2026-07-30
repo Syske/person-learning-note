@@ -1,5 +1,5 @@
 # spring-boot启用security组件
-tags: [#springboot, #security]
+tags: #springboot #security
 
 ### 前言
 

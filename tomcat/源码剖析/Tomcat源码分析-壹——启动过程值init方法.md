@@ -1,6 +1,6 @@
 # Tomcat源码分析 · 壹
 
-tags: [#tomcat, #源码]
+tags: #tomcat #源码
 
 ### 前言
 

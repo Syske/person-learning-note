@@ -1,6 +1,6 @@
 # Tomcat源码分析 · 叁——init方法补充
 
-tags: [#Tomcat, #源码]
+tags: #Tomcat #源码
 
 ### 前言
 

@@ -1,4 +1,4 @@
-tags: [#javascript]
+tags: #javascript
 
 **41、返回值的函数**
 

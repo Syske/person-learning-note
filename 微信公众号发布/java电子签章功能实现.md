@@ -1,6 +1,6 @@
 # java电子签章实现
 
-tags: [#电子签章]
+tags: #电子签章
 
 ##### 项目源码路径:https://github.com/Syske/learning-dome-code.git
 

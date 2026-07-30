@@ -1,5 +1,5 @@
 # 编写你的第一个spring-boot-starter
-tags: [#springboot, #stater]
+tags: #springboot, #starter
 
 ### 前言
 

@@ -36,7 +36,7 @@ cool-vpn <密码> <二次验证码>
 
 ```bash
 #!/bin/bash
-VPN_SERVER="vpn.beisen-inc.com"
+VPN_SERVER="vpn.example.com"
 VPN_GROUP="sslvpn-corp"
 USERNAME="<域账号>"
 PASSWORD="$1"

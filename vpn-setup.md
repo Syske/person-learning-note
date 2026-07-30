@@ -24,34 +24,58 @@ cool-vpn <密码> <二次验证码>
 
 `Ctrl + C` 终止即可。
 
-## 脚本位置
+## 脚本
 
-- `~/net-workspace/cool-vpn` — VPN 一键连接脚本
-- `/usr/local/bin/cool-vpn` — 脚本软链接
+### cool-vpn
 
-## Chrome 工作配置
+一键连接 VPN，自动填入密码和二次验证码。
 
-由于 Chrome 命名空间沙箱与 VPN 网络接口冲突，需要使用独立配置启动：
+位置: `~/net-workspace/cool-vpn` → `/usr/local/bin/cool-vpn`
+
+内容:
 
 ```bash
-google-chrome-stable --disable-namespace-sandbox --user-data-dir=$HOME/.config/chrome-work
+#!/bin/bash
+VPN_SERVER="vpn.beisen-inc.com"
+VPN_GROUP="sslvpn-corp"
+USERNAME="<域账号>"
+PASSWORD="$1"
+OTP_CODE="$2"
+
+if [ -z "$PASSWORD" ] || [ -z "$OTP_CODE" ]; then
+  echo "用法: $0 <VPN密码> <二次验证码>"
+  echo "示例: $0 mypassword 123456"
+  exit 1
+fi
+
+expect << EOF
+set timeout -1
+spawn sudo openconnect --protocol=anyconnect --user=\$USERNAME --authgroup=\$VPN_GROUP \$VPN_SERVER
+expect -re {[Pp]ass(word|W)[:：]?}
+send "\$PASSWORD\r"
+sleep 3
+send "\$OTP_CODE\r"
+expect eof
+EOF
 ```
 
-或通过桌面快捷方式 **Chrome (工作)** 启动。
+### cool-chrome
+
+启动独立配置的 Chrome，绕过命名空间沙箱以支持 VPN 内网访问。
+
+位置: `~/net-workspace/cool-chrome`
+
+内容:
+
+```bash
+#!/bin/bash
+exec google-chrome-stable --disable-namespace-sandbox --user-data-dir="$HOME/.config/chrome-work" "$@"
+```
+
+Chrome 配置目录: `~/.config/chrome-work`
 
 ## Clash 代理
 
 - 日常上网: 开启 Clash (TUN 模式)
 - 上班连 VPN: 关闭 Clash，开启 VPN
 - 不同时使用两者，避免路由冲突
-
-## 死机问题修复记录
-
-死机原因: 卸载 ROCm/AMD GPU 用户态包后，kwin_wayland 无法打开 DRM 设备，显示冻结。
-
-优化内容:
-
-- 移除孤包、旧驱动
-- 安装 `vulkan-radeon` 驱动
-- Cisco VPN 替换为 OpenConnect
-- 系统代理配置清理

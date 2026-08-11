@@ -38,3 +38,11 @@ pyenv global 3.8.5  # 设置全局Python版本为3.8.5
 cd your_project_directory
 pyenv local 3.7.9  # 为当前目录设置特定版本的Python
 ```
+
+
+### win环境安装
+
+直接通过`powershell`安装
+```powershell
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```

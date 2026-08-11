@@ -1,5 +1,9 @@
 # 笔记目录
 - [README](./README.md)：README
+## ai
+
+ - [MCP与大模型.md](ai/MCP与大模型.md)
+
 ## arduino
 
  - [8266+红外模块控制空调.md](arduino/8266+红外模块控制空调.md)
@@ -19,6 +23,7 @@
 
 ## arthas
 
+ - [arthas内存分析.md](arthas/arthas内存分析.md)
  - [arthas常用命令.md](arthas/arthas常用命令.md)
 
 ## db
@@ -43,17 +48,23 @@
  - [数据库驱动配置引发的惨案.md](db/数据库驱动配置引发的惨案.md)
  - [数据连接池——JNDI.md](db/数据连接池——JNDI.md)
 
+## ddd
+
+ - [DDD架构简述.md](ddd/DDD架构简述.md)
+
 ## docker
 
  - [Docker-compose常用命令.md](docker/Docker-compose常用命令.md)
  - [Doker部署springBoot项目.md](docker/Doker部署springBoot项目.md)
  - [Portainer使用指南.md](docker/Portainer使用指南.md)
  - [docker入门.md](docker/docker入门.md)
+ - [docker存储目录迁移.md](docker/docker存储目录迁移.md)
  - [docker常用命令.md](docker/docker常用命令.md)
  - [docker构建python项目镜像.md](docker/docker构建python项目镜像.md)
  - [docker运行网易云音乐接口.md](docker/docker运行网易云音乐接口.md)
  - [harbor镜像构建推送流程.md](docker/harbor镜像构建推送流程.md)
  - [linux环境下docker报错汇总.md](docker/linux环境下docker报错汇总.md)
+ - [国内Docker拉取镜像实战：加速器对比与SSH隧道出海.md](docker/国内Docker拉取镜像实战：加速器对比与SSH隧道出海.md)
  - [sonar安装阿里插件.md](docker/sonar安装阿里插件.md)
  - [安利一款云容器管理工具…….md](docker/安利一款云容器管理工具…….md)
  - [构建Jenkins.md](docker/构建Jenkins.md)
@@ -71,6 +82,9 @@
  - [elasticsearch搜索语法梳理-贰.md](elasticsearch/elasticsearch搜索语法梳理-贰.md)
  - [elasticsearch搜索语法梳理.md](elasticsearch/elasticsearch搜索语法梳理.md)
  - [es实践指南.md](elasticsearch/es实践指南.md)
+ - [es模糊查询.md](elasticsearch/es模糊查询.md)
+ - [es的nested数据类型.md](elasticsearch/es的nested数据类型.md)
+ - [es踩坑记录.md](elasticsearch/es踩坑记录.md)
  - [开始步入Elasticsearch的世界：初探elasticsearch.md](elasticsearch/开始步入Elasticsearch的世界：初探elasticsearch.md)
 
 ## electron
@@ -94,6 +108,8 @@
 
 ## go学习笔记
 
+ - [golang的指针.md](go学习笔记/golang的指针.md)
+ - [golang的接口.md](go学习笔记/golang的接口.md)
  - [go工具类封装.md](go学习笔记/go工具类封装.md)
  - [go环境配置流程.md](go学习笔记/go环境配置流程.md)
  - [go项目构建流程.md](go学习笔记/go项目构建流程.md)
@@ -102,6 +118,7 @@
  - [其他语法点.md](go学习笔记/其他语法点.md)
  - [基本语法.md](go学习笔记/基本语法.md)
  - [循环语句.md](go学习笔记/循环语句.md)
+ - [数组与切片.md](go学习笔记/数组与切片.md)
  - [条件语句.md](go学习笔记/条件语句.md)
  - [运算符.md](go学习笔记/运算符.md)
 
@@ -121,6 +138,7 @@
   - [java内存及数据区.md](java/JVM/java内存及数据区.md)
   - [java类加载器.md](java/JVM/java类加载器.md)
   - [jvm中垃圾回收机制.md](java/JVM/jvm中垃圾回收机制.md)
+  - [jvm分析常用命令.md](java/JVM/jvm分析常用命令.md)
   - [jvm基本内存模型.md](java/JVM/jvm基本内存模型.md)
 
 ### javaSE
@@ -157,6 +175,7 @@
 ## k8s
 
  - [k8s整合kuboard，让我们更愉快地进行k8s管理.md](k8s/k8s整合kuboard，让我们更愉快地进行k8s管理.md)
+ - [kt-connect使用指南.md](k8s/kt-connect使用指南.md)
  - [kuboard简单使用.md](k8s/kuboard简单使用.md)
  - [wsl安装搭建k8s环境.md](k8s/wsl安装搭建k8s环境.md)
  - [wsl搭建k8s集群补充内容.md](k8s/wsl搭建k8s集群补充内容.md)
@@ -177,6 +196,9 @@
 
 ### arch_linux
 
+  - [Arch Linux 磁盘空间清理与优化.md](linux/arch_linux/Arch Linux 磁盘空间清理与优化.md)
+  - [Arch Linux 输入法配置（Fcitx5 + Rime 雾凇拼音）.md](linux/arch_linux/Arch Linux 输入法配置（Fcitx5 + Rime 雾凇拼音）.md)
+  - [arch-linux安装deb软件.md](linux/arch_linux/arch-linux安装deb软件.md)
   - [arch-linux安装记录.md](linux/arch_linux/arch-linux安装记录.md)
 
 ### manjaro
@@ -207,12 +229,14 @@
   - [wsl安装Docker.md](linux/wsl/wsl安装Docker.md)
   - [wsl安装jdk.md](linux/wsl/wsl安装jdk.md)
   - [wsl安装其他盘解决方案.md](linux/wsl/wsl安装其他盘解决方案.md)
+  - [wsl日常使用积累.md](linux/wsl/wsl日常使用积累.md)
 
  - [Linux卡片机制作记录：编译rootfs.md](linux/Linux卡片机制作记录：编译rootfs.md)
  - [Linux卡片机制作记录：配置网络.md](linux/Linux卡片机制作记录：配置网络.md)
  - [Linux命令手册.md](linux/Linux命令手册.md)
  - [Linux环境下jdk、tomcat、redis安装及配置.md](linux/Linux环境下jdk、tomcat、redis安装及配置.md)
  - [Linux环境下mysql安装并配置远程访问.md](linux/Linux环境下mysql安装并配置远程访问.md)
+ - [centos离线安装nginx.md](linux/centos离线安装nginx.md)
  - [linux-card开发板制作记录.md](linux/linux-card开发板制作记录.md)
  - [linux创建sftp用户及相关信息配置.md](linux/linux创建sftp用户及相关信息配置.md)
  - [linux卡片机制作记录：linux内核编译.md](linux/linux卡片机制作记录：linux内核编译.md)
@@ -229,6 +253,11 @@
  - [ubuntu常用软件安装.md](linux/ubuntu常用软件安装.md)
  - [ubunt安装原生微信.md](linux/ubunt安装原生微信.md)
  - [回顾下Linux相关知识，为k8s预热…….md](linux/回顾下Linux相关知识，为k8s预热…….md)
+ - [局域网DNS解析故障实战：dnsmasq上游配置排查.md](linux/局域网DNS解析故障实战：dnsmasq上游配置排查.md)
+ - [局域网域名解析方案：dnsmasq+npm.md](linux/局域网域名解析方案：dnsmasq+npm.md)
+ - [Clash代理拦截内网域名502排查与修复.md](linux/Clash代理拦截内网域名502排查与修复.md)
+ - [BeeCount登录页访问慢：Google Fonts被墙优化.md](linux/BeeCount登录页访问慢：Google Fonts被墙优化.md)
+ - [BeeCount-Cloud蜜蜂记账自部署全记录.md](linux/BeeCount-Cloud蜜蜂记账自部署全记录.md)
  - [解决linux环境下问题.md](linux/解决linux环境下问题.md)
  - [还不会安装Linux？.md](linux/还不会安装Linux？.md)
 
@@ -245,6 +274,11 @@
 
  - [maven使用的技巧.md](maven/maven使用的技巧.md)
  - [添加本地jar.md](maven/添加本地jar.md)
+
+## mcp
+
+ - [MPC资源.md](mcp/MPC资源.md)
+ - [简单示例代码.md](mcp/简单示例代码.md)
 
 ## mock
 
@@ -266,6 +300,7 @@
 
  - [bug整理.md](myBatis/bug整理.md)
  - [mybatis小试牛刀.md](myBatis/mybatis小试牛刀.md)
+ - [mybatis常用技巧.md](myBatis/mybatis常用技巧.md)
  - [动态拼接sql语句.md](myBatis/动态拼接sql语句.md)
  - [记一次mybatis复杂动态sql拼接方案.md](myBatis/记一次mybatis复杂动态sql拼接方案.md)
 
@@ -278,6 +313,7 @@
  - [NGINX安装配置.md](nginx/NGINX安装配置.md)
  - [NGINX本地目录映射.md](nginx/NGINX本地目录映射.md)
  - [NGINX配置笔记.md](nginx/NGINX配置笔记.md)
+ - [nginx踩坑指南.md](nginx/nginx踩坑指南.md)
 
 ## nodeJS
 
@@ -391,6 +427,7 @@
  - [python使用线程池.md](python/python使用线程池.md)
  - [python其他技巧.md](python/python其他技巧.md)
  - [python图形GUI——Qt5.md](python/python图形GUI——Qt5.md)
+ - [python多版本管理.md](python/python多版本管理.md)
  - [python学习笔记.md](python/python学习笔记.md)
  - [python常用库urllib.md](python/python常用库urllib.md)
  - [python常用库之pydantic.md](python/python常用库之pydantic.md)
@@ -467,8 +504,6 @@
 
 ## spring
 
-### jpa
-
 ### springboot
 
 #### 容器组件
@@ -517,6 +552,9 @@
   - [spring-boot启用security组件.md](spring/springboot/spring-boot启用security组件.md)
   - [spring-boot整合security组件实战demo.md](spring/springboot/spring-boot整合security组件实战demo.md)
   - [spring-webflux骚操作.md](spring/springboot/spring-webflux骚操作.md)
+  - [springboot优雅关机方案分享：k8s节点关机流程概述.md](spring/springboot/springboot优雅关机方案分享：k8s节点关机流程概述.md)
+  - [springboot优雅关机方案分享：具体实现.md](spring/springboot/springboot优雅关机方案分享：具体实现.md)
+  - [springboot优雅关机方案分享：方案概述.md](spring/springboot/springboot优雅关机方案分享：方案概述.md)
   - [springboot基于DRUID数据源密码加密及数据源监控实现.md](spring/springboot/springboot基于DRUID数据源密码加密及数据源监控实现.md)
   - [springboot学习笔记（一）.md](spring/springboot/springboot学习笔记（一）.md)
   - [springboot整合Mybatis.md](spring/springboot/springboot整合Mybatis.md)
@@ -574,6 +612,7 @@
 
 ## sso
 
+ - [ADFS单点登录流程梳理.md](sso/ADFS单点登录流程梳理.md)
  - [jwt基本知识及完整实现示例.md](sso/jwt基本知识及完整实现示例.md)
  - [sso常见解决方案及基本原理.md](sso/sso常见解决方案及基本原理.md)
  - [单点登陆token跨域共享解决方案.md](sso/单点登陆token跨域共享解决方案.md)
@@ -749,6 +788,7 @@
   - [refresh-context.drawio](图表文件/spring/refresh-context.drawio)
   - [run方法运行时序图.drawio](图表文件/spring/run方法运行时序图.drawio)
   - [sping-boot-websocket.xmind](图表文件/spring/sping-boot-websocket.xmind)
+  - [sprinboot优雅关机流程图简化版.drawio](图表文件/spring/sprinboot优雅关机流程图简化版.drawio)
   - [spring-boot-security.xmind](图表文件/spring/spring-boot-security.xmind)
   - [spring-cloud.xmind](图表文件/spring/spring-cloud.xmind)
   - [webSocket.drawio](图表文件/spring/webSocket.drawio)
@@ -838,6 +878,23 @@
 
 ## 工具管理
 
+### AI工具
+
+  - [常用提示词梳理.md](工具管理/AI工具/常用提示词梳理.md)
+  - [本地构建AI接口服务.md](工具管理/AI工具/本地构建AI接口服务.md)
+  - [本地部署deepSeek模型.md](工具管理/AI工具/本地部署deepSeek模型.md)
+  - [生产力爆炸！用iFlow CLI打造会操作系统的AI助理.md](工具管理/AI工具/生产力爆炸！用iFlow CLI打造会操作系统的AI助理.md)
+  - [训练特定领域AI模型.md](工具管理/AI工具/训练特定领域AI模型.md)
+  - [集成显卡启用OpenCL.md](工具管理/AI工具/集成显卡启用OpenCL.md)
+
+### ai创作
+
+  - [2025农历新年，辞旧迎新，与DeepSeek一起「破茧成蝶」.md](工具管理/ai创作/2025农历新年，辞旧迎新，与DeepSeek一起「破茧成蝶」.md)
+  - [AI时代的认知保卫战：如何在算法支配下保持主体性.md](工具管理/ai创作/AI时代的认知保卫战：如何在算法支配下保持主体性.md)
+  - [从“节后综合征”到“代码手感全开”的实战指南.md](工具管理/ai创作/从“节后综合征”到“代码手感全开”的实战指南.md)
+  - [深度求索DeepSeek：一个会“思考”的AI，如何用它重塑你的学习与工作？.md](工具管理/ai创作/深度求索DeepSeek：一个会“思考”的AI，如何用它重塑你的学习与工作？.md)
+  - [零基础也能玩转AI训练！手把手教你打造人生第一个AI模型（2024最新实战版）.md](工具管理/ai创作/零基础也能玩转AI训练！手把手教你打造人生第一个AI模型（2024最新实战版）.md)
+
 ### collection
 
   - [Apache旗下主流项目梳理.md](工具管理/collection/Apache旗下主流项目梳理.md)
@@ -867,12 +924,14 @@
  - [shell好用的工具.md](工具管理/shell好用的工具.md)
  - [vscode常用插件梳理.md](工具管理/vscode常用插件梳理.md)
  - [一键上传剪贴板图片到阿里云图床.md](工具管理/一键上传剪贴板图片到阿里云图床.md)
+ - [常用AI工具.md](工具管理/常用AI工具.md)
  - [常用工具网站.md](工具管理/常用工具网站.md)
  - [常用工具链接.md](工具管理/常用工具链接.md)
  - [常用软件资源整理.md](工具管理/常用软件资源整理.md)
  - [手机好用软件整理.md](工具管理/手机好用软件整理.md)
  - [手机投屏至电脑工具.md](工具管理/手机投屏至电脑工具.md)
  - [效率提升工具.md](工具管理/效率提升工具.md)
+ - [本地部署DeepSeek补充内容.md](工具管理/本地部署DeepSeek补充内容.md)
  - [电子书网站整理.md](工具管理/电子书网站整理.md)
  - [高效办公环境分享.md](工具管理/高效办公环境分享.md)
 
@@ -1014,6 +1073,7 @@
 
   - [股票日k周k月k简介.md](管理/股票/股票日k周k月k简介.md)
 
+ - [sklearn学习指南.md](管理/sklearn学习指南.md)
  - [世界格局分析笔记.md](管理/世界格局分析笔记.md)
  - [九型人格.md](管理/九型人格.md)
  - [关于迷茫.md](管理/关于迷茫.md)
@@ -1022,6 +1082,8 @@
  - [我们并非不快乐…….md](管理/我们并非不快乐…….md)
  - [穷爸爸富爸爸笔记.md](管理/穷爸爸富爸爸笔记.md)
  - [软件架构原则.md](管理/软件架构原则.md)
+ - [采购舞弊审计模型的构建思路.md](管理/采购舞弊审计模型的构建思路.md)
+ - [采购舞弊技术实现细节.md](管理/采购舞弊技术实现细节.md)
 
 ## 练习题知识点整理
 
@@ -1109,4 +1171,5 @@
  - [滴，第二波面试来袭.md](面试/滴，第二波面试来袭.md)
  - [面试整理.md](面试/面试整理.md)
 
+- [AGENTS.md](AGENTS.md)
 - [CONTENTS.md](CONTENTS.md)

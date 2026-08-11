@@ -160,8 +160,7 @@ GET /_all/_settings?filter_path=**.creation_date
 
 ```json
  GET /_cat/indices?v&s=creation.date:desc
-<<<<<<< HEAD
-=======
+
 ```
 
 
@@ -170,7 +169,6 @@ GET /_all/_settings?filter_path=**.creation_date
 ```json
 DELETE /authority_resource_data/_doc/1455818647728689179_user_1820179489074843648
 ```
-
 
 ### 根据条件删除
 
@@ -187,5 +185,4 @@ POST /100101951057547274620933/_delete_by_query
     }
   }
 }
->>>>>>> 2b5c9fde2cfcfae33a64f4822874780e154c7961
 ```

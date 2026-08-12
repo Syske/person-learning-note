@@ -207,7 +207,7 @@ WSL 与 Windows 的 git 配置互相独立（`$HOME` 不同），不会自动继
 
 ```bash
 git config --global user.name "syske"
-git config --global user.email "715448004@qq.com"
+git config --global user.email "<GIT_EMAIL>"
 ```
 
 > 软链接继承 Windows 配置虽可行，但会带入 `core.autocrlf=true`、`http.sslverify=false` 等 Windows 专属设置，Linux 下不推荐。建议各自独立配置。
@@ -320,3 +320,240 @@ running
 | `nvm install 20` | 切换 Node 版本 |
 
 系统盘为 ext4.vhdx（`D:\dev-tool\WSL\Ubuntu-24.04`），容量自动扩容，当前可用约 954G。
+
+---
+
+## 十三、安装配置 pi agent 与 opencode（参考 Windows 配置）
+
+> 目标：将 Windows 端已配置好的 pi agent 与 opencode 完整同步到 WSL（Linux 原生版），包括认证、模型、插件、MCP、skills。
+
+### 1. 检查现状
+
+```bash
+export NVM_DIR="$HOME/.nvm"
+. "$NVM_DIR/nvm.sh"
+which pi opencode        # 初始指向 Windows 版 (/mnt/d/tools/...)
+pi --version
+opencode --version
+```
+
+> 关键坑点：WSL 的 PATH 默认含 Windows 路径（`/mnt/d/...`），`which` 会先命中 Windows 的 npm shim 脚本。必须用 WSL 的 nvm node 装 Linux 原生版。
+
+### 2. 安装 Linux 原生版
+
+```bash
+npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+npm install -g opencode-ai
+```
+
+> 坑点：新版本 npm 默认拦截 postinstall 脚本（`allow-scripts` 安全机制），opencode 需要下载原生二进制，需显式放行：
+> ```bash
+> npm install -g --allow-scripts=opencode-ai opencode-ai
+> ```
+
+验证安装位置指向 WSL：
+```bash
+which pi        # ~/.nvm/versions/node/v24.19.0/bin/pi
+which opencode  # ~/.nvm/versions/node/v24.19.0/bin/opencode
+```
+
+### 3. 同步 pi 配置
+
+#### 认证（含 API key，脱敏）
+
+```bash
+mkdir -p ~/.pi/agent
+cp /mnt/c/Users/syske/.pi/agent/auth.json ~/.pi/agent/auth.json   # 含 <DEEPSEEK_API_KEY>
+cp /mnt/c/Users/syske/.pi/agent/models.json ~/.pi/agent/models.json
+cp /mnt/c/Users/syske/.pi/agent/models-store.json ~/.pi/agent/models-store.json
+```
+
+`auth.json` 结构（密钥脱敏为占位符）：
+```json
+{
+  "deepseek": {
+    "type": "api_key",
+    "key": "<DEEPSEEK_API_KEY>"
+  }
+}
+```
+
+#### settings.json
+
+```json
+{
+  "lastChangelogVersion": "0.84.0",
+  "theme": "dark",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:pi-powerline",
+    "npm:pi-cache-optimizer",
+    "npm:pi-web-access",
+    "npm:@mjasnikovs/pi-task"
+  ]
+}
+```
+
+> WSL 路径注意：settings.json 中 `packages` 的安装目标是 `~/.pi/agent/npm/`（Linux 路径）。
+
+#### trust.json（路径映射为 WSL 挂载路径）
+
+```json
+{
+  "/mnt/d/workspace/ai-workspace": true
+}
+```
+
+#### 安装 pi 包
+
+```bash
+pi install npm:pi-powerline
+pi install npm:pi-cache-optimizer
+pi install npm:pi-web-access
+pi install npm:@mjasnikovs/pi-task
+pi list    # 验证 4 个包已装入 ~/.pi/agent/npm/
+```
+
+#### 扩展配置（pi-rtk-optimizer）
+
+```bash
+mkdir -p ~/.pi/agent/extensions/pi-rtk-optimizer
+cp /mnt/c/Users/syske/.pi/agent/extensions/pi-rtk-optimizer/config.json \
+   ~/.pi/agent/extensions/pi-rtk-optimizer/config.json
+```
+
+### 4. 同步 opencode 配置
+
+#### 认证
+
+```bash
+mkdir -p ~/.local/share/opencode
+cp /mnt/c/Users/syske/.local/share/opencode/auth.json ~/.local/share/opencode/auth.json
+cp /mnt/c/Users/syske/.local/share/opencode/account.json ~/.local/share/opencode/account.json
+```
+
+`auth.json` 结构（密钥脱敏）：
+```json
+{
+  "deepseek": { "type": "api", "key": "<DEEPSEEK_API_KEY>" },
+  "opencode": { "type": "api", "key": "<OPENCODE_API_KEY>" }
+}
+```
+
+#### opencode.jsonc（WSL 适配版）
+
+Windows 端 MCP 用 `C:\Users\syske\.pyenv\...\python.exe`，WSL 端改为系统 Python 并补充 PATH：
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-history-search"],
+  "mcp": {
+    "code-review-graph": {
+      "type": "local",
+      "command": ["/usr/bin/python3", "-m", "code_review_graph", "serve"],
+      "cwd": ".",
+      "environment": {
+        "HF_HUB_DISABLE_SYMLINKS_WARNING": "1",
+        "PATH": "/usr/bin:/bin:/home/syske/.local/bin"
+      },
+      "timeout": 60000,
+      "enabled": true
+    }
+  }
+}
+```
+
+> `opencode-history-search` 是 npm/git 插件，opencode 首次运行会自动从插件缓存安装（`~/.cache/opencode/packages/`），无需手动下载。
+
+#### 安装 MCP 依赖（code-review-graph）
+
+```bash
+sudo apt-get -y install python3-pip python3-venv
+/usr/bin/python3 -m pip install --break-system-packages \
+  -i https://pypi.tuna.tsinghua.edu.cn/simple code-review-graph
+```
+
+> 坑点：WSL 里 `pip3` 可能指向 Windows 的 pyenv shim（无法执行），必须用 `/usr/bin/python3 -m pip`。`--break-system-packages` 是 Ubuntu 24.04 外部管理环境的必需参数。
+
+#### 同步 skills
+
+Windows 端 `~/.config/opencode/skills` 是 junction（reparse point），drvfs 无法穿透，`cp` 或 `cd` 会报 `Permission denied`。解法：在 Windows 侧用 robocopy 先复制到临时目录（排除 `.git`/`_archive`/`.system`），WSL 再从 `/mnt/c` 复制：
+
+```powershell
+# Windows 侧
+robocopy "C:\Users\syske\.config\opencode\skills" "C:\...\Temp\skills_stage" /E /XD .git _archive .system
+```
+
+```bash
+# WSL 侧
+mkdir -p ~/.config/opencode/skills
+cp -r /mnt/c/.../skills_stage/* ~/.config/opencode/skills/
+```
+
+同步结果：codegraph-helper、coolreview、find-skills、grilling、karpathy-guidelines、superpowers 共 6 个启用中的 skills。
+
+#### 同步 opencode 全局插件（Witty-Skill-Insight）
+
+```bash
+mkdir -p ~/.opencode/plugins
+cp /mnt/c/Users/syske/.opencode/plugins/* ~/.opencode/plugins/
+cp /mnt/c/Users/syske/.opencode/package.json ~/.opencode/
+cp /mnt/c/Users/syske/.opencode/package-lock.json ~/.opencode/
+cd ~/.opencode && npm install
+```
+
+#### 安装 @opencode-ai 依赖
+
+```bash
+cd ~/.config/opencode && npm install   # 安装 @opencode-ai/plugin、sdk
+```
+
+> 坑点：npm 12.x 项目级安装不允许 `--allow-scripts`，直接 `npm install` 即可；个别包（msgpackr-extract）会有 allow-scripts 警告，不影响使用。
+
+### 5. 验证
+
+```bash
+pi --version                       # 0.84.1
+pi models                          # 显示 deepseek-v4-flash (active) / deepseek-v4-pro
+opencode --version                 # 1.18.16
+opencode models                    # 列出 opencode/deepseek 全部模型
+```
+
+端到端测试：
+```bash
+opencode run --model opencode/deepseek-v4-flash-free "reply OK"
+# → OK
+```
+
+### 6. 遇到的坑点汇总
+
+| 坑点 | 现象 | 解决 |
+|------|------|------|
+| PATH 命中 Windows 版 | `which pi` 指向 /mnt/d/tools | 用 nvm 的 npm 装 Linux 版 |
+| npm 拦截 postinstall | opencode 装完无二进制 | `npm install -g --allow-scripts=opencode-ai` |
+| pip 指向 Windows shim | `pip3` 报 cannot execute | 用 `/usr/bin/python3 -m pip` |
+| Ubuntu 外部管理环境 | pip 拒绝安装 | 加 `--break-system-packages` |
+| skills 是 junction | drvfs 报 Permission denied | Windows 侧 robocopy 中转 |
+| npm 12 项目级 --allow-scripts | 报 EALLOWSCRIPTS | 去掉该参数直接 install |
+
+---
+
+## 十四、Git 提交测试（WSL git + SSH）
+
+WSL 配置好 git 后，用它提交并推送文档到 GitHub 验证（SSH 凭证生效）：
+
+```bash
+cd /mnt/d/workspace/learning/note
+git add "linux/wsl/WSL2-Ubuntu24.04-完整安装与推荐配置.md"
+git commit -m "docs: WSL2 + Ubuntu 24.04 完整安装与推荐配置"
+git push origin master
+```
+
+> 注意：WSL 视角下仓库大量文件显示为 modified，是 WSL/Windows 的 line-ending（autocrlf）差异导致，非真实改动。提交时只 `git add` 目标文件，不要 `git add .`。
+
+已提交示例：
+- `3a499d6` WSL 完整安装配置文档
+- `a41595c` sofa-rpc 压测

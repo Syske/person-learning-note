@@ -641,4 +641,123 @@ zsh -i -c 'echo $ZSH_THEME; echo $plugins; node -v; git config user.name'
 - **快速跳转**：`z 目录名` 跳到历史访问过的目录
 - **git 信息**：agnoster 主题在提示符显示当前分支/工作区状态
 
+---
+
+## 十六、ai-system × WSL 集成
+
+> 目标：让 `D:\workspace\ai-workspace\ai-system`（aic CLI 编排引擎）在 WSL 内可用，能正确解析 Linux 路径并启动 WSL 原生版 opencode/pi。
+
+### 1. 背景与核心障碍
+
+ai-system 是一个 Python CLI（`aic`），通过 `subprocess.call(shell=True)` 启动 agent（opencode/pi/claude）。默认环境配置 `config/environments/local.yaml` 使用 **Windows 绝对路径**（`D:\workspace\...`）。
+
+- 在 WSL 中 Python 的 `Path("D:\...")` 会解析为**相对路径**（`PosixPath('/mnt/d/.../D:/workspace/...')`），导致所有路径错误。
+- `aic` 命令默认命中 Windows 的 pyenv shim（`/mnt/c/Users/syske/.pyenv/pyenv-win/shims/aic`），在 Linux 下不可执行。
+
+### 2. 解决方案：新增 WSL 环境配置
+
+ai-system 原生支持 `--environment <name>`，按 `config/environments/<name>.yaml` 加载。新建 `config/environments/wsl.yaml`：
+
+```yaml
+workspace:
+  root: /mnt/d/workspace/ai-workspace
+  repository_root: /mnt/d/workspace/ai-workspace/projects
+
+build:
+  backend: maven   # WSL 无 IDEA，使用 maven CLI 后端
+
+layers:
+  ai_system:
+    path: /mnt/d/workspace/ai-workspace/ai-system
+  projects:
+    path: /mnt/d/workspace/ai-workspace/projects
+  methodologies:
+    path: /mnt/d/workspace/ai-workspace/methodologies
+  skills:
+    path: /mnt/d/workspace/ai-workspace/extensions
+```
+
+### 3. WSL 内安装依赖
+
+```bash
+cd /mnt/d/workspace/ai-workspace/ai-system
+python3 -m pip install --break-system-packages \
+  -i https://pypi.tuna.tsinghua.edu.cn/simple \
+  PyYAML pyperclip prompt_toolkit
+python3 -m pip install --break-system-packages --no-build-isolation -e .
+# aic 安装到 /home/syske/.local/bin/aic
+```
+
+### 4. 修复 PATH 优先级（关键）
+
+WSL 默认会把 Windows PATH 追加进来，导致 `opencode/pi` 命中 `/mnt/d/tools/node-v24.18.0-win-x64/` 的 Windows 版，`aic` 命中 pyenv shim。需要在**各 shell 配置文件**中把原生 bin 提前。
+
+**`~/.zshrc` 追加**（日常交互 shell）：
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$NVM_BIN:$PATH"
+```
+
+**`~/.bashrc` 与 `~/.profile` 追加**（`subprocess.call` / `bash -lc` 等非交互场景）：
+
+```bash
+if [ -n "$NVM_BIN" ]; then
+    export PATH="$NVM_BIN:$HOME/.local/bin:$PATH"
+fi
+```
+
+验证：
+
+```bash
+which aic opencode pi
+# 应输出:
+# /home/syske/.local/bin/aic
+# /home/syske/.nvm/versions/node/v24.19.0/bin/opencode
+# /home/syske/.nvm/versions/node/v24.19.0/bin/pi
+```
+
+> 注意：`aic` 通过 `subprocess.call(shell=True)` 启动 agent 时，子进程继承 aic 进程自身的 PATH。只要从 zsh 启动 aic（PATH 已含 nvm bin），链路即正确。
+
+### 5. 使用方式
+
+```bash
+# 交互向导（项目选择 → workflow 选择 → 启动 opencode）
+aic --environment wsl
+
+# 非交互生成 prompt
+aic verify --environment wsl --project demo
+```
+
+### 6. 日常使用建议
+
+**WSL 无需常驻**：WSL2 是 VM 架构，最后一个 WSL 进程退出后约 8 秒自动关闭并释放内存；`.wslconfig` 的 `memory=16GB` 是上限而非预留，`autoMemoryReclaim=gradual` 会在空闲 1 分钟后逐步归还缓存内存。日常正常使用 CLI 不会常驻占内存。
+
+**任务归属**：
+
+| 场景 | 用哪个 | 原因 |
+|------|--------|------|
+| 跑 `aic` / opencode / pi（AI 编排） | WSL | 已集成 `--environment wsl`，命中原生 agent |
+| 日常编码、git、Linux 工具链 | WSL | 文件系统 IO 快、工具全 |
+| Windows 专属（IDEA、Office、PowerShell 脚本） | Windows | 无替代 |
+
+**关键实践**：
+
+1. **统一从 WSL 操作代码**：`D:\workspace\...` 在 WSL 里是 `/mnt/d/workspace/...`（9P 协议，比 WSL 原生 fs 慢）。避免两套工具交替改同一文件（行尾/权限会互相干扰）。
+2. **跑 ai-system**：进 WSL 后 `cd` 到项目目录，直接 `aic --environment wsl`，PATH 已收敛无需额外设置。
+3. **用完即走**：退出终端 WSL 自动关闭；改 `.wslconfig` 后需 `wsl --shutdown` 重启生效，其余情况无需手动关机。
+4. **访问 Windows 文件**：用 `/mnt/c/...`、`/mnt/d/...` 直接读写，不要用 `cmd.exe` 反向操作 WSL 文件。
+5. **可选加速**：在 `.zshrc` 加 `export CDPATH=/mnt/d/workspace/ai-workspace` 快速跳转，或把 Windows 的 `workspace-config.ps1` 别名同步到 `.zshrc` 统一体验。
+
+### 7. 验证结果
+
+| 项目 | 状态 |
+|------|------|
+| `paths(root, 'wsl')` 路径解析 | 全部存在 |
+| `tools/check.py` | PASS（3 个原有 warning）|
+| provider 元数据 | opencode/pi/claude 正常加载 |
+| `aic verify --environment wsl` | exit 0，prompt 生成正常 |
+| 交互向导（项目/ workflow 选择） | 正常流转 |
+| subprocess 调 agent（PATH 继承） | 命中 WSL 原生版 |
+
 之后 `wsl` 或 `wsl -d Ubuntu-24.04` 进入即默认 zsh。

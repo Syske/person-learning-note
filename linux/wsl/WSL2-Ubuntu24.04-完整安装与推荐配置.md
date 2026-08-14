@@ -287,6 +287,42 @@ wsl --manage Ubuntu-24.04 --set-sparse true --allow-unsafe
 
 > `--set-sparse` 提示不安全需 `--allow-unsafe`；且发行版必须在 Stopped 状态，否则报 `WSL_E_DISTRO_NOT_STOPPED` 或 `ERROR_SHARING_VIOLATION`。转换仅标记文件，无数据风险。
 
+### 5. 网络模式：镜像代理（消除 localhost 代理告警）
+
+**现象**：Windows 配置了 localhost 代理（如 Clash/V2Ray，`127.0.0.1:7897`）后，每次启动 WSL 提示：
+
+```
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+```
+
+**根因**：WSL2 默认 **NAT 模式**，WSL 内的 `127.0.0.1` 指向 WSL 自身而非 Windows，代理无法镜像。
+
+**方案**：`.wslconfig` 的 `[wsl2]` 段启用 `networkingMode=mirrored`（WSL 与 Windows 共享网络栈）：
+
+```ini
+[wsl2]
+networkingMode=mirrored
+localhostForwarding=true
+memory=16GB
+processors=8
+swap=4GB
+
+[experimental]
+autoMemoryReclaim=gradual
+sparseVhd=true
+```
+
+**效果**：
+- 启动告警消失
+- 代理环境变量（`http_proxy`/`https_proxy`/`no_proxy`）自动注入 WSL
+- WSL 内可直接用 `127.0.0.1:<端口>` 访问 Windows 代理（实测连通）
+- 代理端口变更时只需改系统代理设置，WSL 自动跟随
+
+**注意**：
+- 镜像模式与 NAT 共存，eth0 仍分配虚拟 IP，但网络栈共享
+- 依赖固定 WSL IP / 严格 NAT 隔离的服务可能受影响（一般无碍）
+- 修改后需 `wsl --shutdown` 重启生效
+
 ---
 
 ## 十一、最终验证

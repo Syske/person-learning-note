@@ -785,9 +785,14 @@ aic verify --environment wsl --project demo
 3. **用完即走**：退出终端 WSL 自动关闭；改 `.wslconfig` 后需 `wsl --shutdown` 重启生效，其余情况无需手动关机。
 4. **访问 Windows 文件**：用 `/mnt/c/...`、`/mnt/d/...` 直接读写，不要用 `cmd.exe` 反向操作 WSL 文件。
 5. **可选加速**：在 `.zshrc` 加 `export CDPATH=/mnt/d/workspace/ai-workspace` 快速跳转，或把 Windows 的 `workspace-config.ps1` 别名同步到 `.zshrc` 统一体验。
-6. **启动目录回 home**：从 Windows 目录（如 `C:\Windows\System32`）启动 WSL 时，默认停在对应的 `/mnt/c/...` 而非 home。两层优化：
-   - Windows Terminal Ubuntu profile 加 `startingDirectory: "//wsl$/Ubuntu-24.04/home/syske"`（WT 打开直接进 home）
-   - `.zshrc` 兜底：`if [[ "$PWD" == /mnt/* ]]; then cd ~; fi`（任意方式进入都回 home）
+6. **启动目录回 home**：从 Windows 目录（如 `C:\Windows\System32`）启动 WSL 时，默认停在对应的 `/mnt/c/...` 而非 home。在 `.zshrc` 兜底：
+   ```bash
+   # --- always start in home (avoid inheriting Windows cwd) ---
+   if [[ "$PWD" == /mnt/* ]]; then
+       cd ~
+   fi
+   ```
+   > ⚠️ **不要**给 Windows Terminal 的 Ubuntu profile 设 `startingDirectory: "//wsl$/..."`——该 UNC 路径在 WSL 未运行时无法解析，WT 会主动拉起 WSL，导致"启动 WT 同时打开 WSL"。用 `.zshrc` 兜底即可。
 
 > ⚠️ 强杀 Windows Terminal 进程（`Stop-Process WindowsTerminal`）会误杀承载当前 opencode/终端会话的窗口——如需重启终端，用正常关闭或单独开新窗口，勿强杀。
 

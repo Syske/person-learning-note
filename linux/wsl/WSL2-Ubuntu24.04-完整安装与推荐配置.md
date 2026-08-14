@@ -253,7 +253,7 @@ ssh -T git@codeup.aliyun.com   # Welcome to Codeup, syske!
 
 ```ini
 [wsl2]
-localhostForwarding=true
+networkingMode=mirrored
 memory=16GB
 processors=8
 swap=4GB
@@ -265,6 +265,7 @@ sparseVhd=true
 
 | 项 | 值 | 说明 |
 |----|-----|------|
+| networkingMode | mirrored | 镜像网络模式，共享 Windows 网络栈（代理可镜像进 WSL） |
 | memory | 16GB | 给 WSL 分配一半内存，留足 Windows |
 | processors | 8 | 12 线程中分配 8 |
 | swap | 4GB | 交换空间 |
@@ -302,7 +303,6 @@ wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 W
 ```ini
 [wsl2]
 networkingMode=mirrored
-localhostForwarding=true
 memory=16GB
 processors=8
 swap=4GB
@@ -320,6 +320,7 @@ sparseVhd=true
 
 **注意**：
 - 镜像模式与 NAT 共存，eth0 仍分配虚拟 IP，但网络栈共享
+- **`localhostForwarding` 在镜像模式下无效**（会报 `wsl: 使用镜像网络模式时，wsl2.localhostForwarding 设置无效`），必须移除该行
 - 依赖固定 WSL IP / 严格 NAT 隔离的服务可能受影响（一般无碍）
 - 修改后需 `wsl --shutdown` 重启生效
 

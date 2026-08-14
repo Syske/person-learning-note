@@ -557,3 +557,88 @@ git push origin master
 已提交示例：
 - `3a499d6` WSL 完整安装配置文档
 - `a41595c` sofa-rpc 压测
+
+---
+
+## 十五、zsh + oh-my-zsh 终端环境
+
+将 zsh 设为 WSL 日常主力 shell（比 bash 补全更强、可高度定制）。
+
+### 1. 安装 zsh
+
+```bash
+sudo apt-get -y install zsh git curl
+zsh --version    # zsh 5.9
+```
+
+### 2. 安装 oh-my-zsh
+
+```bash
+RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+> 坑点：若 GitHub clone 中断，`~/.oh-my-zsh` 可能只剩 `.git` 目录（不完整），安装脚本报 "The $ZSH folder already exists"。解法：`rm -rf ~/.oh-my-zsh` 后重装。
+
+### 3. 安装常用插件
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+
+### 4. 配置 .zshrc
+
+```bash
+sed -i 's/^ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
+sed -i 's/^plugins=(git)/plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+```
+
+追加 nvm 集成与别名：
+```bash
+cat >> ~/.zshrc << 'EOF'
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# 常用别名
+alias ls='ls --color=auto'
+alias ll='ls -lah'
+alias la='ls -la'
+alias grep='grep --color=auto'
+alias py='python3'
+alias oc='opencode'
+
+# Windows 互操作
+alias win='cmd.exe /c'
+alias psh='powershell.exe'
+EOF
+```
+
+> 重要：`.zshrc` 中必须保留 nvm 初始化（`NVM_DIR` 块），否则新 zsh 会话中 node/npm 不可用（nvm 的 node 依赖 PATH 注入）。
+
+### 5. 设置默认 shell
+
+```bash
+sudo usermod -s /usr/bin/zsh syske
+```
+
+> 坑点：`chsh -s /usr/bin/zsh` 会走 PAM 密码认证，即使 sudoers 配了 NOPASSWD 也会因需要用户密码而失败（Authentication failure）。改用 `sudo usermod -s` 可绕过。
+
+### 6. 验证
+
+```bash
+zsh -i -c 'echo $ZSH_THEME; echo $plugins; node -v; git config user.name'
+```
+
+输出应包含：agnoster / git z zsh-autosuggestions zsh-syntax-highlighting / v24.19.0 / syske。
+
+### 7. 使用体验
+
+- **命令建议**：输入时灰色自动补全，按 `→` 接受
+- **语法高亮**：命令正确显示绿色、错误红色
+- **快速跳转**：`z 目录名` 跳到历史访问过的目录
+- **git 信息**：agnoster 主题在提示符显示当前分支/工作区状态
+
+之后 `wsl` 或 `wsl -d Ubuntu-24.04` 进入即默认 zsh。

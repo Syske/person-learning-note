@@ -151,6 +151,70 @@ rime_deployer --build \
   ~/.local/share/fcitx5/rime/build/
 ```
 
+> ⚠️ `rime_deployer` 的三个参数顺序：用户目录 → 共享目录 → build 目录，缺一不可。
+> 雾凇拼音的源 schema（`rime_ice.schema.yaml`）在共享目录 `/usr/share/rime-data/`，
+> 用户目录下只有 build 产物，若漏掉共享目录参数会报 `missing input schema: rime_ice`。
+> **坑**：`rime_deployer` 即使报错，退出码仍为 0，必须看 stderr 中 `E` 开头的日志。
+
+### 4.3 默认英文输入、Shift 手动切中文
+
+默认英文 + 手动切换的关键：让 schema 的 `ascii_mode` 开关默认置为「英文」。
+
+**`~/.local/share/fcitx5/rime/rime_ice.custom.yaml`**
+
+```yaml
+# 雾凇拼音覆写：默认英文输入，中文手动切换
+patch:
+  # switches 列表第 0 项是 ascii_mode（states: ["中", "Ａ"]）
+  # reset: 1 表示该开关默认处于第 1 项（英文）
+  switches/@0/reset: 1
+```
+
+配合 `default.custom.yaml` 已有的：
+
+```yaml
+ascii_composer:
+  reset_ascii_mode: true        # 部署后自动回英文
+  switch_key:
+    Shift_L: commit_code        # 按 Shift 中英切换（手动切中文）
+    Shift_R: commit_code
+```
+
+**⚠️ 关键：必须清空 fcitx5 的 AltTriggerKeys**，否则 fcitx5 会抢走 Shift 键，Rime 的 Shift 切换永远不生效：
+
+**`~/.config/fcitx5/config`**
+
+```ini
+[Hotkey/AltTriggerKeys]
+# 留空！不能配 Shift_L 或 Shift_R
+```
+
+### 4.4 部署并重启生效
+
+改完 Rime 配置后：
+
+```bash
+# 1. 重新部署（生成 build 产物）
+rime_deployer --build ~/.local/share/fcitx5/rime/ /usr/share/rime-data/
+
+# 2. 验证 reset 已写入编译产物
+
+grep -n "ascii_mode" -A 3 ~/.local/share/fcitx5/rime/build/rime_ice.schema.yaml
+# 应看到: reset: 1
+
+# 3. 完全重启 fcitx5（fcitx5-remote -r 不够！）
+fcitx5-remote -e
+fcitx5 -d &
+
+# 4. 验证
+fcitx5-remote -n        # 应输出 rime
+fcitx5-remote           # 应输出 2（已激活）
+```
+
+> ⚠️ `fcitx5-remote -r` 只是重载配置，不触发 Rime 重新部署，
+> 还可能把当前输入法重置为 pinyin。必须 `fcitx5-remote -e` 退出后重启 fcitx5 进程才能完全生效。
+> 若切到了 pinyin，用 `fcitx5-remote -s rime` 切回。
+
 ## 5. 重启 Fcitx5
 
 ```bash
@@ -196,15 +260,38 @@ ls ~/.local/share/fcitx5/rime/build/rime_ice.*
 # 应有: .prism.bin .reverse.bin .table.bin .schema.yaml
 ```
 
+### 6.5 Shift 无法切换中/英（或切不回来）
+
+症状：配置了 `switch_key: Shift_L: commit_code` 但按 Shift 没反应 / 切不回来。
+
+根因：`~/.config/fcitx5/config` 的 `[Hotkey/AltTriggerKeys]` 配了 `Shift_L` 或 `Shift_R`，
+fcitx5 把 Shift 当作「临时切换输入法」快捷键抢走了，Rime 收不到按键。
+
+解决：清空该组：
+
+```ini
+[Hotkey/AltTriggerKeys]
+```
+
+### 6.6 默认英文失效 / 配置改了没生效
+
+排查顺序：
+
+1. 确认 `rime_ice.custom.yaml` 的 patch 已写入编译产物：
+   `grep -n "reset: 1" ~/.local/share/fcitx5/rime/build/rime_ice.schema.yaml`
+2. 确认当前输入法确实是 rime 而不是 pinyin：`fcitx5-remote -n`
+3. 重启 fcitx5 进程（`fcitx5-remote -e` 后重新启动），仅 `-r` 重载不够
+
 ## 7. 参考文件路径汇总
 
 | 文件 | 用途 |
 |------|------|
 | `~/.config/environment.d/im.conf` | 环境变量（systemd 用户环境） |
-| `~/.config/fcitx5/config` | Fcitx5 主配置 |
+| `~/.config/fcitx5/config` | Fcitx5 主配置（含 AltTriggerKeys，需清空） |
 | `~/.config/fcitx5/profile` | 输入法列表及顺序 |
 | `~/.config/fcitx5/conf/pinyin.conf` | Fcitx5 拼音配置 |
-| `~/.local/share/fcitx5/rime/default.custom.yaml` | Rime 用户配置 |
+| `~/.local/share/fcitx5/rime/default.custom.yaml` | Rime 用户配置（ascii_composer / switch_key） |
+| `~/.local/share/fcitx5/rime/rime_ice.custom.yaml` | 雾凇拼音覆写（默认英文，switches/@0/reset: 1） |
 | `~/.local/share/fcitx5/rime/build/` | Rime 编译文件 |
-| `/usr/share/rime-data/` | Rime 共享数据 |
+| `/usr/share/rime-data/` | Rime 共享数据（源 schema 在此） |
 | `/etc/xdg/autostart/org.fcitx.Fcitx5.desktop` | Fcitx5 自动启动 |

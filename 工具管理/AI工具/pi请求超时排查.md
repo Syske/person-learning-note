@@ -136,6 +136,44 @@ pi --print -nt "reply exactly with: OK"   # OK
 3. **提示词影响的是输出语言/风格**（英文开头、行动式表达），不是思考链开关。真正的 thinking 是模型请求参数，且取决于网关是否透传。
 4. **pi 的 models-store.json 配置**：已把 `opencode-go/deepseek-v4-flash` 的 `reasoning` 从 `true` 改为 `false`（避免网关层进入不稳定的处理路径）。其他模型未动。
 
+### 补充：pi 的 thinking 实际控制机制（源码确认，2026-08-18）
+
+追查 pi 源码（`@earendil-works/pi-ai/dist/api/openai-completions.js` + `pi-coding-agent/dist`）后确认：
+
+**1. pi 默认发送 `thinking: disabled`，reasoning 布尔值不是开关**
+
+```js
+// openai-completions.js 对 thinkingFormat === "deepseek" 的处理
+else if (compat.thinkingFormat === "deepseek" && model.reasoning) {
+    if (options?.reasoningEffort) {
+        params.thinking = { type: "enabled" };   // 用户显式开了 effort 才发 enabled
+    }
+    else if (model.thinkingLevelMap?.off !== null) {
+        params.thinking = { type: "disabled" };   // ← 默认发 disabled
+    }
+}
+```
+
+- pi 的 `session.thinkingLevel` **默认 `"off"`**（TUI footer 显示 `thinking off`）
+- thinkingLevel=off → reasoningEffort=undefined → pi 默认给 deepseek 发 `thinking:{type:"disabled"}`
+- 所以把 `reasoning` 改成 `false` 与 pi 默认行为一致（安全）；改成 `true` 也不会强制开启 thinking
+
+**2. thinking 参数按模型分派（compat.thinkingFormat）**
+
+| 模型 | thinkingFormat | pi 默认行为 |
+|------|---------------|-------------|
+| deepseek-v4-flash / pro | `deepseek` | 默认 `thinking:{type:"disabled"}` |
+| qwen3.6-plus / 3.7+ / 3.8 | `qwen` | `enable_thinking:false` |
+| kimi-k2.6+ | `deepseek` | 默认 disabled |
+| glm-5.1 | 无 | 不发送 thinking 参数 |
+| grok-4.5 | 无 | openai-responses API（另一套） |
+
+**3. 结论更正/补充**
+
+- **opencode-go 下 18 个模型的 `reasoning:true` 保留无妨**——默认都关闭 thinking，只是「支持思考」的标记
+- 真正控制 thinking 的是 pi 的 **`/thinking` 命令**（TUI 内 thinking 选择器），如 `/thinking high`
+- 若想给某个模型默认关 thinking，改 models-store.json 的 `reasoning:false` 是有效的，但作用与 pi 默认一致
+
 ### 操作记录
 
 ```bash

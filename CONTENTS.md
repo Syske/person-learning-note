@@ -64,8 +64,8 @@
  - [docker运行网易云音乐接口.md](docker/docker运行网易云音乐接口.md)
  - [harbor镜像构建推送流程.md](docker/harbor镜像构建推送流程.md)
  - [linux环境下docker报错汇总.md](docker/linux环境下docker报错汇总.md)
- - [国内Docker拉取镜像实战：加速器对比与SSH隧道出海.md](docker/国内Docker拉取镜像实战：加速器对比与SSH隧道出海.md)
  - [sonar安装阿里插件.md](docker/sonar安装阿里插件.md)
+ - [国内Docker拉取镜像实战：加速器对比与SSH隧道出海.md](docker/国内Docker拉取镜像实战：加速器对比与SSH隧道出海.md)
  - [安利一款云容器管理工具…….md](docker/安利一款云容器管理工具…….md)
  - [构建Jenkins.md](docker/构建Jenkins.md)
 
@@ -201,6 +201,21 @@
   - [arch-linux安装deb软件.md](linux/arch_linux/arch-linux安装deb软件.md)
   - [arch-linux安装记录.md](linux/arch_linux/arch-linux安装记录.md)
 
+### images
+
+  - [after-fix-verify.png](linux/images/after-fix-verify.png)
+  - [beecount-health.png](linux/images/beecount-health.png)
+  - [clash-502-compare.png](linux/images/clash-502-compare.png)
+  - [dns-pollution.png](linux/images/dns-pollution.png)
+  - [dns-tcpdump-after.png](linux/images/dns-tcpdump-after.png)
+  - [dns-tcpdump-before.png](linux/images/dns-tcpdump-before.png)
+  - [dns-upstream-compare.png](linux/images/dns-upstream-compare.png)
+  - [gfonts-direct-timeout.png](linux/images/gfonts-direct-timeout.png)
+  - [gfonts-proxy-timeout.png](linux/images/gfonts-proxy-timeout.png)
+  - [login-timing.png](linux/images/login-timing.png)
+  - [merge-reject-rule.png](linux/images/merge-reject-rule.png)
+  - [urls.json](linux/images/urls.json)
+
 ### manjaro
 
   - [manjaro-gnome安装配置过程.md](linux/manjaro/manjaro-gnome安装配置过程.md)
@@ -224,6 +239,7 @@
 
 ### wsl
 
+  - [WSL2-Ubuntu24.04-完整安装与推荐配置.md](linux/wsl/WSL2-Ubuntu24.04-完整安装与推荐配置.md)
   - [WSL安装配置oh-my-zsh.md](linux/wsl/WSL安装配置oh-my-zsh.md)
   - [win10开启wsl系统，让我们愉快的使用Linux.md](linux/wsl/win10开启wsl系统，让我们愉快的使用Linux.md)
   - [wsl安装Docker.md](linux/wsl/wsl安装Docker.md)
@@ -231,6 +247,9 @@
   - [wsl安装其他盘解决方案.md](linux/wsl/wsl安装其他盘解决方案.md)
   - [wsl日常使用积累.md](linux/wsl/wsl日常使用积累.md)
 
+ - [BeeCount-Cloud蜜蜂记账自部署全记录.md](linux/BeeCount-Cloud蜜蜂记账自部署全记录.md)
+ - [BeeCount登录页访问慢：Google Fonts被墙优化.md](linux/BeeCount登录页访问慢：Google Fonts被墙优化.md)
+ - [Clash代理拦截内网域名502排查与修复.md](linux/Clash代理拦截内网域名502排查与修复.md)
  - [Linux卡片机制作记录：编译rootfs.md](linux/Linux卡片机制作记录：编译rootfs.md)
  - [Linux卡片机制作记录：配置网络.md](linux/Linux卡片机制作记录：配置网络.md)
  - [Linux命令手册.md](linux/Linux命令手册.md)
@@ -249,15 +268,14 @@
  - [linux文件服务器搭建.md](linux/linux文件服务器搭建.md)
  - [linux环境日志分析.md](linux/linux环境日志分析.md)
  - [pacman常用命令.md](linux/pacman常用命令.md)
+ - [render_screenshots.py](linux/render_screenshots.py)
  - [ubuntu常用操作.md](linux/ubuntu常用操作.md)
  - [ubuntu常用软件安装.md](linux/ubuntu常用软件安装.md)
  - [ubunt安装原生微信.md](linux/ubunt安装原生微信.md)
  - [回顾下Linux相关知识，为k8s预热…….md](linux/回顾下Linux相关知识，为k8s预热…….md)
  - [局域网DNS解析故障实战：dnsmasq上游配置排查.md](linux/局域网DNS解析故障实战：dnsmasq上游配置排查.md)
  - [局域网域名解析方案：dnsmasq+npm.md](linux/局域网域名解析方案：dnsmasq+npm.md)
- - [Clash代理拦截内网域名502排查与修复.md](linux/Clash代理拦截内网域名502排查与修复.md)
- - [BeeCount登录页访问慢：Google Fonts被墙优化.md](linux/BeeCount登录页访问慢：Google Fonts被墙优化.md)
- - [BeeCount-Cloud蜜蜂记账自部署全记录.md](linux/BeeCount-Cloud蜜蜂记账自部署全记录.md)
+ - [截图清单.md](linux/截图清单.md)
  - [解决linux环境下问题.md](linux/解决linux环境下问题.md)
  - [还不会安装Linux？.md](linux/还不会安装Linux？.md)
 
@@ -467,6 +485,7 @@
  - [dubbo其他知识点分享.md](rpc/dubbo其他知识点分享.md)
  - [dubbo的负载均衡以及配置方式补充.md](rpc/dubbo的负载均衡以及配置方式补充.md)
  - [dubbo管理工具分享.md](rpc/dubbo管理工具分享.md)
+ - [sofa-rpc压测.md](rpc/sofa-rpc压测.md)
  - [spring-boot整合dubbo配置相关知识点补充.md](rpc/spring-boot整合dubbo配置相关知识点补充.md)
 
 ## servlet&JSP
@@ -880,6 +899,8 @@
 
 ### AI工具
 
+  - [AI工具使用总结.md](工具管理/AI工具/AI工具使用总结.md)
+  - [pi请求超时排查.md](工具管理/AI工具/pi请求超时排查.md)
   - [常用提示词梳理.md](工具管理/AI工具/常用提示词梳理.md)
   - [本地构建AI接口服务.md](工具管理/AI工具/本地构建AI接口服务.md)
   - [本地部署deepSeek模型.md](工具管理/AI工具/本地部署deepSeek模型.md)
@@ -933,6 +954,7 @@
  - [效率提升工具.md](工具管理/效率提升工具.md)
  - [本地部署DeepSeek补充内容.md](工具管理/本地部署DeepSeek补充内容.md)
  - [电子书网站整理.md](工具管理/电子书网站整理.md)
+ - [电脑常用软件.md](工具管理/电脑常用软件.md)
  - [高效办公环境分享.md](工具管理/高效办公环境分享.md)
 
 ## 并发与多线程
@@ -1173,3 +1195,5 @@
 
 - [AGENTS.md](AGENTS.md)
 - [CONTENTS.md](CONTENTS.md)
+- [vpn-setup.md](vpn-setup.md)
+

@@ -1,0 +1,16 @@
+pkgbase = xylink-linuxclient-bin
+	pkgdesc = Xylink (小鱼易连) video conferencing Linux client (official deb repackaged)
+	pkgver = 3.10.0.23609
+	pkgrel = 1
+	url = https://www.xylink.com/
+	arch = x86_64
+	license = custom:Commercial
+	depends = glibc
+	depends = libstdc++
+	depends = libx11
+	depends = libxext
+	depends = zlib
+	source = https://cdn.xylink.com/as/150130/new/signed_com.xylink.linuxclient_3.10.0.23609_amd64.deb
+	sha256sums = da5a41da371c6f15b23fc21236af9523891fe103b07667cef2c181b3071ce8cb
+
+pkgname = xylink-linuxclient-bin

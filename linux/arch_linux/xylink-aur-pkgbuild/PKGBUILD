@@ -1,0 +1,33 @@
+# Maintainer: Your Name <your@email.com>
+# 提交前请把上面 Maintainer 改成你的 AUR 账号信息
+
+pkgname=xylink-linuxclient-bin
+pkgver=3.10.0.23609
+pkgrel=1
+pkgdesc="Xylink (小鱼易连) video conferencing Linux client (official deb repackaged)"
+arch=('x86_64')
+url="https://www.xylink.com/"
+license=('custom:Commercial')
+depends=('glibc' 'libstdc++' 'libx11' 'libxext' 'zlib')
+source=("https://cdn.xylink.com/as/150130/new/signed_com.xylink.linuxclient_${pkgver}_amd64.deb")
+sha256sums=('da5a41da371c6f15b23fc21236af9523891fe103b07667cef2c181b3071ce8cb')
+
+package() {
+  cd "$srcdir"
+  ar x signed_com.xylink.linuxclient_${pkgver}_amd64.deb
+  bsdtar -xf data.tar.xz -C "$pkgdir/"
+
+  # 修复 launch.sh 的打包模板占位符
+  sed -i 's/@packageName@/com.xylink.linuxclient/' \
+    "$pkgdir/opt/apps/com.xylink.linuxclient/files/launch.sh"
+
+  # 桌面入口移到标准位置
+  install -Dm644 "$pkgdir/opt/apps/com.xylink.linuxclient/entries/applications/com.xylink.linuxclient.desktop" \
+    "$pkgdir/usr/share/applications/com.xylink.linuxclient.desktop"
+
+  # 图标
+  if [ -d "$pkgdir/opt/apps/com.xylink.linuxclient/entries/icons/hicolor" ]; then
+    cp -r "$pkgdir/opt/apps/com.xylink.linuxclient/entries/icons/hicolor/." \
+      "$pkgdir/usr/share/icons/hicolor/" 2>/dev/null || true
+  fi
+}

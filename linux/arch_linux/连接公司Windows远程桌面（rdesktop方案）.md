@@ -53,3 +53,24 @@ Remmina 连接报「无法连接」。
 2. 分辨率问题：最初 `-g 1600x900` 窗口操作异常 → 改 **全屏 `-f`** 正常
 3. 二次验证（动态码）在 Windows 登录界面输入，rdesktop 只负责第一层认证
 4. 445 端口关闭（SMB 被挡）、22 开放——该公司机器常规配置
+
+## 四、密码管理（KDE Wallet 密钥环）
+
+rdesktop 支持 `-p` 传密码，配合 KDE Wallet 实现免输域密码：
+
+```bash
+sudo pacman -S libsecret        # secret-tool
+# 存密码(输入一次, 钱包加密保存)
+secret-tool store --label='Company RDP' server 10.0.0.1 user syske
+```
+
+脚本（~/.local/bin/rdp-company）：
+```bash
+#!/bin/bash
+PASS=$(secret-tool lookup server 10.0.0.1 user syske 2>/dev/null)
+[ -z "$PASS" ] && echo "先运行 secret-tool store 存密码" && exit 1
+exec rdesktop 10.0.0.1 -u syske -p "$PASS" -a 32 -f -r clipboard:PRIMARYCLIPBOARD -x lan
+```
+
+- 依赖 KDE ksecretd 提供 Secret Service（Plasma 默认启用）
+- 脚本 chmod 700，无明文密码；二次验证（动态码）仍需手动

@@ -1,7 +1,7 @@
 # 连接公司 Windows 远程桌面（rdesktop 方案）
 
 > 归档时间：2026-09-21
-> 目标：10.129.6.52（公司内网 Windows），域账号 caolei
+> 目标：10.0.0.1（公司内网 Windows），域账号 syske
 > 结论：**FreeRDP 3（Remmina/xfreerdp3）与该服务器协议不兼容，改用 rdesktop（NLA）正常**
 
 ---
@@ -19,7 +19,7 @@ rdp-company        # 或开始菜单「公司Windows远程桌面」
 脚本（~/.local/bin/rdp-company）：
 ```bash
 #!/bin/bash
-rdesktop 10.129.6.52 -u caolei -a 32 -f -r clipboard:PRIMARYCLIPBOARD -x lan
+rdesktop 10.0.0.1 -u syske -a 32 -f -r clipboard:PRIMARYCLIPBOARD -x lan
 ```
 
 ## 二、排查过程（FreeRDP 兼容坑）

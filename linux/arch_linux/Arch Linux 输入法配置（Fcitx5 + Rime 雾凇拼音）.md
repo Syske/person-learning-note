@@ -295,3 +295,29 @@ fcitx5 把 Shift 当作「临时切换输入法」快捷键抢走了，Rime 收�
 | `~/.local/share/fcitx5/rime/build/` | Rime 编译文件 |
 | `/usr/share/rime-data/` | Rime 共享数据（源 schema 在此） |
 | `/etc/xdg/autostart/org.fcitx.Fcitx5.desktop` | Fcitx5 自动启动 |
+
+---
+
+## 附录：皮肤/主题（SVG 主题渲染问题，2026-09）
+
+**现象**：fcitx5 5.1.22（Arch 官方）下安装 mellow 等 SVG 主题后，**只有颜色生效、圆角面板渲染不出来**。
+
+**根因**：fcitx5 5.1 通过 gdk-pixbuf 加载 SVG 主题背景，但 Arch 当前生态**缺失 gdk-pixbuf 的 SVG loader**（新版 librsvg 2.6x 不再提供 loader 插件，`/usr/lib/gdk-pixbuf-2.0/` 目录不存在）→ SVG 加载失败回退纯色。
+
+**可用主题**：
+- `default` / `default-dark`（内置，纯色，正常）
+- AUR 纯色主题可正常显示颜色：`fcitx5-simple-theme`、`fcitx5-skin-base16-material-darker` 等
+- AUR SVG 主题仅颜色生效、无圆角：`fcitx5-mellow-themes-git`（等 fcitx5 6）
+
+**解决方向**：fcitx5 6.x（AUR `fcitx5-git`）改用 librsvg 直接渲染，可支持 SVG 主题——需升级输入法框架（牵连 fcitx5-rime 等），按需评估。
+
+**配置要点**：
+```ini
+# ~/.config/fcitx5/conf/classicui.conf
+[Theme]
+Theme=default-dark
+
+# ~/.config/fcitx5/config — KDE 下必须禁用 kimpanel，候选框才走 classicui（否则用 KDE 样式、主题不生效）
+[Behavior/DisabledAddons]
+0=kimpanel
+```

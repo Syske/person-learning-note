@@ -21,6 +21,13 @@
 11. [Git 双身份（按目录自动切换）](#11-git-双身份按目录自动切换)
 12. [关键配置与命令速查](#12-关键配置与命令速查)
 13. [登录卡顿诊断：71 秒黑屏（2026-10-09）](#13-登录卡顿诊断71-秒黑屏2026-10-09)
+14. [缓解措施与复测（2026-10-09 晚）](#14-缓解措施与复测2026-10-09-晚)
+15. [缓解参数生效后的实测](#15-缓解参数生效后的实测2026-10-09-1427)
+16. [最终结果（2026-10-09 22:26 验证）](#16-最终结果2026-10-09-2226-验证)
+17. [initramfs 安全网与 GRUB 菜单清理](#17-initramfs-安全网与-grub-菜单清理2026-10-09-2319)
+18. [事故复盘：一次改三个文件导致开不了机](#18-事故复盘一次改三个文件导致开不了机2026-10-09-2319)
+19. [两个 initramfs 镜像的实际影响](#19-两个-initramfs-镜像的实际影响含一处自我更正)
+20. [收官验证（2026-10-10）与残留提醒](#20-收官验证2026-10-10与残留提醒)
 
 ---
 
@@ -316,6 +323,9 @@ git config --global --add includeIf."gitdir:~/workspace/person-learning-note/".p
 
 ## 13. 登录卡顿诊断：71 秒黑屏（2026-10-09）
 
+> ⚠️ **阅读提示**：本章记录的是**排查过程**，过程里有过多次误判（13.2 的 MSI-X 结论已被推翻）。
+> 最终结论与成果在**第 16 章**，方法论教训在**第 18 章**，请勿把本章中间结论当作定论。
+
 ### 13.1 症状与定位思路
 
 **症状**：开机输入密码后黑屏/卡死约 **71 秒** 才出桌面。
@@ -336,7 +346,7 @@ journalctl -b -o short-iso | grep -E 'Auth.*successful|Starting KDE Wayland Comp
 
 **结论**：慢的不是登录，是 `kwin_wayland` 在 DRM 后端初始化阶段卡了 38 秒。
 
-### 13.2 根因：NVMe 位于 VMD 下，MSI-X 中断不上报
+### 13.2 曾经的假设：MSI-X 中断不上报 —— **已被推翻，见下方 ❌ 小节**
 
 时间线（注意两次 I/O 超时和 kwin 卡顿的对应关系）：
 
@@ -989,3 +999,84 @@ mkinitcpio 主程序里也没有 fallback_image 的运行时逻辑（它只是 p
 当前 `GRUB_TIMEOUT=1`，即开机后**只有 1 秒**可以操作菜单。要用 fallback 救援，几乎必须在 1 秒内完成「按方向键 → 进子菜单 → 选 fallback」。
 
 **这是一个真实的短板，但我不建议现在去改** —— 改 `GRUB_TIMEOUT` 会增加开机时间，属于收益很小的改动；真遇到主镜像起不来的情况，直接在 GRUB 里等菜单出现后按 `e` 编辑 cmdline 也可以。
+
+---
+
+## 20. 收官验证（2026-10-10）与残留提醒
+
+### 20.1 最优成绩（2026-10-10 00:00 启动）
+
+| 指标 | 原始（9/21） | 排查峰值 | **最优** |
+|---|---|---|---|
+| **总开机** | 103s | 50.1s | **16.8s** |
+| 其中固件 POST | 7.6s | 20.1s | 7.6s |
+| userspace | 63s | 34.3s | **4.3s** |
+| **认证 → 桌面** | 3s | 313s | **4s** |
+| I/O tag timeout | — | 91 | **0** |
+| hung task | — | 1 | **0** |
+| 失败单元 | — | — | **0** |
+
+已追平笔记里记录的历史正常基线（12.5s），差距主要是固件 POST 的随机波动（实测区间 6.3~20.1s）。
+
+> ⚠️ **`firmware` 那一项会骗人**。它是 BIOS 自检时间，与本次所有优化无关且波动极大。
+> **看 `userspace` 和 `认证→桌面` 两个指标才有意义。**
+
+### 20.2 残留的无害噪音（已确认，无需处理）
+
+| 内核消息 | 性质 |
+|---|---|
+| `i8042: PS/2 appears to have AUX port disabled` | 针对 PS/2 AUX 口；本机触控板是 **I2C-HID**（`ASCE1208:00 04F3:3340` → event9），两者无关 |
+| `pcieport 10000:e0:06.0: can't derive routing / no GSI` | VMD 链路的常见日志，**BIOS 307 未修但系统已不复现卡顿** |
+| `i915 [CRTC:151:pipe A] DSB 0 poll error` | 核显显示管线告警，当前不影响使用 |
+| `resource sanity check ... igen6_edac` | Intel 网卡 EDAC 驱动自身瑕疵，不影响网卡 |
+| `asus_armoury: No matching power limits found` | 无匹配机型配置，属正常 |
+| `regulatory.db failed with error -2` | **`wireless-regdb` 未安装**，见下 |
+
+### 20.3 唯一建议处理项：装 `wireless-regdb`
+
+```bash
+sudo pacman -S wireless-regdb
+```
+
+未装导致内核两次报 `Direct firmware load for regulatory.db failed with error -2`。缺区域法规库时内核用默认限制（功率偏低、部分 5GHz 信道不可用）。若没遇到信号差/连不上 5G 可不管，但装上有实际好处。
+
+### 20.4 GRUB 两个镜像的最终对应关系（已验证正确）
+
+| 菜单项 | initramfs | 模块数 |
+|---|---|---|
+| **Arch Linux**（默认） | `initramfs-linux.img` | 39 |
+| Arch Linux, with Linux linux | `initramfs-linux.img` | 39 |
+| (fallback initramfs) | `initramfs-linux-fallback.img` | 1051 |
+| (recovery mode) | `initramfs-linux-fallback.img` | 1051 |
+
+每个 initrd 都先加载 `/intel-ucode.img`（微码必须最先加载）。
+**默认路径只用 24M 主镜像，fallback 不参与正常启动，对开机速度零影响。**
+
+> 检查 grub.cfg 时注意：`initrd` 与路径之间是**制表符**，
+> 用 `grep 'initrd '`（空格）会**零结果**，误以为配置有问题。
+
+### 20.5 关于「终端卡顿」
+
+登录后约 10 秒启动 opencode，实测：读取 **214MB**、占 **~15% CPU**、内存 **567MB**（两个进程）。
+时间线与感知卡顿吻合（登录 ~20s → konsole 22s → opencode 31s）。
+
+**属于工具启动的正常开销，不是故障复发** —— 此时磁盘已不 stall（I/O 超时 0、延迟 0~4ms）。
+工作区本身不是原因（两仓库共约 1564 个文件、51MB）。
+
+### 20.6 长期建议
+
+1. **务必用 `reboot` 正常重启**。该盘 `unsafe_shutdowns` 已 **40+ 次 / 通电 7 小时**，比例严重异常，是整个排查过程中最大的硬件风险源。
+2. 给电池目录配置自动安全关机，减少强制断电。
+3. **观察几天日常使用即可，不要再为验证而频繁重启。**
+4. 若日后再遇同类问题，参考第 13.6 节的通用手法（切分登录前后、找静默空洞、数中断、**实测延迟而非只看计数器**）。
+
+### 20.7 备份文件清单
+
+| 文件 | 说明 |
+|---|---|
+| `/etc/default/grub.bak-20261009-1409` | 加缓解参数**前** |
+| `/etc/default/grub.bak2-20261009-2319` | 动 initramfs/GRUB **前** |
+| `/etc/mkinitcpio.conf.bak-20261009-2319` | 动 HOOKS **前** |
+| `/etc/mkinitcpio.d/linux.preset.bak-20261009-2319` | 动 preset **前** |
+| `~/efi-recovery.txt` | EFI 引导顺序基线与救援步骤 |
+| `~/verify-boot.sh` | 启动复测脚本 |

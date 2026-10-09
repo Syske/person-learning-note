@@ -880,7 +880,7 @@ UEFI Firmware Settings                                     ← 重启进 BIOS �
 
 | 场景 | 结果 |
 |---|---|
-| 主 initramfs 缺模块起不来 | initramfs **自动回退**到 fallback 镜像 |
+| 主 initramfs 缺模块起不来 | **手动**在 GRUB 菜单选 `fallback initramfs`（⚠️ 非自动，见 19 节） |
 | 自动回退也不行 | 开机菜单选 `fallback initramfs` 手动进 |
 | 需要改 BIOS 设置 | 菜单选 `UEFI Firmware Settings` |
 
@@ -948,3 +948,44 @@ HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont bl
 - 安全网类改动（fallback/救援）**收益小、风险大**，属于「锦上添花」，不该在排查收尾阶段冒险
 - 机器状态不稳定时，**先让它稳定下来**（正常关机几次、确认硬件健康），再做优化
 - 出故障后**不要急着归因** —— 无法证实的因果关系应当如实说明
+
+---
+
+## 19. 两个 initramfs 镜像的实际影响（含一处自我更正）
+
+### 19.1 两个镜像的分工
+
+| | `initramfs-linux.img` | `initramfs-linux-fallback.img` |
+|---|---|---|
+| 体积 | **24M** | 213M |
+| 模块数 | **39** | **1051** |
+| 打包方式 | `autodetect`（只含当前系统实际加载的模块） | 全量模块 |
+| 是否默认启动 | ✅ 是 | ❌ 否，需手动选 |
+| 正常开机耗时贡献 | 按 24M 读取，很快 | **完全不参与**，零影响 |
+| 磁盘占用 | \multicolumn{2}{c}{合计 237M，`/boot` 余 740M，无压力 | |
+
+### 19.2 ❌ 更正：fallback **不是自动回退**，是手动选择
+
+我此前在 17.5 写「主 initramfs 起不来会自动回退」，**这是错的**。实测验证：
+
+```bash
+grep -n fallback /usr/lib/initcpio/init        # 无任何命中
+grep -n fallback /usr/lib/initcpio/init_functions  # 无任何命中
+mkinitcpio 主程序里也没有 fallback_image 的运行时逻辑（它只是 preset 的 shell 变量）
+```
+
+`/usr/lib/initcpio/init` 只有 112 行，流程是：跑 hooks → `resolve_device "$root"` → `fsck_root` → 挂载 `/sysroot`。若 root 设备找不到，走到末尾直接结束：
+
+```
+# Nothing got mounted on /sysroot. This is the end, we don't know what to do anymore
+```
+
+**没有任何自动切换到 fallback 的分支。**
+
+所以 fallback 的真实作用是：**主镜像起不来时，在 GRUB 菜单里手动选中它启动**，用 1051 个完整模块挂载 root，进系统后再修复并重建主镜像。
+
+### 19.3 ⚠️ 由此带来的现实约束
+
+当前 `GRUB_TIMEOUT=1`，即开机后**只有 1 秒**可以操作菜单。要用 fallback 救援，几乎必须在 1 秒内完成「按方向键 → 进子菜单 → 选 fallback」。
+
+**这是一个真实的短板，但我不建议现在去改** —— 改 `GRUB_TIMEOUT` 会增加开机时间，属于收益很小的改动；真遇到主镜像起不来的情况，直接在 GRUB 里等菜单出现后按 `e` 编辑 cmdline 也可以。

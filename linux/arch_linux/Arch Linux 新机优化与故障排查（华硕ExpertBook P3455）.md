@@ -603,3 +603,47 @@ E=$(date +%s%N); echo "$(( (E-S)/1000000 )) ms"
 ```
 
 **经验**：「卡顿」类问题的定位锚点选**带时间戳的关键字**（如 `No backend specified`、`Starting KDE Wayland Compositor`），比看总耗时有效得多；静默的 28 秒往往比刷屏的日志更能说明问题。
+
+---
+
+## 14. 缓解措施与复测（2026-10-09 晚）
+
+### 14.1 已施加的缓解（不改根因，只压伤害）
+
+在 `/etc/default/grub` 的 `GRUB_CMDLINE_LINUX` 追加三个参数（已备份 `grub.bak-20261009-1409`）：
+
+```
+systemd.mask=tpm2.target nvme_core.io_timeout=5000 pcie_aspm=off nvme_core.default_ps_max_latency_us=0
+```
+
+| 参数 | 作用 | 代价 |
+|---|---|---|
+| `nvme_core.io_timeout=5000` | **停摆上限 30s → 5s**（30 正是日志节律来源） | 无 |
+| `pcie_aspm=off` | 关闭 PCIe 链路省电，验证 ASPM 是否致卡 | 略增待机功耗 |
+| `nvme_core.default_ps_max_latency_us=0` | 彻底关闭 NVMe APST | 略增功耗（与 TLP 的续航目标冲突） |
+
+另装 `intel-ucode 20260925-1`（此前**根本没安装**，导致 `Running old microcode`）。
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+# 复测（重启后跑）
+bash ~/verify-boot.sh
+```
+
+### 14.2 回滚方式
+
+```bash
+sudo cp /etc/default/grub.bak-20261009-1409 /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### 14.3 预期判读
+
+| 复测结果 | 含义 | 下一步 |
+|---|---|---|
+| 登录 < 15s | `io_timeout` 压低生效，根因未除但已可接受 | 可长期保留此参数 |
+| 登录 15~25s | 停摆仍在但被压短 | 推进 BIOS 禁用 VMD |
+| I/O timeout 节律变 5 秒 | 参数生效但根因在 | 只能靠 BIOS 禁用 VMD |
+| 节律仍为 30 秒 | 参数没生效（检查 cmdline） | 核对 GRUB 配置 |
+
+**根因结论未变**：停摆来自 VMD 链路（`pcieport 10000:e0:06.0: can't derive routing / PCI INT A: no GSI`），BIOS 307 未修复，**禁用 VMD 仍是唯一没试过的根因手段**。

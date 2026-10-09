@@ -352,16 +352,32 @@ journalctl -b -o short-iso | grep -E 'Auth.*successful|Starting KDE Wayland Comp
 
 kwin 解锁的那一秒**恰好**是一次 NVMe I/O 超时 —— 它是被磁盘 IO 阻塞的。
 
-内核持续刷 `nvme0: I/O tag XXX (cid Y) QID N timeout, completion polled`，本次启动 45 次，其中有一段**每 30 秒精确一次**（对应 NVMe `io_timeout` 默认值）。
+内核持续刷 `nvme0: I/O tag XXX (cid Y) QID N timeout, completion polled`，本次启动累计 **91 次**，空闲期约每 1~2 分钟一次，成对出现时间隔恰好 30 秒（对应 NVMe `io_timeout` 默认值）。
 
 **决定性证据**（中断计数对照实验）：
 
 ```bash
 grep nvme /proc/interrupts    # nvme0q0~q16，16 个 CPU 列全是 0
 # 连续 dd 800MB (O_DIRECT) 前后 diff /proc/interrupts，无任何设备计数增长
+# 对照组：同一时刻 iwlwifi 中断计数正常（19 万+），说明 /proc/interrupts 本身有效
 ```
 
-NVMe 的完成中断根本没送达驱动，内核只能靠超时后轮询兜底回收 —— 这正是 `completion polled` 的成因。本机 SSD 挂在 **Intel VMD** 后面（ACPI 节点 `RstVmdE` / `RstVmdV`，`vmd 0000:00:0e.0: PCI host bridge to bus 10000:e0`），MSI-X 在 VMD 下丢失是该问题的高发场景。
+NVMe 的完成中断没有被统计/送达，内核只能靠超时后轮询兜底回收 —— 这正是 `completion polled` 的成因。本机 SSD 挂在 **Intel VMD** 后面（ACPI 节点 `RstVmdE` / `RstVmdV`，`vmd 0000:00:0e.0: PCI host bridge to bus 10000:e0`），MSI-X 在 VMD 下丢失是该问题的高发场景。
+
+> 说明：机制层面尚未 100% 证实（也不排除 VMD 路径下的中断计数异常），但**现象本身已实测确认**。
+
+**与负载无关，是关键结论**。70 秒采样窗口内系统近零 I/O（仅 8KB 写入），仍出现了一次超时：
+
+```bash
+# 采样各进程 /proc/*/io 增量，找出真正在读盘的进程
+for p in /proc/[0-9]*; do awk '/^(read_bytes|write_bytes):/{print}' $p/io 2>/dev/null; done > b.txt
+sleep 70
+# ... 再采一次 a.txt，对比差值
+```
+
+结论：**空闲时也会零星卡顿，负载只是把零星卡顿放大成连续阻塞**。kwin 启动时恰好有一串密集 I/O，于是被 30 秒超时正面命中，就卡住了 38 秒。
+
+> ⚠️ **教训：别用全盘扫描去排查全盘扫描类问题**。本次 `pacman -Qkk` 全量校验跑了 50 分钟、读了 3.5GB，本身就制造了大量超时 —— 排查期间的 45 次超时里有一半是自己造成的。要区分「故障导致 IO」还是「IO 导致故障」，必须先看**空闲基线**。
 
 **SSD 硬件已排除嫌疑**（`nvme-cli` 实测）：
 
@@ -486,10 +502,12 @@ pacman -Qkk <pkg>                                                # 0 altered = �
 stat -c '%F' <路径>                                              # 先看是不是符号链接
 ```
 
-**三条避坑经验**：
+**五条避坑经验**
 
 1. **符号链接的模式位恒为 777 且无意义**。用 `find -perm` 统计损坏范围会严重高估，且 `chmod` 会跟随链接改到目标文件上。判定前先 `stat -c '%F'` 确认类型。
 2. **别把用户数据当损坏**。`/opt` 下自装的应用（属主 `syske`、775/664）是正常状态，`chown -R /opt` 反而破坏它。
-3. **"看起来像故障"的现象要先排除误报**。`systemd -Qkk` 报的 `/var/log/journal` GID 差异就是 journald 的正常 setgid 目录，不是问题。
+3. **"看起来像故障"的现象要先排除误报**。`pacman -Qkk` 报的 `/var/log/journal` GID 差异就是 journald 的正常 setgid 目录，不是问题。
+4. **排查动作本身会污染数据**。全盘校验/扫描会产生与故障同signature 的日志，必须先取空闲基线再下结论。
+5. **改权限前先确认脚本带上了 root**。本次误用 `sh`（非 `sudo bash`）跑修复脚本，好在上千条 `Operation not permitted` 全部失败，等于没执行 —— **权限不足的批量失败反而是安全网**，反倒是"半成功"最危险。
 
 **经验**：「卡顿」类问题的定位锚点选**带时间戳的关键字**（如 `No backend specified`、`Starting KDE Wayland Compositor`），比看总耗时有效得多；静默的 28 秒往往比刷屏的日志更能说明问题。

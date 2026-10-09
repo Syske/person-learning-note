@@ -1075,14 +1075,44 @@ sudo pacman -S wireless-regdb   # 版本 2026.09.03-1，签名验证通过
 **属于工具启动的正常开销，不是故障复发** —— 此时磁盘已不 stall（I/O 超时 0、延迟 0~4ms）。
 工作区本身不是原因（两仓库共约 1564 个文件、51MB）。
 
-### 20.6 长期建议
+### 20.6 电池安全防护配置（2026-10-10 已完成）
+
+**目标**：消除「忘记插电 → 电池耗尽 → 硬断电」这个最现实的 unsafe shutdown 来源。
+
+**配置路径**：系统设置 → 电源管理 → **Advanced Power Settings**（Advanced Power Settings 页，不在三个 Profile 标签里）
+
+| 项 | 改前 | 改后 |
+|---|---|---|
+| Battery Levels → Low level | 10% | **20%** |
+| Battery Levels → Critical level | 5% | **10%** |
+| **At critical level** | Hibernate | **Shut down** ★ |
+| Charge Limit → Stop charging at | 100% | **80%** |
+
+**为什么把 Hibernate 换成 Shutdown**：休眠需把全部内存写入 swap，而本机 **swap 仅 4GB / 内存 30GB**。
+内存用量一旦超过 4GB 休眠即失败 —— 而 IDEA、Docker、浏览器很容易造成这种用量。
+**等于在最需要它工作的时刻失效**，正是要避免的强制断电。
+
+**生效验证**：
+
+```bash
+grep -A3 BatteryManagement ~/.config/powerdevilrc
+# BatteryCriticalAction=8   BatteryCriticalLevel=10   BatteryLowLevel=20
+cat /sys/class/power_supply/BAT0/charge_control_end_threshold   # 80 —— 充电上限真实生效
+```
+
+> ⚠️ **键名教训**：Plasma 6 实际键名是 `[BatteryManagement]` 段的
+> `BatteryCriticalAction` / `BatteryCriticalLevel` / `BatteryLowLevel`，
+> **不是**常见猜测的 `actionCriticalBattery` / `criticalBatteryThreshold`。
+> 猜错的话配置看似写入、实则不生效，且极难察觉 —— **不确定就不要手改，用 GUI**。
+
+### 20.7 长期建议
 
 1. **务必用 `reboot` 正常重启**。该盘 `unsafe_shutdowns` 已 **40+ 次 / 通电 7 小时**，比例严重异常，是整个排查过程中最大的硬件风险源。
 2. 给电池目录配置自动安全关机，减少强制断电。
 3. **观察几天日常使用即可，不要再为验证而频繁重启。**
 4. 若日后再遇同类问题，参考第 13.6 节的通用手法（切分登录前后、找静默空洞、数中断、**实测延迟而非只看计数器**）。
 
-### 20.7 备份文件清单
+### 20.8 备份文件清单
 
 | 文件 | 说明 |
 |---|---|

@@ -352,21 +352,25 @@ journalctl -b -o short-iso | grep -E 'Auth.*successful|Starting KDE Wayland Comp
 
 kwin 解锁的那一秒**恰好**是一次 NVMe I/O 超时 —— 它是被磁盘 IO 阻塞的。
 
-内核持续刷 `nvme0: I/O tag XXX (cid Y) QID N timeout, completion polled`，本次启动累计 **91 次**，空闲期约每 1~2 分钟一次，成对出现时间隔恰好 30 秒（对应 NVMe `io_timeout` 默认值）。
+内核持续刷 `nvme0: I/O tag XXX (cid Y) QID N timeout, completion polled`，累计 **91 次**，空闲期约每 1~2 分钟一次，成对出现时间隔恰好 30 秒（对应 NVMe `io_timeout` 默认值 30000ms）。
 
-**决定性证据**（中断计数对照实验）：
+#### ❌ 一个被推翻的错误结论：不是「MSI-X 中断丢失」
 
-```bash
-grep nvme /proc/interrupts    # nvme0q0~q16，16 个 CPU 列全是 0
-# 连续 dd 800MB (O_DIRECT) 前后 diff /proc/interrupts，无任何设备计数增长
-# 对照组：同一时刻 iwlwifi 中断计数正常（19 万+），说明 /proc/interrupts 本身有效
+我最初根据 `grep nvme /proc/interrupts` 计数全为 0（16 个 CPU 列无一非零），推断「NVMe 完成中断没有送达驱动，只能靠 30 秒超时轮询兜底」。**这个结论是错的**，已推翻。
+
+推翻它的实测证据（100 次 4K 随机读，含 O_DIRECT）：
+
+```
+平均: 0 ms   最大: 1 ms
 ```
 
-NVMe 的完成中断没有被统计/送达，内核只能靠超时后轮询兜底回收 —— 这正是 `completion polled` 的成因。本机 SSD 挂在 **Intel VMD** 后面（ACPI 节点 `RstVmdE` / `RstVmdV`，`vmd 0000:00:0e.0: PCI host bridge to bus 10000:e0`），MSI-X 在 VMD 下丢失是该问题的高发场景。
+如果中断真的失效，每一次读写都要等满 30 秒，系统根本不可用。而实际延迟是 **0~1ms**，说明 NVMe 通路完全正常 —— `/proc/interrupts` 的零计数只是 **VMD 路径下的统计假象**，不是功能失效。
 
-> 说明：机制层面尚未 100% 证实（也不排除 VMD 路径下的中断计数异常），但**现象本身已实测确认**。
+> **教训：计数为 0 ≠ 功能失效**。看到可疑计数必须先用**实际延迟测试**验证因果，再下结论。只看计数器就断言机制，是过度推断。
 
-**与负载无关，是关键结论**。70 秒采样窗口内系统近零 I/O（仅 8KB 写入），仍出现了一次超时：
+#### 实际故障：周期性 30 秒卡顿
+
+正常态磁盘完美（0~1ms），异常态整个请求挂死 30 秒。**与负载无关**：70 秒采样窗口内系统近零 I/O（仅 8KB 写入），仍复现一次超时。
 
 ```bash
 # 采样各进程 /proc/*/io 增量，找出真正在读盘的进程
@@ -375,9 +379,19 @@ sleep 70
 # ... 再采一次 a.txt，对比差值
 ```
 
-结论：**空闲时也会零星卡顿，负载只是把零星卡顿放大成连续阻塞**。kwin 启动时恰好有一串密集 I/O，于是被 30 秒超时正面命中，就卡住了 38 秒。
+结论：**空闲时也会零星卡顿，负载只是把零星卡顿放大成连续阻塞**。kwin 启动时恰好有密集 I/O，于是被 30 秒超时正面命中。
 
-> ⚠️ **教训：别用全盘扫描去排查全盘扫描类问题**。本次 `pacman -Qkk` 全量校验跑了 50 分钟、读了 3.5GB，本身就制造了大量超时 —— 排查期间的 45 次超时里有一半是自己造成的。要区分「故障导致 IO」还是「IO 导致故障」，必须先看**空闲基线**。
+#### 头号嫌疑：Intel VMD 的 PCIe 中断路由
+
+内核日志里有两条高度相关的报错，且**只出现在 NVMe 这条路径上**（其余端口正常，这也解释了为何 wifi 中断计数正常）：
+
+```
+pcieport 10000:e0:06.0: can't derive routing for PCI INT A
+pcieport 10000:e0:06.0: PCI INT A: no GSI
+nvme 10000:e1:00.0: PCI INT A: no GSI
+```
+
+`10000:e0:06.0` → `10000:e1:00.0` 正是 VMD 下挂 NVMe 的那条链路（`vmd 0000:00:0e.0: PCI host bridge to bus 10000:e0`）。**关联已确认，因果未证实**。
 
 **SSD 硬件已排除嫌疑**（`nvme-cli` 实测）：
 
@@ -389,7 +403,18 @@ sleep 70
 | 错误日志 64 条 | 全部 `Successful Completion`，`error_count=0` | 空条目，无真实错误 |
 | **`unsafe_shutdowns`** | **30** | ⚠️ 6 小时的盘被强制断电 30 次 |
 
-盘没坏，**所以 30 秒 I/O 超时不是硬件故障**，而是 VMD/MSI-X 层的软件问题；30 次强制断电很可能让控制器长期处在异常状态。后续可尝试：升级 SSD 固件、关 APST（`nvme_core.default_ps=0`，代价是略增功耗）、或向上游报 VMD 的 bug。
+另外已排除 **TLP Runtime PM**：NVMe 的 `runtime_status=unsupported`，VMD 端口 `power_state=D0 / runtime_status=active`，从未真正挂起。ASPM 策略为 `default`（未排除，但 `policy` 文件只读，须内核参数+重启才能验证）。
+
+#### 升级到 7.2.9 的实测结果：无效，且登录更慢
+
+| | 7.2.6 / systemd 261 | 7.2.9 / systemd 262 |
+|---|---|---|
+| 认证到桌面就绪 | 71s | **99s** |
+| initrd | 2.7s | **31.9s** |
+| userspace | 34.3s | 3.8s |
+| 总计 | 45.7s | 44.0s |
+
+**TPM 那 32 秒没有消失，只是从 userspace 挪进了 initrd**（新 systemd 262 的 initramfs 同样等 TPM 设备）。总耗时基本持平，登录段反而更差，结论是**升级内核对本问题无帮助**。
 
 ### 13.3 附带发现：系统目录属主被损坏（非正常关机所致）
 
@@ -451,7 +476,7 @@ sudo mount /boot
 - **TPM 等待 32.9s 回归**：见 2.4 的修正说明，`systemd.mask=` 不够，需 BIOS 禁用 TPM Device。
 - **i915 GSC 绑定超时**：`GT1: GSC proxy component didn't bind within the expected timeout`，与 kwin 启动慢同源（都卡在等硬件就绪）。
 - **登录时连续 3 次密码错误**，每次约 2s，白等 8s —— 排查卡顿时别把这部分算进去。
-- **内核版本错位**：运行 7.2.6 但已装 7.2.9 + systemd 262，重启后才生效，测性能前务必先重启。
+- **内核版本错位**：运行 7.2.6 但已装 7.2.9 + systemd 262，重启后才生效，测性能前务必先重启。升级后实测**无效**（TPM 等待只是从 userspace 挪进 initrd）。
 
 ### 13.5 本次处理结果与后续
 
@@ -460,26 +485,29 @@ sudo mount /boot
 - [x] `/`、`/usr`、`/usr/share`、`/usr/share/icons`、`/usr/share/applications` 属主/权限修复，`pacman -Qkk` 验证 0 altered
 - [x] EFI 分区 `/dev/nvme0n1p1` dirty bit 修复（卸载后 `fsck.fat -a`）
 - [x] 安装 `nvme-cli`、`dosfstools`，确认 SSD 硬件健康
-- [x] 确认 NVMe 挂在 Intel VMD 下，MSI-X 中断不上报为软件层问题
+- [x] 排除 TLP Runtime PM（NVMe `runtime_status=unsupported`，从未挂起）
+- [x] 升级 7.2.9 + systemd 262 并实测 —— **对登录卡顿无帮助**（见 13.2 对比表）
 
-**待重启验证（关键）**
+**结论：软件侧已无有效手段，下一步必须进 BIOS**
 
-当前运行的是 7.2.6 内核 + systemd 261，但已安装 **7.2.9 + systemd 262**。重启后重测：
+内核、systemd、APST、Runtime PM、SSD 固件这些软件层都排查过了，能立刻见效的两项都在固件里，且**一次进 BIOS 可同时处理**：
 
-```bash
-systemd-analyze
-journalctl -b -o short-iso | grep -E 'Auth.*successful|Starting KDE Wayland Compositor|plasmashell\['
-journalctl -b -k | grep -c 'I/O tag'     # 应显著下降
-systemctl is-enabled tpm2.target          # masked-runtime
-```
+| 操作 | 路径 | 预期收益 |
+|---|---|---|
+| **禁用 TPM Device** | Security → TPM Device → Disable | 消除 **32 秒**启动等待（治本，`systemd.mask=` 挡不住） |
+| **禁用 Intel VMD** | Advanced → VMD Configuration / SATA → 关闭 VMD | 让 NVMe 脱离 VMD 桥接，**有望根除 30 秒 I/O 卡顿** |
 
-**若重启后仍慢**，按此顺序处理：
+> ⚠️ 禁用 VMD 前确认：本机没有组 RAID/VMD 依赖的服务（无 `mdadm`、无 Intel RST 直连依赖）。用 `lsblk` 与 `mdadm --detail --scan` 复核后再改。
 
-1. **BIOS 禁用 TPM Device**（ASUS：Security → TPM Device → Disable）—— 治本，消除 32 秒等待
-2. **NVMe**：升级 WD SN5000S 固件（当前 `34430100`），或加内核参数 `nvme_core.default_ps=0` 关闭 APST 后对比
-3. 若 I/O timeout 仍复现，考虑 `linux-lts` 内核对照测试，或向上游报 VMD MSI-X 问题
+**另外**：BIOS 版本 `B3405CCA.303`（2025-06-11）。若 ASUS 有更新版本，**先更新 BIOS** —— VMD/pcieport 路由问题常由固件修复，能一次解决两项。
 
-**操作建议**：这台盘通电 6 小时却已被强制断电 30 次（`unsafe_shutdowns: 30`）。务必用 `reboot` 正常重启，别直接断电；长期看考虑给内目录开启自动安全关机。
+**若 BIOS 手段无效**，再按序尝试（各需一次重启）：
+
+1. 内核参数 `pcie_aspm=off` —— 关闭 PCIe 链路省电，验证 ASPM 是否致卡
+2. 内核参数 `nvme_core.default_ps=0` —— 彻底关 APST
+3. 换 `linux-lts` 内核对照（不同 NVMe/VMD 代码路径）
+
+**操作建议**：这台盘通电 6 小时却已被强制断电 30 次（`unsafe_shutdowns: 30`）。务必用 `reboot` 正常重启，别直接断电；长期给电池目录开启自动安全关机。
 
 ### 13.6 排查这类问题的通用手法
 
@@ -502,12 +530,21 @@ pacman -Qkk <pkg>                                                # 0 altered = �
 stat -c '%F' <路径>                                              # 先看是不是符号链接
 ```
 
-**五条避坑经验**
+**六条避坑经验**
 
 1. **符号链接的模式位恒为 777 且无意义**。用 `find -perm` 统计损坏范围会严重高估，且 `chmod` 会跟随链接改到目标文件上。判定前先 `stat -c '%F'` 确认类型。
 2. **别把用户数据当损坏**。`/opt` 下自装的应用（属主 `syske`、775/664）是正常状态，`chown -R /opt` 反而破坏它。
 3. **"看起来像故障"的现象要先排除误报**。`pacman -Qkk` 报的 `/var/log/journal` GID 差异就是 journald 的正常 setgid 目录，不是问题。
 4. **排查动作本身会污染数据**。全盘校验/扫描会产生与故障同signature 的日志，必须先取空闲基线再下结论。
 5. **改权限前先确认脚本带上了 root**。本次误用 `sh`（非 `sudo bash`）跑修复脚本，好在上千条 `Operation not permitted` 全部失败，等于没执行 —— **权限不足的批量失败反而是安全网**，反倒是"半成功"最危险。
+6. **别拿计数器当因果**。`/proc/interrupts` 里 NVMe 向量全为 0，一度被当成「中断丢失」的铁证，但实测磁盘延迟是 **0~1ms** —— 计数为 0 只是统计假象。判定「某机制失效」必须先做**延迟实测**，不能只看计数器。
+
+**通用手法补充**：
+
+```bash
+# 测磁盘真实延迟（判断「延迟尖刺」而非「计数器」）
+S=$(date +%s%N); dd if=/dev/nvme0n1p3 of=/dev/null bs=4K count=1 skip=$RANDOM iflag=direct; \
+E=$(date +%s%N); echo "$(( (E-S)/1000000 )) ms"
+```
 
 **经验**：「卡顿」类问题的定位锚点选**带时间戳的关键字**（如 `No backend specified`、`Starting KDE Wayland Compositor`），比看总耗时有效得多；静默的 28 秒往往比刷屏的日志更能说明问题。

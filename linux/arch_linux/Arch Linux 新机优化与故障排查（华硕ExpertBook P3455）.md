@@ -647,3 +647,49 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 | 节律仍为 30 秒 | 参数没生效（检查 cmdline） | 核对 GRUB 配置 |
 
 **根因结论未变**：停摆来自 VMD 链路（`pcieport 10000:e0:06.0: can't derive routing / PCI INT A: no GSI`），BIOS 307 未修复，**禁用 VMD 仍是唯一没试过的根因手段**。
+
+### 14.4 禁用 VMD 的操作与风险评估（附决策依据）
+
+**先说把握度**：禁用 VMD 是**假设，不是确诊**。理由：
+
+- 「MSI-X 中断丢失」已被实测推翻（延迟 0~1ms，计数为 0 是统计假象）
+- `can't derive routing / PCI INT A: no GSI` 在 VMD 设备上**非常常见且大多无害**，BIOS 307 未修复它，但也没有证据表明它就是元凶
+- 目前能确定的只有**现象**：周期性 30 秒 I/O 停摆，成因未知
+
+因此**先验证 14.1 的缓解参数**，不够好再考虑动 BIOS。
+
+**已核实关闭是安全的**：
+
+| 检查项 | 结果 |
+|---|---|
+| VMD 总线（`10000:e0`）下挂设备 | **仅 NVMe**（`10000:e1:00.0`） |
+| 软 RAID（`/proc/mdstat`） | 空，无阵列 |
+| LVM | 未安装 |
+| 根分区 | 普通 ext4，**未加密**（无 `crypt=`，不绑定 TPM） |
+
+**操作路径**（ASUS 官方 FAQ）：
+
+```
+开机按 F2 进 BIOS
+按 F7 切换到 Advanced Mode（不按 F7 看不到该菜单）
+Advanced → VMD setup menu → Enable VMD controller → Disabled
+F10 保存重启
+```
+
+> 旁证：有用户反馈 ASUS 笔记本按 `F9` 载入最优默认值时 VMD **本来就是关闭的** —— 非 RAID 场景下关闭 VMD 是 ASUS 自己的默认取向。
+
+**风险与救援**：
+
+1. 网上确有禁用 VMD 后 Linux 起不来的案例（报 `probe with driver nvme failed with error -4`）
+2. 救援①：开机连续狂按 `F2` 进 BIOS，把 VMD 改回 `Enabled`
+3. 救援②：live USB 启动后执行 `efibootmgr` 还原引导顺序
+
+**救援信息已落盘**：`~/efi-recovery.txt`（含 BootOrder 基线、磁盘布局、回滚命令）。
+
+```bash
+# 基线（2026-10-09 实测，改动前正常状态）
+BootOrder: 0000,0006,0005,0003,0004,0002,0007,0008,0009
+Boot0000* GRUB  HD(1,GPT,785a08b1-...)/\EFI\GRUB\grubx64.efi
+# 还原命令
+sudo efibootmgr -o 0000,0006,0005,0003,0004,0002,0007,0008,0009
+```

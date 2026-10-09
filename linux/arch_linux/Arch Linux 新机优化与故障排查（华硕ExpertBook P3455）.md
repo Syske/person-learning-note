@@ -820,3 +820,66 @@ GRUB_CMDLINE_LINUX="systemd.mask=tpm2.target nvme_core.io_timeout=5000 pcie_aspm
 - `/boot/B3405CCA.bin`（72MB）是刷新 BIOS 时放入的固件文件，刷完即可删除
 - `~/efi-recovery.txt` 可保留作应急参考
 - 长期建议：给电池目录配置自动安全关机，减少强制断电
+
+---
+
+## 17. initramfs 安全网与 GRUB 菜单清理（2026-10-09 23:19）
+
+### 17.1 发现的缺口
+
+排查收尾时发现，**上次 initramfs 损坏导致开不了机的那个安全网，其实是断的**：
+
+| 检查项 | 当时状态 | 后果 |
+|---|---|---|
+| `linux.preset` 的 `PRESETS` | `('default')` | **不生成 fallback 镜像** |
+| `mkinitcpio.conf` 的 `HOOKS` | 含 `autodetect` | 主镜像只含**当前已加载**的模块 |
+| `GRUB_DISABLE_RECOVERY` | `true` | 菜单里**也不给** fallback 入口 |
+
+> 注：`fallback_*` 那几行在 mkinitcpio 42.x 出厂 preset 里**本就是注释状态**，不是谁改坏的。
+> 但 `autodetect` + 无 fallback 的组合意味着：只要当前环境少一个模块，主镜像就起不来，且**没有任何回退**。
+
+### 17.2 修复内容（已备份 `*.bak-20261009-2319`）
+
+```bash
+# 1. /etc/mkinitcpio.d/linux.preset —— 启用 fallback 预设
+PRESETS=('default' 'fallback')
+fallback_image="/boot/initramfs-linux-fallback.img"
+fallback_options="-S autodetect"
+
+# 2. /etc/mkinitcpio.conf —— 主镜像去掉 autodetect，装全量模块
+#   HOOKS=(base udev autodetect ...)  →  HOOKS=(base udev ...)
+
+# 3. /etc/default/grub —— 删除 GRUB_DISABLE_RECOVERY=true
+# 4. chmod 000 /etc/grub.d/31_efi_bootnext —— 干掉 9 个 EFI BootNext 垃圾条目
+# 5. rm /boot/B3405CCA.bin —— 刷 BIOS 残留（70MB）
+sudo mkinitcpio -P && sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+**镜像体积**：24MB → **213MB**（去掉 autodetect 的代价）。开机已只需 15.6s，这点开销可忽略。
+
+**验证**：两个镜像都用 `lsinitcpio` 确认含 `nvme-core` / `vmd` / `ext4` 等关键模块，GRUB 中各被正确引用。
+
+### 17.3 关于 `EFI BootNext` 垃圾条目
+
+`grub-mkconfig` 输出里的 `Adding boot menu entry for EFI BootNext: ...` 就是它们���来源 —— 固件里的 `BootNext` EFI 变量残留，导致每次生成配置都多出 9 条网络/光驱/USB/可移除设备的条目。
+
+处置：`chmod 000 /etc/grub.d/31_efi_bootnext`（标准做法）。这不会影响真实设备的正常启动，只是不再把它们列进菜单。
+
+### 17.4 清理后的菜单（5 项，全部有意义）
+
+```
+Arch Linux
+└─ Advanced options for Arch Linux
+   ├─ Arch Linux, with Linux linux
+   ├─ Arch Linux, with Linux linux (fallback initramfs)   ← 自动+手动双重保险
+   └─ Arch Linux, with Linux linux (recovery mode)
+UEFI Firmware Settings                                     ← 重启进 BIOS 用，保留
+```
+
+### 17.5 生效后应达到的行为
+
+| 场景 | 结果 |
+|---|---|
+| 主 initramfs 缺模块起不来 | initramfs **自动回退**到 fallback 镜像 |
+| 自动回退也不行 | 开机菜单选 `fallback initramfs` 手动进 |
+| 需要改 BIOS 设置 | 菜单选 `UEFI Firmware Settings` |

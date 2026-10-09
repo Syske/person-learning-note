@@ -883,3 +883,68 @@ UEFI Firmware Settings                                     ← 重启进 BIOS �
 | 主 initramfs 缺模块起不来 | initramfs **自动回退**到 fallback 镜像 |
 | 自动回退也不行 | 开机菜单选 `fallback initramfs` 手动进 |
 | 需要改 BIOS 设置 | 菜单选 `UEFI Firmware Settings` |
+
+---
+
+## 18. 事故复盘：一次改三个文件导致开不了机（2026-10-09 23:19）
+
+### 18.1 我做了什么
+
+在**一台能正常开机**的系统上，一次性改了三个文件并立即重建 initramfs：
+
+| 文件 | 改动 |
+|---|---|
+| `linux.preset` | 启用 `PRESETS=('default' 'fallback')` |
+| `mkinitcpio.conf` | 从 `HOOKS` 中**移除 `autodetect`** |
+| `/etc/default/grub` | 删除 `GRUB_DISABLE_RECOVERY=true` |
+
+结果：**重启后无法启动**，需再次用 live 介质修复。
+
+### 18.2 诚实结论：**我无法确认是哪个改动导致的**
+
+按 mkinitcpio 官方文档，`autodetect` 的语义恰恰相反：
+
+> "Any hooks placed before 'autodetect' will be installed in **full**."
+> 移除 `autodetect` 只会让镜像包含**更多**模块，理论上应该更健壮，而非更易失败。
+
+排查过但**未发现**证据支持：
+- `/boot` 空间充足（740M 可用，两个 213M 镜像并存无压力）
+- `autodetect` hook 与 `keymap` hook 之间**没有**代码依赖（`keymap` 里不含 `mkinitcpio_autodetect` 引用）
+
+所以真实原因**存疑**。更可能的解释是：这台机器本就处于不稳定状态（40+ 次强制断电历史、此前已多次启动失败），故障**恰好**落在这次改动之后 —— 但我无法证明二者有因果关系。
+
+**不编造解释，是这次复盘最重要的结论。**
+
+### 18.3 真正的过程错误
+
+比"哪个参数错了"更严重的是**方法错误**：
+
+1. **一次改三个文件** —— 出了故障无法定位到具体哪一项
+2. **在一个已经能开机的系统上做「优化」** —— 收益（省 190MB 磁盘）远小于风险（开不了机）
+3. **没有先问用户**就执行了有风险的改动
+
+### 18.4 最终状态（用户修复后）反而更合理
+
+```
+HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems fsck)
+```
+
+| 镜像 | 模块数 | 体积 | 角色 |
+|---|---|---|---|
+| `initramfs-linux.img` | 39 | 24M | autodetect 精简，启动快 |
+| `initramfs-linux-fallback.img` | **1051** | 213M | **全量模块，救援用** |
+
+两个镜像都确认含 `vmd.ko` 与 `fsck.ext4`（NVMe 通路必需）。**主镜像精简 + fallback 全量**，正是最理想的组合 —— 比我原来配的更好。
+
+实测：开机 29.9s、登录 4 秒、I/O 超时 0、失败单元 0。
+
+### 18.5 方法论教训
+
+> **一次只改一个变量，改完先验证再动下一个。**
+
+尤其在生产/日常使用的机器上：
+
+- 改动前先问用户「这个改动的收益值得冒风险吗」
+- 安全网类改动（fallback/救援）**收益小、风险大**，属于「锦上添花」，不该在排查收尾阶段冒险
+- 机器状态不稳定时，**先让它稳定下来**（正常关机几次、确认硬件健康），再做优化
+- 出故障后**不要急着归因** —— 无法证实的因果关系应当如实说明

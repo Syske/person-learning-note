@@ -1032,13 +1032,25 @@ mkinitcpio 主程序里也没有 fallback_image 的运行时逻辑（它只是 p
 | `asus_armoury: No matching power limits found` | 无匹配机型配置，属正常 |
 | `regulatory.db failed with error -2` | **`wireless-regdb` 未安装**，见下 |
 
-### 20.3 唯一建议处理项：装 `wireless-regdb`
+### 20.3 `wireless-regdb`：✅ 已安装（2026-10-10 00:05）
 
 ```bash
-sudo pacman -S wireless-regdb
+sudo pacman -S wireless-regdb   # 版本 2026.09.03-1，签名验证通过
 ```
 
-未装导致内核两次报 `Direct firmware load for regulatory.db failed with error -2`。缺区域法规库时内核用默认限制（功率偏低、部分 5GHz 信道不可用）。若没遇到信号差/连不上 5G 可不管，但装上有实际好处。
+安装前内核每次启动报 `Direct firmware load for regulatory.db failed with error -2`。
+
+**注意内核只在开机时加载该库** —— 装包时本次启动已经过去，因此当前仍需等下次重启才生效。
+当前 `iw reg get` 显示 `country 00: DFS-UNSET`，这是缺库时的兜底值（雷达检测未正确启用）。
+
+> **免重启的临时办法**（若当下就需要 5GHz 表现）：
+> `sudo iw reg set CN` —— 直接指定国家代码，跳过等待。
+> 持久化可写 `/etc/conf.d/regulatory.conf`：
+> ```
+> echo 'WIRELESS_REGDB=y' > /etc/conf.d/regulatory.conf
+> ```
+> （多数发行版由 `systemd-modules-load` 读取该文件；Arch 上由 `regulatory.conf` 机制处理，
+> 确认生效可重启后用 `iw reg get` 复核 `country` 与 DFS 状态）
 
 ### 20.4 GRUB 两个镜像的最终对应关系（已验证正确）
 

@@ -405,7 +405,7 @@ nvme 10000:e1:00.0: PCI INT A: no GSI
 
 另外已排除 **TLP Runtime PM**：NVMe 的 `runtime_status=unsupported`，VMD 端口 `power_state=D0 / runtime_status=active`，从未真正挂起。ASPM 策略为 `default`（未排除，但 `policy` 文件只读，须内核参数+重启才能验证）。
 
-#### 升级到 7.2.9 的实测结果：无效，且登录更慢
+#### 升级 7.2.9 的实测结果：无效，且登录更慢
 
 | | 7.2.6 / systemd 261 | 7.2.9 / systemd 262 |
 |---|---|---|
@@ -415,6 +415,50 @@ nvme 10000:e1:00.0: PCI INT A: no GSI
 | 总计 | 45.7s | 44.0s |
 
 **TPM 那 32 秒没有消失，只是从 userspace 挪进了 initrd**（新 systemd 262 的 initramfs 同样等 TPM 设备）。总耗时基本持平，登录段反而更差，结论是**升级内核对本问题无帮助**。
+
+#### BIOS 升级 303 → 307：TPM 解决了，I/O 停摆没解决
+
+| 指标 | BIOS 303 | BIOS 307（2026-04-30） |
+|---|---|---|
+| **TPM 设备等待** | 32.9s | **2.0s** ✅ |
+| initrd | 31.9s | **1.7s** ✅ |
+| 认证到桌面就绪 | 99s | **33s**（改善但仍慢） |
+| userspace | 3.8s | **34.0s**（瓶颈转移） |
+| `pcieport ... no GSI` | 有 | **仍有** |
+
+**TPM 那 32 秒被新 BIOS 固件彻底修好了** —— 说明它确实是固件层面的问题，升级固件是对症的手段。但 **VMD 的 PCIe 路由失败依旧**，I/O 停摆照旧（本次启动 9 次，仍严格每 30 秒一次）。
+
+**新瓶颈（BIOS 307 后）**：两个独立的 31 秒空洞，且都是同一个 I/O 停摆撞上的：
+
+```
+13:59:51 → 14:03:33  I/O timeout 严格每 30 秒一次，连续 9 次
+14:03:02  认证成功
+          ← 31 秒空窗（startplasma 在等磁盘）
+14:03:33  I/O timeout + kwin 启动
+14:03:35  plasmashell
+```
+
+开机侧同理：`NetworkManager.service` 耗时 **31.163s**，成了当前 `blame` 第一名，卡住 `network.target` → `systemd-user-sessions` → `plymouth-quit` → `sddm`，导致登录界面本身要等 31 秒才出现。
+
+#### 停摆是内核/硬件层自发的，与用户态无关
+
+两轮采样都证明用户态没有任何周期性 I/O：
+
+```bash
+# 按字节采样：70 秒内仅 8KB 写入
+# 按 syscr（读调用次数）采样：全部来自 konsole/opencode 自己，无后台守护进程
+ps -eo stat,pid,comm | awk '$1 ~ /^D/'    # D 状态进程：空
+```
+
+也就是说没有任何进程在周期性读写 —— 是 NVMe 控制器自己每 30 秒挂死一次。
+
+#### 另外发现：`intel-ucode` 未安装
+
+```
+x86/CPU: Running old microcode
+```
+
+`pacman -Qi intel-ucode` 显示**根本没装**（BIOS 已是 307/2026-04-30）。已安装 `intel-ucode 20260925-1` 并重建 initramfs，需重启生效。
 
 ### 13.3 附带发现：系统目录属主被损坏（非正常关机所致）
 
@@ -494,18 +538,29 @@ sudo mount /boot
 
 | 操作 | 路径 | 预期收益 |
 |---|---|---|
-| **禁用 TPM Device** | Security → TPM Device → Disable | 消除 **32 秒**启动等待（治本，`systemd.mask=` 挡不住） |
-| **禁用 Intel VMD** | Advanced → VMD Configuration / SATA → 关闭 VMD | 让 NVMe 脱离 VMD 桥接，**有望根除 30 秒 I/O 卡顿** |
+| ~~**禁用 TPM Device**~~ | ~~Security → TPM Device~~ | ✅ **已被 BIOS 307 解决**（32.9s → 2.0s），无需再改 |
+| **禁用 Intel VMD** | Advanced → VMD Configuration / SATA → 关闭 VMD | 让 NVMe 脱离 VMD 桥接，**有望根除 30 秒 I/O 卡顿**（BIOS 307 后仍未试） |
 
-> ⚠️ 禁用 VMD 前确认：本机没有组 RAID/VMD 依赖的服务（无 `mdadm`、无 Intel RST 直连依赖）。用 `lsblk` 与 `mdadm --detail --scan` 复核后再改。
+> BIOS 已从 `B3405CCA.303`(2025-06-11) 更新到 **`B3405CCA.307`(2026-04-30)**，TPM 问题已被固件解决。
+>
+> ⚠️ 禁用 VMD 前确认：本机无依赖 VMD 的服务 —— 已核实 `/proc/mdstat` 为空、未安装 `mdadm`、无软 RAID，可安全关闭。
 
-**另外**：BIOS 版本 `B3405CCA.303`（2025-06-11）。若 ASUS 有更新版本，**先更新 BIOS** —— VMD/pcieport 路由问题常由固件修复，能一次解决两项。
+**当前最有价值的两步**：
 
-**若 BIOS 手段无效**，再按序尝试（各需一次重启）：
+1. **BIOS 禁用 VMD** —— 唯一还没试过的根因手段。BIOS 307 仍报 `pcieport ... no GSI`，问题明确在 VMD 这条链路上。
+2. **内核参数缓解**（不治根，但能把每次停摆的伤害从 30 秒压到 5 秒）：
 
-1. 内核参数 `pcie_aspm=off` —— 关闭 PCIe 链路省电，验证 ASPM 是否致卡
-2. 内核参数 `nvme_core.default_ps=0` —— 彻底关 APST
-3. 换 `linux-lts` 内核对照（不同 NVMe/VMD 代码路径）
+```bash
+# /etc/default/grub 的 GRUB_CMDLINE_LINUX 追加：
+#   nvme_core.io_timeout=5000                  # 停摆上限 30s -> 5s（当前值确认可调）
+#   pcie_aspm=off                             # 关闭 PCIe 链路省电，验证 ASPM 是否致卡
+#   nvme_core.default_ps_max_latency_us=0     # 彻底关闭 APST
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+> `io_timeout` 当前为 30，正是日志里 30 秒节律的来源；压到 5 秒后，即使根因未除，登录最坏情况也会从 99 秒降到十几秒。
+
+**若 BIOS 禁用 VMD + 内核参数都无效**，剩余可试：升级 WD SN5000S 固件（当前 `34430100`）、换 `linux-lts` 内核对照（不同 NVMe/VMD 代码路径）、换 SSD 交叉验证。
 
 **操作建议**：这台盘通电 6 小时却已被强制断电 30 次（`unsafe_shutdowns: 30`）。务必用 `reboot` 正常重启，别直接断电；长期给电池目录开启自动安全关机。
 

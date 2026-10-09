@@ -196,10 +196,21 @@
 
 ### arch_linux
 
+#### xylink-aur-pkgbuild
+
+   - [.SRCINFO](linux/arch_linux/xylink-aur-pkgbuild/.SRCINFO)
+   - [PKGBUILD](linux/arch_linux/xylink-aur-pkgbuild/PKGBUILD)
+
+  - [Arch Linux 安装企业微信（Wine 方案）.md](linux/arch_linux/Arch Linux 安装企业微信（Wine 方案）.md)
+  - [Arch Linux 新机优化与故障排查（华硕ExpertBook P3455）.md](linux/arch_linux/Arch Linux 新机优化与故障排查（华硕ExpertBook P3455）.md)
   - [Arch Linux 磁盘空间清理与优化.md](linux/arch_linux/Arch Linux 磁盘空间清理与优化.md)
+  - [Arch Linux 装机配置手册（装完系统后）.md](linux/arch_linux/Arch Linux 装机配置手册（装完系统后）.md)
   - [Arch Linux 输入法配置（Fcitx5 + Rime 雾凇拼音）.md](linux/arch_linux/Arch Linux 输入法配置（Fcitx5 + Rime 雾凇拼音）.md)
   - [arch-linux安装deb软件.md](linux/arch_linux/arch-linux安装deb软件.md)
   - [arch-linux安装记录.md](linux/arch_linux/arch-linux安装记录.md)
+  - [小鱼易连安装与共享屏幕修复.md](linux/arch_linux/小鱼易连安装与共享屏幕修复.md)
+  - [连接公司Windows远程桌面（rdesktop方案）.md](linux/arch_linux/连接公司Windows远程桌面（rdesktop方案）.md)
+  - [钉钉投屏修复记录.md](linux/arch_linux/钉钉投屏修复记录.md)
 
 ### images
 
@@ -900,6 +911,7 @@
 ### AI工具
 
   - [AI工具使用总结.md](工具管理/AI工具/AI工具使用总结.md)
+  - [pi-Stream-finished-without-finish_reason排查.md](工具管理/AI工具/pi-Stream-finished-without-finish_reason排查.md)
   - [pi请求超时排查.md](工具管理/AI工具/pi请求超时排查.md)
   - [常用提示词梳理.md](工具管理/AI工具/常用提示词梳理.md)
   - [本地构建AI接口服务.md](工具管理/AI工具/本地构建AI接口服务.md)

@@ -693,3 +693,68 @@ Boot0000* GRUB  HD(1,GPT,785a08b1-...)/\EFI\GRUB\grubx64.efi
 # 还原命令
 sudo efibootmgr -o 0000,0006,0005,0003,0004,0002,0007,0008,0009
 ```
+
+---
+
+## 15. 缓解参数生效后的实测（2026-10-09 14:27）
+
+### 15.1 三个启动侧指标全部转好
+
+| 指标 | 原始（9/21 前） | BIOS303/7.2.6 | **本轮** |
+|---|---|---|---|
+| 总开机 | 103s | 45.7s | **20.1s** |
+| userspace | 63s | 34.3s | **3.97s** |
+| initrd | 31.2s | 31.9s | **1.66s** |
+| TPM 设备等待 | 32.9s | 32.9s | **1.99s** |
+| `graphical.target` | — | 33.8s | **3.69s** |
+| I/O tag timeout | — | 91 | **0** |
+| i915 GSC 错误 | 有 | 有 | **无** |
+| CPU microcode | old | old | **OK** |
+
+**`pcie_aspm=off` 确实治好了 I/O 停摆**：11 次 → **0 次**（见 15.3 三次启动对照）。
+**`intel-ucode` 装上后**，`Running old microcode` 消失。
+
+### 15.2 但登录段回退：313 秒
+
+| 启动 | `pcie_aspm=off` | I/O 超时 | hung task | 登录到桌面 |
+|---|---|---|---|---|
+| -2 | 无 | 11 | 0 | 33s |
+| -1 | **有** | **0** | 0 | 未完成（强制关机） |
+| 0 | **有** | **0** | 1 | **313s** |
+
+内核 hung task 检测器抓到了现场，`startplasma-way` 卡在 D 状态 122 秒以上：
+
+```
+INFO: task startplasma-way:1473 blocked in I/O wait for more than 122 seconds
+Call Trace:
+  vfs_statx → filename_lookup → ext4_lookup
+  __ext4_find_entry → __wait_on_bit → bit_wait_io → io_schedule → schedule
+```
+
+即：**只是执行了一次 `stat()` 查路径**，就卡在 ext4 目录项锁上。它等的不是命令完成（否则会有 I/O timeout 日志），而是**被别的操作占着的锁**。
+
+**关键矛盾**：同一时刻实测磁盘延迟完全正常（300 次 4K 随机读，平均 0ms、最大 1ms、**无一次超过 50ms**）。所以「ext4 锁被长时间占用」这件事本身无法用磁盘性能解释。
+
+### 15.3 诚实的结论：样本不足，且数据自相矛盾
+
+- 有参数的两次启动（-1、0）**都没有完成登录**，其中 -1 是被强制关机的
+- 无参数的 boot -2 完成了，登录 33s，但有 11 次 I/O 超时
+- **n=1 的 313s 样本，且发生在两次强制断电之后的启动**（`unsafe_shutdowns` 已达 40），样本被污染
+
+因此**现在无法判定 `pcie_aspm=off` 是净收益还是净损失**。需要一次干净的对照。
+
+### 15.4 下一步判读顺序
+
+1. **做一次干净的正常重启**（`systemctl reboot`，禁止强制断电），重新采样登录耗时
+2. 若登录仍 > 60s → **回滚 `pcie_aspm=off`，保留 `io_timeout=5000`**：
+   ```bash
+   sudo cp /etc/default/grub.bak-20261009-1409 /etc/default/grub   # 会清掉全部三个参数，需手改
+   # 改为仅保留：
+   # GRUB_CMDLINE_LINUX="systemd.mask=tpm2.target nvme_core.io_timeout=5000"
+   sudo grub-mkconfig -o /boot/grub/grub.cfg
+   ```
+3. 无论登录结果如何，**开机侧已从 103s 优化到 20.1s，这部分成果要保住**
+
+### 15.5 SSD 健康警告
+
+`unsafe_shutdowns` 已达 **40 次 / 7 小时通电**，仍在 `critical_warning: 0`、`media_errors: 0`，但强制断电是本问题排查过程中最大的硬件风险来源，务必用 `reboot`。

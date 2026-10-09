@@ -758,3 +758,65 @@ Call Trace:
 ### 15.5 SSD 健康警告
 
 `unsafe_shutdowns` 已达 **40 次 / 7 小时通电**，仍在 `critical_warning: 0`、`media_errors: 0`，但强制断电是本问题排查过程中最大的硬件风险来源，务必用 `reboot`。
+
+---
+
+## 16. 最终结果（2026-10-09 22:26 验证）
+
+### 16.1 全部指标达标
+
+| 指标 | 原始（9/21 前） | 峰值（排查中） | **最终** |
+|---|---|---|---|
+| **总开机** | 103s | 50.1s | **15.6s** |
+| userspace | 63s | 34.3s | **3.38s** |
+| initrd | 31.2s | 31.9s | **3.38s** |
+| TPM 设备等待 | 32.9s | 32.9s | **2.0s** |
+| `graphical.target` | — | 33.8s | **2.99s** |
+| **认证 → 桌面就绪** | 3s | 313s | **3s** |
+| **I/O tag timeout** | — | 91 | **0** |
+| hung task (D 状态 >120s) | — | 1 | **0** |
+| i915 GSC 错误 | 有 | 有 | **0** |
+| CPU microcode | old | old | **OK** |
+| 磁盘最大延迟 | — | 30s 挂死 | **4ms** |
+
+**开机 103s → 15.6s，登录稳定 3 秒，I/O 停摆彻底消失。**
+
+### 16.2 起不来的那次：并非内核参数导致
+
+排查中途系统曾连续多次无法进入桌面（boot -6 ~ -1，均为「内核起来了但桌面从未启动」，最后靠 live USB 重装配置 `systemd` + 重建 `mkinitcpio` 才恢复）。
+
+**排查结论：根因是 `/boot` 下的 initramfs 损坏，而不是 `GRUB_CMDLINE_LINUX` 里加的参数。**依据：
+
+1. 损坏期间**始终是同一组参数**（`cmdline` 逐次比对完全一致）
+2. 用 live USB 重建 `initramfs-linux.img`（时间戳 20:56）后，**参数一个字没改**，系统即完全正常
+3. 同期 `unsafe_shutdowns` 已累计 40+ 次 —— 强制断电期间 `/boot` 的 initramfs 很可能被写坏
+
+> **教训：排查期反复强制断电，本身就是最大的破坏源。**
+> `unsafe_shutdowns: 40 / 通电 7 小时` 这个比例非常不正常，initramfs 被截断只是它造成的后果之一。
+> **无论卡成什么样，都要等或用 `reboot`；实在不行才长按电源，且事后务必重建 initramfs。**
+
+### 16.3 最终生效的配置
+
+```
+# /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"
+GRUB_CMDLINE_LINUX="systemd.mask=tpm2.target nvme_core.io_timeout=5000 pcie_aspm=off nvme_core.default_ps_max_latency_us=0"
+```
+
+**四个参数各自的实际贡献**（有对照数据支撑）：
+
+| 参数 | 贡献 | 依据 |
+|---|---|---|
+| `pcie_aspm=off` | **消除 I/O 停摆**（11 次 → 0 次） | 开关对比最清晰 |
+| `nvme_core.io_timeout=5000` | 把停摆伤害上限从 30s 压到 5s | `io_timeout` 原值即 30 |
+| `nvme_core.default_ps_max_latency_us=0` | 彻底关 NVMe APST | — |
+| `intel-ucode`（软件包） | 消除 `Running old microcode` | — |
+| BIOS 303 → 307 | **TPM 32.9s → 2.0s** | 固件层面修复 |
+
+**VMD 最终未禁用** —— 因为问题已通过上述手段解决，无需冒险改 BIOS。
+
+### 16.4 遗留清理项
+
+- `/boot/B3405CCA.bin`（72MB）是刷新 BIOS 时放入的固件文件，刷完即可删除
+- `~/efi-recovery.txt` 可保留作应急参考
+- 长期建议：给电池目录配置自动安全关机，减少强制断电

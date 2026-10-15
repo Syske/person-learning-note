@@ -4,6 +4,6 @@
 .obsidian/
 _book/
 
-
-
+# WorkBuddy 本地记忆/缓存（不纳入公开笔记库）
+.workbuddy/
 

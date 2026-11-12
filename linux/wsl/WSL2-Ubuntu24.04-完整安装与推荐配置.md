@@ -15,6 +15,13 @@
 | 安装的发行版 | Ubuntu 24.04.4 LTS (Noble Numbat) |
 | 安装位置 | `D:\dev-tool\WSL\Ubuntu-24.04`（ext4.vhdx） |
 
+> **2026-11-12 更新（换机后）**：上表是 2026-08 旧机基线，换机后已不同，勿直接照抄。
+>
+> - 新机：ASUS B3405CCA / Intel Core Ultra 7 255H（16 核）/ 31.2GB（2×16GB DDR5-5600）/ 用户目录 `C:\Users\71544`
+> - WSL 3.0.5.0，默认内核 6.18.58.1；**2026-11-12 因 Fatal machine check panic 已回退到 `6.6.87.1`**（`kernel=C:\\Users\\71544\\wsl-kernels\\bzImage-6.6.87.1`）
+> - 原因、判别方法与回退步骤见 `wsl日常使用积累.md` →「WSL 突然「已退出进程，代码为 1」怎么判」
+> - 本文推荐的 `[experimental] autoMemoryReclaim=gradual` 在真机上未落地，导致宿主 commit 一度只剩 2.8GB 空闲，建议补上
+
 ---
 
 ## 二、确认/启用 WSL

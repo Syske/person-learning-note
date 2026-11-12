@@ -1,0 +1,4 @@
+# 统一行尾：仓库与检出统一 LF，避免 Windows/Obsidian 写入 CRLF 导致
+# 整个 vault 在 git status 里显示成"已修改"（2026-11-12 一次出现 199 个假修改）。
+# 二进制文件由 text=auto 自动识别，不做转换。
+* text=auto eol=lf
